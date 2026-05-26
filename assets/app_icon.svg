@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="기업분석 임시 앱 아이콘">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C7AADB"/>
+      <stop offset="1" stop-color="#8B5CB0"/>
+    </linearGradient>
+  </defs>
+  <!-- 배경 라운드 스퀘어 -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#bg)"/>
+  <!-- 돋보기 렌즈 -->
+  <circle cx="230" cy="230" r="118" fill="rgba(255,255,255,0.16)" stroke="#FFFFFF" stroke-width="30"/>
+  <!-- 렌즈 안 상승 추세선 -->
+  <polyline points="172,268 212,224 246,252 300,182"
+            fill="none" stroke="#FFFFFF" stroke-width="17"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 추세선 끝 화살촉 -->
+  <polyline points="276,184 300,182 298,206"
+            fill="none" stroke="#FFFFFF" stroke-width="17"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 돋보기 손잡이 -->
+  <line x1="314" y1="314" x2="416" y2="416" stroke="#FFFFFF" stroke-width="34" stroke-linecap="round"/>
+</svg>

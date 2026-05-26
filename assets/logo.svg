@@ -1,0 +1,27 @@
+<svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="기업분석 임시 로고">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C7AADB"/>
+      <stop offset="1" stop-color="#8B5CB0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 아이콘 마크 -->
+  <g transform="translate(16,22)">
+    <rect x="0" y="0" width="96" height="96" rx="22" fill="url(#lg)"/>
+    <circle cx="43" cy="43" r="22.5" fill="rgba(255,255,255,0.16)" stroke="#FFFFFF" stroke-width="5.6"/>
+    <polyline points="32,50 40,42 47,48 57,34"
+              fill="none" stroke="#FFFFFF" stroke-width="3.2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="59" y1="59" x2="78" y2="78" stroke="#FFFFFF" stroke-width="6.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- 워드마크 (앱 이름: CA — 임시) -->
+  <text x="132" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif"
+        font-size="48" font-weight="800" fill="#2E2740" letter-spacing="1">CA</text>
+  <text x="134" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif"
+        font-size="16" font-weight="500" fill="#6B7280">기업 · ETF 분석 도구</text>
+  <!-- 임시 로고 표식 -->
+  <text x="500" y="30" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif"
+        font-size="12" font-weight="500" fill="#C7AADB">임시</text>
+</svg>

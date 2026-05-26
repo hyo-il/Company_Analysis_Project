@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CA — 기업·ETF 분석</title>
+  <link rel="icon" type="image/png" href="assets/app_icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <script>if (window.Chart && window.ChartDataLabels) { Chart.register(window.ChartDataLabels); Chart.defaults.plugins.datalabels = Chart.defaults.plugins.datalabels || {}; Chart.defaults.plugins.datalabels.display = false; }</script>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="backdrop" id="backdrop"></div>
+    <aside class="sidebar" id="sidebar" aria-label="주 메뉴">
+      <div class="sidebar-brand">CA</div>
+      <nav class="sidebar-nav" role="navigation">
+        <button class="nav-item" data-route="analysis">기업 분석</button>
+        <button class="nav-item" data-route="compare">상대가치 비교</button>
+        <button class="nav-item" data-route="calendar">주요 일정</button>
+      </nav>
+      <div class="sidebar-nav-bottom">
+        <button class="nav-item" data-route="help">도움말</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <button class="hamburger" id="hamburger" aria-label="메뉴 열기">☰</button>
+        <h1 class="header-title" id="page-title">기업 분석</h1>
+        <div class="header-search" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="search-suggest">
+          <input
+            type="search"
+            id="global-search"
+            placeholder="기업명·티커 검색 (예: 엔비디아 / NVIDIA / NVDA)"
+            autocomplete="off"
+            aria-label="통합 검색"
+            aria-autocomplete="list"
+            aria-controls="search-suggest"
+          />
+          <div id="search-suggest" role="listbox" hidden></div>
+        </div>
+        <div class="market-toggle" role="radiogroup" aria-label="시장 구분">
+          <label><input type="radio" name="market" value="all" checked /><span>전체</span></label>
+          <label><input type="radio" name="market" value="kr" /><span>국내</span></label>
+          <label><input type="radio" name="market" value="us" /><span>미국</span></label>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <section class="route-panel" data-panel="analysis"></section>
+        <section class="route-panel" data-panel="compare" hidden></section>
+        <section class="route-panel" data-panel="calendar" hidden></section>
+        <section class="route-panel" data-panel="help" hidden></section>
+      </div>
+
+      <button class="drawer-handle" id="drawer-handle" aria-label="관심 종목 패널 열기" title="관심 종목">★</button>
+      <aside class="right-drawer" id="right-drawer" aria-label="관심 종목">
+        <div class="right-drawer-header">
+          <h3 style="margin:0; font-size:14px;">★ 관심 종목</h3>
+          <button class="right-drawer-close" id="drawer-close" aria-label="닫기">×</button>
+        </div>
+        <div class="right-drawer-body" id="drawer-body"></div>
+      </aside>
+
+      <footer class="disclaimer">
+        본 서비스는 정보 제공 목적의 참고 자료이며 투자 권유가 아닙니다. 모든 투자 판단과 책임은 사용자에게 있습니다.
+      </footer>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
