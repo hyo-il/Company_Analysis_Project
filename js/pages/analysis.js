@@ -125,7 +125,7 @@ export async function renderAnalysis(container, { ticker } = {}) {
 
       <div class="panel">
         <div class="panel-title">주요 일정</div>
-        ${renderSchedule(cal.data)}
+        ${renderSchedule(cal.data, cal.reason)}
       </div>
 
       <div class="panel">
@@ -296,8 +296,22 @@ function renderEtfReverse(rows) {
   <p style="font-size:11px; color:var(--text-muted); margin-top:6px;">행을 클릭하면 해당 ETF의 상세 화면으로 이동합니다.</p>`;
 }
 
-function renderSchedule(events) {
-  if (!events.length) return emptyState('등록된 일정이 없습니다.');
+function renderScheduleReason(reason) {
+  const map = {
+    'no-key': '<strong>Finnhub API 키가 설정되지 않았습니다.</strong><p>도움말 &gt; 데이터 소스 설정에서 무료 키를 등록하면 미국 종목의 실적·배당 일정이 표시됩니다.</p><button class="btn-primary" onclick="location.hash=\'#/help\'">도움말로 가기</button>',
+    'kr-not-supported': '<strong>한국 종목 일정은 아직 지원하지 않습니다.</strong><p>본 앱 구조 제약(서버/프록시 없음)으로, 후속 단계에서 별도 어댑터로 다룰 예정입니다.</p>',
+    'fetch-failed': '<strong>Finnhub 호출이 실패했습니다.</strong><p>키가 유효한지·네트워크가 정상인지 확인 후 다시 시도하세요. 거짓 데이터를 채워 넣지 않습니다.</p>',
+    'no-us-watch': '<strong>관심 종목에 미국 종목이 없습니다.</strong><p>미국 주식·ETF를 관심 등록하면 해당 종목의 실적·배당 일정이 표시됩니다.</p>',
+  };
+  const cls = reason === 'fetch-failed' ? 'cal-empty-banner warn' : 'cal-empty-banner';
+  return map[reason] ? `<div class="${cls}">${map[reason]}</div>` : '';
+}
+
+function renderSchedule(events, reason) {
+  if (!events.length) {
+    const banner = renderScheduleReason(reason);
+    return banner || emptyState('등록된 일정이 없습니다.');
+  }
   const todayIso = new Date().toISOString().slice(0, 10);
   const upcoming = events.filter(e => e.date >= todayIso).sort((a, b) => a.date.localeCompare(b.date));
   const past = events.filter(e => e.date < todayIso).sort((a, b) => b.date.localeCompare(a.date));

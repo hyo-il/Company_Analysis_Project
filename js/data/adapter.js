@@ -158,16 +158,19 @@ export async function getNews(ticker) {
 }
 
 import { fetchEarnings, fetchDividends } from './adapters/calendar/finnhub.js';
-import { buildMockResult, buildMockEvents } from './adapters/calendar/mock.js';
 import { getApiKey, API_KEYS } from './config.js';
 import { getWatchlist } from './watchlist.js';
 
+// MOCK 일정은 사용자 혼선을 줄이기 위해 11차에서 완전 제거됨.
+// TODO: 한국 종목(KIND/DART)·매크로(FRED/ECOS) 실연동은 CORS 제약으로 별도 프록시 서버 필요 — 후속 단계.
 const CAL_TTL_MS = 60 * 60 * 1000; // 1시간
+const CAL_EMPTY_TTL_MS = 5 * 60 * 1000; // 빈 결과는 5분만 캐시
 
 function cacheGetWithTTL(key) {
   const v = cacheGet(key);
   if (!v || !v._cachedAt) return null;
-  if (Date.now() - v._cachedAt > CAL_TTL_MS) return null;
+  const ttl = v.data && v.data.length ? CAL_TTL_MS : CAL_EMPTY_TTL_MS;
+  if (Date.now() - v._cachedAt > ttl) return null;
   return v;
 }
 function cacheSetWithTTL(key, value) {
@@ -180,8 +183,10 @@ function isoOffset(days) {
   return d.toISOString().slice(0, 10);
 }
 
-// 기업 실적·배당 1차 실연동(Finnhub). 한국 종목·매크로는 1단계 미구현 — MOCK fallback.
-// TODO: 한국 종목(KIND/DART)은 CORS 제약으로 별도 프록시 서버가 필요. 매크로(FRED/ECOS)도 후속 단계.
+function emptyResult(reason) {
+  return { data: [], source: 'Finnhub', asOf: todayISO(), reason };
+}
+
 export async function getCalendar(ticker = null, { from, to } = {}) {
   const f = from || isoOffset(-30);
   const t = to || isoOffset(45);
@@ -190,46 +195,59 @@ export async function getCalendar(ticker = null, { from, to } = {}) {
   if (cached) return cached;
 
   const apiKey = getApiKey(API_KEYS.FINNHUB);
-  let realEvents = [];
+  if (!apiKey) {
+    const res = emptyResult('no-key');
+    cacheSetWithTTL(cacheKey, res);
+    return res;
+  }
 
-  if (apiKey) {
-    if (ticker) {
-      const sym = getSymbol(ticker);
-      if (sym?.market === 'us') {
-        const [earn, div] = await Promise.all([
-          fetchEarnings({ ticker, from: f, to: t, apiKey }),
-          fetchDividends({ ticker, from: f, to: t, apiKey }),
-        ]);
-        realEvents = [...earn, ...div];
-      }
-    } else {
-      // 전체 일정 — 관심 종목의 미국 종목들로 실데이터 수집
-      const usWatchTickers = getWatchlist().filter(tk => getSymbol(tk)?.market === 'us');
-      if (usWatchTickers.length) {
-        const all = await Promise.all(usWatchTickers.flatMap(tk => [
-          fetchEarnings({ ticker: tk, from: f, to: t, apiKey }),
-          fetchDividends({ ticker: tk, from: f, to: t, apiKey }),
-        ]));
-        realEvents = all.flat();
-      }
+  let events = [];
+  let fetchFailed = false;
+
+  if (ticker) {
+    const sym = getSymbol(ticker);
+    if (sym?.market !== 'us') {
+      const res = emptyResult('kr-not-supported');
+      cacheSetWithTTL(cacheKey, res);
+      return res;
+    }
+    try {
+      const [earn, div] = await Promise.all([
+        fetchEarnings({ ticker, from: f, to: t, apiKey }),
+        fetchDividends({ ticker, from: f, to: t, apiKey }),
+      ]);
+      events = [...earn, ...div];
+    } catch {
+      fetchFailed = true;
+    }
+  } else {
+    const usWatchTickers = getWatchlist().filter(tk => getSymbol(tk)?.market === 'us');
+    if (!usWatchTickers.length) {
+      const res = emptyResult('no-us-watch');
+      cacheSetWithTTL(cacheKey, res);
+      return res;
+    }
+    try {
+      const all = await Promise.all(usWatchTickers.flatMap(tk => [
+        fetchEarnings({ ticker: tk, from: f, to: t, apiKey }),
+        fetchDividends({ ticker: tk, from: f, to: t, apiKey }),
+      ]));
+      events = all.flat();
+    } catch {
+      fetchFailed = true;
     }
   }
 
-  if (!realEvents.length) {
-    const mock = buildMockResult(ticker);
-    cacheSetWithTTL(cacheKey, mock);
-    return mock;
+  if (fetchFailed) {
+    const res = emptyResult('fetch-failed');
+    cacheSetWithTTL(cacheKey, res);
+    return res;
   }
 
-  // 매크로/한국 등 미구현 영역은 mock에서 보강(매크로 이벤트만 추출).
-  const macro = buildMockEvents(ticker).filter(e => e.category === 'common');
-  const merged = [...realEvents, ...macro].sort((a, b) => a.date.localeCompare(b.date));
   const result = {
-    data: merged,
-    source: 'Finnhub + 매크로 MOCK',
+    data: events.sort((a, b) => a.date.localeCompare(b.date)),
+    source: 'Finnhub',
     asOf: todayISO(),
-    hasFallback: macro.length > 0,
-    note: macro.length ? '기업 실적·배당은 실데이터(Finnhub), 매크로·한국 일정은 MOCK입니다.' : '',
   };
   cacheSetWithTTL(cacheKey, result);
   return result;

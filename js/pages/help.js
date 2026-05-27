@@ -25,21 +25,23 @@ export function renderHelp(container) {
 
       <h3 style="margin-top:16px;">데이터 소스 설정</h3>
       <p style="font-size:13px;">
-        주요 일정의 <strong>기업 실적·배당</strong>은 무료 외부 데이터(Finnhub)를 사용합니다.
-        무료 키를 발급받아 아래에 입력하시면 실데이터로 동작합니다.
-        키가 없거나 호출이 실패하면 임시 데이터(MOCK)로 자동 대체되며, <i class="warn-icon" style="display:inline-flex;">!</i> 아이콘으로 표시됩니다.
+        주요 일정의 <strong>미국 종목 실적·배당</strong>은 무료 외부 데이터(Finnhub)를 사용합니다.
+        무료 키를 발급받아 아래에 입력하시면 실데이터로 표시됩니다.
+        키가 없거나, 한국 종목이거나, 호출이 실패하면 <strong>가짜 데이터로 채우지 않고 "데이터 없음"으로 정직히 표시</strong>합니다.
+        가입 전 Finnhub 공식 사이트의 Privacy/Terms를 직접 확인하시기 바랍니다.
+        한국 종목·매크로 일정(FOMC/CPI 등) 연동은 본 앱 구조 제약(CORS·서버 없음)으로 후속 단계에서 별도 어댑터로 다룹니다.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0;">
         <label for="apikey-finnhub" style="font-size:13px;">Finnhub API Key (선택)</label>
-        <input type="password" id="apikey-finnhub" placeholder="발급받은 키 입력" value="${finnhubKey.replace(/"/g, '&quot;')}"
+        <input type="password" id="apikey-finnhub" placeholder="발급받은 키 입력" autocomplete="off" value="${finnhubKey.replace(/"/g, '&quot;')}"
           style="flex:1; min-width:240px; padding:7px 10px; border:1px solid var(--border); border-radius:6px; font-size:13px;" />
         <button class="btn-primary" id="apikey-finnhub-save">저장</button>
         <button class="btn-secondary" id="apikey-finnhub-clear">지우기</button>
         <a href="https://finnhub.io/register" target="_blank" rel="noopener noreferrer" style="font-size:13px;">무료 키 발급 ↗</a>
+        <a href="https://finnhub.io/" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Finnhub 공식 사이트(약관·개인정보 확인) ↗</a>
       </div>
       <p style="font-size:12px; color:var(--text-muted); margin:0 0 6px;">
         키는 이 PC의 localStorage에만 저장되며 외부로 전송되지 않습니다(브라우저에서 Finnhub로만 직접 호출).
-        한국 종목·매크로(FOMC/CPI 등)는 무료 직접 호출이 제한되어 이번 단계에서는 MOCK으로 표시됩니다.
       </p>
 
       <h3 style="margin-top:16px;">면책</h3>

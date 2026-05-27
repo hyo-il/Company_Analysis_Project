@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+
+# 노드(현재 미사용이나 미래 대비)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# 빌드/캐시(현재 미사용이나 미래 대비)
+dist/
+build/
+.cache/
+
+# 환경/키 — 외부에 절대 노출 금지
+.env
+.env.*
+*.local
+
+# 로그
+*.log

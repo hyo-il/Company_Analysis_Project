@@ -713,3 +713,17 @@ h3 { font-size: 15px; }
 @media (prefers-reduced-motion: reduce) {
   .toast { transition: none; transform: none; }
 }
+
+/* 캘린더 reason 안내 배너 */
+.cal-empty-banner {
+  padding: 12px 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--accent-line);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.cal-empty-banner strong { color: var(--text); }
+.cal-empty-banner p { margin: 6px 0 10px; color: var(--text-muted); font-size: 12px; }
+.cal-empty-banner.warn { background: #fff5f5; border-color: #fecaca; }
+.cal-empty-banner.warn strong { color: #7c2d2d; }

@@ -2,14 +2,50 @@ import { getCalendar } from '../data/adapter.js';
 import { getWatchlist } from '../data/watchlist.js';
 import { fmtDate } from '../utils/format.js';
 
+export function renderReasonBanner(reason, dataLen) {
+  if (reason === 'no-key') {
+    return `<div class="cal-empty-banner">
+      <strong>Finnhub API 키가 설정되지 않아 실데이터를 가져올 수 없습니다.</strong>
+      <p>도움말 &gt; 데이터 소스 설정에서 무료 키를 등록하면 미국 종목의 실적·배당 일정이 표시됩니다.
+        키가 없거나 호출이 실패하면 가짜 데이터를 채워 넣지 않습니다.</p>
+      <button class="btn-primary" data-go-help="1">도움말로 가기</button>
+    </div>`;
+  }
+  if (reason === 'no-us-watch') {
+    return `<div class="cal-empty-banner">
+      <strong>관심 종목에 미국 종목이 없습니다.</strong>
+      <p>미국 주식·ETF를 관심 등록하면 해당 종목의 실적·배당 일정이 여기에 표시됩니다.</p>
+    </div>`;
+  }
+  if (reason === 'kr-not-supported') {
+    return `<div class="cal-empty-banner">
+      <strong>한국 종목의 일정은 본 앱 구조 제약(서버/프록시 없음)으로 아직 지원하지 않습니다.</strong>
+      <p>후속 단계에서 별도 어댑터로 다룰 예정입니다.</p>
+    </div>`;
+  }
+  if (reason === 'fetch-failed') {
+    return `<div class="cal-empty-banner warn">
+      <strong>Finnhub 호출이 실패했습니다.</strong>
+      <p>키가 유효한지, 네트워크가 정상인지 확인 후 다시 시도하세요. 거짓 데이터를 채워 넣지 않습니다.</p>
+    </div>`;
+  }
+  if (!dataLen) {
+    return `<div class="cal-empty-banner"><strong>현재 표시할 일정이 없습니다.</strong></div>`;
+  }
+  return '';
+}
+
 let region = 'all';
 let onlyWatch = false;
 let cursor = new Date();
 cursor.setDate(1);
 
 export async function renderCalendar(container) {
-  const all = (await getCalendar()).data;
+  const calRes = await getCalendar();
+  const all = calRes.data;
   const watch = getWatchlist();
+  const reasonBanner = renderReasonBanner(calRes.reason, all.length);
+  const sourceLine = `<div style="font-size:11px; color:var(--text-muted); margin-top:6px;">출처: ${calRes.source} · 기준일: ${calRes.asOf}</div>`;
 
   container.innerHTML = `
     <div class="panel">
@@ -37,10 +73,12 @@ export async function renderCalendar(container) {
         <span><span class="swatch" style="background:var(--event-company-soft); border:1px solid #d8c0e3;"></span>기업 일정</span>
       </div>
 
+      ${reasonBanner}
       <div id="cal-grid"></div>
       <p style="font-size:12px; color:var(--text-muted); margin-top:10px;">
         💡 날짜의 빈 공간을 누르면 그 날의 일정 목록이, 일정 칩을 누르면 해당 일정의 상세 정보가 열립니다.
       </p>
+      ${sourceLine}
     </div>
 
     <dialog id="event-dialog" style="border:none; border-radius:8px; padding:0; max-width:520px; width:90vw;">
@@ -196,6 +234,10 @@ export async function renderCalendar(container) {
   });
   container.querySelector('#only-watch').addEventListener('change', e => {
     onlyWatch = e.target.checked; drawGrid();
+  });
+
+  container.querySelector('[data-go-help]')?.addEventListener('click', () => {
+    location.hash = '#/help';
   });
 
   drawGrid();
