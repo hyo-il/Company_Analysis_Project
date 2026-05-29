@@ -1,32 +1,17 @@
 import { getProfile, getQuoteEOD, getHoldings, ISSUER_LINKS } from '../data/adapter.js';
 import { fmtNum, fmtChange, fmtMoney, fmtPct } from '../utils/format.js';
 import { metaBadge, warnIcon, infoTip, loadingState, errorState } from '../components/common.js';
+import { pushRecent } from '../data/recents.js';
 import { openHoldingAnalysisDialog } from '../components/holding-dialog.js';
 import { getSymbol } from '../data/symbols.js';
-
-// 무료로 확보 어려운 ETF 지표는 (!)로 명시. 일부는 결정론적 mock.
-function mockEtfDetail(ticker) {
-  let seed = 0;
-  for (let i = 0; i < ticker.length; i++) seed = ((seed << 5) - seed + ticker.charCodeAt(i)) | 0;
-  const rnd = (k, a, b) => {
-    const x = Math.sin(seed + k) * 10000;
-    return a + (x - Math.floor(x)) * (b - a);
-  };
-  return {
-    ter: rnd(1, 0.03, 0.6),
-    aum: rnd(2, 1e8, 5e11),
-    trackingError: rnd(3, 0.05, 1.2),
-    premiumDiscount: rnd(4, -0.5, 0.5),
-    distributionYield: rnd(5, 0, 4),
-    top10Concentration: rnd(6, 15, 70),
-  };
-}
+import { mockEtfDetail } from '../data/adapters/etf-meta.js';
 
 export async function renderEtf(container, { ticker }) {
   if (!ticker) {
     container.innerHTML = `<div class="panel"><div class="state-empty">ETF를 검색해 선택해 주세요.</div></div>`;
     return;
   }
+  pushRecent(ticker);
   container.innerHTML = loadingState();
   try {
     const [profile, quote, holdingsRes] = await Promise.all([

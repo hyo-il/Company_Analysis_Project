@@ -5,7 +5,11 @@
 
 import { getSymbol } from './symbols.js';
 import { cacheGet, cacheSet } from '../utils/cache.js';
+import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
+
+// TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
+// 실데이터로 교체 예정. 현재는 빈 결과(stub)를 반환하고 호출부에서 패널을 숨긴다.
 
 const FRESH_DAYS = 2; // EOD 시세 신선도 기준
 
@@ -13,152 +17,249 @@ function todayISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
-function asOfRecent() {
-  // 평일 기준 가장 최근 영업일 mock
-  const d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
-}
-
-// 결정론적 의사난수 (티커별로 항상 같은 값)
-function seedFromTicker(t) {
-  let h = 0;
-  for (let i = 0; i < t.length; i++) h = ((h << 5) - h + t.charCodeAt(i)) | 0;
-  return Math.abs(h);
-}
-function rnd(seed, min, max) {
-  const x = Math.sin(seed) * 10000;
-  const f = x - Math.floor(x);
-  return min + f * (max - min);
-}
-
-function mockFinancials(ticker) {
-  const seed = seedFromTicker(ticker);
-  const per = rnd(seed, 8, 35);
-  const pbr = rnd(seed + 1, 0.6, 6);
-  const roe = rnd(seed + 2, 4, 28);
-  return {
-    per, pbr,
-    psr: rnd(seed + 3, 0.8, 8),
-    pcr: rnd(seed + 4, 5, 20),
-    peg: rnd(seed + 5, 0.5, 3),
-    evEbitda: rnd(seed + 6, 5, 25),
-    dividendYield: rnd(seed + 7, 0, 5),
-    roe,
-    roa: roe * 0.6,
-    roic: roe * 0.8,
-    opMargin: rnd(seed + 8, 5, 35),
-    netMargin: rnd(seed + 9, 3, 28),
-    ebitdaMargin: rnd(seed + 10, 10, 45),
-    revenueGrowthYoY: rnd(seed + 11, -10, 40),
-    revenueGrowthQoQ: rnd(seed + 12, -5, 15),
-    opGrowth: rnd(seed + 13, -15, 50),
-    epsGrowth: rnd(seed + 14, -10, 45),
-    revenue: rnd(seed + 15, 1e10, 5e11),
-    operatingIncome: rnd(seed + 16, 1e9, 1e11),
-    netIncome: rnd(seed + 17, 5e8, 8e10),
-    eps: rnd(seed + 18, 100, 8000),
-    bps: rnd(seed + 19, 5000, 80000),
-    ocf: rnd(seed + 20, 1e9, 1.2e11),
-    fcf: rnd(seed + 21, 5e8, 8e10),
-    debtRatio: rnd(seed + 22, 20, 180),
-    currentRatio: rnd(seed + 23, 80, 280),
-    interestCoverage: rnd(seed + 24, 1, 30),
-    netDebtEbitda: rnd(seed + 25, -1, 5),
-    dps: rnd(seed + 26, 0, 3000),
-    payoutRatio: rnd(seed + 27, 0, 70),
-    buybackFlag: rnd(seed + 32, 0, 1) > 0.5,
-    beta: rnd(seed + 28, 0.5, 1.8),
-    high52: rnd(seed + 29, 50000, 200000),
-    low52: rnd(seed + 30, 30000, 100000),
-    foreignOwnership: rnd(seed + 31, 5, 60),
-  };
-}
 
 // === 공개 어댑터 함수들 ===
 
 export async function getProfile(ticker) {
   const sym = getSymbol(ticker);
   if (!sym) throw new Error('symbol not found');
-  return {
+
+  if (sym.market !== 'us') {
+    return {
+      data: {
+        ticker: sym.ticker, nameKr: sym.nameKr, nameEn: sym.nameEn,
+        exchange: sym.exchange, sector: sym.sector, industry: sym.industry,
+        market: sym.market, type: sym.type,
+        description: `${sym.nameKr}(${sym.ticker})는 ${sym.exchange}에 상장된 ${sym.industry} 기업입니다.`,
+        marketCap: null, sharesOutstanding: null,
+      },
+      source: 'symbols.js (KR 실데이터 미지원)',
+      asOf: todayISO(),
+      currency: 'KRW',
+      reason: 'kr-not-supported',
+    };
+  }
+
+  const cacheKey = `profile:${ticker}`;
+  const cached = cacheGet(cacheKey);
+  if (cached) {
+    const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
+    if (ageHours < 24 * 7) return cached;
+  }
+
+  const p = await fhProfile(ticker);
+  const result = {
     data: {
       ticker: sym.ticker,
       nameKr: sym.nameKr,
-      nameEn: sym.nameEn,
-      exchange: sym.exchange,
-      sector: sym.sector,
-      industry: sym.industry,
-      market: sym.market,
-      type: sym.type,
-      description: `${sym.nameKr}(${sym.ticker})는 ${sym.exchange}에 상장된 ${sym.industry} 기업입니다.`,
-      marketCap: rnd(seedFromTicker(ticker) + 99, 1e10, 3e12),
-      sharesOutstanding: rnd(seedFromTicker(ticker) + 100, 1e7, 2e10),
+      nameEn: p?.name || sym.nameEn,
+      exchange: p?.exchange || sym.exchange,
+      sector: p?.finnhubIndustry || sym.sector,
+      industry: p?.finnhubIndustry || sym.industry,
+      market: 'us', type: sym.type,
+      description: `${sym.nameKr}(${sym.ticker})는 ${p?.exchange || sym.exchange}에 상장된 ${p?.finnhubIndustry || sym.industry} 기업입니다.` +
+                   (p?.weburl ? ` 공식 사이트: ${p.weburl}` : ''),
+      marketCap: p?.marketCapitalization != null ? p.marketCapitalization * 1e6 : null,
+      sharesOutstanding: p?.shareOutstanding != null ? p.shareOutstanding * 1e6 : null,
+      ipo: p?.ipo || null,
+      logoUrl: p?.logo || null,
     },
-    source: sym.market === 'kr' ? 'DART/KRX' : 'SEC EDGAR',
-    asOf: asOfRecent(),
-    currency: sym.market === 'kr' ? 'KRW' : 'USD',
+    source: p ? 'Finnhub' : 'Finnhub (no data) + symbols.js',
+    asOf: todayISO(),
+    currency: 'USD',
+    reason: p ? undefined : 'fetch-failed',
   };
+  if (p) cacheSet(cacheKey, result);  // 실패는 캐시하지 않음(재시도 허용)
+  return result;
 }
 
 export async function getQuoteEOD(ticker) {
+  const sym = getSymbol(ticker);
   const cacheKey = `quote:${ticker}`;
   const cached = cacheGet(cacheKey);
   if (cached) {
-    const ageDays = (Date.now() - new Date(cached.asOf).getTime()) / (1000 * 60 * 60 * 24);
-    if (ageDays < FRESH_DAYS) return cached;
+    const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
+    if (ageHours < 24) return cached;
   }
-  const sym = getSymbol(ticker);
-  const seed = seedFromTicker(ticker);
-  const price = rnd(seed + 200, sym?.market === 'kr' ? 10000 : 50, sym?.market === 'kr' ? 800000 : 800);
-  const change = rnd(seed + Math.floor(Date.now() / 86400000), -5, 5);
+
+  if (sym?.market !== 'us') {
+    const result = {
+      data: { price: null, changePct: null, volume: null },
+      source: 'unavailable',
+      asOf: todayISO(),
+      currency: sym?.market === 'kr' ? 'KRW' : 'USD',
+      reason: 'kr-not-supported',
+    };
+    cacheSet(cacheKey, result);
+    return result;
+  }
+
+  const q = await fhQuote(ticker);
+  if (!q || q.c == null) {
+    // 실패/빈 응답은 캐시하지 않는다 — 일시적 실패가 캐시에 굳는 것을 방지(다음 조회 시 재시도).
+    return {
+      data: { price: null, changePct: null, volume: null },
+      source: 'Finnhub (no data)',
+      asOf: todayISO(),
+      currency: 'USD',
+      reason: 'fetch-failed',
+    };
+  }
+
   const result = {
-    data: {
-      price: Math.round(price * 100) / 100,
-      changePct: Math.round(change * 100) / 100,
-      volume: Math.floor(rnd(seed + 201, 1e5, 1e8)),
-    },
-    source: sym?.market === 'kr' ? 'KRX' : 'Public EOD',
-    asOf: asOfRecent(),
-    currency: sym?.market === 'kr' ? 'KRW' : 'USD',
+    data: { price: q.c, changePct: q.dp, volume: null },
+    source: 'Finnhub',
+    asOf: q.t ? new Date(q.t * 1000).toISOString().slice(0, 10) : todayISO(),
+    currency: 'USD',
   };
   cacheSet(cacheKey, result);
   return result;
 }
 
 export async function getFinancials(ticker) {
+  const sym = getSymbol(ticker);
   const cacheKey = `fin:${ticker}`;
   const cached = cacheGet(cacheKey);
-  if (cached) return cached;
-  const sym = getSymbol(ticker);
-  const result = {
-    data: mockFinancials(ticker),
-    source: sym?.market === 'kr' ? 'DART' : 'SEC EDGAR',
-    asOf: asOfRecent(),
-    currency: sym?.market === 'kr' ? 'KRW' : 'USD',
-    basis: { period: 'TTM', statement: '연결', earnings: '지배주주' },
+  if (cached) {
+    const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
+    if (ageHours < 24) return cached;
+  }
+
+  if (sym?.market !== 'us') {
+    const result = {
+      data: emptyFinancials(),
+      source: 'unavailable (KR 실데이터 미지원)',
+      asOf: todayISO(),
+      currency: 'KRW',
+      basis: { period: '—', statement: '—', earnings: '—' },
+      reason: 'kr-not-supported',
+    };
+    cacheSet(cacheKey, result);
+    return result;
+  }
+
+  const m = await fhMetric(ticker);
+  const metric = m?.metric || {};
+  const data = {
+    per: pickNum(metric, ['peTTM', 'peNormalizedAnnual', 'peBasicExclExtraTTM']),
+    pbr: pickNum(metric, ['pbAnnual', 'pbQuarterly']),
+    psr: pickNum(metric, ['psTTM', 'psAnnual']),
+    pcr: pickNum(metric, ['pcfShareTTM']),
+    peg: pickNum(metric, ['pegRatioTTM']),
+    evEbitda: pickNum(metric, ['enterpriseValueOverEBITDATTM', 'evEbitTTM']),
+    dividendYield: pickNum(metric, ['dividendYieldIndicatedAnnual', 'currentDividendYieldTTM']),
+    roe: pickNum(metric, ['roeTTM', 'roeRfy']),
+    roa: pickNum(metric, ['roaTTM', 'roaRfy']),
+    roic: pickNum(metric, ['roicTTM']),
+    opMargin: pickNum(metric, ['operatingMarginTTM', 'operatingMarginAnnual']),
+    netMargin: pickNum(metric, ['netProfitMarginTTM', 'netProfitMarginAnnual']),
+    ebitdaMargin: pickNum(metric, ['ebitdaMarginTTM']),
+    revenueGrowthYoY: pickNum(metric, ['revenueGrowthTTMYoy', 'revenueGrowthQuarterlyYoy']),
+    revenueGrowthQoQ: pickNum(metric, ['revenueGrowthQuarterlyQoq']),
+    opGrowth: pickNum(metric, ['operatingIncomeCAGR5Y']),
+    epsGrowth: pickNum(metric, ['epsGrowthTTMYoy', 'epsGrowthQuarterlyYoy']),
+    revenue: null, operatingIncome: null, netIncome: null,
+    eps: pickNum(metric, ['epsTTM', 'epsBasicExclExtraItemsTTM']),
+    bps: pickNum(metric, ['bookValuePerShareAnnual']),
+    ocf: null, fcf: null,
+    debtRatio: pickNum(metric, ['totalDebtTotalEquityQuarterly', 'totalDebtTotalEquityAnnual']),
+    currentRatio: pickNum(metric, ['currentRatioQuarterly', 'currentRatioAnnual']),
+    interestCoverage: null,
+    netDebtEbitda: pickNum(metric, ['netDebtTotalEquityAnnual']),
+    dps: pickNum(metric, ['dividendPerShareAnnual']),
+    payoutRatio: pickNum(metric, ['payoutRatioTTM', 'payoutRatioAnnual']),
+    buybackFlag: null,
+    beta: pickNum(metric, ['beta']),
+    high52: pickNum(metric, ['52WeekHigh']),
+    low52: pickNum(metric, ['52WeekLow']),
+    foreignOwnership: null,
   };
-  cacheSet(cacheKey, result);
+  const result = {
+    data,
+    source: m ? 'Finnhub /stock/metric' : 'Finnhub (no data)',
+    asOf: todayISO(),
+    currency: 'USD',
+    basis: { period: 'TTM/Annual mixed', statement: '연결', earnings: '지배주주' },
+    reason: m ? undefined : 'fetch-failed',
+  };
+  if (m) cacheSet(cacheKey, result);  // 실패는 캐시하지 않음(재시도 허용)
   return result;
 }
 
 export async function getNews(ticker) {
   const sym = getSymbol(ticker);
-  const q = encodeURIComponent(sym?.nameKr || ticker);
-  // mock: 실제 운영 시 RSS·뉴스 API 결과의 url을 그대로 사용한다.
-  const searchUrl = `https://news.google.com/search?q=${q}&hl=ko`;
-  return {
-    data: [
-      { title: `${sym?.nameKr || ticker}, 분기 실적 발표 임박`, source: '뉴스피드', date: asOfRecent(), tag: 'neutral', url: searchUrl },
-      { title: `${sym?.nameKr || ticker} 관련 업계 동향 분석`, source: '뉴스피드', date: asOfRecent(), tag: 'neutral', url: searchUrl },
-      { title: `애널리스트, ${sym?.nameKr || ticker} 목표가 조정`, source: '뉴스피드', date: asOfRecent(), tag: 'positive', url: searchUrl },
-    ],
-    source: 'RSS Aggregate',
-    asOf: asOfRecent(),
+  const cacheKey = `news:${ticker}`;
+  const cached = cacheGet(cacheKey);
+  if (cached) {
+    const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
+    if (ageHours < 6) return cached;
+  }
+
+  if (sym?.market !== 'us') {
+    const result = {
+      data: [],
+      source: 'unavailable (KR 실데이터 미지원)',
+      asOf: todayISO(),
+      reason: 'kr-not-supported',
+    };
+    cacheSet(cacheKey, result);
+    return result;
+  }
+
+  const today = new Date();
+  const from = new Date(today.getTime() - 14 * 86400000).toISOString().slice(0, 10);
+  const to = today.toISOString().slice(0, 10);
+  const arr = await fhNews(ticker, from, to);
+
+  if (!Array.isArray(arr) || arr.length === 0) {
+    // fetch 실패와 '진짜 뉴스 없음'이 합쳐지므로 캐시하지 않는다(다음 조회 재시도).
+    return {
+      data: [],
+      source: 'Finnhub (no news)',
+      asOf: to,
+      reason: 'no-news',
+    };
+  }
+
+  const mapped = arr.slice(0, 12).map(n => ({
+    title: n.headline,
+    source: n.source || 'Finnhub',
+    date: n.datetime ? new Date(n.datetime * 1000).toISOString().slice(0, 10) : to,
+    tag: 'neutral',
+    url: n.url,
+    summary: n.summary,
+  }));
+  const result = {
+    data: mapped,
+    source: 'Finnhub /company-news',
+    asOf: to,
   };
+  cacheSet(cacheKey, result);
+  return result;
+}
+
+// 유틸 — Finnhub metric 응답에서 첫 번째 유효 키 선택
+function pickNum(obj, keys) {
+  for (const k of keys) {
+    const v = obj?.[k];
+    if (v != null && !isNaN(Number(v))) return Number(v);
+  }
+  return null;
+}
+
+function emptyFinancials() {
+  return Object.fromEntries([
+    'per','pbr','psr','pcr','peg','evEbitda','dividendYield',
+    'roe','roa','roic','opMargin','netMargin','ebitdaMargin',
+    'revenueGrowthYoY','revenueGrowthQoQ','opGrowth','epsGrowth',
+    'revenue','operatingIncome','netIncome','eps','bps','ocf','fcf',
+    'debtRatio','currentRatio','interestCoverage','netDebtEbitda',
+    'dps','payoutRatio','buybackFlag','beta','high52','low52','foreignOwnership',
+  ].map(k => [k, null]));
 }
 
 import { fetchEarnings, fetchDividends } from './adapters/calendar/finnhub.js';
-import { getApiKey, API_KEYS } from './config.js';
+import { getFinnhubProxyBase } from './config.js';
 import { getWatchlist } from './watchlist.js';
 
 // MOCK 일정은 사용자 혼선을 줄이기 위해 11차에서 완전 제거됨.
@@ -190,12 +291,13 @@ function emptyResult(reason) {
 export async function getCalendar(ticker = null, { from, to } = {}) {
   const f = from || isoOffset(-30);
   const t = to || isoOffset(45);
-  const cacheKey = `calendar:${ticker || 'all'}:${f}:${t}`;
+  const proxyBase = getFinnhubProxyBase();
+  const mode = proxyBase ? 'proxy' : 'none';
+  const cacheKey = `calendar:${mode}:${ticker || 'all'}:${f}:${t}`;
   const cached = cacheGetWithTTL(cacheKey);
   if (cached) return cached;
 
-  const apiKey = getApiKey(API_KEYS.FINNHUB);
-  if (!apiKey) {
+  if (mode === 'none') {
     const res = emptyResult('no-key');
     cacheSetWithTTL(cacheKey, res);
     return res;
@@ -213,8 +315,8 @@ export async function getCalendar(ticker = null, { from, to } = {}) {
     }
     try {
       const [earn, div] = await Promise.all([
-        fetchEarnings({ ticker, from: f, to: t, apiKey }),
-        fetchDividends({ ticker, from: f, to: t, apiKey }),
+        fetchEarnings({ ticker, from: f, to: t }),
+        fetchDividends({ ticker, from: f, to: t }),
       ]);
       events = [...earn, ...div];
     } catch {
@@ -229,8 +331,8 @@ export async function getCalendar(ticker = null, { from, to } = {}) {
     }
     try {
       const all = await Promise.all(usWatchTickers.flatMap(tk => [
-        fetchEarnings({ ticker: tk, from: f, to: t, apiKey }),
-        fetchDividends({ ticker: tk, from: f, to: t, apiKey }),
+        fetchEarnings({ ticker: tk, from: f, to: t }),
+        fetchDividends({ ticker: tk, from: f, to: t }),
       ]));
       events = all.flat();
     } catch {
@@ -258,60 +360,23 @@ export function isConsensusAvailable() {
   return false;
 }
 
-// 최근 N분기/연도 추이 (결정론적 mock). 실제 운영에서는 SEC EDGAR/DART 시계열로 교체.
+// 분기 추이 — 실연동 전까지 빈 결과(stub). 호출부에서 패널 숨김.
 export async function getHistoricalMetrics(ticker, points = 8) {
-  const seed = seedFromTicker(ticker);
-  const base = mockFinancials(ticker);
-  const labels = [];
-  const now = new Date();
-  for (let i = points - 1; i >= 0; i--) {
-    const d = new Date(now);
-    d.setMonth(d.getMonth() - i * 3);
-    labels.push(`${String(d.getFullYear()).slice(2)}Q${Math.floor(d.getMonth() / 3) + 1}`);
-  }
-  const gen = (key, vol = 0.15) => labels.map((_, i) => {
-    const wave = Math.sin((seed + i + key.length) * 0.7) * vol;
-    const trend = (i / labels.length - 0.5) * vol * 0.6;
-    return base[key] * (1 + wave + trend);
-  });
   return {
-    data: {
-      labels,
-      revenue: gen('revenue'),
-      operatingIncome: gen('operatingIncome', 0.25),
-      netIncome: gen('netIncome', 0.3),
-      eps: gen('eps', 0.2),
-      ocf: gen('ocf', 0.2),
-      fcf: gen('fcf', 0.3),
-      roe: gen('roe', 0.1),
-      opMargin: gen('opMargin', 0.08),
-    },
-    source: getSymbol(ticker)?.market === 'kr' ? 'DART' : 'SEC EDGAR',
-    asOf: asOfRecent(),
+    data: { labels: [], revenue: [], operatingIncome: [], netIncome: [],
+            eps: [], ocf: [], fcf: [], roe: [], opMargin: [] },
+    source: 'pending',
+    asOf: todayISO(),
+    reason: 'timeseries-pending',
   };
 }
 
-// 과거 PER/PBR 시계열 (60개월 mock).
+// 과거 PER/PBR 밸류 밴드 — 실연동 전까지 빈 결과(stub). 호출부에서 패널 숨김.
 export async function getValuationHistory(ticker, months = 60) {
-  const seed = seedFromTicker(ticker);
-  const base = mockFinancials(ticker);
-  const labels = [];
-  const per = [];
-  const pbr = [];
-  const now = new Date();
-  for (let i = months - 1; i >= 0; i--) {
-    const d = new Date(now);
-    d.setMonth(d.getMonth() - i);
-    labels.push(`${String(d.getFullYear()).slice(2)}.${String(d.getMonth() + 1).padStart(2, '0')}`);
-    const w1 = Math.sin((seed + i) * 0.3) * 0.25;
-    const w2 = Math.sin((seed + i) * 0.15 + 1) * 0.2;
-    per.push(base.per * (1 + w1 + w2));
-    pbr.push(base.pbr * (1 + w1 * 0.7));
-  }
   return {
-    data: { labels, per, pbr, currentPer: base.per, currentPbr: base.pbr },
-    source: getSymbol(ticker)?.market === 'kr' ? 'KRX + DART' : 'EOD + SEC',
-    asOf: asOfRecent(),
-    period: `${months}개월`,
+    data: { labels: [], per: [], pbr: [], currentPer: null, currentPbr: null },
+    source: 'pending',
+    asOf: todayISO(),
+    reason: 'valuation-pending',
   };
 }

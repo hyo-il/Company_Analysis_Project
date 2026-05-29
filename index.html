@@ -55,13 +55,25 @@
         <section class="route-panel" data-panel="help" hidden></section>
       </div>
 
-      <button class="drawer-handle" id="drawer-handle" aria-label="관심 종목 패널 열기" title="관심 종목">★</button>
-      <aside class="right-drawer" id="right-drawer" aria-label="관심 종목">
+      <button class="drawer-handle" id="drawer-handle" aria-label="목록 패널 열기 (관심 / 최근)" title="목록 (관심·최근)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 3.5 V15 L9 12 L13 15 V3.5 Z" fill="currentColor" opacity="0.85"/>
+          <circle cx="17" cy="17" r="5" fill="white" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M17 14 V17 L19 18.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        </svg>
+      </button>
+      <aside class="right-drawer" id="right-drawer" aria-label="목록 패널">
         <div class="right-drawer-header">
-          <h3 style="margin:0; font-size:14px;">★ 관심 종목</h3>
+          <div class="drawer-tabs" role="tablist">
+            <button class="drawer-tab active" id="tab-watch" role="tab" aria-selected="true" aria-controls="drawer-watch">★ 관심</button>
+            <button class="drawer-tab" id="tab-recent" role="tab" aria-selected="false" aria-controls="drawer-recent">🕘 최근</button>
+          </div>
           <button class="right-drawer-close" id="drawer-close" aria-label="닫기">×</button>
         </div>
-        <div class="right-drawer-body" id="drawer-body"></div>
+        <div class="right-drawer-body">
+          <div id="drawer-watch" role="tabpanel" aria-labelledby="tab-watch"></div>
+          <div id="drawer-recent" role="tabpanel" aria-labelledby="tab-recent" hidden></div>
+        </div>
       </aside>
 
       <footer class="disclaimer">

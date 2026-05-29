@@ -1,23 +1,10 @@
-// 종목 마스터 — MVP 시드. 실제 운영에서는 KRX/SEC 공개 데이터로 자동 수집.
+// 종목 마스터 — KOSPI 종목은 symbols-kr.js 로 분리(12차).
 // 영문명·한글명·티커 매핑으로 통합 검색 지원.
 
+import { SYMBOLS_KR } from './symbols-kr.js';
+
 export const SYMBOLS = [
-  // ===== 국내 (코스피200 일부) =====
-  { ticker: '005930', nameKr: '삼성전자', nameEn: 'Samsung Electronics', market: 'kr', exchange: 'KOSPI', sector: '반도체', industry: '반도체', type: 'stock' },
-  { ticker: '000660', nameKr: 'SK하이닉스', nameEn: 'SK Hynix', market: 'kr', exchange: 'KOSPI', sector: '반도체', industry: '반도체', type: 'stock' },
-  { ticker: '373220', nameKr: 'LG에너지솔루션', nameEn: 'LG Energy Solution', market: 'kr', exchange: 'KOSPI', sector: '2차전지', industry: '2차전지', type: 'stock' },
-  { ticker: '207940', nameKr: '삼성바이오로직스', nameEn: 'Samsung Biologics', market: 'kr', exchange: 'KOSPI', sector: '바이오', industry: '바이오/CMO', type: 'stock' },
-  { ticker: '005380', nameKr: '현대차', nameEn: 'Hyundai Motor', market: 'kr', exchange: 'KOSPI', sector: '자동차', industry: '완성차', type: 'stock' },
-  { ticker: '000270', nameKr: '기아', nameEn: 'Kia', market: 'kr', exchange: 'KOSPI', sector: '자동차', industry: '완성차', type: 'stock' },
-  { ticker: '035420', nameKr: 'NAVER', nameEn: 'Naver', market: 'kr', exchange: 'KOSPI', sector: '인터넷', industry: '플랫폼', type: 'stock' },
-  { ticker: '035720', nameKr: '카카오', nameEn: 'Kakao', market: 'kr', exchange: 'KOSPI', sector: '인터넷', industry: '플랫폼', type: 'stock' },
-  { ticker: '051910', nameKr: 'LG화학', nameEn: 'LG Chem', market: 'kr', exchange: 'KOSPI', sector: '화학', industry: '화학/배터리소재', type: 'stock' },
-  { ticker: '006400', nameKr: '삼성SDI', nameEn: 'Samsung SDI', market: 'kr', exchange: 'KOSPI', sector: '2차전지', industry: '2차전지', type: 'stock' },
-  { ticker: '105560', nameKr: 'KB금융', nameEn: 'KB Financial', market: 'kr', exchange: 'KOSPI', sector: '금융', industry: '은행', type: 'stock' },
-  { ticker: '055550', nameKr: '신한지주', nameEn: 'Shinhan Financial', market: 'kr', exchange: 'KOSPI', sector: '금융', industry: '은행', type: 'stock' },
-  { ticker: '068270', nameKr: '셀트리온', nameEn: 'Celltrion', market: 'kr', exchange: 'KOSPI', sector: '바이오', industry: '바이오시밀러', type: 'stock' },
-  { ticker: '003550', nameKr: 'LG', nameEn: 'LG Corp', market: 'kr', exchange: 'KOSPI', sector: '지주', industry: '지주회사', type: 'stock' },
-  { ticker: '012330', nameKr: '현대모비스', nameEn: 'Hyundai Mobis', market: 'kr', exchange: 'KOSPI', sector: '자동차부품', industry: '부품', type: 'stock' },
+  ...SYMBOLS_KR,
 
   // KR ETF (대표)
   { ticker: '069500', nameKr: 'KODEX 200', nameEn: 'KODEX 200 ETF', market: 'kr', exchange: 'KOSPI', sector: 'ETF', industry: '국내지수', type: 'etf' },

@@ -1,4 +1,4 @@
-import { getSymbol, getPeers, SYMBOLS, suggestSymbols } from '../data/symbols.js';
+import { getSymbol, getPeers, suggestSymbols } from '../data/symbols.js';
 import { getFinancials } from '../data/adapter.js';
 import { fmtNum, fmtPct } from '../utils/format.js';
 import { emptyState, loadingState, infoTip } from '../components/common.js';

@@ -2,7 +2,7 @@ import { getWatchlist, toggleWatch } from '../data/watchlist.js';
 import { getSymbol } from '../data/symbols.js';
 import { getQuoteEOD, getFinancials } from '../data/adapter.js';
 import { computeFactorScores } from '../utils/scoring.js';
-import { fmtNum, fmtChange, fmtPct, fmtMoney } from '../utils/format.js';
+import { fmtNum, fmtChange, fmtPct } from '../utils/format.js';
 import { emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
 
@@ -30,7 +30,7 @@ export async function renderWatchlist(container, { onSelect } = {}) {
           <th></th><th>종목</th><th>시장</th>
           <th class="num">현재가</th><th class="num">등락</th>
           <th class="num">PER</th><th class="num">ROE</th>
-          <th class="num">시총</th><th class="num">종합점수</th>
+          <th class="num">종합점수</th>
         </tr></thead>
         <tbody id="watch-tbody">
           ${tickers.map(t => `<tr data-ticker="${t}" style="cursor:pointer"><td colspan="9">불러오는 중…</td></tr>`).join('')}
@@ -57,7 +57,6 @@ export async function renderWatchlist(container, { onSelect } = {}) {
       <td class="num">${fmtChange(r.q.changePct)}</td>
       <td class="num">${fmtNum(r.f.per, 1)}</td>
       <td class="num">${fmtPct(r.f.roe, 1)}</td>
-      <td class="num">${fmtMoney(r.f.revenue * 5, r.currency)}</td>
       <td class="num"><strong style="color:var(--primary)">${r.score}</strong></td>
     </tr>
   `).join('');

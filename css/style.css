@@ -74,6 +74,11 @@ h3 { font-size: 15px; }
   display: flex;
   flex-direction: column;
   padding: 16px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  align-self: start;
 }
 
 .sidebar-brand {
@@ -587,9 +592,10 @@ h3 { font-size: 15px; }
   position: fixed;
   right: 16px;
   top: 12px;
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: var(--primary);
@@ -597,14 +603,12 @@ h3 { font-size: 15px; }
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
   line-height: 1;
   z-index: 80;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .drawer-handle:hover { background: var(--primary-hover); }
-.drawer-handle:hover { background: var(--primary-hover); }
+.drawer-handle svg { width: 22px; height: 22px; display: block; }
 
 .right-drawer {
   position: fixed;
@@ -727,3 +731,33 @@ h3 { font-size: 15px; }
 .cal-empty-banner p { margin: 6px 0 10px; color: var(--text-muted); font-size: 12px; }
 .cal-empty-banner.warn { background: #fff5f5; border-color: #fecaca; }
 .cal-empty-banner.warn strong { color: #7c2d2d; }
+
+/* Drawer tabs (14차) */
+.drawer-tabs { display: flex; gap: 4px; flex: 1; }
+.drawer-tab {
+  flex: 1; background: transparent; border: 1px solid var(--border); border-bottom: none;
+  border-radius: 6px 6px 0 0; padding: 6px 10px; font-size: 13px;
+  color: var(--text-muted); cursor: pointer;
+}
+.drawer-tab.active {
+  background: var(--primary-soft); color: var(--primary);
+  border-color: var(--accent-line); font-weight: 600;
+}
+.drawer-tab:hover:not(.active) { background: var(--bg-subtle); }
+
+.drawer-list { list-style: none; padding: 0; margin: 0; }
+.drawer-list .drawer-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-bottom: 1px solid var(--border); cursor: pointer;
+  border-radius: 0; margin-bottom: 0;
+}
+.drawer-list .drawer-item:hover { background: var(--primary-soft); }
+.drawer-item-main { flex: 1; min-width: 0; }
+.drawer-item-main strong { display: block; font-size: 13px; }
+.drawer-item-quote { min-width: 70px; text-align: right; }
+.drawer-item-remove {
+  background: transparent; border: none; color: var(--text-muted);
+  font-size: 16px; cursor: pointer; padding: 2px 6px; border-radius: 4px;
+}
+.drawer-item-remove:hover { background: var(--bg-subtle); color: var(--warn); }
+

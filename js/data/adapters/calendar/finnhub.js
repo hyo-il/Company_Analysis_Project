@@ -2,8 +2,14 @@
 // 약관·커버리지·호출 한도는 시점에 따라 변동될 수 있음. (단정 금지)
 // 실패 시 throw 하지 않고 빈 배열을 반환 — 호출자에서 fallback 결정.
 import { getSymbol } from '../../symbols.js';
+import { getFinnhubProxyBase } from '../../config.js';
 
-const BASE = 'https://finnhub.io/api/v1';
+// 12차: Cloudflare Worker 프록시 단일 모드.
+// 프록시 base가 비어 있으면 즉시 빈 배열을 반환(개인 키 fallback 제거).
+function resolveBase() {
+  const proxy = getFinnhubProxyBase();
+  return proxy ? proxy + '/finnhub/api/v1' : '';
+}
 
 const EARNINGS_META = {
   type: 'earnings', label: '실적 발표', icon: '📊',
@@ -48,23 +54,29 @@ async function safeFetch(url) {
   }
 }
 
-export async function fetchEarnings({ ticker, from, to, apiKey }) {
-  if (!apiKey) return [];
-  const url = `${BASE}/calendar/earnings?from=${from}&to=${to}` +
-    (ticker ? `&symbol=${encodeURIComponent(ticker)}` : '') +
-    `&token=${encodeURIComponent(apiKey)}`;
-  const json = await safeFetch(url);
+export async function fetchEarnings({ ticker, from, to }) {
+  const baseUrl = resolveBase();
+  if (!baseUrl) return [];
+  const url = new URL(baseUrl + '/calendar/earnings');
+  url.searchParams.set('from', from);
+  url.searchParams.set('to', to);
+  if (ticker) url.searchParams.set('symbol', ticker);
+  const json = await safeFetch(url.toString());
   const list = json?.earningsCalendar || [];
   return list
     .filter(r => r.date)
     .map(r => toEvent(EARNINGS_META, { ticker: r.symbol || ticker, date: r.date }));
 }
 
-export async function fetchDividends({ ticker, from, to, apiKey }) {
-  if (!apiKey || !ticker) return [];
-  const url = `${BASE}/stock/dividend?symbol=${encodeURIComponent(ticker)}` +
-    `&from=${from}&to=${to}&token=${encodeURIComponent(apiKey)}`;
-  const json = await safeFetch(url);
+export async function fetchDividends({ ticker, from, to }) {
+  if (!ticker) return [];
+  const baseUrl = resolveBase();
+  if (!baseUrl) return [];
+  const url = new URL(baseUrl + '/stock/dividend');
+  url.searchParams.set('symbol', ticker);
+  url.searchParams.set('from', from);
+  url.searchParams.set('to', to);
+  const json = await safeFetch(url.toString());
   if (!Array.isArray(json)) return [];
   return json
     .filter(r => r.date)

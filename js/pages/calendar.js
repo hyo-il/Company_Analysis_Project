@@ -5,9 +5,8 @@ import { fmtDate } from '../utils/format.js';
 export function renderReasonBanner(reason, dataLen) {
   if (reason === 'no-key') {
     return `<div class="cal-empty-banner">
-      <strong>Finnhub API 키가 설정되지 않아 실데이터를 가져올 수 없습니다.</strong>
-      <p>도움말 &gt; 데이터 소스 설정에서 무료 키를 등록하면 미국 종목의 실적·배당 일정이 표시됩니다.
-        키가 없거나 호출이 실패하면 가짜 데이터를 채워 넣지 않습니다.</p>
+      <strong>현재 프록시 URL이 설정되지 않았습니다.</strong>
+      <p>도움말 → 데이터 소스 설정에서 Worker URL을 확인하거나, 운영자에게 문의하세요.</p>
       <button class="btn-primary" data-go-help="1">도움말로 가기</button>
     </div>`;
   }

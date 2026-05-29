@@ -10,6 +10,12 @@ export function isWatched(ticker) {
   return getWatchlist().includes(ticker);
 }
 
+export function removeFromWatch(ticker) {
+  const list = getWatchlist().filter(t => t !== ticker);
+  cacheSet(KEY, list);
+  window.dispatchEvent(new CustomEvent('watchlist-changed'));
+}
+
 export function toggleWatch(ticker) {
   const list = getWatchlist();
   const idx = list.indexOf(ticker);

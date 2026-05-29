@@ -12,18 +12,3 @@ export function cacheSet(key, value) {
     localStorage.setItem(PREFIX + key, JSON.stringify(value));
   } catch (e) { console.warn('cache set failed', e); }
 }
-
-export function cacheDel(key) {
-  localStorage.removeItem(PREFIX + key);
-}
-
-export function cacheAll(prefix = '') {
-  const out = {};
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (k && k.startsWith(PREFIX + prefix)) {
-      out[k.slice(PREFIX.length)] = JSON.parse(localStorage.getItem(k));
-    }
-  }
-  return out;
-}

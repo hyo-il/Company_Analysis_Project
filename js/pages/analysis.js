@@ -6,7 +6,18 @@ import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/f
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
 import { computeFactorScores } from '../utils/scoring.js';
-import { sparkline, bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
+import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
+import { pushRecent } from '../data/recents.js';
+
+// 규칙 기반 해설용 임계치 (팩터 점수·지표)
+const FACTOR_STRONG = 60;        // 이 점수 이상이면 강점
+const FACTOR_WEAK = 40;          // 이 점수 미만이면 약점
+const REV_GROWTH_STRONG = 20;    // 매출 YoY 성장률(%) — 두드러진 성장
+const REV_GROWTH_NEGATIVE = 0;   // 매출 YoY 성장률(%) — 역성장 기준
+const OP_MARGIN_STRONG = 20;     // 영업이익률(%) — 우수
+const PER_LOW = 12;              // PER — 저평가 영역
+const PER_HIGH = 30;             // PER — 고평가/성장기대
+const DEBT_RATIO_HIGH = 150;     // 부채비율(%) — 재무 부담
 
 export async function renderAnalysis(container, { ticker } = {}) {
   if (!ticker) {
@@ -14,6 +25,7 @@ export async function renderAnalysis(container, { ticker } = {}) {
     return;
   }
   destroyChartsIn(container);
+  pushRecent(ticker);
   container.innerHTML = loadingState();
 
   try {
@@ -34,8 +46,21 @@ export async function renderAnalysis(container, { ticker } = {}) {
     const priority = SECTOR_PRIORITY[profile.data.sector] || [];
     const currency = profile.currency;
     const watched = isWatched(ticker);
+    const hasTrends = !!(hist?.data?.labels?.length);
+    const hasValband = !!(valHist?.data?.labels?.length);
+    // KR 미지원·호출 실패 시 점수/AI 해설은 의미 없으므로 섹션 자체를 숨김(5-D)
+    const scoresUsable = fin?.reason !== 'kr-not-supported' && fin?.reason !== 'fetch-failed';
+    const krNoticeHtml = (sym && sym.market !== 'us') ? `
+      <div class="panel" style="border-left:4px solid var(--warn); background:#fff7ed;">
+        <strong>한국 종목 안내</strong>
+        <p style="margin:6px 0 0; font-size:13px;">
+          이 종목의 시세·재무·뉴스는 현재 무료 데이터 한계(서버/프록시 제약)로 제공되지 않습니다.
+          정확한 정보는 공식 출처(KRX·DART·증권사 HTS)를 확인해 주세요.
+          본 화면은 종목 마스터·일정 일부만 보조 정보로 표시됩니다.
+        </p>
+      </div>` : '';
 
-    container.innerHTML = `
+    container.innerHTML = krNoticeHtml + `
       <div class="panel">
         <div style="display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
           <div style="flex:1; min-width:240px;">
@@ -71,12 +96,12 @@ export async function renderAnalysis(container, { ticker } = {}) {
         ${METRIC_CATEGORIES.map(cat => renderCategory(cat, fin.data, currency, priority)).join('')}
       </div>
 
-      <div class="panel">
-        <div class="panel-title">주요 지표 추이 ${infoTip('핵심 지표가 좋아지고 있는지 나빠지고 있는지 한눈에 보기 위한 최근 8분기 스파크라인입니다. 무료 시계열 데이터 범위 내에서 표시됩니다.')} ${metaBadge(hist)}</div>
+      ${hasTrends ? `<div class="panel">
+        <div class="panel-title">주요 지표 추이 ${infoTip('핵심 지표가 좋아지고 있는지 나빠지고 있는지 한눈에 보기 위한 최근 8분기 스파크라인입니다.')} ${metaBadge(hist)}</div>
         <div id="trends-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px;"></div>
-      </div>
+      </div>` : ''}
 
-      <div class="panel">
+      ${hasValband ? `<div class="panel">
         <div class="panel-title">역사적 밸류에이션 밴드 ${infoTip('이 회사 자신의 과거 PER/PBR과 비교해 지금이 비싼/싼 구간인지 보여줍니다. 평균선과 ±1 표준편차 밴드를 함께 표시. 과거가 미래를 보장하지 않습니다.')} ${metaBadge(valHist)}</div>
         <div id="valband-interpretation" style="margin-bottom:8px;"></div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px;">
@@ -90,9 +115,9 @@ export async function renderAnalysis(container, { ticker } = {}) {
           </div>
         </div>
         <p style="font-size:11px; color:var(--text-muted); margin-top:8px;">⚠ 과거 데이터 기반 참고용 — 미래 수익을 보장하지 않습니다.</p>
-      </div>
+      </div>` : ''}
 
-      <div class="panel">
+      ${scoresUsable ? `<div class="panel">
         <div class="panel-title">AI 기업 분석 ${infoTip('규칙 기반으로 만든 사업 요약과 강점·약점·투자 포인트입니다(유료 LLM 미사용). 출처·기준일이 함께 표기되며 투자 권유가 아닙니다.')}</div>
         ${renderAIBusiness(profile.data, fin.data)}
         ${metaBadge(fin)}
@@ -106,7 +131,7 @@ export async function renderAnalysis(container, { ticker } = {}) {
       <div class="panel">
         <div class="panel-title">AI 주가요인 (규칙 기반) ${infoTip('최근 주가가 왜 그렇게 움직였는지를 실제 실적·지표에 근거해 쉬운 말로 정리한 설명입니다(예측이 아닙니다). 출처·시점·면책을 함께 표시합니다.')}</div>
         ${renderAIFactors(profile.data, fin.data, quote.data)}
-      </div>
+      </div>` : ''}
 
       ${isEtf ? '' : `<div class="panel">
         <div class="panel-title">이 종목이 많이 포함된 ETF ${infoTip('무료 데이터로 일부 대표 ETF에서만 확인됩니다. 운용사·SEC 13F 등 공식 자료에서 추가 확인하세요.')}</div>
@@ -151,10 +176,10 @@ export async function renderAnalysis(container, { ticker } = {}) {
         { type: on ? 'success' : 'info' });
     });
 
-    // 추이 미니차트
-    renderTrends(container.querySelector('#trends-grid'), hist.data, currency);
-    // 역사적 밸류에이션 밴드
-    renderValuationBand(container, valHist.data);
+    // 추이 미니차트 (데이터 있을 때만)
+    if (hasTrends) renderTrends(container.querySelector('#trends-grid'), hist.data, currency);
+    // 역사적 밸류에이션 밴드 (데이터 있을 때만)
+    if (hasValband) renderValuationBand(container, valHist.data);
 
     // 지난 일정 토글
     // 역방향 ETF 표 행 클릭 → 해당 ETF로 이동
@@ -298,7 +323,7 @@ function renderEtfReverse(rows) {
 
 function renderScheduleReason(reason) {
   const map = {
-    'no-key': '<strong>Finnhub API 키가 설정되지 않았습니다.</strong><p>도움말 &gt; 데이터 소스 설정에서 무료 키를 등록하면 미국 종목의 실적·배당 일정이 표시됩니다.</p><button class="btn-primary" onclick="location.hash=\'#/help\'">도움말로 가기</button>',
+    'no-key': '<strong>현재 프록시 URL이 설정되지 않았습니다.</strong><p>도움말 → 데이터 소스 설정에서 Worker URL을 확인하거나, 운영자에게 문의하세요.</p><button class="btn-primary" onclick="location.hash=\'#/help\'">도움말로 가기</button>',
     'kr-not-supported': '<strong>한국 종목 일정은 아직 지원하지 않습니다.</strong><p>본 앱 구조 제약(서버/프록시 없음)으로, 후속 단계에서 별도 어댑터로 다룰 예정입니다.</p>',
     'fetch-failed': '<strong>Finnhub 호출이 실패했습니다.</strong><p>키가 유효한지·네트워크가 정상인지 확인 후 다시 시도하세요. 거짓 데이터를 채워 넣지 않습니다.</p>',
     'no-us-watch': '<strong>관심 종목에 미국 종목이 없습니다.</strong><p>미국 주식·ETF를 관심 등록하면 해당 종목의 실적·배당 일정이 표시됩니다.</p>',
@@ -373,10 +398,14 @@ function metricCell(m, data, currency, priority) {
 }
 
 function renderCategory(cat, data, currency, priority) {
+  // null 지표는 행 자체를 출력하지 않는다. 값이 있는 지표만 남김.
+  const visible = cat.metrics.filter(m => data[m.key] != null);
+  // 카테고리 전체가 null이면 카드 자체를 출력하지 않음.
+  if (!visible.length) return '';
   // 2개씩 묶어 한 행 = 4열(지표/값/지표/값)
   const rows = [];
-  for (let i = 0; i < cat.metrics.length; i += 2) {
-    rows.push([cat.metrics[i], cat.metrics[i + 1]]);
+  for (let i = 0; i < visible.length; i += 2) {
+    rows.push([visible[i], visible[i + 1]]);
   }
   return `
     <div class="metrics-cat" style="margin-bottom:16px;">
@@ -402,15 +431,15 @@ function renderAIBusiness(profile, fin) {
   // 강점·약점 도출
   const factorEntries = ['가치','수익성','성장성','안정성'].map(k => [k, scores[k]]);
   const sorted = [...factorEntries].sort((a, b) => b[1] - a[1]);
-  const strengths = sorted.filter(([,v]) => v >= 60).map(([k]) => k);
-  const weaknesses = sorted.filter(([,v]) => v < 40).map(([k]) => k);
+  const strengths = sorted.filter(([,v]) => v >= FACTOR_STRONG).map(([k]) => k);
+  const weaknesses = sorted.filter(([,v]) => v < FACTOR_WEAK).map(([k]) => k);
 
   const evidenceLines = [];
-  if (scores['수익성'] >= 60) evidenceLines.push(`수익성: ROE ${Number(fin.roe).toFixed(1)}%, 영업이익률 ${Number(fin.opMargin).toFixed(1)}%로 양호`);
-  if (scores['성장성'] >= 60) evidenceLines.push(`성장성: 매출 YoY ${Number(fin.revenueGrowthYoY).toFixed(1)}%로 견조`);
-  if (scores['가치'] >= 60) evidenceLines.push(`가치: PER ${Number(fin.per).toFixed(1)}배, PBR ${Number(fin.pbr).toFixed(1)}배로 저평가 영역`);
-  if (scores['안정성'] < 40) evidenceLines.push(`안정성 부담: 부채비율 ${Number(fin.debtRatio).toFixed(0)}%`);
-  if (scores['수익성'] < 40) evidenceLines.push(`수익성 부진: ROE ${Number(fin.roe).toFixed(1)}%`);
+  if (scores['수익성'] >= FACTOR_STRONG) evidenceLines.push(`수익성: ROE ${Number(fin.roe).toFixed(1)}%, 영업이익률 ${Number(fin.opMargin).toFixed(1)}%로 양호`);
+  if (scores['성장성'] >= FACTOR_STRONG) evidenceLines.push(`성장성: 매출 YoY ${Number(fin.revenueGrowthYoY).toFixed(1)}%로 견조`);
+  if (scores['가치'] >= FACTOR_STRONG) evidenceLines.push(`가치: PER ${Number(fin.per).toFixed(1)}배, PBR ${Number(fin.pbr).toFixed(1)}배로 저평가 영역`);
+  if (scores['안정성'] < FACTOR_WEAK) evidenceLines.push(`안정성 부담: 부채비율 ${Number(fin.debtRatio).toFixed(0)}%`);
+  if (scores['수익성'] < FACTOR_WEAK) evidenceLines.push(`수익성 부진: ROE ${Number(fin.roe).toFixed(1)}%`);
 
   const points = [];
   if (strengths.includes('성장성') && strengths.includes('수익성')) points.push('성장과 수익성을 동시에 갖춘 구조 — 프리미엄 밸류에이션이 정당화될 수 있음');
@@ -466,12 +495,12 @@ function renderScores(ticker, fin) {
 
 function renderAIFactors(p, f, q) {
   const lines = [];
-  if (f.revenueGrowthYoY > 20) lines.push(`매출이 전년 대비 ${fmtPct(f.revenueGrowthYoY)} 성장하여 성장세가 두드러집니다.`);
-  else if (f.revenueGrowthYoY < 0) lines.push(`매출이 전년 대비 ${fmtPct(f.revenueGrowthYoY)}로 역성장 구간입니다.`);
-  if (f.opMargin > 20) lines.push(`영업이익률 ${fmtPct(f.opMargin)}로 수익성이 우수합니다.`);
-  if (f.per < 12) lines.push(`PER ${fmtNum(f.per)}배로 시장 평균 대비 낮은 편입니다(저평가 가능성, 단 밸류 트랩 주의).`);
-  if (f.per > 30) lines.push(`PER ${fmtNum(f.per)}배로 시장 대비 높은 편이며 성장 기대가 반영된 수준입니다.`);
-  if (f.debtRatio > 150) lines.push(`부채비율 ${fmtPct(f.debtRatio)}로 재무 부담을 점검할 필요가 있습니다.`);
+  if (f.revenueGrowthYoY > REV_GROWTH_STRONG) lines.push(`매출이 전년 대비 ${fmtPct(f.revenueGrowthYoY)} 성장하여 성장세가 두드러집니다.`);
+  else if (f.revenueGrowthYoY < REV_GROWTH_NEGATIVE) lines.push(`매출이 전년 대비 ${fmtPct(f.revenueGrowthYoY)}로 역성장 구간입니다.`);
+  if (f.opMargin > OP_MARGIN_STRONG) lines.push(`영업이익률 ${fmtPct(f.opMargin)}로 수익성이 우수합니다.`);
+  if (f.per < PER_LOW) lines.push(`PER ${fmtNum(f.per)}배로 시장 평균 대비 낮은 편입니다(저평가 가능성, 단 밸류 트랩 주의).`);
+  if (f.per > PER_HIGH) lines.push(`PER ${fmtNum(f.per)}배로 시장 대비 높은 편이며 성장 기대가 반영된 수준입니다.`);
+  if (f.debtRatio > DEBT_RATIO_HIGH) lines.push(`부채비율 ${fmtPct(f.debtRatio)}로 재무 부담을 점검할 필요가 있습니다.`);
   if (!lines.length) lines.push('특기할 만한 극단치 없이 안정적인 지표 흐름입니다.');
   const consensusNote = isConsensusAvailable() ? '' : `<p style="font-size:12px; color:var(--text-muted);">${warnIcon('컨센서스(증권사 추정치)는 무료 데이터로 확보가 어려워, 어닝 서프라이즈/쇼크 분석은 제한됩니다.')} 컨센서스 기반 분석은 제공되지 않습니다.</p>`;
   return `

@@ -1,8 +1,18 @@
-import { getApiKey, setApiKey, API_KEYS } from '../data/config.js';
+import { getFinnhubProxyBase, setFinnhubProxyBase, clearFinnhubProxyBase, isUsingDefaultProxy } from '../data/config.js';
 import { showToast } from '../components/toast.js';
 
+function clearCalendarCache() {
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('ca:calendar:')) localStorage.removeItem(k);
+  }
+}
+
 export function renderHelp(container) {
-  const finnhubKey = getApiKey(API_KEYS.FINNHUB);
+  const proxyBase = getFinnhubProxyBase();
+  const usingDefault = isUsingDefaultProxy();
+  const inputValue = (usingDefault ? '' : proxyBase).replace(/"/g, '&quot;');
+
   container.innerHTML = `
     <div class="panel">
       <div class="panel-title">CA 사용 안내</div>
@@ -11,7 +21,7 @@ export function renderHelp(container) {
 
       <h3 style="margin-top:16px;">데이터 정확도 원칙</h3>
       <ul>
-        <li>모든 수치에는 <strong>출처</strong>(DART, SEC EDGAR, KRX 등)와 <strong>기준일</strong>이 함께 표기됩니다.</li>
+        <li>모든 수치에는 <strong>출처</strong>(DART, SEC EDGAR, KRX, Finnhub 등)와 <strong>기준일</strong>이 함께 표기됩니다.</li>
         <li>시세는 EOD(전일 종가) 기준이며 일 1회 갱신됩니다.</li>
         <li>재무는 분기 공시 시점에 갱신됩니다.</li>
         <li>무료 데이터 한계가 있는 항목(예: 컨센서스)은 <i class="warn-icon" style="display:inline-flex;">!</i> 아이콘으로 명시됩니다.</li>
@@ -24,25 +34,30 @@ export function renderHelp(container) {
       </ul>
 
       <h3 style="margin-top:16px;">데이터 소스 설정</h3>
+
+      <h4 style="margin:10px 0 4px; color:var(--primary);">① 친구 공유 모드 (Cloudflare 프록시) — 기본</h4>
       <p style="font-size:13px;">
-        주요 일정의 <strong>미국 종목 실적·배당</strong>은 무료 외부 데이터(Finnhub)를 사용합니다.
-        무료 키를 발급받아 아래에 입력하시면 실데이터로 표시됩니다.
-        키가 없거나, 한국 종목이거나, 호출이 실패하면 <strong>가짜 데이터로 채우지 않고 "데이터 없음"으로 정직히 표시</strong>합니다.
-        가입 전 Finnhub 공식 사이트의 Privacy/Terms를 직접 확인하시기 바랍니다.
-        한국 종목·매크로 일정(FOMC/CPI 등) 연동은 본 앱 구조 제약(CORS·서버 없음)으로 후속 단계에서 별도 어댑터로 다룹니다.
+        이 사이트는 본인이 운영하는 Cloudflare Worker를 통해 Finnhub 데이터를 받아오도록 기본 설정되어 있습니다.
+        별도 키 등록 없이 미국 종목의 실적·배당 일정이 표시됩니다.
+        (Worker URL은 코드에 박혀 있고, 실제 API 키는 본인의 Cloudflare 환경변수에만 보관됩니다.)
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0;">
-        <label for="apikey-finnhub" style="font-size:13px;">Finnhub API Key (선택)</label>
-        <input type="password" id="apikey-finnhub" placeholder="발급받은 키 입력" autocomplete="off" value="${finnhubKey.replace(/"/g, '&quot;')}"
-          style="flex:1; min-width:240px; padding:7px 10px; border:1px solid var(--border); border-radius:6px; font-size:13px;" />
-        <button class="btn-primary" id="apikey-finnhub-save">저장</button>
-        <button class="btn-secondary" id="apikey-finnhub-clear">지우기</button>
-        <a href="https://finnhub.io/register" target="_blank" rel="noopener noreferrer" style="font-size:13px;">무료 키 발급 ↗</a>
-        <a href="https://finnhub.io/" target="_blank" rel="noopener noreferrer" style="font-size:13px;">Finnhub 공식 사이트(약관·개인정보 확인) ↗</a>
+        <label for="proxy-finnhub" style="font-size:13px;">Finnhub 프록시 Worker URL (덮어쓰기)</label>
+        <input type="url" id="proxy-finnhub" placeholder="기본값 사용 중 — 비워두면 코드의 DEFAULT 사용" value="${inputValue}"
+          style="flex:1; min-width:280px; padding:7px 10px; border:1px solid var(--border); border-radius:6px; font-size:13px;" />
+        <button class="btn-primary" id="proxy-finnhub-save">저장</button>
+        <button class="btn-secondary" id="proxy-finnhub-reset">기본값으로</button>
       </div>
-      <p style="font-size:12px; color:var(--text-muted); margin:0 0 6px;">
-        키는 이 PC의 localStorage에만 저장되며 외부로 전송되지 않습니다(브라우저에서 Finnhub로만 직접 호출).
-      </p>
+
+      <h4 style="margin:14px 0 4px; color:var(--primary);">② 데이터 소스 안내 (한계)</h4>
+      <ul style="font-size:12px; color:var(--text-muted);">
+        <li>한국 종목 일정은 본 앱 구조 제약(CORS·서버 없음)으로 아직 지원하지 않습니다.</li>
+        <li>매크로 일정(FOMC/CPI 등)도 후속 단계에서 별도 어댑터로 다룰 예정입니다.</li>
+        <li>무료 한도(시점 변동)는 Finnhub/Cloudflare 공식 페이지에서 확인하세요.</li>
+        <li>프록시 모드에서 키는 본인의 Cloudflare 환경변수에만 존재하며, 친구의 PC·브라우저에는 저장되지 않습니다.</li>
+        <li>관심 종목은 본인 PC의 브라우저에만 저장됩니다(localStorage). 친구마다 독립적으로 관리되며, 친구의 관심 종목이 본인에게 보이지 않고 그 반대도 마찬가지입니다. PC를 바꾸거나 브라우저 데이터를 지우면 관심 종목이 초기화될 수 있습니다.</li>
+        <li>프록시가 일시적으로 비활성화된 경우, 본인은 Cloudflare Workers 대시보드에서 Worker를 재활성화하거나 키를 회전시킬 수 있습니다(<code>cloudflare/README.md</code> 참고).</li>
+      </ul>
 
       <h3 style="margin-top:16px;">면책</h3>
       <p style="font-size:13px; color:var(--text-muted);">
@@ -50,23 +65,18 @@ export function renderHelp(container) {
       </p>
     </div>`;
 
-  const input = container.querySelector('#apikey-finnhub');
-  container.querySelector('#apikey-finnhub-save')?.addEventListener('click', () => {
-    setApiKey(API_KEYS.FINNHUB, input.value.trim());
-    // 새 키로 다음 호출이 fresh 하도록 캘린더 캐시 클리어
-    for (let i = localStorage.length - 1; i >= 0; i--) {
-      const k = localStorage.key(i);
-      if (k && k.startsWith('ca:calendar:')) localStorage.removeItem(k);
-    }
-    showToast('Finnhub 키가 저장되었습니다.', { type: 'success' });
+  const proxyInput = container.querySelector('#proxy-finnhub');
+
+  container.querySelector('#proxy-finnhub-save')?.addEventListener('click', () => {
+    setFinnhubProxyBase(proxyInput.value.trim());
+    clearCalendarCache();
+    showToast('프록시 URL이 저장되었습니다.', { type: 'success' });
+    renderHelp(container);
   });
-  container.querySelector('#apikey-finnhub-clear')?.addEventListener('click', () => {
-    setApiKey(API_KEYS.FINNHUB, '');
-    if (input) input.value = '';
-    for (let i = localStorage.length - 1; i >= 0; i--) {
-      const k = localStorage.key(i);
-      if (k && k.startsWith('ca:calendar:')) localStorage.removeItem(k);
-    }
-    showToast('Finnhub 키를 지웠습니다.', { type: 'info' });
+  container.querySelector('#proxy-finnhub-reset')?.addEventListener('click', () => {
+    clearFinnhubProxyBase();
+    clearCalendarCache();
+    showToast('기본 프록시 URL로 되돌렸습니다.', { type: 'info' });
+    renderHelp(container);
   });
 }
