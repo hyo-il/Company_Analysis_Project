@@ -2,6 +2,7 @@ import { getSymbol, getPeers, suggestSymbols } from '../data/symbols.js';
 import { getFinancials } from '../data/adapter.js';
 import { fmtNum, fmtPct } from '../utils/format.js';
 import { emptyState, loadingState, infoTip } from '../components/common.js';
+import { peerMedian as median, peerPercentile as percentile } from '../utils/peer-percentile.js';
 
 const COMPARE_METRICS = [
   { key: 'per', label: 'PER', unit: 'x', lowerBetter: true },
@@ -24,21 +25,6 @@ function getEffectivePeers(ticker) {
   // 중복 제거
   const seen = new Set();
   return combined.filter(s => (seen.has(s.ticker) ? false : (seen.add(s.ticker), true))).slice(0, 8);
-}
-
-function median(arr) {
-  const a = arr.filter(v => v != null && !isNaN(v)).sort((x, y) => x - y);
-  if (!a.length) return null;
-  const m = Math.floor(a.length / 2);
-  return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
-}
-
-function percentile(val, arr, lowerBetter) {
-  const a = arr.filter(v => v != null && !isNaN(v)).sort((x, y) => x - y);
-  if (!a.length || val == null) return null;
-  const below = a.filter(v => v < val).length;
-  const pct = (below / a.length) * 100;
-  return lowerBetter ? 100 - pct : pct;
 }
 
 function fmtCell(v, unit) {

@@ -5,7 +5,8 @@ import { METRIC_CATEGORIES, SECTOR_PRIORITY } from '../data/metrics-meta.js';
 import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/format.js';
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
-import { computeFactorScores } from '../utils/scoring.js';
+import { computeFactorScores, computePeerScores } from '../utils/scoring.js';
+import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
 
@@ -43,6 +44,13 @@ export async function renderAnalysis(container, { ticker } = {}) {
     ]);
 
     const sym = sym0;
+    // 백분위 점수 카드용 피어 fin (자동 피어 최대 MAX_PEERS명)
+    const peerSyms = getPeers(ticker).filter(p => p.ticker !== ticker).slice(0, MAX_PEERS);
+    const peerFinsRaw = await Promise.all(
+      peerSyms.map(p => getFinancials(p.ticker).then(r => r?.data || null).catch(() => null))
+    );
+    const validPeerFins = peerFinsRaw.filter(f => f);
+
     const priority = SECTOR_PRIORITY[profile.data.sector] || [];
     const currency = profile.currency;
     const watched = isWatched(ticker);
@@ -50,6 +58,8 @@ export async function renderAnalysis(container, { ticker } = {}) {
     const hasValband = !!(valHist?.data?.labels?.length);
     // KR 미지원·호출 실패 시 점수/AI 해설은 의미 없으므로 섹션 자체를 숨김(5-D)
     const scoresUsable = fin?.reason !== 'kr-not-supported' && fin?.reason !== 'fetch-failed';
+    // 백분위 점수(가치·수익성·성장성·안정성·종합). 피어 부족 시 카테고리·종합 모두 null.
+    const peerScores = scoresUsable ? computePeerScores(fin.data, validPeerFins) : null;
     const krNoticeHtml = (sym && sym.market !== 'us') ? `
       <div class="panel" style="border-left:4px solid var(--warn); background:#fff7ed;">
         <strong>한국 종목 안내</strong>
@@ -119,13 +129,13 @@ export async function renderAnalysis(container, { ticker } = {}) {
 
       ${scoresUsable ? `<div class="panel">
         <div class="panel-title">AI 기업 분석 ${infoTip('규칙 기반으로 만든 사업 요약과 강점·약점·투자 포인트입니다(유료 LLM 미사용). 출처·기준일이 함께 표기되며 투자 권유가 아닙니다.')}</div>
-        ${renderAIBusiness(profile.data, fin.data)}
+        ${renderAIBusiness(profile.data, fin.data, peerScores)}
         ${metaBadge(fin)}
       </div>
 
       <div class="panel">
-        <div class="panel-title">퀀트 종합점수 (팩터 스코어) ${infoTip('같은 업종 안에서 이 회사가 가치·수익성·성장성·안정성에서 몇 등쯤인지 0~100점으로 환산한 참고용 점수입니다. 높을수록 동종업계 대비 펀더멘털이 상대적으로 좋다는 뜻이며, 투자 권유가 아닙니다.')}</div>
-        ${renderScores(ticker, fin.data)}
+        <div class="panel-title">퀀트 종합점수 (팩터 스코어) ${infoTip('동종업계 피어 그룹 안에서 이 회사가 가치·수익성·성장성·안정성에서 몇 등쯤인지 백분위로 환산한 참고용 점수입니다. 배당만 절대 기준입니다. 미래 수익을 보장하지 않습니다.')}</div>
+        ${renderScores(ticker, fin.data, validPeerFins)}
       </div>
 
       <div class="panel">
@@ -424,12 +434,14 @@ function renderCategory(cat, data, currency, priority) {
     </div>`;
 }
 
-function renderAIBusiness(profile, fin) {
+function renderAIBusiness(profile, fin, peerScores) {
   // 사업 쉬운 요약
   const summary = `${profile.nameKr}(${profile.ticker})는 ${profile.exchange}에 상장된 <strong>${profile.industry}</strong> 분야 ${profile.type === 'etf' ? 'ETF' : '기업'}입니다. ${profile.description}`;
-  const scores = computeFactorScores(fin);
-  // 강점·약점 도출
-  const factorEntries = ['가치','수익성','성장성','안정성'].map(k => [k, scores[k]]);
+  // 강점·약점은 백분위 점수 기반(피어 부족 카테고리는 자동 제외).
+  const scores = peerScores || computeFactorScores(fin);
+  const factorEntries = ['가치','수익성','성장성','안정성']
+    .map(k => [k, scores[k]])
+    .filter(([, v]) => v != null);
   const sorted = [...factorEntries].sort((a, b) => b[1] - a[1]);
   const strengths = sorted.filter(([,v]) => v >= FACTOR_STRONG).map(([k]) => k);
   const weaknesses = sorted.filter(([,v]) => v < FACTOR_WEAK).map(([k]) => k);
@@ -475,20 +487,55 @@ function renderAIBusiness(profile, fin) {
     </p>`;
 }
 
-function renderScores(ticker, fin) {
-  const peers = getPeers(ticker).slice(0, 8);
-  // peer 데이터를 모의로 가져오기 위해 평균값과 비교(여기서는 단순화)
-  const scores = computeFactorScores(fin);
+function scoreCardHtml({ key, score, note }) {
+  const isNull = score == null;
+  const bars = isNull ? null : toBars5(score);
+  const display = isNull ? '—' : score;
+  const barRow = isNull
+    ? `<div style="height:10px;"></div>`
+    : `<div style="display:flex; gap:3px; justify-content:center; margin-top:6px;">
+         ${[0,1,2,3,4].map(i => `<span style="display:inline-block; width:14px; height:6px; border-radius:2px; background:${i < bars ? 'var(--primary)' : 'var(--border)'};"></span>`).join('')}
+       </div>`;
+  return `<div style="border:1px solid var(--border); border-radius:6px; padding:12px; text-align:center;">
+    <div style="color:var(--text-muted); font-size:12px;">${key}</div>
+    <div style="font-size:22px; font-weight:700; color:${isNull ? 'var(--text-muted)' : 'var(--primary)'};">${display}</div>
+    ${barRow}
+    ${note ? `<div style="font-size:10px; color:var(--text-muted); margin-top:4px;">${note}</div>` : ''}
+  </div>`;
+}
+
+function renderScores(ticker, fin, peerFins) {
+  const usable = (peerFins || []).filter(f => f);
+  if (usable.length < MIN_PEERS) {
+    return `<div style="padding:12px;color:var(--text-muted);font-size:13px;">
+      동종업계 비교 대상이 ${usable.length}곳뿐이라 점수를 표시하지 않습니다 (최소 ${MIN_PEERS}곳 필요).
+      <div style="margin-top:4px;font-size:11px;">상대가치 비교 메뉴에서 피어 그룹을 직접 보강할 수 있습니다.</div>
+    </div>`;
+  }
+
+  const peerScores = computePeerScores(fin, usable);
+  const absoluteScores = computeFactorScores(fin); // 배당 점수만 사용
+
+  const cards = [
+    { key: '가치',     score: peerScores['가치'] },
+    { key: '수익성',   score: peerScores['수익성'] },
+    { key: '성장성',   score: peerScores['성장성'] },
+    { key: '안정성',   score: peerScores['안정성'] },
+    { key: '배당',     score: absoluteScores['배당'], note: '절대 기준' },
+    { key: '종합',     score: peerScores['종합'] },
+  ];
+
+  const peerSyms = getPeers(ticker).filter(p => p.ticker !== ticker).slice(0, MAX_PEERS);
+  const peerNames = peerSyms.slice(0, usable.length).map(s => s.nameKr).join(', ');
+
   return `
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
-      ${Object.entries(scores).map(([k, v]) => `
-        <div style="border:1px solid var(--border); border-radius:6px; padding:12px; text-align:center;">
-          <div style="color:var(--text-muted); font-size:12px;">${k}</div>
-          <div style="font-size:22px; font-weight:700; color:var(--primary);">${Math.round(v)}</div>
-        </div>
-      `).join('')}
+      ${cards.map(c => scoreCardHtml(c)).join('')}
     </div>
     <p style="font-size:12px; color:var(--text-muted); margin-top:12px;">
+      동종업계 ${usable.length}곳 비교 기준 (피어: ${peerNames}) · 배당은 절대 기준 단독 환산
+    </p>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">
       ⚠ 과거·현재 지표 기반 참고용 점수이며 미래 수익을 보장하지 않습니다.
     </p>`;
 }
