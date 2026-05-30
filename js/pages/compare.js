@@ -66,6 +66,9 @@ export async function renderCompare(container, { ticker } = {}) {
       <div class="panel-title">동종업계 상대가치 비교 — ${sym.nameKr}
         <span style="font-weight:400; color:var(--text-muted); font-size:12px;">(${sym.sector} · ${sym.industry})</span>
       </div>
+      <p style="font-size:12px; color:var(--text-muted); margin:0 0 10px;">
+        분석 페이지의 점수 카드는 동종업계 4곳만 비교합니다. 이 표는 자동 피어 + 사용자가 추가한 피어를 함께 비교합니다.
+      </p>
       <p style="background:var(--primary-soft); padding:10px 14px; border-radius:6px; margin:0 0 12px;">
         <strong>종합 한 줄 평:</strong> ${summary}
       </p>

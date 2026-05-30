@@ -487,7 +487,7 @@ function renderAIBusiness(profile, fin, peerScores) {
     </p>`;
 }
 
-function scoreCardHtml({ key, score, note }) {
+function scoreCardHtml({ key, score, note, rank, totalGroup }) {
   const isNull = score == null;
   const bars = isNull ? null : toBars5(score);
   const display = isNull ? '—' : score;
@@ -496,10 +496,14 @@ function scoreCardHtml({ key, score, note }) {
     : `<div style="display:flex; gap:3px; justify-content:center; margin-top:6px;">
          ${[0,1,2,3,4].map(i => `<span style="display:inline-block; width:14px; height:6px; border-radius:2px; background:${i < bars ? 'var(--primary)' : 'var(--border)'};"></span>`).join('')}
        </div>`;
+  const rankBadge = (rank != null && totalGroup != null)
+    ? `<div style="font-size:11px; color:var(--primary); margin-top:4px; font-weight:600;">${totalGroup}곳 중 ${rank}위</div>`
+    : '';
   return `<div style="border:1px solid var(--border); border-radius:6px; padding:12px; text-align:center;">
     <div style="color:var(--text-muted); font-size:12px;">${key}</div>
     <div style="font-size:22px; font-weight:700; color:${isNull ? 'var(--text-muted)' : 'var(--primary)'};">${display}</div>
     ${barRow}
+    ${rankBadge}
     ${note ? `<div style="font-size:10px; color:var(--text-muted); margin-top:4px;">${note}</div>` : ''}
   </div>`;
 }
@@ -516,26 +520,42 @@ function renderScores(ticker, fin, peerFins) {
   const peerScores = computePeerScores(fin, usable);
   const absoluteScores = computeFactorScores(fin); // 배당 점수만 사용
 
+  // 종합 백분위 → 본인 포함 N+1명 안에서의 순위 (100점=1위, 0점=마지막)
+  const totalPct = peerScores['종합'];
+  const totalGroup = 1 + usable.length;
+  const totalRank = totalPct == null
+    ? null
+    : Math.max(1, Math.min(totalGroup, totalGroup - Math.round((totalPct / 100) * (totalGroup - 1))));
+
   const cards = [
     { key: '가치',     score: peerScores['가치'] },
     { key: '수익성',   score: peerScores['수익성'] },
     { key: '성장성',   score: peerScores['성장성'] },
     { key: '안정성',   score: peerScores['안정성'] },
     { key: '배당',     score: absoluteScores['배당'], note: '절대 기준' },
-    { key: '종합',     score: peerScores['종합'] },
+    { key: '종합',     score: totalPct, rank: totalRank, totalGroup },
   ];
 
   const peerSyms = getPeers(ticker).filter(p => p.ticker !== ticker).slice(0, MAX_PEERS);
   const peerNames = peerSyms.slice(0, usable.length).map(s => s.nameKr).join(', ');
+  const compareHref = `#/compare/${ticker}`;
 
   return `
+    <div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+      <strong style="color:var(--primary);">동종업계 ${usable.length}곳</strong>과 비교한 점수입니다. (피어: ${peerNames})
+    </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
       ${cards.map(c => scoreCardHtml(c)).join('')}
     </div>
-    <p style="font-size:12px; color:var(--text-muted); margin-top:12px;">
-      동종업계 ${usable.length}곳 비교 기준 (피어: ${peerNames}) · 배당은 절대 기준 단독 환산
-    </p>
-    <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+    <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <span style="font-size:12px; color:var(--text-muted);">
+        배당은 산업별 정책 차이가 커서 절대 기준(배당수익률 0~5%)으로 표시합니다.
+      </span>
+      <a href="${compareHref}" style="font-size:12px; color:var(--primary); text-decoration:none; padding:4px 10px; border:1px solid var(--accent-line); border-radius:4px;">
+        동종업계 비교 표 보기 →
+      </a>
+    </div>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">
       ⚠ 과거·현재 지표 기반 참고용 점수이며 미래 수익을 보장하지 않습니다.
     </p>`;
 }
