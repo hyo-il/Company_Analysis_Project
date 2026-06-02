@@ -6,7 +6,7 @@ import { fmtNum, fmtChange } from '../utils/format.js';
 import { showToast } from './toast.js';
 
 let onSelectCb = null;
-let activeTab = 'watch';
+let activeTab = 'recent';
 
 export function initDrawer({ onSelect }) {
   onSelectCb = onSelect;
