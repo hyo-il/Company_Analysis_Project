@@ -3,17 +3,13 @@ import { fmtDate, daysSince } from '../utils/format.js';
 const REASON_STYLES = {
   'kr-not-supported': 'background:#f1f5f9;color:#475569;border-color:#cbd5e1;',
   'fetch-failed':     'background:#fef2f2;color:#991b1b;border-color:#fecaca;',
-  'no-data':          'background:#f1f5f9;color:#475569;border-color:#cbd5e1;',
   'no-news':          'background:#f1f5f9;color:#475569;border-color:#cbd5e1;',
-  'mock-timeseries':  'background:#fefce8;color:#854d0e;border-color:#fde68a;',
   'no-key':           'background:#fefce8;color:#854d0e;border-color:#fde68a;',
 };
 const REASON_LABELS = {
   'kr-not-supported': 'KR 실데이터 미지원',
   'fetch-failed':     '데이터 호출 실패',
-  'no-data':          '데이터 없음',
   'no-news':          '뉴스 없음',
-  'mock-timeseries':  '임시 시계열',
   'no-key':           '프록시 미설정',
 };
 
