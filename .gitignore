@@ -22,5 +22,13 @@ build/
 .env.*
 *.local
 
+# OpenDART · API 키 추가 가드 (실수로 워크스페이스에 들어와도 git 추가 차단)
+OpenDartKey*
+*opendart*
+*OpenDart*
+*dart_key*
+*.key
+*.token
+
 # 로그
 *.log
