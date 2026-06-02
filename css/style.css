@@ -761,3 +761,43 @@ h3 { font-size: 15px; }
 }
 .drawer-item-remove:hover { background: var(--bg-subtle); color: var(--warn); }
 
+
+/* ===== 개발 히스토리 페이지 ===== */
+.history-page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+}
+.history-toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  height: fit-content;
+}
+.history-toc ul { list-style: none; padding: 0; margin: 0; }
+.history-toc-link {
+  display: block; width: 100%; text-align: left;
+  background: transparent; border: 0; padding: 8px 12px; cursor: pointer;
+  border-radius: 4px; font-size: 13px; color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.history-toc-link:hover { background: var(--bg-subtle); }
+.history-toc-link.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.history-detail-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.history-detail h3 { margin-top: 0; color: var(--primary); font-size: 18px; }
+.history-detail .help-notes { margin: 12px 0 0; padding-left: 20px; line-height: 1.7; }
+.history-detail .help-notes li { margin-bottom: 6px; }
+
+@media (max-width: 768px) {
+  .history-page { grid-template-columns: 1fr; }
+}

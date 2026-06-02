@@ -4,6 +4,7 @@ import { renderAnalysis } from './pages/analysis.js';
 import { renderCompare } from './pages/compare.js';
 import { renderCalendar } from './pages/calendar.js';
 import { renderHelp } from './pages/help.js';
+import { renderHistory } from './pages/history.js';
 import { renderEtf } from './pages/etf.js';
 import { getWatchlist } from './data/watchlist.js';
 import { getQuoteEOD } from './data/adapter.js';
@@ -16,6 +17,7 @@ const ROUTE_TITLES = {
   compare: '상대가치 비교',
   calendar: '주요 일정',
   help: '도움말',
+  history: '개발 히스토리',
 };
 
 // 종목 파라미터를 받는 라우트
@@ -117,6 +119,7 @@ function render(route) {
   switch (route) {
     case 'calendar': return renderCalendar(el);
     case 'help': return renderHelp(el);
+    case 'history': return renderHistory(el);
   }
 }
 
