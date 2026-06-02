@@ -61,12 +61,11 @@ export async function renderAnalysis(container, { ticker } = {}) {
     // 백분위 점수(가치·수익성·성장성·안정성·종합). 피어 부족 시 카테고리·종합 모두 null.
     const peerScores = scoresUsable ? computePeerScores(fin.data, validPeerFins) : null;
     const krNoticeHtml = (sym && sym.market !== 'us') ? `
-      <div class="panel" style="border-left:4px solid var(--warn); background:#fff7ed;">
+      <div class="panel" style="border-left:4px solid var(--primary); background:var(--bg-subtle);">
         <strong>한국 종목 안내</strong>
         <p style="margin:6px 0 0; font-size:13px;">
-          이 종목의 시세·재무·뉴스는 현재 무료 데이터 한계(서버/프록시 제약)로 제공되지 않습니다.
-          정확한 정보는 공식 출처(KRX·DART·증권사 HTS)를 확인해 주세요.
-          본 화면은 종목 마스터·일정 일부만 보조 정보로 표시됩니다.
+          이 종목의 재무 정보는 OpenDART 사업보고서 기준입니다.
+          시세·뉴스·PER/PBR 등 주가 기반 지표는 시세 소스 연동(2단계) 후 활성화됩니다.
         </p>
       </div>` : '';
 

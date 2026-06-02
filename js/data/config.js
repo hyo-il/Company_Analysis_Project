@@ -31,3 +31,10 @@ export function isUsingDefaultProxy() {
     return !localStorage.getItem(`ca:${PROXY.BASE_KEY}`) && !!PROXY.DEFAULT;
   } catch { return !!PROXY.DEFAULT; }
 }
+
+// Cloudflare Worker의 DART 프록시 base path.
+// Worker는 `${proxy}/dart/api/...` 경로에서 OpenDART API로 라우팅한다.
+export function getDartProxyBase() {
+  const base = getFinnhubProxyBase();
+  return base ? `${base}/dart` : null;
+}

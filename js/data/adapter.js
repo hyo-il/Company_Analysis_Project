@@ -6,6 +6,9 @@
 import { getSymbol } from './symbols.js';
 import { cacheGet, cacheSet } from '../utils/cache.js';
 import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
+import { dartCompany, dartFnlttSinglAcnt } from './adapters/dart.js';
+import { getCorpCode } from './dart-corpcode.js';
+import { extractAccounts, buildKRFinancials } from './dart-derive.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
@@ -25,19 +28,55 @@ export async function getProfile(ticker) {
   if (!sym) throw new Error('symbol not found');
 
   if (sym.market !== 'us') {
-    return {
+    const cacheKey = `profile:${ticker}`;
+    const cached = cacheGet(cacheKey);
+    if (cached) {
+      const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
+      if (ageHours < 24 * 7) return cached;
+    }
+
+    const corpCode = getCorpCode(ticker);
+    if (!corpCode) {
+      return {
+        data: {
+          ticker: sym.ticker, nameKr: sym.nameKr, nameEn: sym.nameEn,
+          exchange: sym.exchange, sector: sym.sector, industry: sym.industry,
+          market: sym.market, type: sym.type,
+          description: `${sym.nameKr}(${sym.ticker})는 ${sym.exchange}에 상장된 ${sym.industry} 기업입니다.`,
+          marketCap: null, sharesOutstanding: null,
+        },
+        source: 'symbols.js (corp_code 매핑 없음)',
+        asOf: todayISO(),
+        currency: 'KRW',
+        reason: 'kr-no-corpcode',
+      };
+    }
+
+    const dart = await dartCompany(corpCode);
+    const co = dart?.[0] || dart?.list?.[0] || dart;
+    const result = {
       data: {
-        ticker: sym.ticker, nameKr: sym.nameKr, nameEn: sym.nameEn,
-        exchange: sym.exchange, sector: sym.sector, industry: sym.industry,
-        market: sym.market, type: sym.type,
-        description: `${sym.nameKr}(${sym.ticker})는 ${sym.exchange}에 상장된 ${sym.industry} 기업입니다.`,
+        ticker: sym.ticker,
+        nameKr: co?.corp_name || sym.nameKr,
+        nameEn: co?.corp_name_eng || sym.nameEn,
+        exchange: sym.exchange,
+        sector: sym.sector,
+        industry: co?.induty_code ? `${sym.industry} (KSIC ${co.induty_code})` : sym.industry,
+        market: 'kr', type: sym.type,
+        description: `${sym.nameKr}(${sym.ticker})는 ${sym.exchange}에 상장된 ${sym.industry} 기업입니다.` +
+                     (co?.hm_url ? ` 공식 사이트: ${co.hm_url}` : ''),
         marketCap: null, sharesOutstanding: null,
+        ceo: co?.ceo_nm || null,
+        established: co?.est_dt || null,
+        fiscalMonth: co?.acc_mt || null,
       },
-      source: 'symbols.js (KR 실데이터 미지원)',
+      source: dart ? 'OpenDART /company' : 'OpenDART (no data) + symbols.js',
       asOf: todayISO(),
       currency: 'KRW',
-      reason: 'kr-not-supported',
+      reason: dart ? undefined : 'fetch-failed',
     };
+    if (dart) cacheSet(cacheKey, result);
+    return result;
   }
 
   const cacheKey = `profile:${ticker}`;
@@ -126,15 +165,57 @@ export async function getFinancials(ticker) {
   }
 
   if (sym?.market !== 'us') {
+    const corpCode = getCorpCode(ticker);
+    if (!corpCode) {
+      return {
+        data: emptyFinancials(),
+        source: 'unavailable (corp_code 매핑 없음)',
+        asOf: todayISO(),
+        currency: 'KRW',
+        basis: { period: '—', statement: '—', earnings: '—' },
+        reason: 'kr-no-corpcode',
+      };
+    }
+
+    const now = new Date();
+    const lastYear = now.getFullYear() - 1;
+    const prevYear = now.getFullYear() - 2;
+    const settled = await Promise.allSettled([
+      dartFnlttSinglAcnt(corpCode, lastYear, '11011'),
+      dartFnlttSinglAcnt(corpCode, prevYear, '11011'),
+    ]);
+    const latestY = settled[0].status === 'fulfilled' ? settled[0].value : null;
+    const prevY   = settled[1].status === 'fulfilled' ? settled[1].value : null;
+    const latestY_ext = extractAccounts(latestY);
+    const prevY_ext = extractAccounts(prevY);
+
+    const data = buildKRFinancials({
+      latestQ: null, yoyQ: null,
+      latestY: latestY_ext, prevY: prevY_ext,
+    });
+    // 연간 YoY 보강
+    if (latestY_ext && prevY_ext) {
+      if (prevY_ext.revenue) {
+        data.revenueGrowthYoY = ((latestY_ext.revenue / prevY_ext.revenue) - 1) * 100;
+      }
+      if (prevY_ext.operatingIncome) {
+        data.opGrowth = ((latestY_ext.operatingIncome / prevY_ext.operatingIncome) - 1) * 100;
+      }
+      if (prevY_ext.netIncome) {
+        data.epsGrowth = ((latestY_ext.netIncome / prevY_ext.netIncome) - 1) * 100;
+      }
+    }
+
+    const ok = !!latestY_ext;
     const result = {
-      data: emptyFinancials(),
-      source: 'unavailable (KR 실데이터 미지원)',
+      data,
+      source: ok ? 'OpenDART /fnlttSinglAcnt' : 'OpenDART (no data)',
       asOf: todayISO(),
       currency: 'KRW',
-      basis: { period: '—', statement: '—', earnings: '—' },
-      reason: 'kr-not-supported',
+      basis: { period: `${lastYear} 사업보고서`, statement: '연결', earnings: '지배주주' },
+      reason: ok ? undefined : 'fetch-failed',
     };
-    cacheSet(cacheKey, result);
+    if (ok) cacheSet(cacheKey, result);
     return result;
   }
 
@@ -360,15 +441,84 @@ export function isConsensusAvailable() {
   return false;
 }
 
-// 분기 추이 — 실연동 전까지 빈 결과(stub). 호출부에서 패널 숨김.
+// 분기 추이. US는 stub(15차 이후), KR은 OpenDART 분기 환산.
 export async function getHistoricalMetrics(ticker, points = 8) {
+  const sym = getSymbol(ticker);
+  const emptyData = { labels: [], revenue: [], operatingIncome: [], netIncome: [],
+                      eps: [], ocf: [], fcf: [], roe: [], opMargin: [] };
+
+  if (sym?.market === 'us') {
+    return { data: emptyData, source: 'pending', asOf: todayISO(), reason: 'timeseries-pending' };
+  }
+
+  const corpCode = getCorpCode(ticker);
+  if (!corpCode) {
+    return { data: emptyData, source: 'unavailable', asOf: todayISO(), reason: 'kr-no-corpcode' };
+  }
+
+  // 최근 1년치 분기 4개로 축소 (회로 차단기 보호 + 무료 한도 절약)
+  const now = new Date();
+  const year = now.getFullYear() - 1;
+  const reportCodes = ['11013', '11012', '11014', '11011']; // 1Q누적, 반기, 3Q누적, 연간
+
+  const settled = await Promise.allSettled(
+    reportCodes.map(rc => dartFnlttSinglAcnt(corpCode, year, rc))
+  );
+  const reports = {};
+  reportCodes.forEach((rc, i) => {
+    reports[rc] = settled[i].status === 'fulfilled' ? extractAccounts(settled[i].value) : null;
+  });
+
+  const q1  = reports['11013'];
+  const h1  = reports['11012'];
+  const q3c = reports['11014'];
+  const fy  = reports['11011'];
+
+  const single = [
+    { label: `${String(year).slice(2)}Q1`, src: q1 },
+    { label: `${String(year).slice(2)}Q2`, src: subtract(h1, q1) },
+    { label: `${String(year).slice(2)}Q3`, src: subtract(q3c, h1) },
+    { label: `${String(year).slice(2)}Q4`, src: subtract(fy, q3c) },
+  ];
+
+  const labels = [];
+  const quarters = { revenue: [], operatingIncome: [], netIncome: [], ocf: [] };
+  for (const s of single) {
+    if (!s.src) continue;
+    labels.push(s.label);
+    quarters.revenue.push(s.src.revenue ?? null);
+    quarters.operatingIncome.push(s.src.operatingIncome ?? null);
+    quarters.netIncome.push(s.src.netIncome ?? null);
+    quarters.ocf.push(s.src.ocf ?? null);
+  }
+
+  if (!labels.length) {
+    return { data: emptyData, source: 'OpenDART (no data)', asOf: todayISO(), reason: 'fetch-failed' };
+  }
+
   return {
-    data: { labels: [], revenue: [], operatingIncome: [], netIncome: [],
-            eps: [], ocf: [], fcf: [], roe: [], opMargin: [] },
-    source: 'pending',
+    data: {
+      labels,
+      revenue: quarters.revenue,
+      operatingIncome: quarters.operatingIncome,
+      netIncome: quarters.netIncome,
+      ocf: quarters.ocf,
+      eps: [], fcf: [], roe: [], opMargin: [],
+    },
+    source: 'OpenDART /fnlttSinglAcnt (분기 환산)',
     asOf: todayISO(),
-    reason: 'timeseries-pending',
   };
+}
+
+function subtract(a, b) {
+  if (!a) return null;
+  if (!b) return a; // Q1만 단독(누적 없음)인 경우
+  const out = {};
+  for (const k of ['revenue','operatingIncome','netIncome','ocf']) {
+    if (a[k] != null && b[k] != null) out[k] = a[k] - b[k];
+    else if (a[k] != null) out[k] = a[k];
+  }
+  return out;
 }
 
 // 과거 PER/PBR 밸류 밴드 — 실연동 전까지 빈 결과(stub). 호출부에서 패널 숨김.
