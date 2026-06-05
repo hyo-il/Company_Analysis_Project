@@ -1,6 +1,7 @@
 // CA Finnhub 프록시 Worker
 // 환경변수(Cloudflare 대시보드에서 등록): FINNHUB_KEY (Secret), ALLOWED_ORIGINS (Text)
 // 허용 경로만 프록시 + Origin 검증 + 클라이언트가 보낸 token은 폐기(서버 키만 사용)
+// (DART 분기는 정적 JSON 전환으로 제거됨 — 2026-05-31. DART_KEY Secret 도 더 이상 불필요)
 
 const ALLOWED_PATHS = new Set([
   '/api/v1/calendar/earnings',

@@ -1,4 +1,5 @@
 import { getProfile, getFinancials, getQuoteEOD, getNews, getCalendar, isConsensusAvailable, getHistoricalMetrics, getValuationHistory, getEtfsContaining } from '../data/adapter.js';
+import { getKRDartMeta } from '../data/kr-dart.js';
 import { getPeers, getSymbol } from '../data/symbols.js';
 import { toggleWatch, isWatched } from '../data/watchlist.js';
 import { METRIC_CATEGORIES, SECTOR_PRIORITY } from '../data/metrics-meta.js';
@@ -60,13 +61,14 @@ export async function renderAnalysis(container, { ticker } = {}) {
     const scoresUsable = fin?.reason !== 'kr-not-supported' && fin?.reason !== 'fetch-failed';
     // 백분위 점수(가치·수익성·성장성·안정성·종합). 피어 부족 시 카테고리·종합 모두 null.
     const peerScores = scoresUsable ? computePeerScores(fin.data, validPeerFins) : null;
+    const krDartGen = getKRDartMeta().generatedAt?.slice(0, 10);
     const krNoticeHtml = (sym && sym.market !== 'us') ? `
       <div class="panel" style="border-left:4px solid var(--primary); background:var(--bg-subtle);">
         <strong>한국 종목 안내</strong>
         <p style="margin:6px 0 0; font-size:13px;">
-          이 종목의 재무 정보는 OpenDART 사업보고서 기준입니다.
-          시세·뉴스·PER/PBR 등 주가 기반 지표는 시세 소스 연동(2단계) 후 활성화됩니다.
+          이 종목의 재무 정보는 OpenDART 사업보고서를 사전 수집한 데이터입니다(분기 단위 갱신). 시세·뉴스·PER/PBR 등 주가 기반 지표는 시세 소스 연동(2단계) 후 활성화됩니다.
         </p>
+        ${krDartGen ? `<p style="margin:4px 0 0; font-size:11px; color:var(--text-muted);">수집 기준일: ${krDartGen}</p>` : ''}
       </div>` : '';
 
     container.innerHTML = krNoticeHtml + `
@@ -240,7 +242,12 @@ function renderTrends(grid, h, currency) {
     { key: 'opMargin', label: '영업이익률', fmt: v => fmtPct(v), chartFmt: chartPct },
   ];
   grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(260px, 1fr))';
-  grid.innerHTML = items.map(it => {
+  // 모든 값이 null/undefined 이거나 배열이 비면 카드 제외 (KR ROE·FCF·EPS 등 자동 숨김)
+  const visibleItems = items.filter(it => {
+    const series = h[it.key];
+    return Array.isArray(series) && series.some(v => v != null);
+  });
+  grid.innerHTML = visibleItems.map(it => {
     const series = h[it.key] || [];
     const last = series[series.length - 1];
     const first = series[0];
@@ -257,7 +264,7 @@ function renderTrends(grid, h, currency) {
       <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">최근 ${series.length}분기 추이</div>
     </div>`;
   }).join('');
-  items.forEach(it => {
+  visibleItems.forEach(it => {
     const cv = grid.querySelector(`#trend-${it.key}`);
     if (cv && h[it.key]) trendChart(cv, h[it.key], h.labels, it.chartFmt);
   });

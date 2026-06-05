@@ -118,10 +118,10 @@ export function getPeers(ticker) {
   if (!sym) return [];
   // 1차: 같은 섹터+업종 동일 type
   let peers = SYMBOLS.filter(s => s.ticker !== ticker && s.type === sym.type && s.sector === sym.sector && s.industry === sym.industry);
-  if (peers.length >= 2) return peers;
+  if (peers.length >= 3) return peers;
   // 2차: 같은 섹터
   peers = SYMBOLS.filter(s => s.ticker !== ticker && s.type === sym.type && s.sector === sym.sector);
-  if (peers.length >= 2) return peers;
+  if (peers.length >= 3) return peers;
   // 3차 폴백: 같은 시장 + 같은 type
   return SYMBOLS.filter(s => s.ticker !== ticker && s.type === sym.type && s.market === sym.market).slice(0, 6);
 }
