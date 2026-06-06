@@ -1,13 +1,42 @@
-import { searchSymbols, getSymbol } from '../data/symbols.js';
+import { searchSymbols, getSymbol, lookupExternal, registerExtraSymbol } from '../data/symbols.js';
+import { addExtra } from '../data/extras-store.js';
 import { getQuoteEOD } from '../data/adapter.js';
 import { toggleWatch, isWatched } from '../data/watchlist.js';
 import { showToast } from '../components/toast.js';
 import { fmtNum, fmtChange } from '../utils/format.js';
-import { emptyState } from '../components/common.js';
 
 let currentMarket = 'all';
 
-export function renderSearch(container, { query = '', market = 'all', onSelect } = {}) {
+// 외부 lookup 시도 후 "추가" 제안 UI 를 container 에 렌더. 빈 결과 분기에서 재사용.
+async function tryLookupAndOfferAdd(container, query, onSelect) {
+  const found = await lookupExternal(query);
+  if (!found) {
+    container.innerHTML = `<div class="panel" style="padding:24px; text-align:center; color:var(--text-muted);">
+      "${query}" 에 해당하는 외부 종목을 찾지 못했습니다.
+    </div>`;
+    return;
+  }
+  const { sym, source } = found;
+  container.innerHTML = `<div class="panel" style="padding:16px;">
+    <p style="margin:0 0 8px;">
+      외부에서 발견: <strong>${sym.nameKr}</strong> (${sym.ticker} · ${sym.market === 'kr' ? '국내' : '미국'} · ${sym.type === 'etf' ? 'ETF' : '주식'})
+      <span style="color:var(--text-muted); font-size:11px; margin-left:6px;">[${source}]</span>
+    </p>
+    <p style="margin:0 0 12px; font-size:12px; color:var(--text-muted);">
+      이 종목을 추가하시겠습니까? (본인 브라우저에 저장됩니다)
+    </p>
+    <button id="btn-add-extra" class="btn-primary">추가하고 분석 보기</button>
+  </div>`;
+  document.getElementById('btn-add-extra')?.addEventListener('click', () => {
+    const added = addExtra(sym);
+    registerExtraSymbol(sym);
+    showToast(added ? `${sym.nameKr} 추가됨` : '이미 추가된 종목입니다', { type: 'info' });
+    if (onSelect) onSelect(sym.ticker);
+    else location.hash = `#/analysis/${sym.ticker}`;
+  });
+}
+
+export async function renderSearch(container, { query = '', market = 'all', onSelect } = {}) {
   currentMarket = market;
   if (!query) {
     container.innerHTML = `
@@ -22,7 +51,11 @@ export function renderSearch(container, { query = '', market = 'all', onSelect }
 
   const results = searchSymbols(query, market);
   if (results.length === 0) {
-    container.innerHTML = `<div class="panel">${emptyState(`"${query}"에 대한 결과가 없습니다.`)}</div>`;
+    // 빈 결과 — 외부 lookup 시도 (한국 corp_code / 미국 Finnhub)
+    container.innerHTML = `<div class="panel" style="padding:24px; text-align:center; color:var(--text-muted);">
+      "${query}" 에 해당하는 종목을 마스터에서 찾지 못했습니다. 외부에서 확인 중...
+    </div>`;
+    await tryLookupAndOfferAdd(container, query, onSelect);
     return;
   }
 
@@ -56,6 +89,45 @@ export function renderSearch(container, { query = '', market = 'all', onSelect }
         </tbody>
       </table>
     </div>`;
+
+  // 결과 테이블 아래에 보조 "외부에서 찾기" 안내 — 사용자가 찾는 정확한 종목이 없을 수도 있으므로.
+  const extraLookupPanel = document.createElement('div');
+  extraLookupPanel.className = 'panel';
+  extraLookupPanel.style.cssText = 'margin-top:8px; padding:14px; text-align:center;';
+  extraLookupPanel.innerHTML = `
+    <p style="margin:0 0 8px; font-size:13px; color:var(--text-muted);">
+      찾으시는 종목이 위 결과에 없나요? 검색어 "<strong>${query}</strong>" 그대로 외부에서 한 번 더 찾아볼 수 있습니다.
+    </p>
+    <button id="btn-external-lookup" class="btn-secondary">이 검색어로 외부에서 찾기</button>
+  `;
+  container.appendChild(extraLookupPanel);
+
+  extraLookupPanel.querySelector('#btn-external-lookup')?.addEventListener('click', async () => {
+    extraLookupPanel.innerHTML = `<p style="color:var(--text-muted); font-size:13px;">"${query}" 외부 확인 중...</p>`;
+    // 결과 페이지 전체를 lookup 결과로 교체하지 않고, 보조 패널만 갱신.
+    const found = await lookupExternal(query);
+    if (!found) {
+      extraLookupPanel.innerHTML = `<p style="color:var(--text-muted); font-size:13px;">
+        "${query}" 에 해당하는 외부 종목을 찾지 못했습니다.
+      </p>`;
+      return;
+    }
+    const { sym, source } = found;
+    extraLookupPanel.innerHTML = `
+      <p style="margin:0 0 8px;">
+        외부에서 발견: <strong>${sym.nameKr}</strong> (${sym.ticker} · ${sym.market === 'kr' ? '국내' : '미국'} · ${sym.type === 'etf' ? 'ETF' : '주식'})
+        <span style="color:var(--text-muted); font-size:11px; margin-left:6px;">[${source}]</span>
+      </p>
+      <button id="btn-add-extra-aux" class="btn-primary">추가하고 분석 보기</button>
+    `;
+    extraLookupPanel.querySelector('#btn-add-extra-aux')?.addEventListener('click', () => {
+      const added = addExtra(sym);
+      registerExtraSymbol(sym);
+      showToast(added ? `${sym.nameKr} 추가됨` : '이미 추가된 종목입니다', { type: 'info' });
+      if (onSelect) onSelect(sym.ticker);
+      else location.hash = `#/analysis/${sym.ticker}`;
+    });
+  });
 
   // 시세 비동기 로드
   results.forEach(async s => {

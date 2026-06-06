@@ -2,8 +2,12 @@
 // 영문명·한글명·티커 매핑으로 통합 검색 지원.
 
 import { SYMBOLS_KR } from './symbols-kr.js';
+import { SYMBOLS_US_EXTRA } from './symbols-us-extra.js';
+import { ETF_US_EXTRA } from './etf-us-extra.js';
+import { getAllExtras } from './extras-store.js';
+import { lookupKr } from './dart-corpcode-full.js';
 
-export const SYMBOLS = [
+const HARDCODED_SYMBOLS = [
   ...SYMBOLS_KR,
 
   // KR ETF (대표)
@@ -63,6 +67,33 @@ export const SYMBOLS = [
   { ticker: 'IBIT', nameKr: 'iShares 비트코인', nameEn: 'iShares Bitcoin Trust', market: 'us', exchange: 'NASDAQ', sector: 'ETF', industry: '테마/크립토', type: 'etf' },
 ];
 
+// 사전 확장(US 600) + LocalStorage 사용자 추가 종목을 자동 병합.
+// 중복은 ticker 기준으로 먼저 들어온 항목 유지.
+function mergeBy(arrs) {
+  const seen = new Set();
+  const out = [];
+  for (const arr of arrs) {
+    for (const s of arr) {
+      if (!s || !s.ticker || seen.has(s.ticker)) continue;
+      seen.add(s.ticker);
+      out.push(s);
+    }
+  }
+  return out;
+}
+
+export const SYMBOLS = mergeBy([HARDCODED_SYMBOLS, SYMBOLS_US_EXTRA, ETF_US_EXTRA, getAllExtras()]);
+
+// 검색에서 외부 lookup 으로 추가된 종목을 런타임 SYMBOLS 에 즉시 반영.
+// (SYMBOLS 는 모듈 로드 시 1회 구성되므로, 새 종목은 새로고침 전까지 이 함수로 등록해야
+//  getSymbol·getPeers 등이 즉시 인식한다.)
+export function registerExtraSymbol(sym) {
+  if (!sym || !sym.ticker) return false;
+  if (SYMBOLS.some(s => s.ticker === sym.ticker)) return false;
+  SYMBOLS.push(sym);
+  return true;
+}
+
 // 한글 자모 단순화 (정확 매치용 보조). 영문은 lowercase.
 function norm(s) { return (s || '').toLowerCase().replace(/\s+/g, ''); }
 
@@ -74,16 +105,18 @@ function fuzzyScore(haystack, needle) {
   if (h.startsWith(n)) return 500 - (h.length - n.length);
   const idx = h.indexOf(n);
   if (idx >= 0) return 300 - idx;
+  // 짧은 query (5자 미만) 에서는 subsequence/오타 매칭이 우연 매칭을 너무 많이 만든다.
+  // 예: "NASA" 4자가 Nasdaq, Bunge Global SA, Hanwha Aerospace 등에 모두 순서대로 등장.
+  // 5자 이상 query 에서만 fuzzy 매칭 허용.
+  if (n.length < 5) return 0;
   // subsequence 매칭: n의 모든 글자가 h에 순서대로 등장
   let i = 0;
   for (let c of h) { if (i < n.length && c === n[i]) i++; }
   if (i === n.length) return 100 - (h.length - n.length);
   // 1글자 오타 허용 (n의 한 글자를 빼면 부분일치)
-  if (n.length >= 3) {
-    for (let k = 0; k < n.length; k++) {
-      const m = n.slice(0, k) + n.slice(k + 1);
-      if (h.includes(m)) return 50 - k;
-    }
+  for (let k = 0; k < n.length; k++) {
+    const m = n.slice(0, k) + n.slice(k + 1);
+    if (h.includes(m)) return 50 - k;
   }
   return 0;
 }
@@ -124,4 +157,71 @@ export function getPeers(ticker) {
   if (peers.length >= 3) return peers;
   // 3차 폴백: 같은 시장 + 같은 type
   return SYMBOLS.filter(s => s.ticker !== ticker && s.type === sym.type && s.market === sym.market).slice(0, 6);
+}
+
+/**
+ * 검색 결과가 비었을 때 외부 lookup 시도.
+ * 한국: dart-corpcode-full 에서 즉시 매칭.
+ * 미국: ticker 가 6자리 미만 영문이면 Finnhub /stock/profile2 호출(비동기).
+ *
+ * @returns Promise<{ sym, source } | null>
+ *   sym: SYMBOLS 와 동일한 형식의 객체.
+ *   source: 'kr-corpcode' | 'us-finnhub'.
+ */
+export async function lookupExternal(query) {
+  if (!query) return null;
+  const q = String(query).trim();
+
+  // 1차: KR lookup (한글/숫자 6자리/영문 회사명 모두 시도)
+  const kr = lookupKr(q);
+  if (kr) {
+    return {
+      sym: {
+        ticker: kr.ticker,
+        nameKr: kr.nameKr,
+        nameEn: kr.nameEn || kr.nameKr,
+        market: 'kr',
+        exchange: 'KOSPI',         // corp_code 만으로는 시장 구분 어려움 → 추후 보완
+        sector: '미분류',
+        industry: '미분류',
+        type: 'stock',
+      },
+      source: 'kr-corpcode',
+    };
+  }
+
+  // 2차: US lookup (영문 ticker 패턴 — 1~5자 알파벳 + 선택적 점/하이픈)
+  if (/^[A-Za-z][A-Za-z.\-]{0,4}$/.test(q)) {
+    try {
+      const { fhProfile } = await import('./adapters/finnhub.js');
+      const p = await fhProfile(q.toUpperCase());
+      if (p && p.name) {
+        // ETF 자동 추정: 이름에 ETF/Fund/Trust 단어가 있거나, 시총·주식수가 둘 다 비어있음(전통 주식은 둘 다 채워짐).
+        const looksLikeEtf =
+          /etf|fund|trust/i.test(p.name || '') ||
+          ((p.marketCapitalization == null || p.marketCapitalization === 0) &&
+           (p.shareOutstanding == null || p.shareOutstanding === 0));
+
+        return {
+          sym: {
+            ticker: q.toUpperCase(),
+            nameKr: p.name,
+            nameEn: p.name,
+            market: 'us',
+            exchange: p.exchange || 'NASDAQ',
+            sector: looksLikeEtf ? 'ETF' : (p.finnhubIndustry || 'Unknown'),
+            industry: p.finnhubIndustry || 'Unknown',
+            type: looksLikeEtf ? 'etf' : 'stock',
+            weburl: p.weburl || null,
+            logo: p.logo || null,
+          },
+          source: 'us-finnhub',
+        };
+      }
+    } catch (e) {
+      console.warn('[lookupExternal] us fetch failed', e?.message);
+    }
+  }
+
+  return null;
 }
