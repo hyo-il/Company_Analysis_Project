@@ -37,7 +37,7 @@ import urllib.request
 import urllib.error
 
 # === 경로 ===
-REPO_ROOT = Path(__file__).resolve().parent.parent  # CompanyAnalysis/
+REPO_ROOT = Path(__file__).resolve().parent.parent  # CA_Project/ (git repo root)
 CORPCODE_JSON = REPO_ROOT / "js" / "data" / "dart-corpcode.json"
 OUTPUT_JSON   = REPO_ROOT / "js" / "data" / "kr-dart.json"
 
