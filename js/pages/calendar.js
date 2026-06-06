@@ -46,6 +46,8 @@ export async function renderCalendar(container) {
   const reasonBanner = renderReasonBanner(calRes.reason, all.length);
   const sourceLine = `<div style="font-size:11px; color:var(--text-muted); margin-top:6px;">출처: ${calRes.source} · 기준일: ${calRes.asOf}</div>`;
 
+  let upcomingFilter = 'all';   // 모달 카테고리 필터 상태
+
   container.innerHTML = `
     <div class="panel">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
@@ -64,6 +66,10 @@ export async function renderCalendar(container) {
             <input type="checkbox" id="only-watch" ${onlyWatch?'checked':''}/>
             <span>관심 종목만</span>
           </label>
+          <button id="open-upcoming" class="upcoming-chip" style="background:var(--primary-soft); border:1px solid var(--accent-line); padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; color:var(--primary); display:inline-flex; align-items:center; gap:6px;">
+            <span>📋 다가오는 일정</span>
+            <span id="upcoming-chip-summary" style="font-weight:500;">…</span>
+          </button>
         </div>
       </div>
 
@@ -87,6 +93,20 @@ export async function renderCalendar(container) {
           <button class="btn-primary" id="close-dialog">닫기</button>
         </div>
       </div>
+    </dialog>
+
+    <dialog id="upcoming-dialog" style="border:none; border-radius:10px; padding:0; max-width:720px; width:92vw;">
+      <div style="padding:14px 20px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+        <strong style="font-size:16px;">다가오는 일정 (1~3개월)</strong>
+        <button id="close-upcoming" style="background:none; border:none; font-size:20px; cursor:pointer; color:var(--text-muted);">✕</button>
+      </div>
+      <div style="padding:12px 20px; display:flex; gap:6px; flex-wrap:wrap; border-bottom:1px solid var(--border); background:var(--bg-subtle);">
+        <button class="upcoming-filter" data-filter="all">전체</button>
+        <button class="upcoming-filter" data-filter="macro">매크로</button>
+        <button class="upcoming-filter" data-filter="company">실적·배당</button>
+        <button class="upcoming-filter" data-filter="watch">관심 종목</button>
+      </div>
+      <div id="upcoming-dialog-body" style="padding:14px 20px; max-height:60vh; overflow-y:auto;"></div>
     </dialog>`;
 
   function filtered() {
@@ -119,14 +139,27 @@ export async function renderCalendar(container) {
         <button type="button" class="cal-day-number ${isToday ? 'today' : ''}" data-date="${iso}"
           title="${hasEvents ? `${dayEvents.length}건 일정 보기` : '해당 날짜에 등록된 일정이 없습니다'}"
           aria-label="${y}년 ${m+1}월 ${d}일 일정 보기">${d}</button>
-        ${dayEvents.slice(0, 3).map(e => {
-          const idx = all.indexOf(e);
-          const cls = e.category === 'common' ? 'common' : 'company';
-          return `<div class="cal-event-chip ${cls}" data-event-idx="${idx}" title="${e.title}">
-            <span aria-hidden="true">${e.icon || '•'}</span><span>${e.title}</span>
-          </div>`;
-        }).join('')}
-        ${dayEvents.length > 3 ? `<div style="font-size:10px; color:var(--text-muted); margin-top:2px;">+${dayEvents.length - 3}</div>` : ''}
+        ${(() => {
+          // 우선순위 정렬: 매크로 → 관심 종목 → 그 외. 셀당 최대 5건.
+          const watchSet = new Set(watch);
+          const score = e => (e.category === 'macro' ? 0 : (e.ticker && watchSet.has(e.ticker) ? 1 : 2));
+          const sorted = [...dayEvents].sort((a, b) => score(a) - score(b));
+          const MAX_PER_DAY = 5;
+          const visible = sorted.slice(0, MAX_PER_DAY);
+          const overflow = sorted.length - visible.length;
+          const chips = visible.map(e => {
+            const idx = all.indexOf(e);
+            // 매크로·공통은 'common'(강조 색), 기업 일정은 'company'.
+            const cls = e.category === 'company' ? 'company' : 'common';
+            return `<div class="cal-event-chip ${cls}" data-event-idx="${idx}" title="${e.title}">
+              <span aria-hidden="true">${e.icon || '•'}</span><span>${e.title}</span>
+            </div>`;
+          }).join('');
+          const more = overflow > 0
+            ? `<div class="cal-day-more" data-date="${iso}" style="font-size:11px; color:var(--text-muted); padding:2px 6px; text-align:center; cursor:pointer;">+ ${overflow} 더보기</div>`
+            : '';
+          return chips + more;
+        })()}
       </div>`;
     }
     html += `</div>`;
@@ -150,6 +183,99 @@ export async function renderCalendar(container) {
         showEventDetail(all[idx]);
       });
     });
+
+    // "+ N 더보기" 클릭 → 그날 일정 다이얼로그 (기존 흐름 재사용)
+    grid.querySelectorAll('.cal-day-more').forEach(more => {
+      more.addEventListener('click', e => {
+        e.stopPropagation();
+        const date = more.dataset.date;
+        const list = events.filter(ev => ev.date === date);
+        if (list.length) showDateList(date, list);
+      });
+    });
+
+    updateUpcomingChip();
+  }
+
+  function updateUpcomingChip() {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const upcoming = filtered()
+      .filter(e => new Date(e.date) >= today)
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+    const total = upcoming.length;
+    const nearest = upcoming[0];
+    const summary = container.querySelector('#upcoming-chip-summary');
+    if (!summary) return;
+    if (!total) {
+      summary.textContent = '없음';
+      return;
+    }
+    const day = Math.floor((new Date(nearest.date) - today) / 86400e3);
+    const nearestLabel = nearest.ticker
+      ? `${nearest.tickerName || nearest.ticker} ${nearest.label}`
+      : nearest.label;
+    const short = nearestLabel.length > 18 ? nearestLabel.slice(0, 18) + '…' : nearestLabel;
+    summary.textContent = `${total}건 · ${short} D-${day}`;
+  }
+
+  function drawUpcomingGroups() {
+    const body = container.querySelector('#upcoming-dialog-body');
+    if (!body) return;
+    const watchSet = new Set(watch);
+    const today = new Date(); today.setHours(0,0,0,0);
+    const upcoming = filtered()
+      .filter(e => new Date(e.date) >= today)
+      .filter(e => {
+        if (upcomingFilter === 'macro') return e.category === 'macro';
+        if (upcomingFilter === 'company') return e.category !== 'macro';
+        if (upcomingFilter === 'watch') return e.ticker && watchSet.has(e.ticker);
+        return true;
+      })
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const buckets = [
+      { label: '이번 주',   days: [0, 7],   key: 'wk' },
+      { label: '2주 내',    days: [8, 14],  key: 'm1' },
+      { label: '1개월 내',  days: [15, 30], key: 'm2' },
+      { label: '2~3개월',   days: [31, 90], key: 'm3' },
+    ];
+    const day = e => Math.floor((new Date(e.date) - today) / 86400e3);
+
+    body.innerHTML = buckets.map(b => {
+      const items = upcoming.filter(e => {
+        const d = day(e);
+        return d >= b.days[0] && d <= b.days[1];
+      });
+      if (!items.length) return '';
+      const rows = items.slice(0, 8).map(e => {
+        const d = day(e);
+        const isWatch = e.ticker && watchSet.has(e.ticker);
+        const bg = e.category === 'macro' ? '#FAEEDA' : isWatch ? '#E1F5EE' : '#EEEDFE';
+        const border = e.category === 'macro' ? '#BA7517' : isWatch ? '#0F6E56' : '#534AB7';
+        const txt = e.category === 'macro' ? '#633806' : isWatch ? '#04342C' : '#26215C';
+        const labelLeft = e.ticker
+          ? `<strong>${e.tickerName || e.ticker}</strong> ${e.label}`
+          : `<strong>${e.label}</strong>`;
+        return `
+          <div style="padding:7px 10px; background:${bg}; border-left:3px solid ${border}; border-radius:6px; display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="font-size:13px; color:${txt};">${labelLeft}</span>
+            <span style="font-size:11px; color:${border}; font-weight:500; white-space:nowrap;">D-${d} · ${e.date.slice(5)}</span>
+          </div>
+        `;
+      }).join('');
+      const more = items.length > 8
+        ? `<div style="padding:6px 10px; font-size:11px; color:var(--text-muted); text-align:center;">+ ${items.length - 8} 더보기 (월간 그리드 참조)</div>`
+        : '';
+      return `
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:14px; margin-bottom:10px;">
+          <div style="text-align:center; padding-top:4px;">
+            <div style="font-size:11px; color:var(--text-muted); font-weight:500;">D-${b.days[0]}~${b.days[1]}</div>
+            <div style="font-size:13px; font-weight:500; margin-top:2px;">${b.label}</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:5px;">${rows}${more}</div>
+        </div>
+      `;
+    }).filter(Boolean).join('') || `<div style="font-size:13px; color:var(--text-muted); padding:12px; text-align:center;">다가오는 일정이 없습니다.</div>`;
   }
 
   function showDateList(date, list) {
@@ -237,6 +363,30 @@ export async function renderCalendar(container) {
 
   container.querySelector('[data-go-help]')?.addEventListener('click', () => {
     location.hash = '#/help';
+  });
+
+  // 다가오는 일정 모달 — 필터 버튼 인라인 스타일 칠하기(.upcoming-filter CSS 미정의).
+  function paintUpcomingFilters() {
+    container.querySelectorAll('.upcoming-filter').forEach(btn => {
+      const active = btn.dataset.filter === upcomingFilter;
+      btn.style.cssText = `padding:5px 12px; font-size:12px; border-radius:6px; cursor:pointer; border:1px solid ${active ? 'var(--primary)' : 'var(--border)'}; background:${active ? 'var(--primary)' : 'var(--surface)'}; color:${active ? '#fff' : 'var(--text)'};`;
+    });
+  }
+  paintUpcomingFilters();
+
+  container.querySelector('#open-upcoming')?.addEventListener('click', () => {
+    drawUpcomingGroups();   // 모달 열리기 전 본문 채움
+    container.querySelector('#upcoming-dialog')?.showModal();
+  });
+  container.querySelector('#close-upcoming')?.addEventListener('click', () => {
+    container.querySelector('#upcoming-dialog')?.close();
+  });
+  container.querySelectorAll('.upcoming-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      upcomingFilter = btn.dataset.filter;
+      paintUpcomingFilters();
+      drawUpcomingGroups();
+    });
   });
 
   drawGrid();

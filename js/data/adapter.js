@@ -314,7 +314,8 @@ function emptyFinancials() {
   ].map(k => [k, null]));
 }
 
-import { fetchEarnings, fetchDividends } from './adapters/calendar/finnhub.js';
+import { fetchEarnings, fetchEarningsAll, fetchDividends } from './adapters/calendar/finnhub.js';
+import { getMacroEvents, getMacroMeta } from './macro-events.js';
 import { getFinnhubProxyBase } from './config.js';
 import { getWatchlist } from './watchlist.js';
 
@@ -379,19 +380,20 @@ export async function getCalendar(ticker = null, { from, to } = {}) {
       fetchFailed = true;
     }
   } else {
-    const usWatchTickers = getWatchlist().filter(tk => getSymbol(tk)?.market === 'us');
-    if (!usWatchTickers.length) {
-      const res = emptyResult('no-us-watch');
-      cacheSetWithTTL(cacheKey, res);
-      return res;
-    }
     try {
-      const all = await Promise.all(usWatchTickers.flatMap(tk => [
-        fetchEarnings({ ticker: tk, from: f, to: t }),
-        fetchDividends({ ticker: tk, from: f, to: t }),
-      ]));
-      events = all.flat();
-    } catch {
+      // (1) 다가오는 모든 미국 실적 (티커 무관, 한 번 호출) + 매크로 정적 일정
+      const [earnAll, macros] = await Promise.all([
+        fetchEarningsAll({ from: f, to: t }),
+        Promise.resolve(getMacroEvents({ from: f, to: t })),
+      ]);
+      // (2) 관심 종목 배당 (티커별 호출, 배당은 단일 ticker endpoint 만 제공)
+      const usWatchTickers = getWatchlist().filter(tk => getSymbol(tk)?.market === 'us');
+      const divResults = usWatchTickers.length
+        ? await Promise.all(usWatchTickers.map(tk => fetchDividends({ ticker: tk, from: f, to: t })))
+        : [];
+      events = [...earnAll, ...divResults.flat(), ...macros];
+    } catch (e) {
+      console.warn('[getCalendar] fetch failed', e?.message);
       fetchFailed = true;
     }
   }

@@ -68,6 +68,21 @@ export async function fetchEarnings({ ticker, from, to }) {
     .map(r => toEvent(EARNINGS_META, { ticker: r.symbol || ticker, date: r.date }));
 }
 
+// 티커 무관 — 해당 기간 전체 미국 실적 일정을 한 번에 받는다.
+export async function fetchEarningsAll({ from, to }) {
+  const baseUrl = resolveBase();
+  if (!baseUrl) return [];
+  const url = new URL(baseUrl + '/calendar/earnings');
+  url.searchParams.set('from', from);
+  url.searchParams.set('to', to);
+  // symbol 파라미터 생략 — Finnhub 가 해당 기간 전체 실적 반환
+  const json = await safeFetch(url.toString());
+  const list = json?.earningsCalendar || [];
+  return list
+    .filter(r => r.date && r.symbol)
+    .map(r => toEvent(EARNINGS_META, { ticker: r.symbol, date: r.date }));
+}
+
 export async function fetchDividends({ ticker, from, to }) {
   if (!ticker) return [];
   const baseUrl = resolveBase();

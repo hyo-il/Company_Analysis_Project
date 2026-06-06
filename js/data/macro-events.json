@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-12-15",
+  "validUntil": "2027-03-31",
+  "note": "공식 출처 참조하여 분기마다 갱신. Federal Reserve(FOMC), BLS(CPI·고용), 한국은행(금통위·한국 CPI), ECB, BOJ. 옵션만기는 매월 셋째 금요일·분기 만기는 3·6·9·12월 셋째 금요일(쿼드러플 위칭).",
+  "sources": {
+    "fomc": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "us_cpi_nfp": "https://www.bls.gov/schedule/news_release/",
+    "kr_bok": "https://www.bok.or.kr/portal/main/main.do",
+    "kr_cpi": "https://kostat.go.kr/",
+    "ecb": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+    "boj": "https://www.boj.or.jp/en/mopo/mpmsche_minu/index.htm"
+  },
+  "events": [
+    {
+      "date": "2026-12-18",
+      "region": "us",
+      "type": "fomc",
+      "label": "FOMC 정책금리 결정",
+      "what": "미국 연방준비제도가 기준금리를 결정·발표하는 회의. 연 8회.",
+      "impact": "금리 인상 시 성장주·고밸류 종목에 하락 압력. 금리 인하 시 상승 압력.",
+      "source": "Federal Reserve"
+    },
+    {
+      "date": "2026-12-23",
+      "region": "us",
+      "type": "cpi",
+      "label": "미국 CPI 발표 (11월)",
+      "what": "소비자물가지수. 인플레이션 강도를 보여주는 핵심 지표.",
+      "impact": "예상치 상회 → 금리 인상 우려 → 시장 약세. 하회 → 강세.",
+      "source": "BLS"
+    }
+  ]
+}
