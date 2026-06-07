@@ -6,10 +6,21 @@ import { METRIC_CATEGORIES, SECTOR_PRIORITY } from '../data/metrics-meta.js';
 import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/format.js';
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
-import { computeFactorScores, computePeerScores } from '../utils/scoring.js';
+import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores } from '../utils/scoring.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
+
+// 투자 기간 모드 (장기/스윙) — 사용자 선호 LocalStorage 저장
+const INVEST_MODE_KEY = 'ca:invest-mode';
+
+function getInvestMode() {
+  try { return localStorage.getItem(INVEST_MODE_KEY) === 'swing' ? 'swing' : 'long'; }
+  catch { return 'long'; }
+}
+function setInvestMode(mode) {
+  try { localStorage.setItem(INVEST_MODE_KEY, mode); } catch {}
+}
 
 // 규칙 기반 해설용 임계치 (팩터 점수·지표)
 const FACTOR_STRONG = 60;        // 이 점수 이상이면 강점
@@ -134,9 +145,15 @@ export async function renderAnalysis(container, { ticker } = {}) {
         ${metaBadge(fin)}
       </div>
 
-      <div class="panel">
-        <div class="panel-title">퀀트 종합점수 (팩터 스코어) ${infoTip('동종업계 피어 그룹 안에서 이 회사가 가치·수익성·성장성·안정성에서 몇 등쯤인지 백분위로 환산한 참고용 점수입니다. 배당만 절대 기준입니다. 미래 수익을 보장하지 않습니다.')}</div>
-        ${renderScores(ticker, fin.data, validPeerFins)}
+      <div class="panel" id="scores-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <div class="panel-title" style="margin-bottom:0;">퀀트 종합점수 ${infoTip('동종업계 비교 또는 절대 환산 기반 참고용 점수. 미래 수익을 보장하지 않습니다.')}</div>
+          <div style="display:inline-flex; background:var(--bg-subtle); border-radius:6px; padding:3px;" role="tablist" aria-label="투자 기간 모드">
+            <button id="mode-long"  class="mode-tab ${getInvestMode()==='long' ?'active':''}" style="background:${getInvestMode()==='long' ?'var(--surface)':'transparent'}; border:none; padding:5px 12px; font-size:12px; color:${getInvestMode()==='long' ?'var(--primary)':'var(--text-muted)'}; ${getInvestMode()==='long' ?'font-weight:500;':''} border-radius:5px; cursor:pointer;">장기</button>
+            <button id="mode-swing" class="mode-tab ${getInvestMode()==='swing'?'active':''}" style="background:${getInvestMode()==='swing'?'var(--surface)':'transparent'}; border:none; padding:5px 12px; font-size:12px; color:${getInvestMode()==='swing'?'var(--primary)':'var(--text-muted)'}; ${getInvestMode()==='swing'?'font-weight:500;':''} border-radius:5px; cursor:pointer;">스윙 1~3개월</button>
+          </div>
+        </div>
+        ${renderScores(ticker, fin.data, validPeerFins, hist?.data, cal?.data, sym?.market === 'kr')}
       </div>
 
       <div class="panel">
@@ -187,6 +204,9 @@ export async function renderAnalysis(container, { ticker } = {}) {
         { type: on ? 'success' : 'info' });
     });
 
+    // 투자 기간 모드 토글 (장기/스윙) — 점수 카드만 부분 리렌더 (스크롤 보존)
+    bindModeToggle(container, ticker);
+
     // 추이 미니차트 (데이터 있을 때만)
     if (hasTrends) renderTrends(container.querySelector('#trends-grid'), hist.data, currency);
     // 역사적 밸류에이션 밴드 (데이터 있을 때만)
@@ -212,6 +232,87 @@ export async function renderAnalysis(container, { ticker } = {}) {
     console.error(e);
     container.innerHTML = errorState('데이터 로드 실패: ' + e.message);
   }
+}
+
+/**
+ * 점수 카드 패널만 부분 리렌더. 토글 클릭 시 호출.
+ * 데이터는 어댑터 캐시 활용으로 빠르게 재조회. 페이지 전체를 다시 그리지 않으므로 스크롤 위치 보존.
+ */
+async function rerenderScoresPanel(container, ticker) {
+  const panel = container.querySelector('#scores-panel');
+  if (!panel) return;
+
+  // (1) 로딩 표시 — 헤더(토글 포함)만 유지, 본문은 스피너로 교체
+  const header = panel.querySelector(':scope > div:first-child');
+  panel.innerHTML = '';
+  if (header) panel.appendChild(header);
+  const loading = document.createElement('div');
+  loading.id = 'scores-loading';
+  loading.style.cssText = 'padding:24px; text-align:center; color:var(--text-muted); font-size:13px;';
+  loading.innerHTML = `
+    <div style="display:inline-block; width:24px; height:24px; border:2px solid var(--border); border-top-color:var(--primary); border-radius:50%; animation:ca-spin 0.7s linear infinite;"></div>
+    <div style="margin-top:8px;">점수 계산 중...</div>
+  `;
+  panel.appendChild(loading);
+  bindModeToggle(container, ticker);   // 헤더 유지되지만 안전 위해 재바인딩 + 활성 표시 갱신
+
+  // (2) 데이터 재조회 (캐시 적중 시 즉시 반환)
+  const sym = getSymbol(ticker);
+  const marketKr = sym?.market === 'kr';
+  const [finR, histR, calR] = await Promise.all([
+    getFinancials(ticker).catch(() => null),
+    getHistoricalMetrics(ticker).catch(() => ({ data: null })),
+    getCalendar(ticker).catch(() => ({ data: [] })),
+  ]);
+
+  // peer 는 장기 모드에서만 필요
+  let validPeerFins = [];
+  if (getInvestMode() === 'long') {
+    const peers = getPeers(ticker).filter(p => p.ticker !== ticker).slice(0, MAX_PEERS);
+    const peerFinsRaw = await Promise.all(peers.map(p =>
+      getFinancials(p.ticker).then(r => r?.data || null).catch(() => null)
+    ));
+    validPeerFins = peerFinsRaw.filter(f => f);
+  }
+
+  // (3) 본문 렌더 — 헤더는 유지하고 그 아래만 교체
+  panel.querySelector('#scores-loading')?.remove();
+  panel.insertAdjacentHTML('beforeend',
+    renderScores(ticker, finR?.data, validPeerFins, histR?.data, calR?.data, marketKr));
+
+  bindModeToggle(container, ticker);   // 본문 교체 후 토글 재바인딩
+}
+
+/**
+ * 모드 토글 버튼에 클릭 핸들러 바인딩 + 활성 표시 갱신.
+ * 중복 바인딩 방지를 위해 cloneNode 로 기존 리스너 제거 후 재등록.
+ */
+function bindModeToggle(container, ticker) {
+  ['mode-long', 'mode-swing'].forEach(id => {
+    const btn = container.querySelector(`#${id}`);
+    if (!btn) return;
+    const cloned = btn.cloneNode(true);
+    btn.parentNode.replaceChild(cloned, btn);
+    cloned.addEventListener('click', () => {
+      const target = id === 'mode-long' ? 'long' : 'swing';
+      if (getInvestMode() === target) return;
+      setInvestMode(target);
+      rerenderScoresPanel(container, ticker);
+    });
+  });
+  paintModeTabs(container);
+}
+
+/** 현재 모드에 맞춰 토글 버튼 활성 스타일 갱신(부분 리렌더 시 헤더가 재생성되지 않으므로 필요). */
+function paintModeTabs(container) {
+  const mode = getInvestMode();
+  [['mode-long', 'long'], ['mode-swing', 'swing']].forEach(([id, m]) => {
+    const btn = container.querySelector(`#${id}`);
+    if (!btn) return;
+    const active = mode === m;
+    btn.style.cssText = `background:${active ? 'var(--surface)' : 'transparent'}; border:none; padding:5px 12px; font-size:12px; color:${active ? 'var(--primary)' : 'var(--text-muted)'}; ${active ? 'font-weight:500;' : ''} border-radius:5px; cursor:pointer;`;
+    btn.classList.toggle('active', active);
+  });
 }
 
 function renderTrends(grid, h, currency) {
@@ -514,7 +615,11 @@ function scoreCardHtml({ key, score, note, rank, totalGroup }) {
   </div>`;
 }
 
-function renderScores(ticker, fin, peerFins) {
+function renderScores(ticker, fin, peerFins, ts, calendar, marketKr) {
+  const mode = getInvestMode();
+  if (mode === 'swing') {
+    return renderSwingScores({ ticker, fin, ts, calendar, marketKr });
+  }
   const usable = (peerFins || []).filter(f => f);
   if (usable.length < MIN_PEERS) {
     return `<div style="padding:12px;color:var(--text-muted);font-size:13px;">
@@ -564,6 +669,72 @@ function renderScores(ticker, fin, peerFins) {
     <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">
       ⚠ 과거·현재 지표 기반 참고용 점수이며 미래 수익을 보장하지 않습니다.
     </p>`;
+}
+
+function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
+  const scores = computeSwingScores({ fin, ts, calendar, marketKr });
+
+  const cards = [
+    {
+      key: '모멘텀',
+      score: scores['모멘텀'],
+      note: scores._meta.momentumPending ? '시세 candle 연동 후 활성화' : null,
+    },
+    {
+      key: '실적 모멘텀',
+      score: scores['실적 모멘텀'],
+      note: scores['실적 모멘텀'] == null ? '데이터 부족' : null,
+    },
+    {
+      key: '이벤트 임박',
+      score: scores['이벤트 임박'],
+      note: null,
+    },
+    {
+      key: '변동성/강도',
+      score: scores['변동성/강도'],
+      note: scores._meta.volatilityUnavailable ? '시세 연동 후 활성화 (KR)' : null,
+    },
+    { key: '종합', score: scores['종합'], note: null, isTotal: true },
+  ];
+
+  const krNotice = marketKr
+    ? `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+         한국 종목은 시세·일정 미연동으로 모멘텀·변동성·이벤트 임박이 제한적입니다. 실적 모멘텀만 본격 적용.
+       </div>`
+    : `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+         스윙(1~3개월) 관점의 4 카테고리 점수입니다.
+       </div>`;
+
+  return `
+    ${krNotice}
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+      ${cards.map(c => swingScoreCardHtml(c)).join('')}
+    </div>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">
+      ⚠ 가용 카테고리만 종합 점수에 반영됩니다(${scores._meta.categoryCount}/4 카테고리). 미래 수익을 보장하지 않습니다.
+    </p>
+  `;
+}
+
+function swingScoreCardHtml({ key, score, note, isTotal }) {
+  const isNull = score == null;
+  const display = isNull ? '—' : score;
+  const bars = isNull ? null : Math.max(0, Math.min(4, Math.round(score / 25)));
+  const accent = isTotal ? 'var(--primary)' : 'var(--text)';
+  const bg = isTotal ? 'var(--primary-soft)' : 'var(--bg-subtle)';
+  return `
+    <div style="background:${bg}; border-radius:6px; padding:12px; text-align:center;">
+      <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">${key}</div>
+      <div style="font-size:22px; font-weight:500; color:${accent};">${display}</div>
+      ${isNull ? '' : `
+        <div style="display:flex; gap:3px; justify-content:center; margin-top:6px;">
+          ${[0,1,2,3,4].map(i => `<span style="display:inline-block; width:14px; height:6px; border-radius:2px; background:${i < bars ? 'var(--primary)' : 'var(--border)'};"></span>`).join('')}
+        </div>
+      `}
+      ${note ? `<div style="font-size:10px; color:var(--text-muted); margin-top:6px; line-height:1.3;">${note}</div>` : ''}
+    </div>
+  `;
 }
 
 function renderAIFactors(p, f, q) {

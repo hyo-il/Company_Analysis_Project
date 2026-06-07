@@ -801,3 +801,8 @@ h3 { font-size: 15px; }
 @media (max-width: 768px) {
   .history-page { grid-template-columns: 1fr; }
 }
+
+/* 점수 카드 부분 리렌더 로딩 스피너 */
+@keyframes ca-spin {
+  to { transform: rotate(360deg); }
+}
