@@ -7,6 +7,7 @@ import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/f
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
 import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores } from '../utils/scoring.js';
+import { getMomentumData, getCandlesMeta } from '../data/us-candles.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
@@ -672,13 +673,18 @@ function renderScores(ticker, fin, peerFins, ts, calendar, marketKr) {
 }
 
 function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
-  const scores = computeSwingScores({ fin, ts, calendar, marketKr });
+  const momentumData = marketKr ? null : getMomentumData(ticker);
+  const scores = computeSwingScores({ fin, ts, calendar, marketKr, momentum: momentumData });
 
   const cards = [
     {
       key: '모멘텀',
       score: scores['모멘텀'],
-      note: scores._meta.momentumPending ? '시세 candle 연동 후 활성화' : null,
+      note: scores._meta.momentumPending
+        ? (scores._meta.momentumUnavailableReason === 'kr-no-data'
+            ? '시세 연동 후 활성화 (KR)'
+            : '시세 데이터 부족 (수집 누락)')
+        : null,
     },
     {
       key: '실적 모멘텀',
@@ -711,6 +717,14 @@ function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
       ${cards.map(c => swingScoreCardHtml(c)).join('')}
     </div>
+    ${(() => {
+      const meta = getCandlesMeta();
+      return meta.generatedAt
+        ? `<p style="font-size:11px; color:var(--text-muted); margin-top:4px;">
+             시계열 출처: yfinance (수집: ${meta.generatedAt.slice(0,10)}, 종목 ${meta.tickerCount})
+           </p>`
+        : '';
+    })()}
     <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">
       ⚠ 가용 카테고리만 종합 점수에 반영됩니다(${scores._meta.categoryCount}/4 카테고리). 미래 수익을 보장하지 않습니다.
     </p>

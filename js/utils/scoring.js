@@ -129,9 +129,37 @@ function pctScore(v, low, high) {
  * 반환:
  *   { '모멘텀': null|number, '실적 모멘텀': ..., '이벤트 임박': ..., '변동성/강도': ..., '종합': ..., _meta }
  */
-export function computeSwingScores({ fin, ts, calendar, marketKr }) {
-  // 모멘텀 — candle 미연동: KR/US 모두 null + 'pending' 표기
-  const momentum = null;
+export function computeSwingScores({ fin, ts, calendar, marketKr, momentum }) {
+  // 모멘텀 점수 산출 (1·3개월 가격 변화 + 이동평균 위치). momentum = us-candles 데이터 객체.
+  let momentumScore = null;
+  if (momentum && !marketKr) {
+    const parts = [];
+
+    // 1개월 변화: -15% = 0, 0% = 33, +30% = 100  → pctScore(v, -15, 30)
+    const s1m = pctScore(momentum.change1m, -15, 30);
+    if (s1m != null) parts.push(s1m);
+
+    // 3개월 변화: -30% = 0, 0% = 33, +60% = 100  → pctScore(v, -30, 60)
+    const s3m = pctScore(momentum.change3m, -30, 60);
+    if (s3m != null) parts.push(s3m);
+
+    // 이동평균 위치 4 케이스
+    const { currentPrice, ma20, ma60 } = momentum;
+    if (currentPrice != null && ma20 != null && ma60 != null) {
+      const above20 = currentPrice > ma20;
+      const ma20Above60 = ma20 > ma60;
+      let maScore;
+      if (above20 && ma20Above60)        maScore = 85;   // 강세 정렬
+      else if (above20 && !ma20Above60)  maScore = 60;   // 약강세
+      else if (!above20 && ma20Above60)  maScore = 40;   // 약세 가능성
+      else                                maScore = 25;   // 약세 정렬
+      parts.push(maScore);
+    }
+
+    if (parts.length) {
+      momentumScore = Math.round(parts.reduce((a, b) => a + b, 0) / parts.length);
+    }
+  }
 
   // 실적 모멘텀 — 최근 분기 YoY + 분기별 추세
   let earnings = null;
@@ -209,18 +237,19 @@ export function computeSwingScores({ fin, ts, calendar, marketKr }) {
   }
 
   // 종합 — 가용 카테고리 평균
-  const all = [momentum, earnings, events, volatility];
+  const all = [momentumScore, earnings, events, volatility];
   const valid = all.filter(v => v != null);
   const total = valid.length ? Math.round(valid.reduce((a, b) => a + b, 0) / valid.length) : null;
 
   return {
-    '모멘텀': momentum,
+    '모멘텀': momentumScore,
     '실적 모멘텀': earnings,
     '이벤트 임박': events,
     '변동성/강도': volatility,
     '종합': total,
     _meta: {
-      momentumPending: true,            // candle 연동 후 활성화 안내용
+      momentumPending: momentumScore == null,   // 모멘텀 산출 불가/대기(KR 또는 데이터 없음)
+      momentumUnavailableReason: marketKr ? 'kr-no-data' : (momentum ? null : 'us-no-data'),
       volatilityUnavailable: !!marketKr,
       categoryCount: valid.length,
     },
