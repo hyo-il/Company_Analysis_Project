@@ -20,9 +20,9 @@ export async function renderEtf(container, { ticker }) {
     const etf = mockEtfDetail(ticker);
     const holdings = holdingsRes.data;
     const currency = profile.currency;
-    const lowAum = etf.aum < 1e9;
-    const highTracking = etf.trackingError > 0.8;
-    const delistRisk = lowAum || highTracking;
+    const lowAum = etf.aum < 1e8;             // < $100M (실제 상장폐지 위험 권역)
+    const highTracking = etf.trackingError > 1.5;   // > 1.5% (큰 ETF 도 일부 정상 범위 포함)
+    const delistRisk = lowAum && highTracking;       // 둘 다 충족 시만 상장폐지 위험
 
     container.innerHTML = `
       <div class="panel">
@@ -67,7 +67,7 @@ export async function renderEtf(container, { ticker }) {
           </tbody>
         </table>
         ${delistRisk ? `<div style="margin-top:10px; padding:10px 12px; background:#fff5f5; border:1px solid #fecaca; border-radius:6px; font-size:13px;">
-          <strong style="color:var(--warn);">⚠ 상장폐지 위험 플래그</strong> — ${lowAum ? 'AUM이 낮습니다. ' : ''}${highTracking ? '추적오차가 큽니다. ' : ''}
+          <strong style="color:var(--warn);">⚠ 상장폐지 위험 플래그</strong> — AUM 이 작고 추적오차도 큽니다.
           <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">거래소별 상장폐지 기준은 변동되므로 공식 출처를 추가 확인하세요.</div>
         </div>` : ''}
       </div>
