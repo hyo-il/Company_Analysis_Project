@@ -6,7 +6,7 @@ import { METRIC_CATEGORIES, SECTOR_PRIORITY } from '../data/metrics-meta.js';
 import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/format.js';
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
-import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores } from '../utils/scoring.js';
+import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores, computeWarnings } from '../utils/scoring.js';
 import { getMomentumData, getCandlesMeta } from '../data/us-candles.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
@@ -157,6 +157,14 @@ export async function renderAnalysis(container, { ticker } = {}) {
         ${renderScores(ticker, fin.data, validPeerFins, hist?.data, cal?.data, sym?.market === 'kr')}
       </div>
 
+      <div class="panel" id="warnings-panel" style="display:${getInvestMode() === 'long' ? '' : 'none'};">
+        <div class="panel-title">⚠ 함정 신호 점검 ${infoTip('애널리스트가 경계하는 구조적 위험 5가지 — 단순 점수에서 안 보이는 함정을 자동 감지합니다.')}</div>
+        ${renderWarnings(fin.data)}
+        <p style="font-size:11px; color:var(--text-muted); margin-top:10px;">
+          ⚠ 룰 기반 자동 감지. 산업·시점에 따라 의미가 다를 수 있어 참고용입니다. 투자 권유 아님.
+        </p>
+      </div>
+
       <div class="panel">
         <div class="panel-title">AI 주가요인 (규칙 기반) ${infoTip('최근 주가가 왜 그렇게 움직였는지를 실제 실적·지표에 근거해 쉬운 말로 정리한 설명입니다(예측이 아닙니다). 출처·시점·면책을 함께 표시합니다.')}</div>
         ${renderAIFactors(profile.data, fin.data, quote.data)}
@@ -282,6 +290,12 @@ async function rerenderScoresPanel(container, ticker) {
     renderScores(ticker, finR?.data, validPeerFins, histR?.data, calR?.data, marketKr));
 
   bindModeToggle(container, ticker);   // 본문 교체 후 토글 재바인딩
+
+  // 함정 경고 패널은 장기 모드 전용 — 모드 전환 시 보이/숨김
+  const warningsPanel = container.querySelector('#warnings-panel');
+  if (warningsPanel) {
+    warningsPanel.style.display = getInvestMode() === 'long' ? '' : 'none';
+  }
 }
 
 /**
@@ -614,6 +628,32 @@ function scoreCardHtml({ key, score, note, rank, totalGroup }) {
     ${rankBadge}
     ${note ? `<div style="font-size:10px; color:var(--text-muted); margin-top:4px;">${note}</div>` : ''}
   </div>`;
+}
+
+function renderWarnings(fin) {
+  const warnings = computeWarnings(fin);
+  if (!warnings.length) {
+    return `
+      <div style="padding:14px; background:var(--bg-subtle); border-radius:6px; font-size:13px; color:var(--text-muted); text-align:center;">
+        ✓ 분석가가 경계하는 5가지 함정 신호는 발견되지 않았습니다.
+        <div style="font-size:11px; margin-top:4px;">차입경영·이자부담·영업외 의존·유동성·회계품질 — 모두 정상 범위.</div>
+      </div>
+    `;
+  }
+  return warnings.map(w => {
+    const bg = w.level === 'high' ? '#fff5f5' : '#fffaf0';
+    const border = w.level === 'high' ? '#fecaca' : '#fed7aa';
+    const titleColor = w.level === 'high' ? '#c53030' : '#c05621';
+    return `
+      <div style="padding:12px 14px; background:${bg}; border:1px solid ${border}; border-radius:6px; margin-bottom:8px;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
+          <span style="font-size:14px;">${w.icon}</span>
+          <strong style="font-size:13px; color:${titleColor};">${w.label}</strong>
+        </div>
+        <div style="font-size:12px; color:var(--text); line-height:1.5;">${w.msg}</div>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderScores(ticker, fin, peerFins, ts, calendar, marketKr) {

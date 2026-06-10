@@ -255,3 +255,84 @@ export function computeSwingScores({ fin, ts, calendar, marketKr, momentum }) {
     },
   };
 }
+
+/**
+ * 애널리스트 함정 경고 룰 — 단순 점수로 안 보이는 구조적 위험.
+ * 각 룰은 (input) → boolean | object 반환.
+ * 입력 데이터가 부족하면 false (미발동).
+ */
+export const WARNING_RULES = [
+  {
+    id: 'high-leverage-low-coverage',
+    level: 'high',
+    label: '차입경영 위험',
+    icon: '⚠',
+    check: (f) => {
+      if (f.debtRatio == null || f.interestCoverage == null) return false;
+      return f.debtRatio > 200 && f.interestCoverage < 3;
+    },
+    msg: (f) => `부채비율 ${f.debtRatio?.toFixed(0)}% + 이자보상 ${f.interestCoverage?.toFixed(1)}배 — ROE 가 부채 의존적이며 금리 인상 시 취약.`,
+  },
+  {
+    id: 'interest-burden',
+    level: 'high',
+    label: '이자 부담 임계',
+    icon: '🔴',
+    check: (f) => f.interestCoverage != null && f.interestCoverage < 1.5,
+    msg: (f) => `이자보상 ${f.interestCoverage?.toFixed(1)}배 — 본업 이익으로 이자 비용을 1.5배 이하로만 커버. 실적 둔화 시 즉시 위험.`,
+  },
+  {
+    id: 'non-operating-dependence',
+    level: 'mid',
+    label: '영업외 이익 의존',
+    icon: '⚠',
+    check: (f) => {
+      if (f.netIncome == null || f.operatingIncome == null || f.operatingIncome <= 0) return false;
+      return f.netIncome > f.operatingIncome * 1.3;
+    },
+    msg: (f) => `순이익(${(f.netIncome/1e8).toFixed(0)}억) > 영업이익(${(f.operatingIncome/1e8).toFixed(0)}억) × 1.3 — 본업 외 이익(자산 매각·일회성 등) 비중이 큼.`,
+  },
+  {
+    id: 'liquidity-risk',
+    level: 'mid',
+    label: '단기 유동성 위험',
+    icon: '⚠',
+    check: (f) => {
+      if (f.currentRatio == null || f.debtRatio == null) return false;
+      return f.currentRatio < 100 && f.debtRatio > 200;
+    },
+    msg: (f) => `유동비율 ${f.currentRatio?.toFixed(0)}% (1년 내 갚을 빚 > 1년 내 쓸 돈) + 부채비율 ${f.debtRatio?.toFixed(0)}% — 단기 유동성 압박.`,
+  },
+  {
+    id: 'cash-quality-doubt',
+    level: 'mid',
+    label: '회계품질 의심',
+    icon: '⚠',
+    check: (f) => {
+      if (f.netIncome == null || f.ocf == null || f.netIncome <= 0) return false;
+      return f.netIncome > f.ocf * 1.5;
+    },
+    msg: (f) => `순이익 > 영업현금흐름 × 1.5 — 장부 이익 대비 실제 현금 회수가 약함. 매출채권·재고 누적 점검 필요.`,
+  },
+];
+
+/**
+ * 함정 경고 평가. 입력 부족 룰은 자동 스킵.
+ * @returns Array<{ id, level, label, icon, msg }>
+ */
+export function computeWarnings(fin) {
+  if (!fin) return [];
+  const out = [];
+  for (const rule of WARNING_RULES) {
+    try {
+      if (rule.check(fin)) {
+        out.push({
+          id: rule.id, level: rule.level,
+          label: rule.label, icon: rule.icon,
+          msg: rule.msg(fin),
+        });
+      }
+    } catch { /* 입력 미달 — 스킵 */ }
+  }
+  return out;
+}
