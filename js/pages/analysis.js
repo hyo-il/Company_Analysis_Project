@@ -6,7 +6,7 @@ import { METRIC_CATEGORIES, SECTOR_PRIORITY } from '../data/metrics-meta.js';
 import { fmtNum, fmtPct, fmtMoney, fmtChange, fmtInt, fmtDate } from '../utils/format.js';
 import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } from '../components/common.js';
 import { showToast } from '../components/toast.js';
-import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores, computeWarnings } from '../utils/scoring.js';
+import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores, computeWarnings, computeDupont } from '../utils/scoring.js';
 import { getMomentumData, getCandlesMeta } from '../data/us-candles.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
@@ -165,6 +165,14 @@ export async function renderAnalysis(container, { ticker } = {}) {
         </p>
       </div>
 
+      <div class="panel" id="dupont-panel" style="display:${getInvestMode() === 'long' ? '' : 'none'};">
+        <div class="panel-title">🧬 DuPont 분해 ${infoTip('ROE 를 순이익률 × 자산회전율 × 재무레버리지 세 요소로 분해해 ROE 의 출처를 보여줍니다. 같은 ROE 라도 어디서 나오는지에 따라 회사 특성과 위험도가 다릅니다.')}</div>
+        ${renderDupont(fin.data)}
+        <p style="font-size:11px; color:var(--text-muted); margin-top:10px;">
+          ⚠ 절대 임계값 기반 분류. 산업·시점에 따라 의미가 다를 수 있어 참고용입니다.
+        </p>
+      </div>
+
       <div class="panel">
         <div class="panel-title">AI 주가요인 (규칙 기반) ${infoTip('최근 주가가 왜 그렇게 움직였는지를 실제 실적·지표에 근거해 쉬운 말로 정리한 설명입니다(예측이 아닙니다). 출처·시점·면책을 함께 표시합니다.')}</div>
         ${renderAIFactors(profile.data, fin.data, quote.data)}
@@ -295,6 +303,10 @@ async function rerenderScoresPanel(container, ticker) {
   const warningsPanel = container.querySelector('#warnings-panel');
   if (warningsPanel) {
     warningsPanel.style.display = getInvestMode() === 'long' ? '' : 'none';
+  }
+  const dupontPanel = container.querySelector('#dupont-panel');
+  if (dupontPanel) {
+    dupontPanel.style.display = getInvestMode() === 'long' ? '' : 'none';
   }
 }
 
@@ -654,6 +666,75 @@ function renderWarnings(fin) {
       </div>
     `;
   }).join('');
+}
+
+function renderDupont(fin) {
+  const dp = computeDupont(fin);
+  if (!dp) {
+    return `
+      <div style="padding:14px; background:var(--bg-subtle); border-radius:6px; font-size:13px; color:var(--text-muted); text-align:center;">
+        DuPont 분해는 매출·총자산·자본·순이익 절대값이 필요합니다.
+        <div style="font-size:11px; margin-top:4px;">현재 종목은 절대값 일부가 미제공이라 분해를 표시하지 않습니다.</div>
+      </div>
+    `;
+  }
+
+  const typeColor =
+    dp.type === 'margin'    ? '#0F6E56' :     // 진한 청록 (마진형)
+    dp.type === 'turnover'  ? '#185FA5' :     // 진한 파랑 (회전형)
+    dp.type === 'leverage'  ? '#A32D2D' :     // 진한 빨강 (레버리지형)
+                              '#5F5E5A';      // 회색 (균형형)
+  const typeBg =
+    dp.type === 'margin'    ? '#E1F5EE' :
+    dp.type === 'turnover'  ? '#E6F1FB' :
+    dp.type === 'leverage'  ? '#FCEBEB' :
+                              'var(--bg-subtle)';
+
+  // 세 요소의 상대 막대 (시각화) — 각 요소의 절대값을 적당히 정규화
+  // netMargin 은 비율로 변환 (5% = 5점)
+  const m = dp.netMargin * 100;          // %
+  const t = dp.assetTurnover;            // 배수
+  const l = dp.leverage;                 // 배수
+  const maxScale = Math.max(m * 4, t * 30, l * 6, 30);  // 시각 비교용 스케일
+
+  return `
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+      <span style="background:${typeBg}; color:${typeColor}; padding:6px 14px; border-radius:6px; font-weight:500; font-size:13px;">
+        ${dp.typeLabel}
+      </span>
+      <span style="font-size:12px; color:var(--text-muted);">${dp.typeDesc}</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:10px;">
+      <div style="background:var(--bg-subtle); border-radius:6px; padding:12px; text-align:center;">
+        <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">① 순이익률</div>
+        <div style="font-size:18px; font-weight:500;">${m.toFixed(2)}%</div>
+        <div style="height:4px; background:var(--border); border-radius:2px; margin:8px 4px 0; overflow:hidden;">
+          <div style="height:100%; width:${Math.min(100, m * 4)}%; background:var(--primary);"></div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">매출 100원당 ${m.toFixed(1)}원 남김</div>
+      </div>
+      <div style="background:var(--bg-subtle); border-radius:6px; padding:12px; text-align:center;">
+        <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">② 자산회전율</div>
+        <div style="font-size:18px; font-weight:500;">${t.toFixed(2)}회</div>
+        <div style="height:4px; background:var(--border); border-radius:2px; margin:8px 4px 0; overflow:hidden;">
+          <div style="height:100%; width:${Math.min(100, t * 30)}%; background:var(--primary);"></div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">자산 1원으로 매출 ${t.toFixed(2)}원 발생</div>
+      </div>
+      <div style="background:var(--bg-subtle); border-radius:6px; padding:12px; text-align:center;">
+        <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">③ 재무레버리지</div>
+        <div style="font-size:18px; font-weight:500;">${l.toFixed(2)}배</div>
+        <div style="height:4px; background:var(--border); border-radius:2px; margin:8px 4px 0; overflow:hidden;">
+          <div style="height:100%; width:${Math.min(100, l * 10)}%; background:var(--primary);"></div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:4px;">자본 1원으로 자산 ${l.toFixed(2)}원 운용</div>
+      </div>
+    </div>
+    <div style="padding:10px 12px; background:var(--bg-subtle); border-radius:6px; font-size:12px; color:var(--text); text-align:center;">
+      ROE 재산출 검증: <strong>${m.toFixed(2)}% × ${t.toFixed(2)} × ${l.toFixed(2)} ≈ ${dp.roeCheck}%</strong>
+      <span style="font-size:11px; color:var(--text-muted); margin-left:6px;">(실제 ROE 와 비교)</span>
+    </div>
+  `;
 }
 
 function renderScores(ticker, fin, peerFins, ts, calendar, marketKr) {

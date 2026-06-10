@@ -336,3 +336,59 @@ export function computeWarnings(fin) {
   }
   return out;
 }
+
+export const DUPONT_TYPES = {
+  margin: {
+    label: '마진형',
+    desc: '높은 수익성으로 ROE 달성 — 가격 결정력·브랜드·기술 우위 (예: 소프트웨어, 럭셔리)',
+  },
+  turnover: {
+    label: '회전형',
+    desc: '자산을 효율적으로 굴려 ROE 달성 — 박리다매·재고 회전 (예: 유통, 도소매)',
+  },
+  leverage: {
+    label: '레버리지형',
+    desc: '부채 활용으로 ROE 증폭 — 자기자본 대비 부채 의존도 큼 (예: 금융업, 유틸리티)',
+  },
+  balanced: {
+    label: '균형형',
+    desc: '세 요소가 평이 — 특정 우위 없이 무난한 구조',
+  },
+};
+
+/**
+ * DuPont 3요소 분해 + 유형 분류.
+ * ROE = netMargin × assetTurnover × leverage
+ *   netMargin = netIncome / revenue (배수, 0~1)
+ *   assetTurnover = revenue / totalAssets (배수)
+ *   leverage = totalAssets / totalEquity (배수)
+ * @returns { netMargin, assetTurnover, leverage, roeCheck, type, typeLabel, typeDesc } | null
+ */
+export function computeDupont(fin) {
+  if (!fin) return null;
+  const { netIncome, revenue, totalAssets, totalEquity } = fin;
+  // 모두 절대값 필요. 하나라도 없으면 분해 불가.
+  if (revenue == null || totalAssets == null || totalEquity == null || netIncome == null) return null;
+  if (revenue <= 0 || totalAssets <= 0 || totalEquity <= 0) return null;
+
+  const netMargin = netIncome / revenue;           // 0.0556 = 5.56%
+  const assetTurnover = revenue / totalAssets;      // 배수
+  const leverage = totalAssets / totalEquity;       // 배수
+  const roeCheck = netMargin * assetTurnover * leverage * 100;  // % 환산
+
+  // 유형 분류 — 절대 임계값 기반
+  let type = 'balanced';
+  if (netMargin > 0.15 && assetTurnover < 1.0 && leverage < 3) type = 'margin';
+  else if (assetTurnover > 1.5 && netMargin < 0.10) type = 'turnover';
+  else if (leverage > 5) type = 'leverage';
+
+  return {
+    netMargin,
+    assetTurnover,
+    leverage,
+    roeCheck: Math.round(roeCheck * 100) / 100,
+    type,
+    typeLabel: DUPONT_TYPES[type].label,
+    typeDesc: DUPONT_TYPES[type].desc,
+  };
+}
