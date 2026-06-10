@@ -85,6 +85,18 @@ ACCOUNT_MAP: dict[str, str] = {
     "영업활동으로인한현금흐름":           "ocf",
     "영업활동으로인한순현금흐름":         "ocf",
     "영업활동으로 인한 순현금흐름":        "ocf",
+    # BS - 유동/비유동 (유동비율 산출)
+    "유동자산":                          "currentAssets",
+    "유동부채":                          "currentLiabilities",
+    # PL - 이자비용 (이자보상비율 산출)
+    "이자비용":                          "interestExpense",
+    "이자비용(영업외)":                  "interestExpense",
+    "금융비용":                          "interestExpense",     # 금융업·일부 IFRS 표기
+    # PL - 감가상각비 (EBITDA 산출)
+    "감가상각비":                        "depreciation",
+    "감가상각비및무형자산상각비":         "depreciation",
+    "감가상각비 및 무형자산상각비":       "depreciation",
+    "유형자산상각비":                     "depreciation",
 }
 
 
@@ -215,8 +227,9 @@ def build_financials_card(latestY: dict | None, prevY: dict | None) -> dict:
     fin: dict[str, float | None] = {
         "revenue": None, "operatingIncome": None, "netIncome": None, "ocf": None,
         "totalAssets": None, "totalLiabilities": None, "totalEquity": None,
+        "currentAssets": None, "currentLiabilities": None,
         "roe": None, "roa": None, "opMargin": None, "netMargin": None,
-        "debtRatio": None,
+        "debtRatio": None, "currentRatio": None, "interestCoverage": None, "ebitdaMargin": None,
         "revenueGrowthYoY": None, "opGrowth": None, "epsGrowth": None,
     }
 
@@ -229,6 +242,8 @@ def build_financials_card(latestY: dict | None, prevY: dict | None) -> dict:
     fin["totalAssets"] = ref.get("totalAssets")
     fin["totalLiabilities"] = ref.get("totalLiabilities")
     fin["totalEquity"] = ref.get("totalEquity")
+    fin["currentAssets"] = ref.get("currentAssets")
+    fin["currentLiabilities"] = ref.get("currentLiabilities")
 
     # 파생 지표
     if ref.get("revenue") and ref.get("operatingIncome") is not None:
@@ -241,6 +256,21 @@ def build_financials_card(latestY: dict | None, prevY: dict | None) -> dict:
         fin["roa"] = ref["netIncome"] / ref["totalAssets"] * 100
     if ref.get("totalEquity") and ref.get("totalLiabilities") is not None:
         fin["debtRatio"] = ref["totalLiabilities"] / ref["totalEquity"] * 100
+
+    # 유동비율 = 유동자산 / 유동부채 × 100 (백분율)
+    if ref.get("currentLiabilities") and ref.get("currentAssets") is not None:
+        fin["currentRatio"] = ref["currentAssets"] / ref["currentLiabilities"] * 100
+
+    # 이자보상비율 = 영업이익 / 이자비용 (배수)
+    if ref.get("interestExpense") and ref.get("operatingIncome") is not None:
+        # 이자비용이 양수일 때만 의미. DART 에서 이자비용은 양수로 들어옴.
+        if ref["interestExpense"] > 0:
+            fin["interestCoverage"] = ref["operatingIncome"] / ref["interestExpense"]
+
+    # EBITDA 마진 = (영업이익 + 감가상각비) / 매출 × 100
+    if ref.get("revenue") and ref.get("operatingIncome") is not None and ref.get("depreciation") is not None:
+        ebitda = ref["operatingIncome"] + ref["depreciation"]
+        fin["ebitdaMargin"] = ebitda / ref["revenue"] * 100
 
     # 연간 YoY 성장
     if latestY and prevY:
