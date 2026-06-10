@@ -139,6 +139,24 @@ def fetch_fnltt(corp_code: str, year: int, report_code: str, key: str) -> dict |
     )
 
 
+def fetch_fnltt_supp(corp_code: str, year: int, key: str) -> dict | None:
+    """fnlttSinglAcntAll (사업보고서 전체 계정) — 보강 데이터 전용.
+
+    이자비용·감가상각비 등 fnlttSinglAcnt(주요계정) 에 없는 항목 추출용.
+    호출 줄이기 위해 사업보고서(REPORT_FY) 만 받음. 분기 보고서는 받지 않음.
+    """
+    return dart_get(
+        "/api/fnlttSinglAcntAll.json",
+        {
+            "corp_code": corp_code,
+            "bsns_year": str(year),
+            "reprt_code": REPORT_FY,
+            "fs_div": "CFS",          # 연결재무제표 우선
+        },
+        key,
+    )
+
+
 # === 가공 ===
 def parse_amount(s: Any) -> float | None:
     if s in (None, "", "-"):
@@ -189,6 +207,38 @@ def extract_quarterly_accounts(report: dict | None) -> dict[str, float] | None:
         if not key:
             continue
         amount = parse_amount(r.get("thstrm_add_amount"))
+        if amount is not None and key not in out:
+            out[key] = amount
+    return out or None
+
+
+def extract_supp_accounts(report: dict | None) -> dict[str, float] | None:
+    """fnlttSinglAcntAll 응답에서 보강 키만 추출.
+
+    SUPP_KEYS 화이트리스트(interestExpense, depreciation) 안 키만 채움.
+    핵심 키(revenue·netIncome 등) 는 무시하여 core 결과를 절대 덮어쓰지 않음 — 회귀 방지.
+    fs_div 분기: CFS 가 비어 있으면 OFS 보조.
+    """
+    if not report or not report.get("list"):
+        return None
+    items = report["list"]
+    # fnlttSinglAcntAll 은 fs_div 를 요청 파라미터로 받으므로 응답 행에 fs_div 가 없다(None).
+    # 행에 태그가 있으면 CFS>OFS 우선, 없으면 전체 사용(요청이 이미 fs_div=CFS).
+    cfs = [r for r in items if r.get("fs_div") == "CFS"]
+    ofs = [r for r in items if r.get("fs_div") == "OFS"]
+    chosen = cfs or ofs or items
+    if not chosen:
+        return None
+
+    # 보강 대상 화이트리스트 — 이 두 키만 추출
+    SUPP_KEYS = {"interestExpense", "depreciation"}
+
+    out: dict[str, float] = {}
+    for r in chosen:
+        key = ACCOUNT_MAP.get(r.get("account_nm", ""))
+        if not key or key not in SUPP_KEYS:
+            continue
+        amount = parse_amount(r.get("thstrm_amount"))
         if amount is not None and key not in out:
             out[key] = amount
     return out or None
@@ -461,8 +511,19 @@ def main() -> int:
         time.sleep(REQ_INTERVAL_SEC)
         fy_prev_raw = fetch_fnltt(corp_code, prev_year, REPORT_FY, key)
         time.sleep(REQ_INTERVAL_SEC)
+        fy_supp_raw = fetch_fnltt_supp(corp_code, base_year, key)   # 신규 보강 호출
+        time.sleep(REQ_INTERVAL_SEC)
         latestY = extract_accounts(fy_latest_raw)
         prevY = extract_accounts(fy_prev_raw)
+        supp = extract_supp_accounts(fy_supp_raw)
+
+        # 보강 머지 — core 우선, supp 는 비어있는 키만 채움
+        if supp:
+            if latestY is None:
+                latestY = {}
+            for k, v in supp.items():
+                latestY.setdefault(k, v)   # ← 이미 있으면 안 덮어씀
+
         financials = build_financials_card(latestY, prevY)
         if not latestY:
             fail_fin.append(ticker)
@@ -495,6 +556,7 @@ def main() -> int:
             "P" if co_raw else "·",
             "F" if latestY else "·",
             "T" if ts["labels"] else "·",
+            "S" if supp else "·",   # 신규
         ])
         print(f"[{ok_marks}]")
 
