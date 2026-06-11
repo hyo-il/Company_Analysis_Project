@@ -45,6 +45,10 @@ const HARDCODED_SYMBOLS = [
   { ticker: 'V', nameKr: '비자', nameEn: 'Visa', market: 'us', exchange: 'NYSE', sector: 'Financials', industry: 'Credit Services', type: 'stock' },
   { ticker: 'WMT', nameKr: '월마트', nameEn: 'Walmart', market: 'us', exchange: 'NYSE', sector: 'Consumer Staples', industry: 'Discount Stores', type: 'stock' },
   { ticker: 'KO', nameKr: '코카콜라', nameEn: 'Coca-Cola', market: 'us', exchange: 'NYSE', sector: 'Consumer Staples', industry: 'Beverages', type: 'stock' },
+  { ticker: 'BK',   nameKr: '뉴욕멜론은행',         nameEn: 'BNY Mellon',          market: 'us', exchange: 'NYSE',   sector: 'Financials',            industry: 'Banks',           type: 'stock' },
+  { ticker: 'FI',   nameKr: '파이서브',              nameEn: 'Fiserv',              market: 'us', exchange: 'NYSE',   sector: 'Financials',            industry: 'Capital Markets', type: 'stock' },
+  { ticker: 'MMC',  nameKr: '마쉬앤맥레넌',         nameEn: 'Marsh McLennan',      market: 'us', exchange: 'NYSE',   sector: 'Financials',            industry: 'Insurance Brokers', type: 'stock' },
+  { ticker: 'PARA', nameKr: '파라마운트',           nameEn: 'Paramount Global',    market: 'us', exchange: 'NASDAQ', sector: 'Communication Services', industry: 'Entertainment',   type: 'stock' },
 
   // US ETF (대표)
   { ticker: 'SPY', nameKr: 'SPDR S&P500', nameEn: 'SPDR S&P 500 ETF', market: 'us', exchange: 'NYSE', sector: 'ETF', industry: 'Large Blend', type: 'etf' },
