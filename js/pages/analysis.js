@@ -803,8 +803,8 @@ function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
       key: '모멘텀',
       score: scores['모멘텀'],
       note: scores._meta.momentumPending
-        ? (scores._meta.momentumUnavailableReason === 'kr-no-data'
-            ? '시세 연동 후 활성화 (KR)'
+        ? (scores._meta.momentumUnavailableReason === 'kr-no-candle'
+            ? 'kr-candles 수집 실패 종목 (KR)'
             : '시세 데이터 부족 (수집 누락)')
         : null,
     },
@@ -821,7 +821,11 @@ function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
     {
       key: '변동성/강도',
       score: scores['변동성/강도'],
-      note: scores._meta.volatilityUnavailable ? '시세 연동 후 활성화 (KR)' : null,
+      note: scores['변동성/강도'] == null
+        ? '시세 데이터 미가용'
+        : (scores._meta.volatilityPartial === 'pos52-only-no-beta'
+            ? '베타 미수집 (KR) — 52주 위치만 반영'
+            : null),
     },
     { key: '종합', score: scores['종합'], note: null, isTotal: true },
   ];
