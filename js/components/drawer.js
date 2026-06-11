@@ -15,6 +15,18 @@ export function initDrawer({ onSelect }) {
   document.getElementById('drawer-handle').addEventListener('click', openDrawer);
   document.getElementById('drawer-close').addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // 드로어 외부 클릭 시 닫기 (기획서 v3 백드롭 클릭 기획 보강)
+  // 가드: (a) 닫혀있으면 무시 (b) 드로어 내부 클릭 무시 (c) 핸들 클릭 무시 (열기·닫기 충돌 방지)
+  document.addEventListener('click', e => {
+    const drawer = document.getElementById('right-drawer');
+    const handle = document.getElementById('drawer-handle');
+    if (!drawer || !drawer.classList.contains('open')) return;
+    if (drawer.contains(e.target)) return;
+    if (handle && handle.contains(e.target)) return;
+    closeDrawer();
+  });
+
   window.addEventListener('watchlist-changed', () => { if (activeTab === 'watch') renderWatch(); });
   renderActive();
 }
