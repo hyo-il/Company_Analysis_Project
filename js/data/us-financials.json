@@ -1,0 +1,4983 @@
+{
+  "generatedAt": "2026-06-11T10:41:07",
+  "validUntil": "2026-09-09",
+  "tickerCount": 496,
+  "data": {
+    "A": {
+      "revenue": 6948000000.0,
+      "operatingIncome": 1479000000.0,
+      "netIncome": 1303000000.0,
+      "totalAssets": 12727000000.0,
+      "totalLiabilities": 5986000000.0,
+      "totalEquity": 6741000000.0,
+      "ocf": 1559000000.0,
+      "fiscalYear": 2025
+    },
+    "AAPL": {
+      "revenue": 416161000000.0,
+      "operatingIncome": 133050000000.0,
+      "netIncome": 112010000000.0,
+      "totalAssets": 359241000000.0,
+      "totalLiabilities": 285508000000.0,
+      "totalEquity": 73733000000.0,
+      "ocf": 111482000000.0,
+      "fiscalYear": 2025
+    },
+    "ABBV": {
+      "revenue": 61160000000.0,
+      "operatingIncome": 20091000000.0,
+      "netIncome": 4226000000.0,
+      "totalAssets": 133960000000.0,
+      "totalLiabilities": 137188000000.0,
+      "totalEquity": -3270000000.0,
+      "ocf": 19030000000.0,
+      "fiscalYear": 2025
+    },
+    "ABNB": {
+      "revenue": 12241000000.0,
+      "operatingIncome": 2544000000.0,
+      "netIncome": 2511000000.0,
+      "totalAssets": 22208000000.0,
+      "totalLiabilities": 14009000000.0,
+      "totalEquity": 8199000000.0,
+      "ocf": 4646000000.0,
+      "fiscalYear": 2025
+    },
+    "ABT": {
+      "revenue": 44328000000.0,
+      "operatingIncome": 8053000000.0,
+      "netIncome": 6524000000.0,
+      "totalAssets": 86713000000.0,
+      "totalLiabilities": 33942000000.0,
+      "totalEquity": 52130000000.0,
+      "ocf": 9566000000.0,
+      "fiscalYear": 2025
+    },
+    "ACGL": {
+      "revenue": 19294000000.0,
+      "operatingIncome": 5127000000.0,
+      "netIncome": 4399000000.0,
+      "totalAssets": 79241000000.0,
+      "totalLiabilities": 55035000000.0,
+      "totalEquity": 24206000000.0,
+      "ocf": 6172000000.0,
+      "fiscalYear": 2025
+    },
+    "ACM": {
+      "revenue": 16139622000.0,
+      "operatingIncome": 1058864000.0,
+      "netIncome": 561774000.0,
+      "totalAssets": 12200249000.0,
+      "totalLiabilities": 9504065000.0,
+      "totalEquity": 2492584000.0,
+      "ocf": 821602000.0,
+      "fiscalYear": 2025
+    },
+    "ACN": {
+      "revenue": 69672977000.0,
+      "operatingIncome": 10840988000.0,
+      "netIncome": 7678433000.0,
+      "totalAssets": 65394897000.0,
+      "totalLiabilities": 33153930000.0,
+      "totalEquity": 31195446000.0,
+      "ocf": 11474399000.0,
+      "fiscalYear": 2025
+    },
+    "ADBE": {
+      "revenue": 23769000000.0,
+      "operatingIncome": 8706000000.0,
+      "netIncome": 7130000000.0,
+      "totalAssets": 29496000000.0,
+      "totalLiabilities": 17873000000.0,
+      "totalEquity": 11623000000.0,
+      "ocf": 10031000000.0,
+      "fiscalYear": 2025
+    },
+    "ADI": {
+      "revenue": 11019707000.0,
+      "operatingIncome": 3002476000.0,
+      "netIncome": 2267342000.0,
+      "totalAssets": 47992712000.0,
+      "totalLiabilities": 14176957000.0,
+      "totalEquity": 33815755000.0,
+      "ocf": 4812202000.0,
+      "fiscalYear": 2025
+    },
+    "ADM": {
+      "revenue": 80269000000.0,
+      "operatingIncome": 1424000000.0,
+      "netIncome": 1078000000.0,
+      "totalAssets": 52389000000.0,
+      "totalLiabilities": 29362000000.0,
+      "totalEquity": 22733000000.0,
+      "ocf": 5452000000.0,
+      "fiscalYear": 2025
+    },
+    "ADP": {
+      "revenue": 20560900000.0,
+      "operatingIncome": 5411900000.0,
+      "netIncome": 4079700000.0,
+      "totalAssets": 53369300000.0,
+      "totalLiabilities": 47181300000.0,
+      "totalEquity": 6188000000.0,
+      "ocf": 4939700000.0,
+      "fiscalYear": 2025
+    },
+    "ADSK": {
+      "revenue": 7206000000.0,
+      "operatingIncome": 1794000000.0,
+      "netIncome": 1124000000.0,
+      "totalAssets": 12467000000.0,
+      "totalLiabilities": 9422000000.0,
+      "totalEquity": 3045000000.0,
+      "ocf": 2452000000.0,
+      "fiscalYear": 2026
+    },
+    "AEE": {
+      "revenue": 8799000000.0,
+      "operatingIncome": 2026000000.0,
+      "netIncome": 1456000000.0,
+      "totalAssets": 48476000000.0,
+      "totalLiabilities": 34946000000.0,
+      "totalEquity": 13401000000.0,
+      "ocf": 3353000000.0,
+      "fiscalYear": 2025
+    },
+    "AEP": {
+      "revenue": 21876000000.0,
+      "operatingIncome": 5385000000.0,
+      "netIncome": 3580000000.0,
+      "totalAssets": 114460000000.0,
+      "totalLiabilities": 82242000000.0,
+      "totalEquity": 31138000000.0,
+      "ocf": 6944000000.0,
+      "fiscalYear": 2025
+    },
+    "AES": {
+      "revenue": 12233000000.0,
+      "operatingIncome": 1970000000.0,
+      "netIncome": 910000000.0,
+      "totalAssets": 51768000000.0,
+      "totalLiabilities": 42663000000.0,
+      "totalEquity": 4063000000.0,
+      "ocf": 4306000000.0,
+      "fiscalYear": 2025
+    },
+    "AFL": {
+      "revenue": 17355000000.0,
+      "operatingIncome": 4753000000.0,
+      "netIncome": 3646000000.0,
+      "totalAssets": 116470000000.0,
+      "totalLiabilities": 86980000000.0,
+      "totalEquity": 29490000000.0,
+      "ocf": 2555000000.0,
+      "fiscalYear": 2025
+    },
+    "AIG": {
+      "revenue": 26774000000.0,
+      "operatingIncome": 4275000000.0,
+      "netIncome": 3096000000.0,
+      "totalAssets": 161254000000.0,
+      "totalLiabilities": 120092000000.0,
+      "totalEquity": 41139000000.0,
+      "ocf": 3314000000.0,
+      "fiscalYear": 2025
+    },
+    "AIZ": {
+      "revenue": 12814300000.0,
+      "operatingIncome": 1197100000.0,
+      "netIncome": 872700000.0,
+      "totalAssets": 36289600000.0,
+      "totalLiabilities": 30418000000.0,
+      "totalEquity": 5871600000.0,
+      "ocf": 1833900000.0,
+      "fiscalYear": 2025
+    },
+    "AJG": {
+      "revenue": 13942000000.0,
+      "operatingIncome": 2556000000.0,
+      "netIncome": 1494000000.0,
+      "totalAssets": 70665000000.0,
+      "totalLiabilities": 47318000000.0,
+      "totalEquity": 23321000000.0,
+      "ocf": 1930000000.0,
+      "fiscalYear": 2025
+    },
+    "AKAM": {
+      "revenue": 4208175000.0,
+      "operatingIncome": 628242000.0,
+      "netIncome": 452031000.0,
+      "totalAssets": 11479643000.0,
+      "totalLiabilities": 6502272000.0,
+      "totalEquity": 4977371000.0,
+      "ocf": 1518765000.0,
+      "fiscalYear": 2025
+    },
+    "ALB": {
+      "revenue": 5142733000.0,
+      "operatingIncome": 67285000.0,
+      "netIncome": -510628000.0,
+      "totalAssets": 16374211000.0,
+      "totalLiabilities": 6592750000.0,
+      "totalEquity": 9533365000.0,
+      "ocf": 1282267000.0,
+      "fiscalYear": 2025
+    },
+    "ALGN": {
+      "revenue": 4034964000.0,
+      "operatingIncome": 585311000.0,
+      "netIncome": 410351000.0,
+      "totalAssets": 6233693000.0,
+      "totalLiabilities": 2184546000.0,
+      "totalEquity": 4049147000.0,
+      "ocf": 593223000.0,
+      "fiscalYear": 2025
+    },
+    "ALL": {
+      "revenue": 67069000000.0,
+      "operatingIncome": 13555000000.0,
+      "netIncome": 10282000000.0,
+      "totalAssets": 119758000000.0,
+      "totalLiabilities": 89169000000.0,
+      "totalEquity": 30610000000.0,
+      "ocf": 10110000000.0,
+      "fiscalYear": 2025
+    },
+    "ALLE": {
+      "revenue": 4067300000.0,
+      "operatingIncome": 859500000.0,
+      "netIncome": 643800000.0,
+      "totalAssets": 5223700000.0,
+      "totalLiabilities": 3156100000.0,
+      "totalEquity": 2067600000.0,
+      "ocf": 783800000.0,
+      "fiscalYear": 2025
+    },
+    "AMAT": {
+      "revenue": 28368000000.0,
+      "operatingIncome": 8470000000.0,
+      "netIncome": 6998000000.0,
+      "totalAssets": 36299000000.0,
+      "totalLiabilities": 15884000000.0,
+      "totalEquity": 20415000000.0,
+      "ocf": 7958000000.0,
+      "fiscalYear": 2025
+    },
+    "AMCR": {
+      "revenue": 15009000000.0,
+      "operatingIncome": 1316000000.0,
+      "netIncome": 511000000.0,
+      "totalAssets": 37066000000.0,
+      "totalLiabilities": 25326000000.0,
+      "totalEquity": 11728000000.0,
+      "ocf": 1390000000.0,
+      "fiscalYear": 2025
+    },
+    "AMD": {
+      "revenue": 34639000000.0,
+      "operatingIncome": 3694000000.0,
+      "netIncome": 4335000000.0,
+      "totalAssets": 76926000000.0,
+      "totalLiabilities": 13927000000.0,
+      "totalEquity": 62999000000.0,
+      "ocf": 7709000000.0,
+      "fiscalYear": 2025
+    },
+    "AME": {
+      "revenue": 7401116000.0,
+      "operatingIncome": 1910317000.0,
+      "netIncome": 1480142000.0,
+      "totalAssets": 16067543000.0,
+      "totalLiabilities": 5438757000.0,
+      "totalEquity": 10628786000.0,
+      "ocf": 1801763000.0,
+      "fiscalYear": 2025
+    },
+    "AMGN": {
+      "revenue": 36751000000.0,
+      "operatingIncome": 9080000000.0,
+      "netIncome": 7711000000.0,
+      "totalAssets": 90586000000.0,
+      "totalLiabilities": 81928000000.0,
+      "totalEquity": 8658000000.0,
+      "ocf": 9958000000.0,
+      "fiscalYear": 2025
+    },
+    "AMP": {
+      "revenue": 18480000000.0,
+      "operatingIncome": 4830000000.0,
+      "netIncome": 3563000000.0,
+      "totalAssets": 190904000000.0,
+      "totalLiabilities": 184355000000.0,
+      "totalEquity": 6549000000.0,
+      "ocf": 8323000000.0,
+      "fiscalYear": 2025
+    },
+    "AMT": {
+      "revenue": 10644600000.0,
+      "operatingIncome": 4929200000.0,
+      "netIncome": 2529500000.0,
+      "totalAssets": 63190400000.0,
+      "totalLiabilities": 52835100000.0,
+      "totalEquity": 3652500000.0,
+      "ocf": 5464000000.0,
+      "fiscalYear": 2025
+    },
+    "AMZN": {
+      "revenue": 716924000000.0,
+      "operatingIncome": 79975000000.0,
+      "netIncome": 77670000000.0,
+      "totalAssets": 818042000000.0,
+      "totalLiabilities": 406977000000.0,
+      "totalEquity": 411065000000.0,
+      "ocf": 139514000000.0,
+      "fiscalYear": 2025
+    },
+    "ANET": {
+      "revenue": 9005700000.0,
+      "operatingIncome": 3856100000.0,
+      "netIncome": 3511400000.0,
+      "totalAssets": 19448600000.0,
+      "totalLiabilities": 7078100000.0,
+      "totalEquity": 12370500000.0,
+      "ocf": 4371900000.0,
+      "fiscalYear": 2025
+    },
+    "AON": {
+      "revenue": 17181000000.0,
+      "operatingIncome": 4709000000.0,
+      "netIncome": 3695000000.0,
+      "totalAssets": 50784000000.0,
+      "totalLiabilities": 41236000000.0,
+      "totalEquity": 9352000000.0,
+      "ocf": 3481000000.0,
+      "fiscalYear": 2025
+    },
+    "APA": {
+      "revenue": 8920000000.0,
+      "operatingIncome": 2750000000.0,
+      "netIncome": 1434000000.0,
+      "totalAssets": 17761000000.0,
+      "totalLiabilities": 10758000000.0,
+      "totalEquity": 6093000000.0,
+      "ocf": 4545000000.0,
+      "fiscalYear": 2025
+    },
+    "APD": {
+      "revenue": 12037300000.0,
+      "operatingIncome": 2889000000.0,
+      "netIncome": -394500000.0,
+      "totalAssets": 41059500000.0,
+      "totalLiabilities": 23709700000.0,
+      "totalEquity": 15024900000.0,
+      "ocf": 3256800000.0,
+      "fiscalYear": 2025
+    },
+    "APH": {
+      "revenue": 23094700000.0,
+      "operatingIncome": 5972000000.0,
+      "netIncome": 4270300000.0,
+      "totalAssets": 36236900000.0,
+      "totalLiabilities": 22727200000.0,
+      "totalEquity": 13413100000.0,
+      "ocf": 5374700000.0,
+      "fiscalYear": 2025
+    },
+    "APP": {
+      "revenue": 5480717000.0,
+      "operatingIncome": 4151914000.0,
+      "netIncome": 3333764000.0,
+      "totalAssets": 7259610000.0,
+      "totalLiabilities": 5124939000.0,
+      "totalEquity": 2134671000.0,
+      "ocf": 3971094000.0,
+      "fiscalYear": 2025
+    },
+    "APTV": {
+      "revenue": 20398000000.0,
+      "operatingIncome": 2017000000.0,
+      "netIncome": 165000000.0,
+      "totalAssets": 23413000000.0,
+      "totalLiabilities": 13914000000.0,
+      "totalEquity": 9207000000.0,
+      "ocf": 2185000000.0,
+      "fiscalYear": 2025
+    },
+    "ARE": {
+      "revenue": 2945175000.0,
+      "operatingIncome": 555045000.0,
+      "netIncome": -1429570000.0,
+      "totalAssets": 34081835000.0,
+      "totalLiabilities": 14925399000.0,
+      "totalEquity": 15470070000.0,
+      "ocf": 1414046000.0,
+      "fiscalYear": 2025
+    },
+    "ARGX": {
+      "revenue": 4153482000.0,
+      "operatingIncome": 1054615000.0,
+      "netIncome": 1292035000.0,
+      "totalAssets": 8682698000.0,
+      "totalLiabilities": 1359606000.0,
+      "totalEquity": 7323092000.0,
+      "ocf": 685192000.0,
+      "fiscalYear": 2025
+    },
+    "ARM": {
+      "revenue": 4920000000.0,
+      "operatingIncome": 908000000.0,
+      "netIncome": 904000000.0,
+      "totalAssets": 10703000000.0,
+      "totalLiabilities": 2417000000.0,
+      "totalEquity": 8286000000.0,
+      "ocf": 1524000000.0,
+      "fiscalYear": 2026
+    },
+    "ASML": {
+      "revenue": 32667300000.0,
+      "operatingIncome": 11301400000.0,
+      "netIncome": 9609400000.0,
+      "totalAssets": 50566600000.0,
+      "totalLiabilities": 30954400000.0,
+      "totalEquity": 19612200000.0,
+      "ocf": 12658500000.0,
+      "fiscalYear": 2025
+    },
+    "ATO": {
+      "revenue": 4702755000.0,
+      "operatingIncome": 1559971000.0,
+      "netIncome": 1198754000.0,
+      "totalAssets": 28249522000.0,
+      "totalLiabilities": 14690632000.0,
+      "totalEquity": 13558890000.0,
+      "ocf": 2049456000.0,
+      "fiscalYear": 2025
+    },
+    "AVB": {
+      "revenue": 3040725000.0,
+      "operatingIncome": 919756000.0,
+      "netIncome": 1051301000.0,
+      "totalAssets": 22192137000.0,
+      "totalLiabilities": 10357820000.0,
+      "totalEquity": 11611340000.0,
+      "ocf": 1671105000.0,
+      "fiscalYear": 2025
+    },
+    "AVGO": {
+      "revenue": 63887000000.0,
+      "operatingIncome": 26075000000.0,
+      "netIncome": 23126000000.0,
+      "totalAssets": 171092000000.0,
+      "totalLiabilities": 89800000000.0,
+      "totalEquity": 81292000000.0,
+      "ocf": 27537000000.0,
+      "fiscalYear": 2025
+    },
+    "AVY": {
+      "revenue": 8855500000.0,
+      "operatingIncome": 1123800000.0,
+      "netIncome": 688000000.0,
+      "totalAssets": 8801700000.0,
+      "totalLiabilities": 6559600000.0,
+      "totalEquity": 2242100000.0,
+      "ocf": 881400000.0,
+      "fiscalYear": 2025
+    },
+    "AWK": {
+      "revenue": 5140000000.0,
+      "operatingIncome": 1879000000.0,
+      "netIncome": 1111000000.0,
+      "totalAssets": 35442000000.0,
+      "totalLiabilities": 24605000000.0,
+      "totalEquity": 10837000000.0,
+      "ocf": 2059000000.0,
+      "fiscalYear": 2025
+    },
+    "AXON": {
+      "revenue": 2779536000.0,
+      "operatingIncome": -62076000.0,
+      "netIncome": 124656000.0,
+      "totalAssets": 7000313000.0,
+      "totalLiabilities": 3757655000.0,
+      "totalEquity": 3242658000.0,
+      "ocf": 211339000.0,
+      "fiscalYear": 2025
+    },
+    "AXP": {
+      "revenue": 72230000000.0,
+      "operatingIncome": null,
+      "netIncome": 10833000000.0,
+      "totalAssets": 300052000000.0,
+      "totalLiabilities": 266578000000.0,
+      "totalEquity": 33474000000.0,
+      "ocf": 18428000000.0,
+      "fiscalYear": 2025
+    },
+    "AZN": {
+      "revenue": 58739000000.0,
+      "operatingIncome": 13327000000.0,
+      "netIncome": 10225000000.0,
+      "totalAssets": 114074000000.0,
+      "totalLiabilities": 65355000000.0,
+      "totalEquity": 48667000000.0,
+      "ocf": 14575000000.0,
+      "fiscalYear": 2025
+    },
+    "AZO": {
+      "revenue": 18938717000.0,
+      "operatingIncome": 3610156000.0,
+      "netIncome": 2498247000.0,
+      "totalAssets": 19355324000.0,
+      "totalLiabilities": 22769637000.0,
+      "totalEquity": -3414313000.0,
+      "ocf": 3117337000.0,
+      "fiscalYear": 2025
+    },
+    "BA": {
+      "revenue": 89463000000.0,
+      "operatingIncome": -5416000000.0,
+      "netIncome": 2235000000.0,
+      "totalAssets": 168235000000.0,
+      "totalLiabilities": 162778000000.0,
+      "totalEquity": 5454000000.0,
+      "ocf": 1065000000.0,
+      "fiscalYear": 2025
+    },
+    "BAC": {
+      "revenue": 113097000000.0,
+      "operatingIncome": null,
+      "netIncome": 30509000000.0,
+      "totalAssets": 3411738000000.0,
+      "totalLiabilities": 3108495000000.0,
+      "totalEquity": 303243000000.0,
+      "ocf": 12613000000.0,
+      "fiscalYear": 2025
+    },
+    "BALL": {
+      "revenue": 13161000000.0,
+      "operatingIncome": 1390000000.0,
+      "netIncome": 912000000.0,
+      "totalAssets": 19524000000.0,
+      "totalLiabilities": 14103000000.0,
+      "totalEquity": 5421000000.0,
+      "ocf": 1262000000.0,
+      "fiscalYear": 2025
+    },
+    "BAX": {
+      "revenue": 11244000000.0,
+      "operatingIncome": 177000000.0,
+      "netIncome": -957000000.0,
+      "totalAssets": 20055000000.0,
+      "totalLiabilities": 13953000000.0,
+      "totalEquity": 6129000000.0,
+      "ocf": 845000000.0,
+      "fiscalYear": 2025
+    },
+    "BBY": {
+      "revenue": 41691000000.0,
+      "operatingIncome": 1750000000.0,
+      "netIncome": 1069000000.0,
+      "totalAssets": 14670000000.0,
+      "totalLiabilities": 11706000000.0,
+      "totalEquity": 2964000000.0,
+      "ocf": 1962000000.0,
+      "fiscalYear": 2026
+    },
+    "BDX": {
+      "revenue": 21840000000.0,
+      "operatingIncome": 2986000000.0,
+      "netIncome": 1678000000.0,
+      "totalAssets": 55325000000.0,
+      "totalLiabilities": 29935000000.0,
+      "totalEquity": 25390000000.0,
+      "ocf": 3431000000.0,
+      "fiscalYear": 2025
+    },
+    "BEN": {
+      "revenue": 8770700000.0,
+      "operatingIncome": 1099800000.0,
+      "netIncome": 524900000.0,
+      "totalAssets": 32368300000.0,
+      "totalLiabilities": 18179500000.0,
+      "totalEquity": 12077800000.0,
+      "ocf": 1066100000.0,
+      "fiscalYear": 2025
+    },
+    "BG": {
+      "revenue": 70329000000.0,
+      "operatingIncome": 1296000000.0,
+      "netIncome": 816000000.0,
+      "totalAssets": 44528000000.0,
+      "totalLiabilities": 27106000000.0,
+      "totalEquity": 15904000000.0,
+      "ocf": 844000000.0,
+      "fiscalYear": 2025
+    },
+    "BIDU": {
+      "revenue": 129079000000.0,
+      "operatingIncome": 10367000000.0,
+      "netIncome": 5589000000.0,
+      "totalAssets": 449157000000.0,
+      "totalLiabilities": 159431000000.0,
+      "totalEquity": 266330000000.0,
+      "ocf": -3013000000.0,
+      "fiscalYear": 2025
+    },
+    "BIIB": {
+      "revenue": 9890600000.0,
+      "operatingIncome": 2469000000.0,
+      "netIncome": 1292900000.0,
+      "totalAssets": 29439500000.0,
+      "totalLiabilities": 11182700000.0,
+      "totalEquity": 18256800000.0,
+      "ocf": 2204600000.0,
+      "fiscalYear": 2025
+    },
+    "BK": {
+      "revenue": 19759000000.0,
+      "operatingIncome": null,
+      "netIncome": 5549000000.0,
+      "totalAssets": 472300000000.0,
+      "totalLiabilities": 427492000000.0,
+      "totalEquity": 44313000000.0,
+      "ocf": 6730000000.0,
+      "fiscalYear": 2025
+    },
+    "BKNG": {
+      "revenue": 26917000000.0,
+      "operatingIncome": 9282000000.0,
+      "netIncome": 5404000000.0,
+      "totalAssets": 29264000000.0,
+      "totalLiabilities": 34842000000.0,
+      "totalEquity": -5578000000.0,
+      "ocf": 9409000000.0,
+      "fiscalYear": 2025
+    },
+    "BKR": {
+      "revenue": 27733000000.0,
+      "operatingIncome": 3557000000.0,
+      "netIncome": 2588000000.0,
+      "totalAssets": 40881000000.0,
+      "totalLiabilities": 21871000000.0,
+      "totalEquity": 18834000000.0,
+      "ocf": 3810000000.0,
+      "fiscalYear": 2025
+    },
+    "BLDR": {
+      "revenue": 15190638000.0,
+      "operatingIncome": 786276000.0,
+      "netIncome": 435199000.0,
+      "totalAssets": 11237530000.0,
+      "totalLiabilities": 6885279000.0,
+      "totalEquity": 4352251000.0,
+      "ocf": 1215886000.0,
+      "fiscalYear": 2025
+    },
+    "BLK": {
+      "revenue": 24216000000.0,
+      "operatingIncome": 7909000000.0,
+      "netIncome": 5553000000.0,
+      "totalAssets": 169998000000.0,
+      "totalLiabilities": 108456000000.0,
+      "totalEquity": 55888000000.0,
+      "ocf": 3927000000.0,
+      "fiscalYear": 2025
+    },
+    "BMY": {
+      "revenue": 48195000000.0,
+      "operatingIncome": 13724000000.0,
+      "netIncome": 7054000000.0,
+      "totalAssets": 90038000000.0,
+      "totalLiabilities": 71532000000.0,
+      "totalEquity": 18473000000.0,
+      "ocf": 14156000000.0,
+      "fiscalYear": 2025
+    },
+    "BR": {
+      "revenue": 6889100000.0,
+      "operatingIncome": 1188600000.0,
+      "netIncome": 839500000.0,
+      "totalAssets": 8545000000.0,
+      "totalLiabilities": 5889800000.0,
+      "totalEquity": 2655200000.0,
+      "ocf": 1171300000.0,
+      "fiscalYear": 2025
+    },
+    "BRO": {
+      "revenue": 5763000000.0,
+      "operatingIncome": 1502000000.0,
+      "netIncome": 1054000000.0,
+      "totalAssets": 29991000000.0,
+      "totalLiabilities": 17418000000.0,
+      "totalEquity": 12547000000.0,
+      "ocf": 1450000000.0,
+      "fiscalYear": 2025
+    },
+    "BSX": {
+      "revenue": 20074000000.0,
+      "operatingIncome": 3971000000.0,
+      "netIncome": 2898000000.0,
+      "totalAssets": 43673000000.0,
+      "totalLiabilities": 19201000000.0,
+      "totalEquity": 24232000000.0,
+      "ocf": 4534000000.0,
+      "fiscalYear": 2025
+    },
+    "BWA": {
+      "revenue": 14316000000.0,
+      "operatingIncome": 1323000000.0,
+      "netIncome": 277000000.0,
+      "totalAssets": 13769000000.0,
+      "totalLiabilities": 8155000000.0,
+      "totalEquity": 5442000000.0,
+      "ocf": 1648000000.0,
+      "fiscalYear": 2025
+    },
+    "BXP": {
+      "revenue": 3482279000.0,
+      "operatingIncome": 1014351000.0,
+      "netIncome": 276800000.0,
+      "totalAssets": 26166164000.0,
+      "totalLiabilities": 18473924000.0,
+      "totalEquity": 5154728000.0,
+      "ocf": 1245157000.0,
+      "fiscalYear": 2025
+    },
+    "C": {
+      "revenue": 85213000000.0,
+      "operatingIncome": null,
+      "netIncome": 14306000000.0,
+      "totalAssets": 2657202000000.0,
+      "totalLiabilities": 2443380000000.0,
+      "totalEquity": 212291000000.0,
+      "ocf": -67632000000.0,
+      "fiscalYear": 2025
+    },
+    "CAG": {
+      "revenue": 11612800000.0,
+      "operatingIncome": 1466200000.0,
+      "netIncome": 1152400000.0,
+      "totalAssets": 20933900000.0,
+      "totalLiabilities": 12001200000.0,
+      "totalEquity": 8932700000.0,
+      "ocf": 1691900000.0,
+      "fiscalYear": 2025
+    },
+    "CAH": {
+      "revenue": 222578000000.0,
+      "operatingIncome": 2322000000.0,
+      "netIncome": 1561000000.0,
+      "totalAssets": 53122000000.0,
+      "totalLiabilities": 55756000000.0,
+      "totalEquity": -2781000000.0,
+      "ocf": 2397000000.0,
+      "fiscalYear": 2025
+    },
+    "CARR": {
+      "revenue": 21747000000.0,
+      "operatingIncome": 1907000000.0,
+      "netIncome": 1484000000.0,
+      "totalAssets": 37190000000.0,
+      "totalLiabilities": 23062000000.0,
+      "totalEquity": 13804000000.0,
+      "ocf": 2513000000.0,
+      "fiscalYear": 2025
+    },
+    "CAT": {
+      "revenue": 67589000000.0,
+      "operatingIncome": 11151000000.0,
+      "netIncome": 8884000000.0,
+      "totalAssets": 98585000000.0,
+      "totalLiabilities": 77267000000.0,
+      "totalEquity": 21318000000.0,
+      "ocf": 11739000000.0,
+      "fiscalYear": 2025
+    },
+    "CB": {
+      "revenue": 59783000000.0,
+      "operatingIncome": 13808000000.0,
+      "netIncome": 10310000000.0,
+      "totalAssets": 272327000000.0,
+      "totalLiabilities": 192548000000.0,
+      "totalEquity": 73757000000.0,
+      "ocf": 12816000000.0,
+      "fiscalYear": 2025
+    },
+    "CBOE": {
+      "revenue": 4714200000.0,
+      "operatingIncome": 1514100000.0,
+      "netIncome": 1100000000.0,
+      "totalAssets": 9305300000.0,
+      "totalLiabilities": 4167000000.0,
+      "totalEquity": 5138300000.0,
+      "ocf": 1752600000.0,
+      "fiscalYear": 2025
+    },
+    "CBRE": {
+      "revenue": 40550000000.0,
+      "operatingIncome": 1294000000.0,
+      "netIncome": 1157000000.0,
+      "totalAssets": 30877000000.0,
+      "totalLiabilities": 21251000000.0,
+      "totalEquity": 8878000000.0,
+      "ocf": 1559000000.0,
+      "fiscalYear": 2025
+    },
+    "CCEP": {
+      "revenue": 20901000000.0,
+      "operatingIncome": 2792000000.0,
+      "netIncome": 1942000000.0,
+      "totalAssets": 29872000000.0,
+      "totalLiabilities": 21569000000.0,
+      "totalEquity": 7835000000.0,
+      "ocf": 2953000000.0,
+      "fiscalYear": 2025
+    },
+    "CCI": {
+      "revenue": 4264000000.0,
+      "operatingIncome": 2086000000.0,
+      "netIncome": 444000000.0,
+      "totalAssets": 31518000000.0,
+      "totalLiabilities": 33153000000.0,
+      "totalEquity": -1635000000.0,
+      "ocf": 3057000000.0,
+      "fiscalYear": 2025
+    },
+    "CCL": {
+      "revenue": 26621000000.0,
+      "operatingIncome": 4482000000.0,
+      "netIncome": 2760000000.0,
+      "totalAssets": 51687000000.0,
+      "totalLiabilities": 39403000000.0,
+      "totalEquity": 12284000000.0,
+      "ocf": 6218000000.0,
+      "fiscalYear": 2025
+    },
+    "CDNS": {
+      "revenue": 5296759000.0,
+      "operatingIncome": 1649781000.0,
+      "netIncome": 1108888000.0,
+      "totalAssets": 10153148000.0,
+      "totalLiabilities": 4678967000.0,
+      "totalEquity": 5474181000.0,
+      "ocf": 1728781000.0,
+      "fiscalYear": 2025
+    },
+    "CDW": {
+      "revenue": 22424100000.0,
+      "operatingIncome": 1655600000.0,
+      "netIncome": 1066600000.0,
+      "totalAssets": 16028200000.0,
+      "totalLiabilities": 13422100000.0,
+      "totalEquity": 2606100000.0,
+      "ocf": 1205200000.0,
+      "fiscalYear": 2025
+    },
+    "CE": {
+      "revenue": 9544000000.0,
+      "operatingIncome": 764000000.0,
+      "netIncome": -1165000000.0,
+      "totalAssets": 21695000000.0,
+      "totalLiabilities": 17223000000.0,
+      "totalEquity": 4049000000.0,
+      "ocf": 1146000000.0,
+      "fiscalYear": 2025
+    },
+    "CEG": {
+      "revenue": 25533000000.0,
+      "operatingIncome": 4198000000.0,
+      "netIncome": 2319000000.0,
+      "totalAssets": 57249000000.0,
+      "totalLiabilities": 42396000000.0,
+      "totalEquity": 14517000000.0,
+      "ocf": 4237000000.0,
+      "fiscalYear": 2025
+    },
+    "CF": {
+      "revenue": 7084000000.0,
+      "operatingIncome": 2375000000.0,
+      "netIncome": 1455000000.0,
+      "totalAssets": 14088000000.0,
+      "totalLiabilities": 6313000000.0,
+      "totalEquity": 4838000000.0,
+      "ocf": 2752000000.0,
+      "fiscalYear": 2025
+    },
+    "CFG": {
+      "revenue": 8247000000.0,
+      "operatingIncome": null,
+      "netIncome": 1831000000.0,
+      "totalAssets": 226351000000.0,
+      "totalLiabilities": 200034000000.0,
+      "totalEquity": 26317000000.0,
+      "ocf": 2211000000.0,
+      "fiscalYear": 2025
+    },
+    "CHD": {
+      "revenue": 6203200000.0,
+      "operatingIncome": 1077600000.0,
+      "netIncome": 736800000.0,
+      "totalAssets": 8912400000.0,
+      "totalLiabilities": 4910200000.0,
+      "totalEquity": 4002200000.0,
+      "ocf": 1215400000.0,
+      "fiscalYear": 2025
+    },
+    "CHRW": {
+      "revenue": 16232763000.0,
+      "operatingIncome": 794961000.0,
+      "netIncome": 587081000.0,
+      "totalAssets": 5058381000.0,
+      "totalLiabilities": 3212734000.0,
+      "totalEquity": 1845647000.0,
+      "ocf": 914519000.0,
+      "fiscalYear": 2025
+    },
+    "CHTR": {
+      "revenue": 54774000000.0,
+      "operatingIncome": 13324000000.0,
+      "netIncome": 4987000000.0,
+      "totalAssets": 154213000000.0,
+      "totalLiabilities": 133694000000.0,
+      "totalEquity": 16054000000.0,
+      "ocf": 16077000000.0,
+      "fiscalYear": 2025
+    },
+    "CI": {
+      "revenue": 274876000000.0,
+      "operatingIncome": 8444000000.0,
+      "netIncome": 5957000000.0,
+      "totalAssets": 157919000000.0,
+      "totalLiabilities": 116045000000.0,
+      "totalEquity": 41713000000.0,
+      "ocf": 9601000000.0,
+      "fiscalYear": 2025
+    },
+    "CINF": {
+      "revenue": 12631000000.0,
+      "operatingIncome": 3033000000.0,
+      "netIncome": 2393000000.0,
+      "totalAssets": 41002000000.0,
+      "totalLiabilities": 25091000000.0,
+      "totalEquity": 15911000000.0,
+      "ocf": 3112000000.0,
+      "fiscalYear": 2025
+    },
+    "CL": {
+      "revenue": 20382000000.0,
+      "operatingIncome": 4233000000.0,
+      "netIncome": 2132000000.0,
+      "totalAssets": 16330000000.0,
+      "totalLiabilities": 15965000000.0,
+      "totalEquity": 54000000.0,
+      "ocf": 4198000000.0,
+      "fiscalYear": 2025
+    },
+    "CLX": {
+      "revenue": 7104000000.0,
+      "operatingIncome": 1177000000.0,
+      "netIncome": 810000000.0,
+      "totalAssets": 5561000000.0,
+      "totalLiabilities": 5079000000.0,
+      "totalEquity": 321000000.0,
+      "ocf": 981000000.0,
+      "fiscalYear": 2025
+    },
+    "CMCSA": {
+      "revenue": 123707000000.0,
+      "operatingIncome": 20670000000.0,
+      "netIncome": 19998000000.0,
+      "totalAssets": 272631000000.0,
+      "totalLiabilities": 175255000000.0,
+      "totalEquity": 96903000000.0,
+      "ocf": 33643000000.0,
+      "fiscalYear": 2025
+    },
+    "CME": {
+      "revenue": 6520600000.0,
+      "operatingIncome": 4229500000.0,
+      "netIncome": 4072200000.0,
+      "totalAssets": 198424200000.0,
+      "totalLiabilities": 169696000000.0,
+      "totalEquity": 28728200000.0,
+      "ocf": 4277100000.0,
+      "fiscalYear": 2025
+    },
+    "CMG": {
+      "revenue": 11925601000.0,
+      "operatingIncome": 2012808000.0,
+      "netIncome": 1535761000.0,
+      "totalAssets": 8994531000.0,
+      "totalLiabilities": 6163924000.0,
+      "totalEquity": 2830607000.0,
+      "ocf": 2113926000.0,
+      "fiscalYear": 2025
+    },
+    "CMI": {
+      "revenue": 33670000000.0,
+      "operatingIncome": 3865000000.0,
+      "netIncome": 2843000000.0,
+      "totalAssets": 33992000000.0,
+      "totalLiabilities": 20584000000.0,
+      "totalEquity": 12349000000.0,
+      "ocf": 3621000000.0,
+      "fiscalYear": 2025
+    },
+    "CMS": {
+      "revenue": 8539000000.0,
+      "operatingIncome": 1727000000.0,
+      "netIncome": 1071000000.0,
+      "totalAssets": 39941000000.0,
+      "totalLiabilities": 30230000000.0,
+      "totalEquity": 9144000000.0,
+      "ocf": 2235000000.0,
+      "fiscalYear": 2025
+    },
+    "CNC": {
+      "revenue": 194777000000.0,
+      "operatingIncome": -312000000.0,
+      "netIncome": -6674000000.0,
+      "totalAssets": 76747000000.0,
+      "totalLiabilities": 56691000000.0,
+      "totalEquity": 19953000000.0,
+      "ocf": 5088000000.0,
+      "fiscalYear": 2025
+    },
+    "CNP": {
+      "revenue": 9357000000.0,
+      "operatingIncome": 2110000000.0,
+      "netIncome": 1052000000.0,
+      "totalAssets": 46534000000.0,
+      "totalLiabilities": 35381000000.0,
+      "totalEquity": 11153000000.0,
+      "ocf": 2486000000.0,
+      "fiscalYear": 2025
+    },
+    "COF": {
+      "revenue": 53434000000.0,
+      "operatingIncome": null,
+      "netIncome": 2453000000.0,
+      "totalAssets": 669009000000.0,
+      "totalLiabilities": 555393000000.0,
+      "totalEquity": 113616000000.0,
+      "ocf": 27718000000.0,
+      "fiscalYear": 2025
+    },
+    "COIN": {
+      "revenue": 7181325000.0,
+      "operatingIncome": 1456145000.0,
+      "netIncome": 1260327000.0,
+      "totalAssets": 29671832000.0,
+      "totalLiabilities": 14878774000.0,
+      "totalEquity": 14793058000.0,
+      "ocf": 2426383000.0,
+      "fiscalYear": 2025
+    },
+    "COO": {
+      "revenue": 4092400000.0,
+      "operatingIncome": 682900000.0,
+      "netIncome": 374900000.0,
+      "totalAssets": 12394800000.0,
+      "totalLiabilities": 4155700000.0,
+      "totalEquity": 8238900000.0,
+      "ocf": 796100000.0,
+      "fiscalYear": 2025
+    },
+    "COP": {
+      "revenue": 58944000000.0,
+      "operatingIncome": 11342000000.0,
+      "netIncome": 7988000000.0,
+      "totalAssets": 121939000000.0,
+      "totalLiabilities": 57452000000.0,
+      "totalEquity": 64487000000.0,
+      "ocf": 19796000000.0,
+      "fiscalYear": 2025
+    },
+    "COR": {
+      "revenue": 321332819000.0,
+      "operatingIncome": 3933622000.0,
+      "netIncome": 1554169000.0,
+      "totalAssets": 76590112000.0,
+      "totalLiabilities": 74843027000.0,
+      "totalEquity": 1508019000.0,
+      "ocf": 3875120000.0,
+      "fiscalYear": 2025
+    },
+    "COST": {
+      "revenue": 275235000000.0,
+      "operatingIncome": 10383000000.0,
+      "netIncome": 8099000000.0,
+      "totalAssets": 77099000000.0,
+      "totalLiabilities": 47935000000.0,
+      "totalEquity": 29164000000.0,
+      "ocf": 13335000000.0,
+      "fiscalYear": 2025
+    },
+    "CPB": {
+      "revenue": 10253000000.0,
+      "operatingIncome": 1353000000.0,
+      "netIncome": 602000000.0,
+      "totalAssets": 14896000000.0,
+      "totalLiabilities": 10992000000.0,
+      "totalEquity": 3902000000.0,
+      "ocf": 1131000000.0,
+      "fiscalYear": 2025
+    },
+    "CPRT": {
+      "revenue": 4646958000.0,
+      "operatingIncome": 1696714000.0,
+      "netIncome": 1552449000.0,
+      "totalAssets": 10090902000.0,
+      "totalLiabilities": 883411000.0,
+      "totalEquity": 9187033000.0,
+      "ocf": 1799750000.0,
+      "fiscalYear": 2025
+    },
+    "CPT": {
+      "revenue": 1573544000.0,
+      "operatingIncome": 288906000.0,
+      "netIncome": 384462000.0,
+      "totalAssets": 9042989000.0,
+      "totalLiabilities": 4604736000.0,
+      "totalEquity": 4362523000.0,
+      "ocf": 826621000.0,
+      "fiscalYear": 2025
+    },
+    "CRL": {
+      "revenue": 4015382000.0,
+      "operatingIncome": 401136000.0,
+      "netIncome": -144338000.0,
+      "totalAssets": 7135422000.0,
+      "totalLiabilities": 3924228000.0,
+      "totalEquity": 3164630000.0,
+      "ocf": 737646000.0,
+      "fiscalYear": 2025
+    },
+    "CRM": {
+      "revenue": 41525000000.0,
+      "operatingIncome": 8917000000.0,
+      "netIncome": 7457000000.0,
+      "totalAssets": 112305000000.0,
+      "totalLiabilities": 53163000000.0,
+      "totalEquity": 59142000000.0,
+      "ocf": 14996000000.0,
+      "fiscalYear": 2026
+    },
+    "CRWD": {
+      "revenue": 4812005000.0,
+      "operatingIncome": -293292000.0,
+      "netIncome": -162502000.0,
+      "totalAssets": 11086684000.0,
+      "totalLiabilities": 6614079000.0,
+      "totalEquity": 4428390000.0,
+      "ocf": 1612349000.0,
+      "fiscalYear": 2026
+    },
+    "CSCO": {
+      "revenue": 56654000000.0,
+      "operatingIncome": 12504000000.0,
+      "netIncome": 10180000000.0,
+      "totalAssets": 122291000000.0,
+      "totalLiabilities": 75448000000.0,
+      "totalEquity": 46843000000.0,
+      "ocf": 14193000000.0,
+      "fiscalYear": 2025
+    },
+    "CSGP": {
+      "revenue": 3247000000.0,
+      "operatingIncome": -72000000.0,
+      "netIncome": 7000000.0,
+      "totalAssets": 10538000000.0,
+      "totalLiabilities": 2167000000.0,
+      "totalEquity": 8334000000.0,
+      "ocf": 430000000.0,
+      "fiscalYear": 2025
+    },
+    "CSX": {
+      "revenue": 14092000000.0,
+      "operatingIncome": 4718000000.0,
+      "netIncome": 2889000000.0,
+      "totalAssets": 43682000000.0,
+      "totalLiabilities": 30522000000.0,
+      "totalEquity": 13155000000.0,
+      "ocf": 4613000000.0,
+      "fiscalYear": 2025
+    },
+    "CTAS": {
+      "revenue": 10340181000.0,
+      "operatingIncome": 2359726000.0,
+      "netIncome": 1812281000.0,
+      "totalAssets": 9825241000.0,
+      "totalLiabilities": 5140760000.0,
+      "totalEquity": 4684481000.0,
+      "ocf": 2165905000.0,
+      "fiscalYear": 2025
+    },
+    "CTRA": {
+      "revenue": 7645000000.0,
+      "operatingIncome": 2447000000.0,
+      "netIncome": 1717000000.0,
+      "totalAssets": 24241000000.0,
+      "totalLiabilities": 9403000000.0,
+      "totalEquity": 14838000000.0,
+      "ocf": 4021000000.0,
+      "fiscalYear": 2025
+    },
+    "CTSH": {
+      "revenue": 21108000000.0,
+      "operatingIncome": 3327000000.0,
+      "netIncome": 2230000000.0,
+      "totalAssets": 20692000000.0,
+      "totalLiabilities": 5677000000.0,
+      "totalEquity": 15015000000.0,
+      "ocf": 2883000000.0,
+      "fiscalYear": 2025
+    },
+    "CTVA": {
+      "revenue": 17401000000.0,
+      "operatingIncome": 2619000000.0,
+      "netIncome": 1094000000.0,
+      "totalAssets": 42845000000.0,
+      "totalLiabilities": 18459000000.0,
+      "totalEquity": 24144000000.0,
+      "ocf": 3406000000.0,
+      "fiscalYear": 2025
+    },
+    "CVS": {
+      "revenue": 402067000000.0,
+      "operatingIncome": 10385000000.0,
+      "netIncome": 1768000000.0,
+      "totalAssets": 253538000000.0,
+      "totalLiabilities": 178156000000.0,
+      "totalEquity": 75214000000.0,
+      "ocf": 10639000000.0,
+      "fiscalYear": 2025
+    },
+    "CVX": {
+      "revenue": 184432000000.0,
+      "operatingIncome": 16674000000.0,
+      "netIncome": 12299000000.0,
+      "totalAssets": 324012000000.0,
+      "totalLiabilities": 131836000000.0,
+      "totalEquity": 186450000000.0,
+      "ocf": 33939000000.0,
+      "fiscalYear": 2025
+    },
+    "CZR": {
+      "revenue": 11486000000.0,
+      "operatingIncome": 2078000000.0,
+      "netIncome": -502000000.0,
+      "totalAssets": 31639000000.0,
+      "totalLiabilities": 27953000000.0,
+      "totalEquity": 3504000000.0,
+      "ocf": 1302000000.0,
+      "fiscalYear": 2025
+    },
+    "D": {
+      "revenue": 16506000000.0,
+      "operatingIncome": 4931000000.0,
+      "netIncome": 2998000000.0,
+      "totalAssets": 115857000000.0,
+      "totalLiabilities": 82440000000.0,
+      "totalEquity": 29083000000.0,
+      "ocf": 5361000000.0,
+      "fiscalYear": 2025
+    },
+    "DASH": {
+      "revenue": 13717000000.0,
+      "operatingIncome": 725000000.0,
+      "netIncome": 935000000.0,
+      "totalAssets": 19659000000.0,
+      "totalLiabilities": 9613000000.0,
+      "totalEquity": 10033000000.0,
+      "ocf": 2431000000.0,
+      "fiscalYear": 2025
+    },
+    "DD": {
+      "revenue": 6849000000.0,
+      "operatingIncome": 860000000.0,
+      "netIncome": -779000000.0,
+      "totalAssets": 21575000000.0,
+      "totalLiabilities": 7472000000.0,
+      "totalEquity": 13919000000.0,
+      "ocf": 560000000.0,
+      "fiscalYear": 2025
+    },
+    "DDOG": {
+      "revenue": 3427158000.0,
+      "operatingIncome": -44373000.0,
+      "netIncome": 107741000.0,
+      "totalAssets": 6643844000.0,
+      "totalLiabilities": 2911638000.0,
+      "totalEquity": 3732206000.0,
+      "ocf": 1050135000.0,
+      "fiscalYear": 2025
+    },
+    "DE": {
+      "revenue": 44665000000.0,
+      "operatingIncome": 8416000000.0,
+      "netIncome": 5027000000.0,
+      "totalAssets": 105996000000.0,
+      "totalLiabilities": 79989000000.0,
+      "totalEquity": 25950000000.0,
+      "ocf": 7459000000.0,
+      "fiscalYear": 2025
+    },
+    "DECK": {
+      "revenue": 5472296000.0,
+      "operatingIncome": 1262903000.0,
+      "netIncome": 1024071000.0,
+      "totalAssets": 3687765000.0,
+      "totalLiabilities": 1188127000.0,
+      "totalEquity": 2499638000.0,
+      "ocf": 1181955000.0,
+      "fiscalYear": 2026
+    },
+    "DELL": {
+      "revenue": 113538000000.0,
+      "operatingIncome": 8446000000.0,
+      "netIncome": 5936000000.0,
+      "totalAssets": 101286000000.0,
+      "totalLiabilities": 103756000000.0,
+      "totalEquity": -2470000000.0,
+      "ocf": 11185000000.0,
+      "fiscalYear": 2026
+    },
+    "DG": {
+      "revenue": 42724369000.0,
+      "operatingIncome": 2203668000.0,
+      "netIncome": 1512311000.0,
+      "totalAssets": 30963730000.0,
+      "totalLiabilities": 22451768000.0,
+      "totalEquity": 8511962000.0,
+      "ocf": 3634500000.0,
+      "fiscalYear": 2026
+    },
+    "DGX": {
+      "revenue": 11035000000.0,
+      "operatingIncome": 1556000000.0,
+      "netIncome": 992000000.0,
+      "totalAssets": 16225000000.0,
+      "totalLiabilities": 8939000000.0,
+      "totalEquity": 7170000000.0,
+      "ocf": 1886000000.0,
+      "fiscalYear": 2025
+    },
+    "DHI": {
+      "revenue": 34250400000.0,
+      "operatingIncome": 4424200000.0,
+      "netIncome": 3585200000.0,
+      "totalAssets": 35471200000.0,
+      "totalLiabilities": 10729000000.0,
+      "totalEquity": 24190400000.0,
+      "ocf": 3420900000.0,
+      "fiscalYear": 2025
+    },
+    "DHR": {
+      "revenue": 24568000000.0,
+      "operatingIncome": 4690000000.0,
+      "netIncome": 3614000000.0,
+      "totalAssets": 83464000000.0,
+      "totalLiabilities": 30923000000.0,
+      "totalEquity": 52534000000.0,
+      "ocf": 6416000000.0,
+      "fiscalYear": 2025
+    },
+    "DIS": {
+      "revenue": 94425000000.0,
+      "operatingIncome": 13832000000.0,
+      "netIncome": 12404000000.0,
+      "totalAssets": 197514000000.0,
+      "totalLiabilities": 82902000000.0,
+      "totalEquity": 109869000000.0,
+      "ocf": 18101000000.0,
+      "fiscalYear": 2025
+    },
+    "DLR": {
+      "revenue": 6112692000.0,
+      "operatingIncome": 922135000.0,
+      "netIncome": 1308589000.0,
+      "totalAssets": 49410468000.0,
+      "totalLiabilities": 24564494000.0,
+      "totalEquity": 22925663000.0,
+      "ocf": 2412136000.0,
+      "fiscalYear": 2025
+    },
+    "DLTR": {
+      "revenue": 19411800000.0,
+      "operatingIncome": 1653100000.0,
+      "netIncome": 1282500000.0,
+      "totalAssets": 13466200000.0,
+      "totalLiabilities": 9711300000.0,
+      "totalEquity": 3754900000.0,
+      "ocf": 2534000000.0,
+      "fiscalYear": 2026
+    },
+    "DOC": {
+      "revenue": 2822512000.0,
+      "operatingIncome": 544132000.0,
+      "netIncome": 71347000.0,
+      "totalAssets": 20336018000.0,
+      "totalLiabilities": 12033567000.0,
+      "totalEquity": 7500094000.0,
+      "ocf": 1251959000.0,
+      "fiscalYear": 2025
+    },
+    "DOV": {
+      "revenue": 8092571000.0,
+      "operatingIncome": 1373361000.0,
+      "netIncome": 1093956000.0,
+      "totalAssets": 13422423000.0,
+      "totalLiabilities": 6017217000.0,
+      "totalEquity": 7405206000.0,
+      "ocf": 1333575000.0,
+      "fiscalYear": 2025
+    },
+    "DOW": {
+      "revenue": 39968000000.0,
+      "operatingIncome": 158000000.0,
+      "netIncome": -2623000000.0,
+      "totalAssets": 58538000000.0,
+      "totalLiabilities": 41016000000.0,
+      "totalEquity": 16008000000.0,
+      "ocf": 1032000000.0,
+      "fiscalYear": 2025
+    },
+    "DPZ": {
+      "revenue": 4939994000.0,
+      "operatingIncome": 949946000.0,
+      "netIncome": 601704000.0,
+      "totalAssets": 1716459000.0,
+      "totalLiabilities": 5617601000.0,
+      "totalEquity": -3901142000.0,
+      "ocf": 792062000.0,
+      "fiscalYear": 2025
+    },
+    "DRI": {
+      "revenue": 12076700000.0,
+      "operatingIncome": 1436300000.0,
+      "netIncome": 1049600000.0,
+      "totalAssets": 12587000000.0,
+      "totalLiabilities": 10275700000.0,
+      "totalEquity": 2311300000.0,
+      "ocf": 1698500000.0,
+      "fiscalYear": 2025
+    },
+    "DTE": {
+      "revenue": 15814000000.0,
+      "operatingIncome": 2528000000.0,
+      "netIncome": 1462000000.0,
+      "totalAssets": 54066000000.0,
+      "totalLiabilities": 41758000000.0,
+      "totalEquity": 12303000000.0,
+      "ocf": 3409000000.0,
+      "fiscalYear": 2025
+    },
+    "DUK": {
+      "revenue": 32237000000.0,
+      "operatingIncome": 8577000000.0,
+      "netIncome": 4968000000.0,
+      "totalAssets": 195736000000.0,
+      "totalLiabilities": 142717000000.0,
+      "totalEquity": 51842000000.0,
+      "ocf": 12330000000.0,
+      "fiscalYear": 2025
+    },
+    "DVA": {
+      "revenue": 13643069000.0,
+      "operatingIncome": 2010615000.0,
+      "netIncome": 746803000.0,
+      "totalAssets": 17480103000.0,
+      "totalLiabilities": 16321665000.0,
+      "totalEquity": -651082000.0,
+      "ocf": 1886500000.0,
+      "fiscalYear": 2025
+    },
+    "DVN": {
+      "revenue": 17188000000.0,
+      "operatingIncome": 3856000000.0,
+      "netIncome": 2642000000.0,
+      "totalAssets": 31599000000.0,
+      "totalLiabilities": 16071000000.0,
+      "totalEquity": 15528000000.0,
+      "ocf": 6711000000.0,
+      "fiscalYear": 2025
+    },
+    "DXCM": {
+      "revenue": 4662000000.0,
+      "operatingIncome": 911800000.0,
+      "netIncome": 836300000.0,
+      "totalAssets": 6339900000.0,
+      "totalLiabilities": 3593900000.0,
+      "totalEquity": 2746000000.0,
+      "ocf": 1440700000.0,
+      "fiscalYear": 2025
+    },
+    "EA": {
+      "revenue": 7531000000.0,
+      "operatingIncome": 1162000000.0,
+      "netIncome": 887000000.0,
+      "totalAssets": 13131000000.0,
+      "totalLiabilities": 6367000000.0,
+      "totalEquity": 6764000000.0,
+      "ocf": 2553000000.0,
+      "fiscalYear": 2026
+    },
+    "EBAY": {
+      "revenue": 11100000000.0,
+      "operatingIncome": 2277000000.0,
+      "netIncome": 2031000000.0,
+      "totalAssets": 17610000000.0,
+      "totalLiabilities": 12995000000.0,
+      "totalEquity": 4615000000.0,
+      "ocf": 1959000000.0,
+      "fiscalYear": 2025
+    },
+    "ECL": {
+      "revenue": 16081200000.0,
+      "operatingIncome": 2892500000.0,
+      "netIncome": 2075600000.0,
+      "totalAssets": 24696300000.0,
+      "totalLiabilities": 14891800000.0,
+      "totalEquity": 9770800000.0,
+      "ocf": 2952600000.0,
+      "fiscalYear": 2025
+    },
+    "ED": {
+      "revenue": 16918000000.0,
+      "operatingIncome": 3000000000.0,
+      "netIncome": 2023000000.0,
+      "totalAssets": 74603000000.0,
+      "totalLiabilities": 50413000000.0,
+      "totalEquity": 24190000000.0,
+      "ocf": 4800000000.0,
+      "fiscalYear": 2025
+    },
+    "EFX": {
+      "revenue": 6074500000.0,
+      "operatingIncome": 1095200000.0,
+      "netIncome": 660300000.0,
+      "totalAssets": 11864200000.0,
+      "totalLiabilities": 7126000000.0,
+      "totalEquity": 4604300000.0,
+      "ocf": 1615700000.0,
+      "fiscalYear": 2025
+    },
+    "EG": {
+      "revenue": 17218000000.0,
+      "operatingIncome": 2038000000.0,
+      "netIncome": 1591000000.0,
+      "totalAssets": 62514000000.0,
+      "totalLiabilities": 47054000000.0,
+      "totalEquity": 15460000000.0,
+      "ocf": 3068000000.0,
+      "fiscalYear": 2025
+    },
+    "EIX": {
+      "revenue": 19317000000.0,
+      "operatingIncome": 5240000000.0,
+      "netIncome": 4701000000.0,
+      "totalAssets": 94026000000.0,
+      "totalLiabilities": 74767000000.0,
+      "totalEquity": 17579000000.0,
+      "ocf": 5800000000.0,
+      "fiscalYear": 2025
+    },
+    "ELV": {
+      "revenue": 199125000000.0,
+      "operatingIncome": 8112000000.0,
+      "netIncome": 5662000000.0,
+      "totalAssets": 121494000000.0,
+      "totalLiabilities": 77468000000.0,
+      "totalEquity": 43882000000.0,
+      "ocf": 4290000000.0,
+      "fiscalYear": 2025
+    },
+    "EME": {
+      "revenue": 16986422000.0,
+      "operatingIncome": 1568542000.0,
+      "netIncome": 1272817000.0,
+      "totalAssets": 9291399000.0,
+      "totalLiabilities": 5616418000.0,
+      "totalEquity": 3673944000.0,
+      "ocf": 1302063000.0,
+      "fiscalYear": 2025
+    },
+    "EMN": {
+      "revenue": 8752000000.0,
+      "operatingIncome": 956000000.0,
+      "netIncome": 474000000.0,
+      "totalAssets": 14859000000.0,
+      "totalLiabilities": 8822000000.0,
+      "totalEquity": 5961000000.0,
+      "ocf": 970000000.0,
+      "fiscalYear": 2025
+    },
+    "EMR": {
+      "revenue": 18016000000.0,
+      "operatingIncome": 3532000000.0,
+      "netIncome": 2293000000.0,
+      "totalAssets": 41964000000.0,
+      "totalLiabilities": 21666000000.0,
+      "totalEquity": 20282000000.0,
+      "ocf": 3098000000.0,
+      "fiscalYear": 2025
+    },
+    "ENPH": {
+      "revenue": 1472985000.0,
+      "operatingIncome": 164657000.0,
+      "netIncome": 172133000.0,
+      "totalAssets": 3509792000.0,
+      "totalLiabilities": 2422769000.0,
+      "totalEquity": 1087023000.0,
+      "ocf": 136540000.0,
+      "fiscalYear": 2025
+    },
+    "EOG": {
+      "revenue": 22582000000.0,
+      "operatingIncome": 7250000000.0,
+      "netIncome": 4980000000.0,
+      "totalAssets": 51799000000.0,
+      "totalLiabilities": 21966000000.0,
+      "totalEquity": 29833000000.0,
+      "ocf": 10044000000.0,
+      "fiscalYear": 2025
+    },
+    "EPAM": {
+      "revenue": 5457056000.0,
+      "operatingIncome": 520003000.0,
+      "netIncome": 377678000.0,
+      "totalAssets": 4902136000.0,
+      "totalLiabilities": 1224328000.0,
+      "totalEquity": 3677226000.0,
+      "ocf": 654934000.0,
+      "fiscalYear": 2025
+    },
+    "EQIX": {
+      "revenue": 9217000000.0,
+      "operatingIncome": 1966000000.0,
+      "netIncome": 1350000000.0,
+      "totalAssets": 40141000000.0,
+      "totalLiabilities": 25963000000.0,
+      "totalEquity": 14156000000.0,
+      "ocf": 3911000000.0,
+      "fiscalYear": 2025
+    },
+    "EQR": {
+      "revenue": 3093959000.0,
+      "operatingIncome": 869752000.0,
+      "netIncome": 1120089000.0,
+      "totalAssets": 20746023000.0,
+      "totalLiabilities": 9336889000.0,
+      "totalEquity": 11041499000.0,
+      "ocf": 1648763000.0,
+      "fiscalYear": 2025
+    },
+    "EQT": {
+      "revenue": 8353217000.0,
+      "operatingIncome": 3014406000.0,
+      "netIncome": 2039247000.0,
+      "totalAssets": 41792874000.0,
+      "totalLiabilities": 14432726000.0,
+      "totalEquity": 23752677000.0,
+      "ocf": 5125952000.0,
+      "fiscalYear": 2025
+    },
+    "ES": {
+      "revenue": 13547244000.0,
+      "operatingIncome": 2988589000.0,
+      "netIncome": 1692372000.0,
+      "totalAssets": 63786711000.0,
+      "totalLiabilities": 47433872000.0,
+      "totalEquity": 16197271000.0,
+      "ocf": 4113572000.0,
+      "fiscalYear": 2025
+    },
+    "ESS": {
+      "revenue": 1887345000.0,
+      "operatingIncome": 601913000.0,
+      "netIncome": 669666000.0,
+      "totalAssets": 13159009000.0,
+      "totalLiabilities": 7422114000.0,
+      "totalEquity": 5541372000.0,
+      "ocf": 1074423000.0,
+      "fiscalYear": 2025
+    },
+    "ETN": {
+      "revenue": 27448000000.0,
+      "operatingIncome": 5209000000.0,
+      "netIncome": 4087000000.0,
+      "totalAssets": 41251000000.0,
+      "totalLiabilities": 21782000000.0,
+      "totalEquity": 19425000000.0,
+      "ocf": 4472000000.0,
+      "fiscalYear": 2025
+    },
+    "ETR": {
+      "revenue": 12946686000.0,
+      "operatingIncome": 3215073000.0,
+      "netIncome": 1773328000.0,
+      "totalAssets": 71890730000.0,
+      "totalLiabilities": 54876563000.0,
+      "totalEquity": 16958076000.0,
+      "ocf": 5150651000.0,
+      "fiscalYear": 2025
+    },
+    "EVRG": {
+      "revenue": 5961600000.0,
+      "operatingIncome": 1532900000.0,
+      "netIncome": 855600000.0,
+      "totalAssets": 33948500000.0,
+      "totalLiabilities": 23680700000.0,
+      "totalEquity": 10221300000.0,
+      "ocf": 2045200000.0,
+      "fiscalYear": 2025
+    },
+    "EW": {
+      "revenue": 6067600000.0,
+      "operatingIncome": 1636200000.0,
+      "netIncome": 1073500000.0,
+      "totalAssets": 13697200000.0,
+      "totalLiabilities": 3359600000.0,
+      "totalEquity": 10337600000.0,
+      "ocf": 1595200000.0,
+      "fiscalYear": 2025
+    },
+    "EXC": {
+      "revenue": 24258000000.0,
+      "operatingIncome": 5145000000.0,
+      "netIncome": 2768000000.0,
+      "totalAssets": 116570000000.0,
+      "totalLiabilities": 87772000000.0,
+      "totalEquity": 28798000000.0,
+      "ocf": 6254000000.0,
+      "fiscalYear": 2025
+    },
+    "EXPD": {
+      "revenue": 11069009000.0,
+      "operatingIncome": 1052546000.0,
+      "netIncome": 810332000.0,
+      "totalAssets": 4893638000.0,
+      "totalLiabilities": 2535545000.0,
+      "totalEquity": 2355633000.0,
+      "ocf": 1006501000.0,
+      "fiscalYear": 2025
+    },
+    "EXPE": {
+      "revenue": 14733000000.0,
+      "operatingIncome": 2163000000.0,
+      "netIncome": 1294000000.0,
+      "totalAssets": 24452000000.0,
+      "totalLiabilities": 21905000000.0,
+      "totalEquity": 1284000000.0,
+      "ocf": 3880000000.0,
+      "fiscalYear": 2025
+    },
+    "EXR": {
+      "revenue": 3377542000.0,
+      "operatingIncome": 1489001000.0,
+      "netIncome": 973999000.0,
+      "totalAssets": 29264046000.0,
+      "totalLiabilities": 14940010000.0,
+      "totalEquity": 13433166000.0,
+      "ocf": 1850193000.0,
+      "fiscalYear": 2025
+    },
+    "F": {
+      "revenue": 187267000000.0,
+      "operatingIncome": -9169000000.0,
+      "netIncome": -8182000000.0,
+      "totalAssets": 289160000000.0,
+      "totalLiabilities": 253180000000.0,
+      "totalEquity": 35952000000.0,
+      "ocf": 21282000000.0,
+      "fiscalYear": 2025
+    },
+    "FANG": {
+      "revenue": 14929000000.0,
+      "operatingIncome": 4918000000.0,
+      "netIncome": 1664000000.0,
+      "totalAssets": 71059000000.0,
+      "totalLiabilities": 28092000000.0,
+      "totalEquity": 36972000000.0,
+      "ocf": 8758000000.0,
+      "fiscalYear": 2025
+    },
+    "FAST": {
+      "revenue": 8200500000.0,
+      "operatingIncome": 1655700000.0,
+      "netIncome": 1258400000.0,
+      "totalAssets": 5052900000.0,
+      "totalLiabilities": 1109300000.0,
+      "totalEquity": 3943600000.0,
+      "ocf": 1295900000.0,
+      "fiscalYear": 2025
+    },
+    "FBIN": {
+      "revenue": 4463200000.0,
+      "operatingIncome": 621400000.0,
+      "netIncome": 298800000.0,
+      "totalAssets": 6520600000.0,
+      "totalLiabilities": 4132000000.0,
+      "totalEquity": 2388600000.0,
+      "ocf": 478600000.0,
+      "fiscalYear": 2025
+    },
+    "FCX": {
+      "revenue": 25915000000.0,
+      "operatingIncome": 6502000000.0,
+      "netIncome": 2204000000.0,
+      "totalAssets": 58167000000.0,
+      "totalLiabilities": 27401000000.0,
+      "totalEquity": 18899000000.0,
+      "ocf": 5610000000.0,
+      "fiscalYear": 2025
+    },
+    "FDS": {
+      "revenue": 2321748000.0,
+      "operatingIncome": 748303000.0,
+      "netIncome": 597040000.0,
+      "totalAssets": 4304272000.0,
+      "totalLiabilities": 2117859000.0,
+      "totalEquity": 2186413000.0,
+      "ocf": 726260000.0,
+      "fiscalYear": 2025
+    },
+    "FDX": {
+      "revenue": 87926000000.0,
+      "operatingIncome": 5994000000.0,
+      "netIncome": 4092000000.0,
+      "totalAssets": 87627000000.0,
+      "totalLiabilities": 59553000000.0,
+      "totalEquity": 28074000000.0,
+      "ocf": 7036000000.0,
+      "fiscalYear": 2025
+    },
+    "FE": {
+      "revenue": 15090000000.0,
+      "operatingIncome": 2833000000.0,
+      "netIncome": 1020000000.0,
+      "totalAssets": 55904000000.0,
+      "totalLiabilities": 41978000000.0,
+      "totalEquity": 12510000000.0,
+      "ocf": 3700000000.0,
+      "fiscalYear": 2025
+    },
+    "FFIV": {
+      "revenue": 3088072000.0,
+      "operatingIncome": 791433000.0,
+      "netIncome": 692380000.0,
+      "totalAssets": 6319492000.0,
+      "totalLiabilities": 2727493000.0,
+      "totalEquity": 3591999000.0,
+      "ocf": 949666000.0,
+      "fiscalYear": 2025
+    },
+    "FICO": {
+      "revenue": 1990869000.0,
+      "operatingIncome": 935772000.0,
+      "netIncome": 651946000.0,
+      "totalAssets": 1868133000.0,
+      "totalLiabilities": 3613917000.0,
+      "totalEquity": -1745784000.0,
+      "ocf": 778807000.0,
+      "fiscalYear": 2025
+    },
+    "FITB": {
+      "revenue": 8821000000.0,
+      "operatingIncome": null,
+      "netIncome": 2522000000.0,
+      "totalAssets": 214376000000.0,
+      "totalLiabilities": 192652000000.0,
+      "totalEquity": 21724000000.0,
+      "ocf": 4514000000.0,
+      "fiscalYear": 2025
+    },
+    "FMC": {
+      "revenue": 3467400000.0,
+      "operatingIncome": 332000000.0,
+      "netIncome": -2238900000.0,
+      "totalAssets": 9687200000.0,
+      "totalLiabilities": 7588300000.0,
+      "totalEquity": 2071500000.0,
+      "ocf": -80200000.0,
+      "fiscalYear": 2025
+    },
+    "FOX": {
+      "revenue": 16300000000.0,
+      "operatingIncome": 3229000000.0,
+      "netIncome": 2263000000.0,
+      "totalAssets": 23195000000.0,
+      "totalLiabilities": 10840000000.0,
+      "totalEquity": 11962000000.0,
+      "ocf": 3324000000.0,
+      "fiscalYear": 2025
+    },
+    "FOXA": {
+      "revenue": 16300000000.0,
+      "operatingIncome": 3229000000.0,
+      "netIncome": 2263000000.0,
+      "totalAssets": 23195000000.0,
+      "totalLiabilities": 10840000000.0,
+      "totalEquity": 11962000000.0,
+      "ocf": 3324000000.0,
+      "fiscalYear": 2025
+    },
+    "FRT": {
+      "revenue": 1278975000.0,
+      "operatingIncome": 459513000.0,
+      "netIncome": 411077000.0,
+      "totalAssets": 9130460000.0,
+      "totalLiabilities": 5629819000.0,
+      "totalEquity": 3248731000.0,
+      "ocf": 622378000.0,
+      "fiscalYear": 2025
+    },
+    "FSLR": {
+      "revenue": 5219376000.0,
+      "operatingIncome": 1596864000.0,
+      "netIncome": 1528229000.0,
+      "totalAssets": 13321310000.0,
+      "totalLiabilities": 3783317000.0,
+      "totalEquity": 9537993000.0,
+      "ocf": 2057105000.0,
+      "fiscalYear": 2025
+    },
+    "FTNT": {
+      "revenue": 6799600000.0,
+      "operatingIncome": 2084700000.0,
+      "netIncome": 1853400000.0,
+      "totalAssets": 10389200000.0,
+      "totalLiabilities": 9151700000.0,
+      "totalEquity": 1237500000.0,
+      "ocf": 2590600000.0,
+      "fiscalYear": 2025
+    },
+    "FTV": {
+      "revenue": 4159100000.0,
+      "operatingIncome": 720200000.0,
+      "netIncome": 579200000.0,
+      "totalAssets": 11737700000.0,
+      "totalLiabilities": 5276600000.0,
+      "totalEquity": 6453400000.0,
+      "ocf": 1083200000.0,
+      "fiscalYear": 2025
+    },
+    "GD": {
+      "revenue": 52550000000.0,
+      "operatingIncome": 5356000000.0,
+      "netIncome": 4210000000.0,
+      "totalAssets": 57249000000.0,
+      "totalLiabilities": 31627000000.0,
+      "totalEquity": 25622000000.0,
+      "ocf": 5120000000.0,
+      "fiscalYear": 2025
+    },
+    "GDDY": {
+      "revenue": 4951100000.0,
+      "operatingIncome": 1138400000.0,
+      "netIncome": 875000000.0,
+      "totalAssets": 8034900000.0,
+      "totalLiabilities": 7819800000.0,
+      "totalEquity": 215100000.0,
+      "ocf": 1599400000.0,
+      "fiscalYear": 2025
+    },
+    "GE": {
+      "revenue": 45855000000.0,
+      "operatingIncome": 8680000000.0,
+      "netIncome": 8704000000.0,
+      "totalAssets": 130169000000.0,
+      "totalLiabilities": 111271000000.0,
+      "totalEquity": 18677000000.0,
+      "ocf": 8537000000.0,
+      "fiscalYear": 2025
+    },
+    "GEHC": {
+      "revenue": 20625000000.0,
+      "operatingIncome": 2762000000.0,
+      "netIncome": 2084000000.0,
+      "totalAssets": 36906000000.0,
+      "totalLiabilities": 26307000000.0,
+      "totalEquity": 10379000000.0,
+      "ocf": 1987000000.0,
+      "fiscalYear": 2025
+    },
+    "GEN": {
+      "revenue": 5000000000.0,
+      "operatingIncome": 2155000000.0,
+      "netIncome": 973000000.0,
+      "totalAssets": 15589000000.0,
+      "totalLiabilities": 12978000000.0,
+      "totalEquity": 2611000000.0,
+      "ocf": 1545000000.0,
+      "fiscalYear": 2026
+    },
+    "GEV": {
+      "revenue": 38068000000.0,
+      "operatingIncome": 1389000000.0,
+      "netIncome": 4884000000.0,
+      "totalAssets": 63016000000.0,
+      "totalLiabilities": 50720000000.0,
+      "totalEquity": 11178000000.0,
+      "ocf": 4987000000.0,
+      "fiscalYear": 2025
+    },
+    "GFS": {
+      "revenue": 6791000000.0,
+      "operatingIncome": 797000000.0,
+      "netIncome": 885000000.0,
+      "totalAssets": 17141000000.0,
+      "totalLiabilities": 5158000000.0,
+      "totalEquity": 11928000000.0,
+      "ocf": 1731000000.0,
+      "fiscalYear": 2025
+    },
+    "GILD": {
+      "revenue": 29442000000.0,
+      "operatingIncome": 11701000000.0,
+      "netIncome": 8510000000.0,
+      "totalAssets": 59023000000.0,
+      "totalLiabilities": 36405000000.0,
+      "totalEquity": 22702000000.0,
+      "ocf": 10019000000.0,
+      "fiscalYear": 2025
+    },
+    "GIS": {
+      "revenue": 19486600000.0,
+      "operatingIncome": 3287200000.0,
+      "netIncome": 2295200000.0,
+      "totalAssets": 33071100000.0,
+      "totalLiabilities": 23859900000.0,
+      "totalEquity": 9199200000.0,
+      "ocf": 2918200000.0,
+      "fiscalYear": 2025
+    },
+    "GL": {
+      "revenue": 5994318000.0,
+      "operatingIncome": 1577196000.0,
+      "netIncome": 1161238000.0,
+      "totalAssets": 30813692000.0,
+      "totalLiabilities": 24839113000.0,
+      "totalEquity": 5974579000.0,
+      "ocf": 1396391000.0,
+      "fiscalYear": 2025
+    },
+    "GLW": {
+      "revenue": 15629000000.0,
+      "operatingIncome": 2279000000.0,
+      "netIncome": 1596000000.0,
+      "totalAssets": 30976000000.0,
+      "totalLiabilities": 18669000000.0,
+      "totalEquity": 11807000000.0,
+      "ocf": 2695000000.0,
+      "fiscalYear": 2025
+    },
+    "GM": {
+      "revenue": 185019000000.0,
+      "operatingIncome": 2909000000.0,
+      "netIncome": 2697000000.0,
+      "totalAssets": 281284000000.0,
+      "totalLiabilities": 218116000000.0,
+      "totalEquity": 61119000000.0,
+      "ocf": 26867000000.0,
+      "fiscalYear": 2025
+    },
+    "GNRC": {
+      "revenue": 4209147000.0,
+      "operatingIncome": 289191000.0,
+      "netIncome": 159554000.0,
+      "totalAssets": 5573679000.0,
+      "totalLiabilities": 2934633000.0,
+      "totalEquity": 2632422000.0,
+      "ocf": 437978000.0,
+      "fiscalYear": 2025
+    },
+    "GOOG": {
+      "revenue": 402836000000.0,
+      "operatingIncome": 129039000000.0,
+      "netIncome": 132170000000.0,
+      "totalAssets": 595281000000.0,
+      "totalLiabilities": 180016000000.0,
+      "totalEquity": 415265000000.0,
+      "ocf": 164713000000.0,
+      "fiscalYear": 2025
+    },
+    "GOOGL": {
+      "revenue": 402836000000.0,
+      "operatingIncome": 129039000000.0,
+      "netIncome": 132170000000.0,
+      "totalAssets": 595281000000.0,
+      "totalLiabilities": 180016000000.0,
+      "totalEquity": 415265000000.0,
+      "ocf": 164713000000.0,
+      "fiscalYear": 2025
+    },
+    "GPC": {
+      "revenue": 24300141000.0,
+      "operatingIncome": 1214612000.0,
+      "netIncome": 65945000.0,
+      "totalAssets": 20795540000.0,
+      "totalLiabilities": 16355177000.0,
+      "totalEquity": 4422991000.0,
+      "ocf": 890762000.0,
+      "fiscalYear": 2025
+    },
+    "GPN": {
+      "revenue": 7705878000.0,
+      "operatingIncome": 1471866000.0,
+      "netIncome": 1400107000.0,
+      "totalAssets": 53338484000.0,
+      "totalLiabilities": 29559003000.0,
+      "totalEquity": 22888767000.0,
+      "ocf": 2656592000.0,
+      "fiscalYear": 2025
+    },
+    "GRMN": {
+      "revenue": 7245519000.0,
+      "operatingIncome": 1876076000.0,
+      "netIncome": 1663887000.0,
+      "totalAssets": 10993669000.0,
+      "totalLiabilities": 2021105000.0,
+      "totalEquity": 8972564000.0,
+      "ocf": 1633359000.0,
+      "fiscalYear": 2025
+    },
+    "GS": {
+      "revenue": 58283000000.0,
+      "operatingIncome": null,
+      "netIncome": 17176000000.0,
+      "totalAssets": 1809320000000.0,
+      "totalLiabilities": 1684348000000.0,
+      "totalEquity": 124972000000.0,
+      "ocf": -45154000000.0,
+      "fiscalYear": 2025
+    },
+    "GWW": {
+      "revenue": 17942000000.0,
+      "operatingIncome": 2495000000.0,
+      "netIncome": 1706000000.0,
+      "totalAssets": 8962000000.0,
+      "totalLiabilities": 4821000000.0,
+      "totalEquity": 3736000000.0,
+      "ocf": 2015000000.0,
+      "fiscalYear": 2025
+    },
+    "HAL": {
+      "revenue": 22184000000.0,
+      "operatingIncome": 3091000000.0,
+      "netIncome": 1283000000.0,
+      "totalAssets": 25010000000.0,
+      "totalLiabilities": 14505000000.0,
+      "totalEquity": 10461000000.0,
+      "ocf": 2926000000.0,
+      "fiscalYear": 2025
+    },
+    "HAS": {
+      "revenue": 4701300000.0,
+      "operatingIncome": 1058000000.0,
+      "netIncome": -322400000.0,
+      "totalAssets": 5552000000.0,
+      "totalLiabilities": 4986500000.0,
+      "totalEquity": 538500000.0,
+      "ocf": 893200000.0,
+      "fiscalYear": 2025
+    },
+    "HBAN": {
+      "revenue": 8131000000.0,
+      "operatingIncome": null,
+      "netIncome": 2211000000.0,
+      "totalAssets": 225106000000.0,
+      "totalLiabilities": 200727000000.0,
+      "totalEquity": 24342000000.0,
+      "ocf": 2482000000.0,
+      "fiscalYear": 2025
+    },
+    "HCA": {
+      "revenue": 75600000000.0,
+      "operatingIncome": 11965000000.0,
+      "netIncome": 6784000000.0,
+      "totalAssets": 60720000000.0,
+      "totalLiabilities": 63491000000.0,
+      "totalEquity": -6027000000.0,
+      "ocf": 12636000000.0,
+      "fiscalYear": 2025
+    },
+    "HD": {
+      "revenue": 164683000000.0,
+      "operatingIncome": 20890000000.0,
+      "netIncome": 14156000000.0,
+      "totalAssets": 105095000000.0,
+      "totalLiabilities": 92282000000.0,
+      "totalEquity": 12813000000.0,
+      "ocf": 16325000000.0,
+      "fiscalYear": 2026
+    },
+    "HIG": {
+      "revenue": 28071000000.0,
+      "operatingIncome": 4959000000.0,
+      "netIncome": 3836000000.0,
+      "totalAssets": 85997000000.0,
+      "totalLiabilities": 67018000000.0,
+      "totalEquity": 18979000000.0,
+      "ocf": 5922000000.0,
+      "fiscalYear": 2025
+    },
+    "HII": {
+      "revenue": 12484000000.0,
+      "operatingIncome": 611000000.0,
+      "netIncome": 605000000.0,
+      "totalAssets": 12749000000.0,
+      "totalLiabilities": 7676000000.0,
+      "totalEquity": 5073000000.0,
+      "ocf": 1196000000.0,
+      "fiscalYear": 2025
+    },
+    "HLT": {
+      "revenue": 12039000000.0,
+      "operatingIncome": 2693000000.0,
+      "netIncome": 1457000000.0,
+      "totalAssets": 16774000000.0,
+      "totalLiabilities": 22120000000.0,
+      "totalEquity": -5388000000.0,
+      "ocf": 2129000000.0,
+      "fiscalYear": 2025
+    },
+    "HON": {
+      "revenue": 37442000000.0,
+      "operatingIncome": 6567000000.0,
+      "netIncome": 4729000000.0,
+      "totalAssets": 73681000000.0,
+      "totalLiabilities": 58651000000.0,
+      "totalEquity": 13904000000.0,
+      "ocf": 6408000000.0,
+      "fiscalYear": 2025
+    },
+    "HPE": {
+      "revenue": 34296000000.0,
+      "operatingIncome": 1644000000.0,
+      "netIncome": 57000000.0,
+      "totalAssets": 75906000000.0,
+      "totalLiabilities": 51152000000.0,
+      "totalEquity": 24688000000.0,
+      "ocf": 2919000000.0,
+      "fiscalYear": 2025
+    },
+    "HPQ": {
+      "revenue": 55295000000.0,
+      "operatingIncome": 3624000000.0,
+      "netIncome": 2529000000.0,
+      "totalAssets": 41769000000.0,
+      "totalLiabilities": 42115000000.0,
+      "totalEquity": -346000000.0,
+      "ocf": 3697000000.0,
+      "fiscalYear": 2025
+    },
+    "HRB": {
+      "revenue": 3760995000.0,
+      "operatingIncome": 827970000.0,
+      "netIncome": 605773000.0,
+      "totalAssets": 3263898000.0,
+      "totalLiabilities": 3175002000.0,
+      "totalEquity": 88896000.0,
+      "ocf": 680883000.0,
+      "fiscalYear": 2025
+    },
+    "HRL": {
+      "revenue": 12106160000.0,
+      "operatingIncome": 895192000.0,
+      "netIncome": 478197000.0,
+      "totalAssets": 13393119000.0,
+      "totalLiabilities": 5477304000.0,
+      "totalEquity": 7901171000.0,
+      "ocf": 845251000.0,
+      "fiscalYear": 2025
+    },
+    "HSIC": {
+      "revenue": 13184000000.0,
+      "operatingIncome": 758000000.0,
+      "netIncome": 398000000.0,
+      "totalAssets": 11215000000.0,
+      "totalLiabilities": 6421000000.0,
+      "totalEquity": 3245000000.0,
+      "ocf": 712000000.0,
+      "fiscalYear": 2025
+    },
+    "HST": {
+      "revenue": 6114000000.0,
+      "operatingIncome": 831000000.0,
+      "netIncome": 765000000.0,
+      "totalAssets": 13049000000.0,
+      "totalLiabilities": 6317000000.0,
+      "totalEquity": 6558000000.0,
+      "ocf": 1510000000.0,
+      "fiscalYear": 2025
+    },
+    "HSY": {
+      "revenue": 11692576000.0,
+      "operatingIncome": 1462122000.0,
+      "netIncome": 883259000.0,
+      "totalAssets": 13741297000.0,
+      "totalLiabilities": 9104547000.0,
+      "totalEquity": 4636750000.0,
+      "ocf": 2277367000.0,
+      "fiscalYear": 2025
+    },
+    "HUM": {
+      "revenue": 129664000000.0,
+      "operatingIncome": 2186000000.0,
+      "netIncome": 1188000000.0,
+      "totalAssets": 48909000000.0,
+      "totalLiabilities": 31172000000.0,
+      "totalEquity": 17657000000.0,
+      "ocf": 921000000.0,
+      "fiscalYear": 2025
+    },
+    "HWM": {
+      "revenue": 8252000000.0,
+      "operatingIncome": 2115000000.0,
+      "netIncome": 1508000000.0,
+      "totalAssets": 11179000000.0,
+      "totalLiabilities": 5826000000.0,
+      "totalEquity": 5353000000.0,
+      "ocf": 1884000000.0,
+      "fiscalYear": 2025
+    },
+    "IBM": {
+      "revenue": 67536000000.0,
+      "operatingIncome": 12492000000.0,
+      "netIncome": 10593000000.0,
+      "totalAssets": 151880000000.0,
+      "totalLiabilities": 119139000000.0,
+      "totalEquity": 32648000000.0,
+      "ocf": 13193000000.0,
+      "fiscalYear": 2025
+    },
+    "ICE": {
+      "revenue": 12640000000.0,
+      "operatingIncome": 4999000000.0,
+      "netIncome": 3315000000.0,
+      "totalAssets": 136887000000.0,
+      "totalLiabilities": 107896000000.0,
+      "totalEquity": 28915000000.0,
+      "ocf": 4662000000.0,
+      "fiscalYear": 2025
+    },
+    "IDXX": {
+      "revenue": 4303702000.0,
+      "operatingIncome": 1360031000.0,
+      "netIncome": 1059464000.0,
+      "totalAssets": 3350759000.0,
+      "totalLiabilities": 1745376000.0,
+      "totalEquity": 1605383000.0,
+      "ocf": 1181805000.0,
+      "fiscalYear": 2025
+    },
+    "IEX": {
+      "revenue": 3457500000.0,
+      "operatingIncome": 720000000.0,
+      "netIncome": 483200000.0,
+      "totalAssets": 6927000000.0,
+      "totalLiabilities": 2900800000.0,
+      "totalEquity": 4027500000.0,
+      "ocf": 680400000.0,
+      "fiscalYear": 2025
+    },
+    "IFF": {
+      "revenue": 10890000000.0,
+      "operatingIncome": 842000000.0,
+      "netIncome": -361000000.0,
+      "totalAssets": 25539000000.0,
+      "totalLiabilities": 11353000000.0,
+      "totalEquity": 14154000000.0,
+      "ocf": 850000000.0,
+      "fiscalYear": 2025
+    },
+    "INCY": {
+      "revenue": 5141242000.0,
+      "operatingIncome": 1342790000.0,
+      "netIncome": 1286650000.0,
+      "totalAssets": 6957973000.0,
+      "totalLiabilities": 1790495000.0,
+      "totalEquity": 5167478000.0,
+      "ocf": 1413498000.0,
+      "fiscalYear": 2025
+    },
+    "INTC": {
+      "revenue": 52853000000.0,
+      "operatingIncome": -23000000.0,
+      "netIncome": -267000000.0,
+      "totalAssets": 211429000000.0,
+      "totalLiabilities": 85069000000.0,
+      "totalEquity": 114281000000.0,
+      "ocf": 9697000000.0,
+      "fiscalYear": 2025
+    },
+    "INTU": {
+      "revenue": 18831000000.0,
+      "operatingIncome": 4938000000.0,
+      "netIncome": 3869000000.0,
+      "totalAssets": 36958000000.0,
+      "totalLiabilities": 17248000000.0,
+      "totalEquity": 19710000000.0,
+      "ocf": 6207000000.0,
+      "fiscalYear": 2025
+    },
+    "INVH": {
+      "revenue": 2729296000.0,
+      "operatingIncome": 752396000.0,
+      "netIncome": 587924000.0,
+      "totalAssets": 18680290000.0,
+      "totalLiabilities": 9112398000.0,
+      "totalEquity": 9530132000.0,
+      "ocf": 1206230000.0,
+      "fiscalYear": 2025
+    },
+    "IP": {
+      "revenue": 23634000000.0,
+      "operatingIncome": -10000000.0,
+      "netIncome": -3516000000.0,
+      "totalAssets": 37964000000.0,
+      "totalLiabilities": 23137000000.0,
+      "totalEquity": 14827000000.0,
+      "ocf": 1698000000.0,
+      "fiscalYear": 2025
+    },
+    "IQV": {
+      "revenue": 16310000000.0,
+      "operatingIncome": 2287000000.0,
+      "netIncome": 1360000000.0,
+      "totalAssets": 29944000000.0,
+      "totalLiabilities": 23314000000.0,
+      "totalEquity": 6503000000.0,
+      "ocf": 2654000000.0,
+      "fiscalYear": 2025
+    },
+    "IR": {
+      "revenue": 7650900000.0,
+      "operatingIncome": 1510000000.0,
+      "netIncome": 581400000.0,
+      "totalAssets": 18297200000.0,
+      "totalLiabilities": 8143200000.0,
+      "totalEquity": 10089800000.0,
+      "ocf": 1355700000.0,
+      "fiscalYear": 2025
+    },
+    "IRM": {
+      "revenue": 6901737000.0,
+      "operatingIncome": 1403920000.0,
+      "netIncome": 144591000.0,
+      "totalAssets": 21125019000.0,
+      "totalLiabilities": 21769927000.0,
+      "totalEquity": -981007000.0,
+      "ocf": 1339999000.0,
+      "fiscalYear": 2025
+    },
+    "ISRG": {
+      "revenue": 10064700000.0,
+      "operatingIncome": 2945500000.0,
+      "netIncome": 2856000000.0,
+      "totalAssets": 20458700000.0,
+      "totalLiabilities": 2517000000.0,
+      "totalEquity": 17824000000.0,
+      "ocf": 3030500000.0,
+      "fiscalYear": 2025
+    },
+    "IT": {
+      "revenue": 6497226000.0,
+      "operatingIncome": 1175711000.0,
+      "netIncome": 729231000.0,
+      "totalAssets": 8085400000.0,
+      "totalLiabilities": 7765492000.0,
+      "totalEquity": 319908000.0,
+      "ocf": 1290365000.0,
+      "fiscalYear": 2025
+    },
+    "ITW": {
+      "revenue": 16044000000.0,
+      "operatingIncome": 4216000000.0,
+      "netIncome": 3066000000.0,
+      "totalAssets": 16148000000.0,
+      "totalLiabilities": 12922000000.0,
+      "totalEquity": 3225000000.0,
+      "ocf": 3126000000.0,
+      "fiscalYear": 2025
+    },
+    "IVZ": {
+      "revenue": 6377100000.0,
+      "operatingIncome": -695700000.0,
+      "netIncome": -281700000.0,
+      "totalAssets": 27094000000.0,
+      "totalLiabilities": 14089100000.0,
+      "totalEquity": 12231000000.0,
+      "ocf": 1525300000.0,
+      "fiscalYear": 2025
+    },
+    "J": {
+      "revenue": 12029783000.0,
+      "operatingIncome": 863634000.0,
+      "netIncome": 289336000.0,
+      "totalAssets": 11252535000.0,
+      "totalLiabilities": 6585936000.0,
+      "totalEquity": 3640807000.0,
+      "ocf": 686704000.0,
+      "fiscalYear": 2025
+    },
+    "JBHT": {
+      "revenue": 11999096000.0,
+      "operatingIncome": 865069000.0,
+      "netIncome": 598282000.0,
+      "totalAssets": 7927155000.0,
+      "totalLiabilities": 4362070000.0,
+      "totalEquity": 3565085000.0,
+      "ocf": 1678272000.0,
+      "fiscalYear": 2025
+    },
+    "JBL": {
+      "revenue": 29802000000.0,
+      "operatingIncome": 1436000000.0,
+      "netIncome": 657000000.0,
+      "totalAssets": 18543000000.0,
+      "totalLiabilities": 17026000000.0,
+      "totalEquity": 1513000000.0,
+      "ocf": 1640000000.0,
+      "fiscalYear": 2025
+    },
+    "JCI": {
+      "revenue": 23596000000.0,
+      "operatingIncome": 2828000000.0,
+      "netIncome": 3291000000.0,
+      "totalAssets": 37939000000.0,
+      "totalLiabilities": 24985000000.0,
+      "totalEquity": 12927000000.0,
+      "ocf": 1399000000.0,
+      "fiscalYear": 2025
+    },
+    "JD": {
+      "revenue": 1309085000000.0,
+      "operatingIncome": 3690000000.0,
+      "netIncome": 19631000000.0,
+      "totalAssets": 695201000000.0,
+      "totalLiabilities": 401418000000.0,
+      "totalEquity": 225040000000.0,
+      "ocf": 18991000000.0,
+      "fiscalYear": 2025
+    },
+    "JKHY": {
+      "revenue": 2375288000.0,
+      "operatingIncome": 568715000.0,
+      "netIncome": 455748000.0,
+      "totalAssets": 3043970000.0,
+      "totalLiabilities": 913138000.0,
+      "totalEquity": 2130832000.0,
+      "ocf": 641504000.0,
+      "fiscalYear": 2025
+    },
+    "JNJ": {
+      "revenue": 94193000000.0,
+      "operatingIncome": 25596000000.0,
+      "netIncome": 26804000000.0,
+      "totalAssets": 199210000000.0,
+      "totalLiabilities": 117666000000.0,
+      "totalEquity": 81544000000.0,
+      "ocf": 24530000000.0,
+      "fiscalYear": 2025
+    },
+    "JPM": {
+      "revenue": 181847000000.0,
+      "operatingIncome": null,
+      "netIncome": 57048000000.0,
+      "totalAssets": 4424900000000.0,
+      "totalLiabilities": 4062462000000.0,
+      "totalEquity": 362438000000.0,
+      "ocf": -147782000000.0,
+      "fiscalYear": 2025
+    },
+    "KDP": {
+      "revenue": 16603000000.0,
+      "operatingIncome": 3653000000.0,
+      "netIncome": 2079000000.0,
+      "totalAssets": 55459000000.0,
+      "totalLiabilities": 29943000000.0,
+      "totalEquity": 25516000000.0,
+      "ocf": 1991000000.0,
+      "fiscalYear": 2025
+    },
+    "KEY": {
+      "revenue": 7285000000.0,
+      "operatingIncome": null,
+      "netIncome": 1829000000.0,
+      "totalAssets": 184381000000.0,
+      "totalLiabilities": 164000000000.0,
+      "totalEquity": 20381000000.0,
+      "ocf": 2208000000.0,
+      "fiscalYear": 2025
+    },
+    "KEYS": {
+      "revenue": 5375000000.0,
+      "operatingIncome": 876000000.0,
+      "netIncome": 850000000.0,
+      "totalAssets": 11301000000.0,
+      "totalLiabilities": 5420000000.0,
+      "totalEquity": 5881000000.0,
+      "ocf": 1409000000.0,
+      "fiscalYear": 2025
+    },
+    "KHC": {
+      "revenue": 24942000000.0,
+      "operatingIncome": 4637000000.0,
+      "netIncome": -5846000000.0,
+      "totalAssets": 81786000000.0,
+      "totalLiabilities": 39997000000.0,
+      "totalEquity": 41664000000.0,
+      "ocf": 4462000000.0,
+      "fiscalYear": 2025
+    },
+    "KIM": {
+      "revenue": 2140116000.0,
+      "operatingIncome": 717677000.0,
+      "netIncome": 584741000.0,
+      "totalAssets": 19688250000.0,
+      "totalLiabilities": 9120372000.0,
+      "totalEquity": 10391836000.0,
+      "ocf": 1120015000.0,
+      "fiscalYear": 2025
+    },
+    "KLAC": {
+      "revenue": 12156162000.0,
+      "operatingIncome": 5014227000.0,
+      "netIncome": 4061643000.0,
+      "totalAssets": 16067926000.0,
+      "totalLiabilities": 11375473000.0,
+      "totalEquity": 4692453000.0,
+      "ocf": 4081903000.0,
+      "fiscalYear": 2025
+    },
+    "KMB": {
+      "revenue": 16447000000.0,
+      "operatingIncome": 2351000000.0,
+      "netIncome": 2021000000.0,
+      "totalAssets": 17098000000.0,
+      "totalLiabilities": 15468000000.0,
+      "totalEquity": 1502000000.0,
+      "ocf": 2777000000.0,
+      "fiscalYear": 2025
+    },
+    "KMI": {
+      "revenue": 16937000000.0,
+      "operatingIncome": 4724000000.0,
+      "netIncome": 3056000000.0,
+      "totalAssets": 72748000000.0,
+      "totalLiabilities": 40299000000.0,
+      "totalEquity": 31162000000.0,
+      "ocf": 5917000000.0,
+      "fiscalYear": 2025
+    },
+    "KMX": {
+      "revenue": 25881131000.0,
+      "operatingIncome": -409757000.0,
+      "netIncome": 247290000.0,
+      "totalAssets": 26367903000.0,
+      "totalLiabilities": 20479047000.0,
+      "totalEquity": 5888856000.0,
+      "ocf": 1783847000.0,
+      "fiscalYear": 2026
+    },
+    "KO": {
+      "revenue": 47941000000.0,
+      "operatingIncome": 14911000000.0,
+      "netIncome": 13107000000.0,
+      "totalAssets": 104816000000.0,
+      "totalLiabilities": 70541000000.0,
+      "totalEquity": 32169000000.0,
+      "ocf": 7408000000.0,
+      "fiscalYear": 2025
+    },
+    "KR": {
+      "revenue": 147642000000.0,
+      "operatingIncome": 1890000000.0,
+      "netIncome": 1016000000.0,
+      "totalAssets": 49953000000.0,
+      "totalLiabilities": 44017000000.0,
+      "totalEquity": 5927000000.0,
+      "ocf": 7311000000.0,
+      "fiscalYear": 2026
+    },
+    "KVUE": {
+      "revenue": 15124000000.0,
+      "operatingIncome": 2715000000.0,
+      "netIncome": 1470000000.0,
+      "totalAssets": 27076000000.0,
+      "totalLiabilities": 16311000000.0,
+      "totalEquity": 10765000000.0,
+      "ocf": 2197000000.0,
+      "fiscalYear": 2025
+    },
+    "L": {
+      "revenue": 18176000000.0,
+      "operatingIncome": 2720000000.0,
+      "netIncome": 1667000000.0,
+      "totalAssets": 86348000000.0,
+      "totalLiabilities": 66707000000.0,
+      "totalEquity": 18686000000.0,
+      "ocf": 3279000000.0,
+      "fiscalYear": 2025
+    },
+    "LEN": {
+      "revenue": 34186934000.0,
+      "operatingIncome": 2750407000.0,
+      "netIncome": 2078179000.0,
+      "totalAssets": 34430437000.0,
+      "totalLiabilities": 12289828000.0,
+      "totalEquity": 21959417000.0,
+      "ocf": 216812000.0,
+      "fiscalYear": 2025
+    },
+    "LH": {
+      "revenue": 13951700000.0,
+      "operatingIncome": 1516200000.0,
+      "netIncome": 876500000.0,
+      "totalAssets": 18392700000.0,
+      "totalLiabilities": 9756000000.0,
+      "totalEquity": 8619800000.0,
+      "ocf": 1640500000.0,
+      "fiscalYear": 2025
+    },
+    "LHX": {
+      "revenue": 21865000000.0,
+      "operatingIncome": 2150000000.0,
+      "netIncome": 1606000000.0,
+      "totalAssets": 41195000000.0,
+      "totalLiabilities": 21560000000.0,
+      "totalEquity": 19635000000.0,
+      "ocf": 3106000000.0,
+      "fiscalYear": 2025
+    },
+    "LIN": {
+      "revenue": 33986000000.0,
+      "operatingIncome": 9254000000.0,
+      "netIncome": 6898000000.0,
+      "totalAssets": 86817000000.0,
+      "totalLiabilities": 47076000000.0,
+      "totalEquity": 38245000000.0,
+      "ocf": 10350000000.0,
+      "fiscalYear": 2025
+    },
+    "LKQ": {
+      "revenue": 13651000000.0,
+      "operatingIncome": 1087000000.0,
+      "netIncome": 607000000.0,
+      "totalAssets": 15137000000.0,
+      "totalLiabilities": 8576000000.0,
+      "totalEquity": 6537000000.0,
+      "ocf": 1063000000.0,
+      "fiscalYear": 2025
+    },
+    "LLY": {
+      "revenue": 65179000000.0,
+      "operatingIncome": 29696000000.0,
+      "netIncome": 20640000000.0,
+      "totalAssets": 112476000000.0,
+      "totalLiabilities": 85941000000.0,
+      "totalEquity": 26535000000.0,
+      "ocf": 16813000000.0,
+      "fiscalYear": 2025
+    },
+    "LMT": {
+      "revenue": 75048000000.0,
+      "operatingIncome": 7731000000.0,
+      "netIncome": 5017000000.0,
+      "totalAssets": 59840000000.0,
+      "totalLiabilities": 53119000000.0,
+      "totalEquity": 6721000000.0,
+      "ocf": 8557000000.0,
+      "fiscalYear": 2025
+    },
+    "LNT": {
+      "revenue": 4362000000.0,
+      "operatingIncome": 1025000000.0,
+      "netIncome": 810000000.0,
+      "totalAssets": 24991000000.0,
+      "totalLiabilities": 17657000000.0,
+      "totalEquity": 7334000000.0,
+      "ocf": 1169000000.0,
+      "fiscalYear": 2025
+    },
+    "LOW": {
+      "revenue": 86286000000.0,
+      "operatingIncome": 10153000000.0,
+      "netIncome": 6654000000.0,
+      "totalAssets": 54144000000.0,
+      "totalLiabilities": 64061000000.0,
+      "totalEquity": -9917000000.0,
+      "ocf": 9864000000.0,
+      "fiscalYear": 2026
+    },
+    "LRCX": {
+      "revenue": 18435591000.0,
+      "operatingIncome": 5900968000.0,
+      "netIncome": 5358217000.0,
+      "totalAssets": 21345260000.0,
+      "totalLiabilities": 11483641000.0,
+      "totalEquity": 9861619000.0,
+      "ocf": 6173264000.0,
+      "fiscalYear": 2025
+    },
+    "LULU": {
+      "revenue": 11102600000.0,
+      "operatingIncome": 2210615000.0,
+      "netIncome": 1579183000.0,
+      "totalAssets": 8456743000.0,
+      "totalLiabilities": 3494903000.0,
+      "totalEquity": 4961840000.0,
+      "ocf": 1602477000.0,
+      "fiscalYear": 2026
+    },
+    "LVS": {
+      "revenue": 13017000000.0,
+      "operatingIncome": 3089000000.0,
+      "netIncome": 1627000000.0,
+      "totalAssets": 21920000000.0,
+      "totalLiabilities": 19986000000.0,
+      "totalEquity": 1590000000.0,
+      "ocf": 3023000000.0,
+      "fiscalYear": 2025
+    },
+    "LW": {
+      "revenue": 6451300000.0,
+      "operatingIncome": 765100000.0,
+      "netIncome": 357200000.0,
+      "totalAssets": 7392600000.0,
+      "totalLiabilities": 5654900000.0,
+      "totalEquity": 1737700000.0,
+      "ocf": 868300000.0,
+      "fiscalYear": 2025
+    },
+    "LYB": {
+      "revenue": 30153000000.0,
+      "operatingIncome": 831000000.0,
+      "netIncome": -745000000.0,
+      "totalAssets": 34003000000.0,
+      "totalLiabilities": 23796000000.0,
+      "totalEquity": 10082000000.0,
+      "ocf": 2262000000.0,
+      "fiscalYear": 2025
+    },
+    "LYV": {
+      "revenue": 25201406000.0,
+      "operatingIncome": 1232689000.0,
+      "netIncome": 495972000.0,
+      "totalAssets": 22912533000.0,
+      "totalLiabilities": 21093686000.0,
+      "totalEquity": 271007000.0,
+      "ocf": 1395316000.0,
+      "fiscalYear": 2025
+    },
+    "MA": {
+      "revenue": 32791000000.0,
+      "operatingIncome": 19514000000.0,
+      "netIncome": 14968000000.0,
+      "totalAssets": 54157000000.0,
+      "totalLiabilities": 46411000000.0,
+      "totalEquity": 7737000000.0,
+      "ocf": 17648000000.0,
+      "fiscalYear": 2025
+    },
+    "MAA": {
+      "revenue": 2209126000.0,
+      "operatingIncome": 619438000.0,
+      "netIncome": 446909000.0,
+      "totalAssets": 11975383000.0,
+      "totalLiabilities": 6135738000.0,
+      "totalEquity": 5683253000.0,
+      "ocf": 1078175000.0,
+      "fiscalYear": 2025
+    },
+    "MAR": {
+      "revenue": 26186000000.0,
+      "operatingIncome": 4139000000.0,
+      "netIncome": 2601000000.0,
+      "totalAssets": 27540000000.0,
+      "totalLiabilities": 31311000000.0,
+      "totalEquity": -3771000000.0,
+      "ocf": 3212000000.0,
+      "fiscalYear": 2025
+    },
+    "MAS": {
+      "revenue": 7562000000.0,
+      "operatingIncome": 1253000000.0,
+      "netIncome": 810000000.0,
+      "totalAssets": 5201000000.0,
+      "totalLiabilities": 5126000000.0,
+      "totalEquity": -186000000.0,
+      "ocf": 1022000000.0,
+      "fiscalYear": 2025
+    },
+    "MCD": {
+      "revenue": 26885000000.0,
+      "operatingIncome": 12394000000.0,
+      "netIncome": 8563000000.0,
+      "totalAssets": 59515000000.0,
+      "totalLiabilities": 61306000000.0,
+      "totalEquity": -1790000000.0,
+      "ocf": 10551000000.0,
+      "fiscalYear": 2025
+    },
+    "MCHP": {
+      "revenue": 4713100000.0,
+      "operatingIncome": 529800000.0,
+      "netIncome": 230000000.0,
+      "totalAssets": 14370100000.0,
+      "totalLiabilities": 7937700000.0,
+      "totalEquity": 6432400000.0,
+      "ocf": 962100000.0,
+      "fiscalYear": 2026
+    },
+    "MCK": {
+      "revenue": 403430000000.0,
+      "operatingIncome": 6454000000.0,
+      "netIncome": 4762000000.0,
+      "totalAssets": 82323000000.0,
+      "totalLiabilities": 83157000000.0,
+      "totalEquity": -2172000000.0,
+      "ocf": 6155000000.0,
+      "fiscalYear": 2026
+    },
+    "MCO": {
+      "revenue": 7718000000.0,
+      "operatingIncome": 3462000000.0,
+      "netIncome": 2459000000.0,
+      "totalAssets": 15830000000.0,
+      "totalLiabilities": 11625000000.0,
+      "totalEquity": 4054000000.0,
+      "ocf": 2901000000.0,
+      "fiscalYear": 2025
+    },
+    "MDB": {
+      "revenue": 2463797000.0,
+      "operatingIncome": -136968000.0,
+      "netIncome": -71151000.0,
+      "totalAssets": 3758848000.0,
+      "totalLiabilities": 806490000.0,
+      "totalEquity": 2952358000.0,
+      "ocf": 505148000.0,
+      "fiscalYear": 2026
+    },
+    "MDLZ": {
+      "revenue": 38537000000.0,
+      "operatingIncome": 3620000000.0,
+      "netIncome": 2451000000.0,
+      "totalAssets": 71487000000.0,
+      "totalLiabilities": 45596000000.0,
+      "totalEquity": 25838000000.0,
+      "ocf": 4514000000.0,
+      "fiscalYear": 2025
+    },
+    "MDT": {
+      "revenue": 33537000000.0,
+      "operatingIncome": 6540000000.0,
+      "netIncome": 4662000000.0,
+      "totalAssets": 91680000000.0,
+      "totalLiabilities": 43424000000.0,
+      "totalEquity": 48024000000.0,
+      "ocf": 7044000000.0,
+      "fiscalYear": 2025
+    },
+    "MELI": {
+      "revenue": 28893000000.0,
+      "operatingIncome": 3201000000.0,
+      "netIncome": 1997000000.0,
+      "totalAssets": 42667000000.0,
+      "totalLiabilities": 35919000000.0,
+      "totalEquity": 6748000000.0,
+      "ocf": 12116000000.0,
+      "fiscalYear": 2025
+    },
+    "MET": {
+      "revenue": 75654000000.0,
+      "operatingIncome": 5722000000.0,
+      "netIncome": 3379000000.0,
+      "totalAssets": 745166000000.0,
+      "totalLiabilities": 716245000000.0,
+      "totalEquity": 28398000000.0,
+      "ocf": 17092000000.0,
+      "fiscalYear": 2025
+    },
+    "META": {
+      "revenue": 200966000000.0,
+      "operatingIncome": 83276000000.0,
+      "netIncome": 60458000000.0,
+      "totalAssets": 366021000000.0,
+      "totalLiabilities": 148778000000.0,
+      "totalEquity": 217243000000.0,
+      "ocf": 115800000000.0,
+      "fiscalYear": 2025
+    },
+    "MGM": {
+      "revenue": 17537683000.0,
+      "operatingIncome": 1337847000.0,
+      "netIncome": 205862000.0,
+      "totalAssets": 41373786000.0,
+      "totalLiabilities": 38097468000.0,
+      "totalEquity": 2429917000.0,
+      "ocf": 2529378000.0,
+      "fiscalYear": 2025
+    },
+    "MHK": {
+      "revenue": 10785400000.0,
+      "operatingIncome": 509700000.0,
+      "netIncome": 369900000.0,
+      "totalAssets": 13687300000.0,
+      "totalLiabilities": 5308600000.0,
+      "totalEquity": 8373300000.0,
+      "ocf": 1056200000.0,
+      "fiscalYear": 2025
+    },
+    "MKC": {
+      "revenue": 6840300000.0,
+      "operatingIncome": 1091900000.0,
+      "netIncome": 789400000.0,
+      "totalAssets": 13200400000.0,
+      "totalLiabilities": 7432300000.0,
+      "totalEquity": 5736500000.0,
+      "ocf": 962200000.0,
+      "fiscalYear": 2025
+    },
+    "MKTX": {
+      "revenue": 846268000.0,
+      "operatingIncome": 341838000.0,
+      "netIncome": 246627000.0,
+      "totalAssets": 1934886000.0,
+      "totalLiabilities": 776627000.0,
+      "totalEquity": 1145667000.0,
+      "ocf": 382139000.0,
+      "fiscalYear": 2025
+    },
+    "MLM": {
+      "revenue": 6150000000.0,
+      "operatingIncome": 1455000000.0,
+      "netIncome": 1137000000.0,
+      "totalAssets": 18711000000.0,
+      "totalLiabilities": 8677000000.0,
+      "totalEquity": 10032000000.0,
+      "ocf": 1785000000.0,
+      "fiscalYear": 2025
+    },
+    "MNST": {
+      "revenue": 8294343000.0,
+      "operatingIncome": 2419354000.0,
+      "netIncome": 1905432000.0,
+      "totalAssets": 9988945000.0,
+      "totalLiabilities": 1734837000.0,
+      "totalEquity": 8254108000.0,
+      "ocf": 2098177000.0,
+      "fiscalYear": 2025
+    },
+    "MO": {
+      "revenue": 20139000000.0,
+      "operatingIncome": 12035000000.0,
+      "netIncome": 6947000000.0,
+      "totalAssets": 35017000000.0,
+      "totalLiabilities": 38469000000.0,
+      "totalEquity": -3502000000.0,
+      "ocf": 9290000000.0,
+      "fiscalYear": 2025
+    },
+    "MOH": {
+      "revenue": 45426000000.0,
+      "operatingIncome": 781000000.0,
+      "netIncome": 472000000.0,
+      "totalAssets": 15564000000.0,
+      "totalLiabilities": 11495000000.0,
+      "totalEquity": 4069000000.0,
+      "ocf": -535000000.0,
+      "fiscalYear": 2025
+    },
+    "MOS": {
+      "revenue": 12052400000.0,
+      "operatingIncome": 1078700000.0,
+      "netIncome": 540700000.0,
+      "totalAssets": 24480100000.0,
+      "totalLiabilities": 12245900000.0,
+      "totalEquity": 12084900000.0,
+      "ocf": 824800000.0,
+      "fiscalYear": 2025
+    },
+    "MPC": {
+      "revenue": 132699000000.0,
+      "operatingIncome": 5768000000.0,
+      "netIncome": 4047000000.0,
+      "totalAssets": 83955000000.0,
+      "totalLiabilities": 59869000000.0,
+      "totalEquity": 17314000000.0,
+      "ocf": 8253000000.0,
+      "fiscalYear": 2025
+    },
+    "MPWR": {
+      "revenue": 2790459000.0,
+      "operatingIncome": 728636000.0,
+      "netIncome": 621483000.0,
+      "totalAssets": 4194199000.0,
+      "totalLiabilities": 662702000.0,
+      "totalEquity": 3531497000.0,
+      "ocf": 838202000.0,
+      "fiscalYear": 2025
+    },
+    "MRK": {
+      "revenue": 65011000000.0,
+      "operatingIncome": 22107000000.0,
+      "netIncome": 18254000000.0,
+      "totalAssets": 136866000000.0,
+      "totalLiabilities": 84204000000.0,
+      "totalEquity": 52606000000.0,
+      "ocf": 16472000000.0,
+      "fiscalYear": 2025
+    },
+    "MRNA": {
+      "revenue": 1922000000.0,
+      "operatingIncome": -3074000000.0,
+      "netIncome": -2822000000.0,
+      "totalAssets": 12338000000.0,
+      "totalLiabilities": 3688000000.0,
+      "totalEquity": 8650000000.0,
+      "ocf": -1873000000.0,
+      "fiscalYear": 2025
+    },
+    "MS": {
+      "revenue": 65966000000.0,
+      "operatingIncome": null,
+      "netIncome": 16861000000.0,
+      "totalAssets": 1420270000000.0,
+      "totalLiabilities": 1307618000000.0,
+      "totalEquity": 111632000000.0,
+      "ocf": -17889000000.0,
+      "fiscalYear": 2025
+    },
+    "MSCI": {
+      "revenue": 3134459000.0,
+      "operatingIncome": 1713567000.0,
+      "netIncome": 1202305000.0,
+      "totalAssets": 5702459000.0,
+      "totalLiabilities": 8356999000.0,
+      "totalEquity": -2654540000.0,
+      "ocf": 1588446000.0,
+      "fiscalYear": 2025
+    },
+    "MSFT": {
+      "revenue": 281724000000.0,
+      "operatingIncome": 128528000000.0,
+      "netIncome": 101832000000.0,
+      "totalAssets": 619003000000.0,
+      "totalLiabilities": 275524000000.0,
+      "totalEquity": 343479000000.0,
+      "ocf": 136162000000.0,
+      "fiscalYear": 2025
+    },
+    "MSI": {
+      "revenue": 11682000000.0,
+      "operatingIncome": 2959000000.0,
+      "netIncome": 2154000000.0,
+      "totalAssets": 19389000000.0,
+      "totalLiabilities": 16962000000.0,
+      "totalEquity": 2410000000.0,
+      "ocf": 2837000000.0,
+      "fiscalYear": 2025
+    },
+    "MTB": {
+      "revenue": 9632000000.0,
+      "operatingIncome": null,
+      "netIncome": 2851000000.0,
+      "totalAssets": 213510000000.0,
+      "totalLiabilities": 184333000000.0,
+      "totalEquity": 29177000000.0,
+      "ocf": 3003000000.0,
+      "fiscalYear": 2025
+    },
+    "MTCH": {
+      "revenue": 3487197000.0,
+      "operatingIncome": 911077000.0,
+      "netIncome": 613446000.0,
+      "totalAssets": 4460811000.0,
+      "totalLiabilities": 4714207000.0,
+      "totalEquity": -253504000.0,
+      "ocf": 1080380000.0,
+      "fiscalYear": 2025
+    },
+    "MTD": {
+      "revenue": 4026399000.0,
+      "operatingIncome": 1118490000.0,
+      "netIncome": 869193000.0,
+      "totalAssets": 3712646000.0,
+      "totalLiabilities": 3736282000.0,
+      "totalEquity": -23636000.0,
+      "ocf": 955772000.0,
+      "fiscalYear": 2025
+    },
+    "MU": {
+      "revenue": 37378000000.0,
+      "operatingIncome": 9809000000.0,
+      "netIncome": 8539000000.0,
+      "totalAssets": 82798000000.0,
+      "totalLiabilities": 28633000000.0,
+      "totalEquity": 54165000000.0,
+      "ocf": 17525000000.0,
+      "fiscalYear": 2025
+    },
+    "NCLH": {
+      "revenue": 9827592000.0,
+      "operatingIncome": 1560868000.0,
+      "netIncome": 423246000.0,
+      "totalAssets": 22541401000.0,
+      "totalLiabilities": 20331513000.0,
+      "totalEquity": 2209888000.0,
+      "ocf": 2089746000.0,
+      "fiscalYear": 2025
+    },
+    "NDAQ": {
+      "revenue": 8262000000.0,
+      "operatingIncome": 2433000000.0,
+      "netIncome": 1788000000.0,
+      "totalAssets": 31053000000.0,
+      "totalLiabilities": 18821000000.0,
+      "totalEquity": 12227000000.0,
+      "ocf": 2255000000.0,
+      "fiscalYear": 2025
+    },
+    "NDSN": {
+      "revenue": 2791687000.0,
+      "operatingIncome": 724270000.0,
+      "netIncome": 484474000.0,
+      "totalAssets": 5917681000.0,
+      "totalLiabilities": 2874110000.0,
+      "totalEquity": 3043571000.0,
+      "ocf": 719175000.0,
+      "fiscalYear": 2025
+    },
+    "NEE": {
+      "revenue": 27412000000.0,
+      "operatingIncome": 8020000000.0,
+      "netIncome": 6835000000.0,
+      "totalAssets": 212721000000.0,
+      "totalLiabilities": 146242000000.0,
+      "totalEquity": 54608000000.0,
+      "ocf": 12485000000.0,
+      "fiscalYear": 2025
+    },
+    "NEM": {
+      "revenue": 22669000000.0,
+      "operatingIncome": 11023000000.0,
+      "netIncome": 7085000000.0,
+      "totalAssets": 57121000000.0,
+      "totalLiabilities": 23079000000.0,
+      "totalEquity": 33867000000.0,
+      "ocf": 10334000000.0,
+      "fiscalYear": 2025
+    },
+    "NFLX": {
+      "revenue": 45183036000.0,
+      "operatingIncome": 13326603000.0,
+      "netIncome": 10981201000.0,
+      "totalAssets": 55596993000.0,
+      "totalLiabilities": 28981505000.0,
+      "totalEquity": 26615488000.0,
+      "ocf": 10149273000.0,
+      "fiscalYear": 2025
+    },
+    "NI": {
+      "revenue": 6642200000.0,
+      "operatingIncome": 1831900000.0,
+      "netIncome": 929500000.0,
+      "totalAssets": 35858700000.0,
+      "totalLiabilities": 24198800000.0,
+      "totalEquity": 9450100000.0,
+      "ocf": 2362300000.0,
+      "fiscalYear": 2025
+    },
+    "NKE": {
+      "revenue": 46309000000.0,
+      "operatingIncome": 3702000000.0,
+      "netIncome": 3219000000.0,
+      "totalAssets": 36579000000.0,
+      "totalLiabilities": 23366000000.0,
+      "totalEquity": 13213000000.0,
+      "ocf": 3698000000.0,
+      "fiscalYear": 2025
+    },
+    "NOC": {
+      "revenue": 41954000000.0,
+      "operatingIncome": 4280000000.0,
+      "netIncome": 4182000000.0,
+      "totalAssets": 51377000000.0,
+      "totalLiabilities": 34703000000.0,
+      "totalEquity": 16674000000.0,
+      "ocf": 4757000000.0,
+      "fiscalYear": 2025
+    },
+    "NOW": {
+      "revenue": 13278000000.0,
+      "operatingIncome": 1824000000.0,
+      "netIncome": 1748000000.0,
+      "totalAssets": 26038000000.0,
+      "totalLiabilities": 13074000000.0,
+      "totalEquity": 12964000000.0,
+      "ocf": 5444000000.0,
+      "fiscalYear": 2025
+    },
+    "NRG": {
+      "revenue": 30713000000.0,
+      "operatingIncome": 1944000000.0,
+      "netIncome": 864000000.0,
+      "totalAssets": 29140000000.0,
+      "totalLiabilities": 27459000000.0,
+      "totalEquity": 1681000000.0,
+      "ocf": 1913000000.0,
+      "fiscalYear": 2025
+    },
+    "NSC": {
+      "revenue": 12180000000.0,
+      "operatingIncome": 4571000000.0,
+      "netIncome": 2873000000.0,
+      "totalAssets": 45236000000.0,
+      "totalLiabilities": 29689000000.0,
+      "totalEquity": 15547000000.0,
+      "ocf": 4361000000.0,
+      "fiscalYear": 2025
+    },
+    "NTAP": {
+      "revenue": 6925000000.0,
+      "operatingIncome": 1695000000.0,
+      "netIncome": 1276000000.0,
+      "totalAssets": 10744000000.0,
+      "totalLiabilities": 9393000000.0,
+      "totalEquity": 1351000000.0,
+      "ocf": 2067000000.0,
+      "fiscalYear": 2026
+    },
+    "NTRS": {
+      "revenue": 8086400000.0,
+      "operatingIncome": null,
+      "netIncome": 1736900000.0,
+      "totalAssets": 177132700000.0,
+      "totalLiabilities": 164174800000.0,
+      "totalEquity": 12957900000.0,
+      "ocf": 5533500000.0,
+      "fiscalYear": 2025
+    },
+    "NUE": {
+      "revenue": 32494000000.0,
+      "operatingIncome": 2659000000.0,
+      "netIncome": 1744000000.0,
+      "totalAssets": 35104000000.0,
+      "totalLiabilities": 12980000000.0,
+      "totalEquity": 20936000000.0,
+      "ocf": 3234000000.0,
+      "fiscalYear": 2025
+    },
+    "NVDA": {
+      "revenue": 215938000000.0,
+      "operatingIncome": 130387000000.0,
+      "netIncome": 120067000000.0,
+      "totalAssets": 206803000000.0,
+      "totalLiabilities": 49510000000.0,
+      "totalEquity": 157293000000.0,
+      "ocf": 102718000000.0,
+      "fiscalYear": 2026
+    },
+    "NVR": {
+      "revenue": 10341845000.0,
+      "operatingIncome": 1689318000.0,
+      "netIncome": 1339816000.0,
+      "totalAssets": 5856930000.0,
+      "totalLiabilities": 1992061000.0,
+      "totalEquity": 3864869000.0,
+      "ocf": 1121320000.0,
+      "fiscalYear": 2025
+    },
+    "NWS": {
+      "revenue": 8452000000.0,
+      "operatingIncome": 956000000.0,
+      "netIncome": 1180000000.0,
+      "totalAssets": 15504000000.0,
+      "totalLiabilities": 6115000000.0,
+      "totalEquity": 8774000000.0,
+      "ocf": 978000000.0,
+      "fiscalYear": 2025
+    },
+    "NWSA": {
+      "revenue": 8452000000.0,
+      "operatingIncome": 956000000.0,
+      "netIncome": 1180000000.0,
+      "totalAssets": 15504000000.0,
+      "totalLiabilities": 6115000000.0,
+      "totalEquity": 8774000000.0,
+      "ocf": 978000000.0,
+      "fiscalYear": 2025
+    },
+    "NXPI": {
+      "revenue": 12269000000.0,
+      "operatingIncome": 3035000000.0,
+      "netIncome": 2021000000.0,
+      "totalAssets": 26560000000.0,
+      "totalLiabilities": 16109000000.0,
+      "totalEquity": 10056000000.0,
+      "ocf": 2820000000.0,
+      "fiscalYear": 2025
+    },
+    "O": {
+      "revenue": 5749377000.0,
+      "operatingIncome": 2593823000.0,
+      "netIncome": 1058590000.0,
+      "totalAssets": 72795612000.0,
+      "totalLiabilities": 32671644000.0,
+      "totalEquity": 39438695000.0,
+      "ocf": 3994754000.0,
+      "fiscalYear": 2025
+    },
+    "ODFL": {
+      "revenue": 5496389000.0,
+      "operatingIncome": 1361045000.0,
+      "netIncome": 1023703000.0,
+      "totalAssets": 5470160000.0,
+      "totalLiabilities": 1159103000.0,
+      "totalEquity": 4311057000.0,
+      "ocf": 1370133000.0,
+      "fiscalYear": 2025
+    },
+    "OKE": {
+      "revenue": 33629000000.0,
+      "operatingIncome": 5822000000.0,
+      "netIncome": 3393000000.0,
+      "totalAssets": 66641000000.0,
+      "totalLiabilities": 44072000000.0,
+      "totalEquity": 22485000000.0,
+      "ocf": 5599000000.0,
+      "fiscalYear": 2025
+    },
+    "OMC": {
+      "revenue": 17271900000.0,
+      "operatingIncome": 444700000.0,
+      "netIncome": -54500000.0,
+      "totalAssets": 54415300000.0,
+      "totalLiabilities": 41359100000.0,
+      "totalEquity": 12045800000.0,
+      "ocf": 2938200000.0,
+      "fiscalYear": 2025
+    },
+    "ON": {
+      "revenue": 5995400000.0,
+      "operatingIncome": 751100000.0,
+      "netIncome": 121000000.0,
+      "totalAssets": 12524100000.0,
+      "totalLiabilities": 4832200000.0,
+      "totalEquity": 7673300000.0,
+      "ocf": 1759800000.0,
+      "fiscalYear": 2025
+    },
+    "ORCL": {
+      "revenue": 57399000000.0,
+      "operatingIncome": 18052000000.0,
+      "netIncome": 12443000000.0,
+      "totalAssets": 168361000000.0,
+      "totalLiabilities": 147392000000.0,
+      "totalEquity": 20451000000.0,
+      "ocf": 20821000000.0,
+      "fiscalYear": 2025
+    },
+    "ORLY": {
+      "revenue": 17781992000.0,
+      "operatingIncome": 3460612000.0,
+      "netIncome": 2538209000.0,
+      "totalAssets": 16538253000.0,
+      "totalLiabilities": 17301605000.0,
+      "totalEquity": -763352000.0,
+      "ocf": 2761993000.0,
+      "fiscalYear": 2025
+    },
+    "OTIS": {
+      "revenue": 14431000000.0,
+      "operatingIncome": 2219000000.0,
+      "netIncome": 1384000000.0,
+      "totalAssets": 10653000000.0,
+      "totalLiabilities": 15924000000.0,
+      "totalEquity": -5392000000.0,
+      "ocf": 1596000000.0,
+      "fiscalYear": 2025
+    },
+    "OXY": {
+      "revenue": 21593000000.0,
+      "operatingIncome": 3722000000.0,
+      "netIncome": 2326000000.0,
+      "totalAssets": 84186000000.0,
+      "totalLiabilities": 47588000000.0,
+      "totalEquity": 36034000000.0,
+      "ocf": 10532000000.0,
+      "fiscalYear": 2025
+    },
+    "PANW": {
+      "revenue": 9221500000.0,
+      "operatingIncome": 1242900000.0,
+      "netIncome": 1133900000.0,
+      "totalAssets": 23576200000.0,
+      "totalLiabilities": 15751800000.0,
+      "totalEquity": 7824400000.0,
+      "ocf": 3716000000.0,
+      "fiscalYear": 2025
+    },
+    "PAYC": {
+      "revenue": 2051700000.0,
+      "operatingIncome": 567200000.0,
+      "netIncome": 453400000.0,
+      "totalAssets": 7598700000.0,
+      "totalLiabilities": 5867200000.0,
+      "totalEquity": 1731500000.0,
+      "ocf": 678900000.0,
+      "fiscalYear": 2025
+    },
+    "PAYX": {
+      "revenue": 5571700000.0,
+      "operatingIncome": 2207700000.0,
+      "netIncome": 1657300000.0,
+      "totalAssets": 16564100000.0,
+      "totalLiabilities": 12436100000.0,
+      "totalEquity": 4128000000.0,
+      "ocf": 1900900000.0,
+      "fiscalYear": 2025
+    },
+    "PCAR": {
+      "revenue": 28444800000.0,
+      "operatingIncome": 2961700000.0,
+      "netIncome": 2375800000.0,
+      "totalAssets": 44336200000.0,
+      "totalLiabilities": 25072200000.0,
+      "totalEquity": 19264000000.0,
+      "ocf": 4415800000.0,
+      "fiscalYear": 2025
+    },
+    "PCG": {
+      "revenue": 24935000000.0,
+      "operatingIncome": 4849000000.0,
+      "netIncome": 2703000000.0,
+      "totalAssets": 141611000000.0,
+      "totalLiabilities": 108819000000.0,
+      "totalEquity": 32540000000.0,
+      "ocf": 8716000000.0,
+      "fiscalYear": 2025
+    },
+    "PDD": {
+      "revenue": 431845713000.0,
+      "operatingIncome": 93102131000.0,
+      "netIncome": 97842539000.0,
+      "totalAssets": 630044327000.0,
+      "totalLiabilities": 216659171000.0,
+      "totalEquity": 413385156000.0,
+      "ocf": 106938690000.0,
+      "fiscalYear": 2025
+    },
+    "PEG": {
+      "revenue": 12168000000.0,
+      "operatingIncome": 2980000000.0,
+      "netIncome": 2111000000.0,
+      "totalAssets": 57576000000.0,
+      "totalLiabilities": 40594000000.0,
+      "totalEquity": 16982000000.0,
+      "ocf": 3298000000.0,
+      "fiscalYear": 2025
+    },
+    "PEP": {
+      "revenue": 93925000000.0,
+      "operatingIncome": 13491000000.0,
+      "netIncome": 8240000000.0,
+      "totalAssets": 107399000000.0,
+      "totalLiabilities": 86852000000.0,
+      "totalEquity": 20406000000.0,
+      "ocf": 12087000000.0,
+      "fiscalYear": 2025
+    },
+    "PFE": {
+      "revenue": 62579000000.0,
+      "operatingIncome": 15794000000.0,
+      "netIncome": 7771000000.0,
+      "totalAssets": 208160000000.0,
+      "totalLiabilities": 121385000000.0,
+      "totalEquity": 86476000000.0,
+      "ocf": 11704000000.0,
+      "fiscalYear": 2025
+    },
+    "PFG": {
+      "revenue": 15625500000.0,
+      "operatingIncome": null,
+      "netIncome": 1185100000.0,
+      "totalAssets": 341376500000.0,
+      "totalLiabilities": 328985200000.0,
+      "totalEquity": 11883900000.0,
+      "ocf": 4536700000.0,
+      "fiscalYear": 2025
+    },
+    "PG": {
+      "revenue": 84284000000.0,
+      "operatingIncome": 20451000000.0,
+      "netIncome": 15974000000.0,
+      "totalAssets": 125231000000.0,
+      "totalLiabilities": 72947000000.0,
+      "totalEquity": 52012000000.0,
+      "ocf": 17817000000.0,
+      "fiscalYear": 2025
+    },
+    "PGR": {
+      "revenue": 87637000000.0,
+      "operatingIncome": 14501000000.0,
+      "netIncome": 11308000000.0,
+      "totalAssets": 123039000000.0,
+      "totalLiabilities": 92716000000.0,
+      "totalEquity": 30323000000.0,
+      "ocf": 17548000000.0,
+      "fiscalYear": 2025
+    },
+    "PH": {
+      "revenue": 19850000000.0,
+      "operatingIncome": 4060000000.0,
+      "netIncome": 3531000000.0,
+      "totalAssets": 29494000000.0,
+      "totalLiabilities": 15803000000.0,
+      "totalEquity": 13682000000.0,
+      "ocf": 3776000000.0,
+      "fiscalYear": 2025
+    },
+    "PHM": {
+      "revenue": 17311953000.0,
+      "operatingIncome": 2978583000.0,
+      "netIncome": 2218730000.0,
+      "totalAssets": 18048423000.0,
+      "totalLiabilities": 5062981000.0,
+      "totalEquity": 12985442000.0,
+      "ocf": 1871249000.0,
+      "fiscalYear": 2025
+    },
+    "PKG": {
+      "revenue": 8989300000.0,
+      "operatingIncome": 1255400000.0,
+      "netIncome": 774100000.0,
+      "totalAssets": 10725500000.0,
+      "totalLiabilities": 6127500000.0,
+      "totalEquity": 4598000000.0,
+      "ocf": 1557500000.0,
+      "fiscalYear": 2025
+    },
+    "PLD": {
+      "revenue": 8790127000.0,
+      "operatingIncome": 3414302000.0,
+      "netIncome": 3328231000.0,
+      "totalAssets": 98724256000.0,
+      "totalLiabilities": 40970248000.0,
+      "totalEquity": 53193178000.0,
+      "ocf": 5008434000.0,
+      "fiscalYear": 2025
+    },
+    "PLTR": {
+      "revenue": 4475446000.0,
+      "operatingIncome": 1414015000.0,
+      "netIncome": 1625033000.0,
+      "totalAssets": 8900392000.0,
+      "totalLiabilities": 1412381000.0,
+      "totalEquity": 7387268000.0,
+      "ocf": 2134473000.0,
+      "fiscalYear": 2025
+    },
+    "PM": {
+      "revenue": 40648000000.0,
+      "operatingIncome": 14933000000.0,
+      "netIncome": 11348000000.0,
+      "totalAssets": 69185000000.0,
+      "totalLiabilities": 77213000000.0,
+      "totalEquity": -9994000000.0,
+      "ocf": 12233000000.0,
+      "fiscalYear": 2025
+    },
+    "PNC": {
+      "revenue": 23077000000.0,
+      "operatingIncome": null,
+      "netIncome": 6936000000.0,
+      "totalAssets": 573572000000.0,
+      "totalLiabilities": 512936000000.0,
+      "totalEquity": 60585000000.0,
+      "ocf": 4384000000.0,
+      "fiscalYear": 2025
+    },
+    "PNR": {
+      "revenue": 4176000000.0,
+      "operatingIncome": 930900000.0,
+      "netIncome": 653800000.0,
+      "totalAssets": 6868800000.0,
+      "totalLiabilities": 2999600000.0,
+      "totalEquity": 3869200000.0,
+      "ocf": 814800000.0,
+      "fiscalYear": 2025
+    },
+    "PNW": {
+      "revenue": 5339939000.0,
+      "operatingIncome": 1067630000.0,
+      "netIncome": 616531000.0,
+      "totalAssets": 30031599000.0,
+      "totalLiabilities": 22944524000.0,
+      "totalEquity": 7046458000.0,
+      "ocf": 1805095000.0,
+      "fiscalYear": 2025
+    },
+    "PODD": {
+      "revenue": 2708100000.0,
+      "operatingIncome": 473800000.0,
+      "netIncome": 247100000.0,
+      "totalAssets": 3190400000.0,
+      "totalLiabilities": 1675100000.0,
+      "totalEquity": 1515300000.0,
+      "ocf": 569300000.0,
+      "fiscalYear": 2025
+    },
+    "POOL": {
+      "revenue": 5289396000.0,
+      "operatingIncome": 580204000.0,
+      "netIncome": 406404000.0,
+      "totalAssets": 3626126000.0,
+      "totalLiabilities": 2440897000.0,
+      "totalEquity": 1185229000.0,
+      "ocf": 365850000.0,
+      "fiscalYear": 2025
+    },
+    "PPG": {
+      "revenue": 15875000000.0,
+      "operatingIncome": 2169000000.0,
+      "netIncome": 1576000000.0,
+      "totalAssets": 22098000000.0,
+      "totalLiabilities": 14001000000.0,
+      "totalEquity": 7941000000.0,
+      "ocf": 1941000000.0,
+      "fiscalYear": 2025
+    },
+    "PPL": {
+      "revenue": 9042000000.0,
+      "operatingIncome": 2129000000.0,
+      "netIncome": 1181000000.0,
+      "totalAssets": 45244000000.0,
+      "totalLiabilities": 30363000000.0,
+      "totalEquity": 14881000000.0,
+      "ocf": 2629000000.0,
+      "fiscalYear": 2025
+    },
+    "PRU": {
+      "revenue": 60967000000.0,
+      "operatingIncome": null,
+      "netIncome": 3576000000.0,
+      "totalAssets": 773740000000.0,
+      "totalLiabilities": 738159000000.0,
+      "totalEquity": 32438000000.0,
+      "ocf": 6271000000.0,
+      "fiscalYear": 2025
+    },
+    "PSA": {
+      "revenue": 4824113000.0,
+      "operatingIncome": 2260491000.0,
+      "netIncome": 1784348000.0,
+      "totalAssets": 20208604000.0,
+      "totalLiabilities": 10866770000.0,
+      "totalEquity": 9248128000.0,
+      "ocf": 3186449000.0,
+      "fiscalYear": 2025
+    },
+    "PSX": {
+      "revenue": 132376000000.0,
+      "operatingIncome": 3381000000.0,
+      "netIncome": 4403000000.0,
+      "totalAssets": 73680000000.0,
+      "totalLiabilities": 43439000000.0,
+      "totalEquity": 29093000000.0,
+      "ocf": 4962000000.0,
+      "fiscalYear": 2025
+    },
+    "PTC": {
+      "revenue": 2739226000.0,
+      "operatingIncome": 998028000.0,
+      "netIncome": 733997000.0,
+      "totalAssets": 6617172000.0,
+      "totalLiabilities": 2790943000.0,
+      "totalEquity": 3826229000.0,
+      "ocf": 867696000.0,
+      "fiscalYear": 2025
+    },
+    "PWR": {
+      "revenue": 28479697000.0,
+      "operatingIncome": 1587077000.0,
+      "netIncome": 1028378000.0,
+      "totalAssets": 24926901000.0,
+      "totalLiabilities": 15899027000.0,
+      "totalEquity": 8938249000.0,
+      "ocf": 2229970000.0,
+      "fiscalYear": 2025
+    },
+    "PYPL": {
+      "revenue": 33172000000.0,
+      "operatingIncome": 6396000000.0,
+      "netIncome": 5233000000.0,
+      "totalAssets": 80173000000.0,
+      "totalLiabilities": 59917000000.0,
+      "totalEquity": 20256000000.0,
+      "ocf": 6416000000.0,
+      "fiscalYear": 2025
+    },
+    "QCOM": {
+      "revenue": 44284000000.0,
+      "operatingIncome": 12394000000.0,
+      "netIncome": 5541000000.0,
+      "totalAssets": 50143000000.0,
+      "totalLiabilities": 28937000000.0,
+      "totalEquity": 21206000000.0,
+      "ocf": 14012000000.0,
+      "fiscalYear": 2025
+    },
+    "QRVO": {
+      "revenue": 3678517000.0,
+      "operatingIncome": 493793000.0,
+      "netIncome": 338989000.0,
+      "totalAssets": 5825590000.0,
+      "totalLiabilities": 2481291000.0,
+      "totalEquity": 3344299000.0,
+      "ocf": 808631000.0,
+      "fiscalYear": 2026
+    },
+    "RCL": {
+      "revenue": 17934000000.0,
+      "operatingIncome": 4910000000.0,
+      "netIncome": 4268000000.0,
+      "totalAssets": 41619000000.0,
+      "totalLiabilities": 31374000000.0,
+      "totalEquity": 10037000000.0,
+      "ocf": 6465000000.0,
+      "fiscalYear": 2025
+    },
+    "REG": {
+      "revenue": 1553524000.0,
+      "operatingIncome": 583065000.0,
+      "netIncome": 527460000.0,
+      "totalAssets": 13001283000.0,
+      "totalLiabilities": 5819677000.0,
+      "totalEquity": 6906890000.0,
+      "ocf": 827692000.0,
+      "fiscalYear": 2025
+    },
+    "REGN": {
+      "revenue": 14342900000.0,
+      "operatingIncome": 3702000000.0,
+      "netIncome": 4504900000.0,
+      "totalAssets": 40558700000.0,
+      "totalLiabilities": 9301800000.0,
+      "totalEquity": 31256900000.0,
+      "ocf": 4978900000.0,
+      "fiscalYear": 2025
+    },
+    "RF": {
+      "revenue": 7526000000.0,
+      "operatingIncome": null,
+      "netIncome": 2156000000.0,
+      "totalAssets": 158814000000.0,
+      "totalLiabilities": 139711000000.0,
+      "totalEquity": 19043000000.0,
+      "ocf": 2181000000.0,
+      "fiscalYear": 2025
+    },
+    "RJF": {
+      "revenue": 13842000000.0,
+      "operatingIncome": null,
+      "netIncome": 2135000000.0,
+      "totalAssets": 88230000000.0,
+      "totalLiabilities": 75726000000.0,
+      "totalEquity": 12503000000.0,
+      "ocf": 2434000000.0,
+      "fiscalYear": 2025
+    },
+    "RL": {
+      "revenue": 8114500000.0,
+      "operatingIncome": 1297300000.0,
+      "netIncome": 941100000.0,
+      "totalAssets": 7739500000.0,
+      "totalLiabilities": 4898100000.0,
+      "totalEquity": 2841400000.0,
+      "ocf": 1154200000.0,
+      "fiscalYear": 2026
+    },
+    "RMD": {
+      "revenue": 5146327000.0,
+      "operatingIncome": 1687394000.0,
+      "netIncome": 1400723000.0,
+      "totalAssets": 8174391000.0,
+      "totalLiabilities": 2206532000.0,
+      "totalEquity": 5967859000.0,
+      "ocf": 1751588000.0,
+      "fiscalYear": 2025
+    },
+    "ROK": {
+      "revenue": 8342000000.0,
+      "operatingIncome": 1423000000.0,
+      "netIncome": 869000000.0,
+      "totalAssets": 11219000000.0,
+      "totalLiabilities": 7508000000.0,
+      "totalEquity": 3654000000.0,
+      "ocf": 1544000000.0,
+      "fiscalYear": 2025
+    },
+    "ROL": {
+      "revenue": 3761050000.0,
+      "operatingIncome": 726068000.0,
+      "netIncome": 526705000.0,
+      "totalAssets": 3140523000.0,
+      "totalLiabilities": 1766202000.0,
+      "totalEquity": 1374321000.0,
+      "ocf": 678107000.0,
+      "fiscalYear": 2025
+    },
+    "ROP": {
+      "revenue": 7902500000.0,
+      "operatingIncome": 2235400000.0,
+      "netIncome": 1536300000.0,
+      "totalAssets": 34577000000.0,
+      "totalLiabilities": 14695500000.0,
+      "totalEquity": 19881500000.0,
+      "ocf": 2540300000.0,
+      "fiscalYear": 2025
+    },
+    "ROST": {
+      "revenue": 22750559000.0,
+      "operatingIncome": 2707357000.0,
+      "netIncome": 2145044000.0,
+      "totalAssets": 15548737000.0,
+      "totalLiabilities": 9361294000.0,
+      "totalEquity": 6187443000.0,
+      "ocf": 3026883000.0,
+      "fiscalYear": 2026
+    },
+    "RSG": {
+      "revenue": 16591000000.0,
+      "operatingIncome": 3322000000.0,
+      "netIncome": 2139000000.0,
+      "totalAssets": 34366000000.0,
+      "totalLiabilities": 22397000000.0,
+      "totalEquity": 11968000000.0,
+      "ocf": 4296000000.0,
+      "fiscalYear": 2025
+    },
+    "RTX": {
+      "revenue": 88603000000.0,
+      "operatingIncome": 9300000000.0,
+      "netIncome": 6732000000.0,
+      "totalAssets": 171079000000.0,
+      "totalLiabilities": 103941000000.0,
+      "totalEquity": 65245000000.0,
+      "ocf": 10567000000.0,
+      "fiscalYear": 2025
+    },
+    "RVTY": {
+      "revenue": 2856051000.0,
+      "operatingIncome": 356635000.0,
+      "netIncome": 241201000.0,
+      "totalAssets": 12168411000.0,
+      "totalLiabilities": 4918051000.0,
+      "totalEquity": 7250360000.0,
+      "ocf": 582933000.0,
+      "fiscalYear": 2025
+    },
+    "SBAC": {
+      "revenue": 2815139000.0,
+      "operatingIncome": 1554271000.0,
+      "netIncome": 1053632000.0,
+      "totalAssets": 11575012000.0,
+      "totalLiabilities": 16350269000.0,
+      "totalEquity": -4853519000.0,
+      "ocf": 1291328000.0,
+      "fiscalYear": 2025
+    },
+    "SBUX": {
+      "revenue": 37184400000.0,
+      "operatingIncome": 3580800000.0,
+      "netIncome": 1856400000.0,
+      "totalAssets": 32019700000.0,
+      "totalLiabilities": 40108900000.0,
+      "totalEquity": -8096600000.0,
+      "ocf": 4747500000.0,
+      "fiscalYear": 2025
+    },
+    "SCHW": {
+      "revenue": 23921000000.0,
+      "operatingIncome": null,
+      "netIncome": 8852000000.0,
+      "totalAssets": 490995000000.0,
+      "totalLiabilities": 441570000000.0,
+      "totalEquity": 49425000000.0,
+      "ocf": 9311000000.0,
+      "fiscalYear": 2025
+    },
+    "SHW": {
+      "revenue": 23574300000.0,
+      "operatingIncome": 3796700000.0,
+      "netIncome": 2568500000.0,
+      "totalAssets": 25901700000.0,
+      "totalLiabilities": 21303400000.0,
+      "totalEquity": 4598300000.0,
+      "ocf": 3451600000.0,
+      "fiscalYear": 2025
+    },
+    "SJM": {
+      "revenue": 8726100000.0,
+      "operatingIncome": 1654500000.0,
+      "netIncome": -1230800000.0,
+      "totalAssets": 17563300000.0,
+      "totalLiabilities": 11480700000.0,
+      "totalEquity": 6082600000.0,
+      "ocf": 1210400000.0,
+      "fiscalYear": 2025
+    },
+    "SLB": {
+      "revenue": 35708000000.0,
+      "operatingIncome": 5458000000.0,
+      "netIncome": 3374000000.0,
+      "totalAssets": 54868000000.0,
+      "totalLiabilities": 27577000000.0,
+      "totalEquity": 26109000000.0,
+      "ocf": 6489000000.0,
+      "fiscalYear": 2025
+    },
+    "SMCI": {
+      "revenue": 21972042000.0,
+      "operatingIncome": 1252994000.0,
+      "netIncome": 1048854000.0,
+      "totalAssets": 14018429000.0,
+      "totalLiabilities": 7716558000.0,
+      "totalEquity": 6301693000.0,
+      "ocf": 1659524000.0,
+      "fiscalYear": 2025
+    },
+    "SNA": {
+      "revenue": 5156100000.0,
+      "operatingIncome": 1327700000.0,
+      "netIncome": 1016900000.0,
+      "totalAssets": 8412300000.0,
+      "totalLiabilities": 2455500000.0,
+      "totalEquity": 5931800000.0,
+      "ocf": 1081700000.0,
+      "fiscalYear": 2025
+    },
+    "SNPS": {
+      "revenue": 7054178000.0,
+      "operatingIncome": 914927000.0,
+      "netIncome": 1332220000.0,
+      "totalAssets": 48224461000.0,
+      "totalLiabilities": 19897446000.0,
+      "totalEquity": 28327602000.0,
+      "ocf": 1518608000.0,
+      "fiscalYear": 2025
+    },
+    "SO": {
+      "revenue": 29553000000.0,
+      "operatingIncome": 7285000000.0,
+      "netIncome": 4341000000.0,
+      "totalAssets": 155720000000.0,
+      "totalLiabilities": 116853000000.0,
+      "totalEquity": 36016000000.0,
+      "ocf": 9802000000.0,
+      "fiscalYear": 2025
+    },
+    "SOLV": {
+      "revenue": 8325000000.0,
+      "operatingIncome": 632000000.0,
+      "netIncome": 1556000000.0,
+      "totalAssets": 14294000000.0,
+      "totalLiabilities": 9244000000.0,
+      "totalEquity": 5050000000.0,
+      "ocf": 369000000.0,
+      "fiscalYear": 2025
+    },
+    "SPG": {
+      "revenue": 6364505000.0,
+      "operatingIncome": 3175396000.0,
+      "netIncome": 4627612000.0,
+      "totalAssets": 40606466000.0,
+      "totalLiabilities": 33901073000.0,
+      "totalEquity": 5208268000.0,
+      "ocf": 4136551000.0,
+      "fiscalYear": 2025
+    },
+    "SPGI": {
+      "revenue": 15336000000.0,
+      "operatingIncome": 6177000000.0,
+      "netIncome": 4471000000.0,
+      "totalAssets": 61200000000.0,
+      "totalLiabilities": 25048000000.0,
+      "totalEquity": 31127000000.0,
+      "ocf": 5651000000.0,
+      "fiscalYear": 2025
+    },
+    "SRE": {
+      "revenue": 13702000000.0,
+      "operatingIncome": 3080000000.0,
+      "netIncome": 1837000000.0,
+      "totalAssets": 110878000000.0,
+      "totalLiabilities": 68879000000.0,
+      "totalEquity": 31614000000.0,
+      "ocf": 4565000000.0,
+      "fiscalYear": 2025
+    },
+    "STE": {
+      "revenue": 5935900000.0,
+      "operatingIncome": 1105900000.0,
+      "netIncome": 782300000.0,
+      "totalAssets": 10737200000.0,
+      "totalLiabilities": 3540000000.0,
+      "totalEquity": 7183600000.0,
+      "ocf": 1341400000.0,
+      "fiscalYear": 2026
+    },
+    "STLD": {
+      "revenue": 18176581000.0,
+      "operatingIncome": 1598972000.0,
+      "netIncome": 1185595000.0,
+      "totalAssets": 16419780000.0,
+      "totalLiabilities": 7489369000.0,
+      "totalEquity": 8957182000.0,
+      "ocf": 1449534000.0,
+      "fiscalYear": 2025
+    },
+    "STT": {
+      "revenue": 13965000000.0,
+      "operatingIncome": null,
+      "netIncome": 2945000000.0,
+      "totalAssets": 366047000000.0,
+      "totalLiabilities": 338206000000.0,
+      "totalEquity": 27841000000.0,
+      "ocf": 11898000000.0,
+      "fiscalYear": 2025
+    },
+    "STX": {
+      "revenue": 9097000000.0,
+      "operatingIncome": 1915000000.0,
+      "netIncome": 1469000000.0,
+      "totalAssets": 8023000000.0,
+      "totalLiabilities": 8476000000.0,
+      "totalEquity": -453000000.0,
+      "ocf": 1083000000.0,
+      "fiscalYear": 2025
+    },
+    "STZ": {
+      "revenue": 9139000000.0,
+      "operatingIncome": 2863100000.0,
+      "netIncome": 1686700000.0,
+      "totalAssets": 21900500000.0,
+      "totalLiabilities": 13513600000.0,
+      "totalEquity": 8082400000.0,
+      "ocf": 2669000000.0,
+      "fiscalYear": 2026
+    },
+    "SW": {
+      "revenue": 31179000000.0,
+      "operatingIncome": 2224000000.0,
+      "netIncome": 699000000.0,
+      "totalAssets": 45157000000.0,
+      "totalLiabilities": 26803000000.0,
+      "totalEquity": 18327000000.0,
+      "ocf": 3392000000.0,
+      "fiscalYear": 2025
+    },
+    "SWK": {
+      "revenue": 15130400000.0,
+      "operatingIncome": 1255400000.0,
+      "netIncome": 401900000.0,
+      "totalAssets": 21243700000.0,
+      "totalLiabilities": 12189100000.0,
+      "totalEquity": 9054600000.0,
+      "ocf": 971200000.0,
+      "fiscalYear": 2025
+    },
+    "SWKS": {
+      "revenue": 4086900000.0,
+      "operatingIncome": 524200000.0,
+      "netIncome": 477100000.0,
+      "totalAssets": 7917000000.0,
+      "totalLiabilities": 2159900000.0,
+      "totalEquity": 5757100000.0,
+      "ocf": 1300800000.0,
+      "fiscalYear": 2025
+    },
+    "SYK": {
+      "revenue": 25116000000.0,
+      "operatingIncome": 5059000000.0,
+      "netIncome": 3246000000.0,
+      "totalAssets": 47844000000.0,
+      "totalLiabilities": 25424000000.0,
+      "totalEquity": 22420000000.0,
+      "ocf": 5044000000.0,
+      "fiscalYear": 2025
+    },
+    "SYY": {
+      "revenue": 81370000000.0,
+      "operatingIncome": 3088000000.0,
+      "netIncome": 1828000000.0,
+      "totalAssets": 26774000000.0,
+      "totalLiabilities": 24917000000.0,
+      "totalEquity": 1830000000.0,
+      "ocf": 2510000000.0,
+      "fiscalYear": 2025
+    },
+    "T": {
+      "revenue": 125648000000.0,
+      "operatingIncome": 25000000000.0,
+      "netIncome": 21953000000.0,
+      "totalAssets": 420198000000.0,
+      "totalLiabilities": 291706000000.0,
+      "totalEquity": 110533000000.0,
+      "ocf": 40284000000.0,
+      "fiscalYear": 2025
+    },
+    "TAP": {
+      "revenue": 11140800000.0,
+      "operatingIncome": 1630700000.0,
+      "netIncome": -2139600000.0,
+      "totalAssets": 22738400000.0,
+      "totalLiabilities": 12195700000.0,
+      "totalEquity": 10230300000.0,
+      "ocf": 1784400000.0,
+      "fiscalYear": 2025
+    },
+    "TDG": {
+      "revenue": 8831000000.0,
+      "operatingIncome": 4189000000.0,
+      "netIncome": 2074000000.0,
+      "totalAssets": 22909000000.0,
+      "totalLiabilities": 32588000000.0,
+      "totalEquity": -9686000000.0,
+      "ocf": 2038000000.0,
+      "fiscalYear": 2025
+    },
+    "TDY": {
+      "revenue": 6115400000.0,
+      "operatingIncome": 1149800000.0,
+      "netIncome": 894800000.0,
+      "totalAssets": 15285300000.0,
+      "totalLiabilities": 4771400000.0,
+      "totalEquity": 10513900000.0,
+      "ocf": 1191300000.0,
+      "fiscalYear": 2025
+    },
+    "TEAM": {
+      "revenue": 5215304000.0,
+      "operatingIncome": -130392000.0,
+      "netIncome": -256687000.0,
+      "totalAssets": 6041970000.0,
+      "totalLiabilities": 4696316000.0,
+      "totalEquity": 1345654000.0,
+      "ocf": 1460393000.0,
+      "fiscalYear": 2025
+    },
+    "TECH": {
+      "revenue": 1219635000.0,
+      "operatingIncome": 242804000.0,
+      "netIncome": 73400000.0,
+      "totalAssets": 2557868000.0,
+      "totalLiabilities": 639060000.0,
+      "totalEquity": 1918808000.0,
+      "ocf": 287556000.0,
+      "fiscalYear": 2025
+    },
+    "TEL": {
+      "revenue": 17262000000.0,
+      "operatingIncome": 3384000000.0,
+      "netIncome": 1842000000.0,
+      "totalAssets": 25081000000.0,
+      "totalLiabilities": 12351000000.0,
+      "totalEquity": 12585000000.0,
+      "ocf": 4139000000.0,
+      "fiscalYear": 2025
+    },
+    "TER": {
+      "revenue": 3190024000.0,
+      "operatingIncome": 688605000.0,
+      "netIncome": 554047000.0,
+      "totalAssets": 4183599000.0,
+      "totalLiabilities": 1387847000.0,
+      "totalEquity": 2795752000.0,
+      "ocf": 674415000.0,
+      "fiscalYear": 2025
+    },
+    "TFC": {
+      "revenue": 20319000000.0,
+      "operatingIncome": null,
+      "netIncome": 5307000000.0,
+      "totalAssets": 547538000000.0,
+      "totalLiabilities": 482349000000.0,
+      "totalEquity": 65189000000.0,
+      "ocf": 5739000000.0,
+      "fiscalYear": 2025
+    },
+    "TGT": {
+      "revenue": 104780000000.0,
+      "operatingIncome": 5117000000.0,
+      "netIncome": 3705000000.0,
+      "totalAssets": 59490000000.0,
+      "totalLiabilities": 43325000000.0,
+      "totalEquity": 16165000000.0,
+      "ocf": 6562000000.0,
+      "fiscalYear": 2026
+    },
+    "TJX": {
+      "revenue": 60372000000.0,
+      "operatingIncome": 7178000000.0,
+      "netIncome": 5494000000.0,
+      "totalAssets": 35767000000.0,
+      "totalLiabilities": 25577000000.0,
+      "totalEquity": 10190000000.0,
+      "ocf": 6874000000.0,
+      "fiscalYear": 2026
+    },
+    "TMO": {
+      "revenue": 44557000000.0,
+      "operatingIncome": 8110000000.0,
+      "netIncome": 6704000000.0,
+      "totalAssets": 110343000000.0,
+      "totalLiabilities": 56807000000.0,
+      "totalEquity": 53407000000.0,
+      "ocf": 7818000000.0,
+      "fiscalYear": 2025
+    },
+    "TMUS": {
+      "revenue": 88309000000.0,
+      "operatingIncome": 18557000000.0,
+      "netIncome": 10992000000.0,
+      "totalAssets": 219237000000.0,
+      "totalLiabilities": 160034000000.0,
+      "totalEquity": 59203000000.0,
+      "ocf": 27950000000.0,
+      "fiscalYear": 2025
+    },
+    "TPL": {
+      "revenue": 798190000.0,
+      "operatingIncome": 592161000.0,
+      "netIncome": 481376000.0,
+      "totalAssets": 1623278000.0,
+      "totalLiabilities": 164371000.0,
+      "totalEquity": 1458907000.0,
+      "ocf": 545910000.0,
+      "fiscalYear": 2025
+    },
+    "TPR": {
+      "revenue": 7010700000.0,
+      "operatingIncome": 1269800000.0,
+      "netIncome": 183200000.0,
+      "totalAssets": 6580500000.0,
+      "totalLiabilities": 5722700000.0,
+      "totalEquity": 857800000.0,
+      "ocf": 1216600000.0,
+      "fiscalYear": 2025
+    },
+    "TRGP": {
+      "revenue": 17028300000.0,
+      "operatingIncome": 3331200000.0,
+      "netIncome": 1923000000.0,
+      "totalAssets": 25218400000.0,
+      "totalLiabilities": 22020200000.0,
+      "totalEquity": 3067900000.0,
+      "ocf": 3917400000.0,
+      "fiscalYear": 2025
+    },
+    "TRMB": {
+      "revenue": 3587300000.0,
+      "operatingIncome": 611300000.0,
+      "netIncome": 424000000.0,
+      "totalAssets": 9312000000.0,
+      "totalLiabilities": 3475800000.0,
+      "totalEquity": 5836200000.0,
+      "ocf": 386200000.0,
+      "fiscalYear": 2025
+    },
+    "TROW": {
+      "revenue": 7314800000.0,
+      "operatingIncome": 2477400000.0,
+      "netIncome": 2087100000.0,
+      "totalAssets": 14341800000.0,
+      "totalLiabilities": 2288600000.0,
+      "totalEquity": 10860100000.0,
+      "ocf": 1753400000.0,
+      "fiscalYear": 2025
+    },
+    "TRV": {
+      "revenue": 48828000000.0,
+      "operatingIncome": 8221000000.0,
+      "netIncome": 6288000000.0,
+      "totalAssets": 143708000000.0,
+      "totalLiabilities": 110814000000.0,
+      "totalEquity": 32894000000.0,
+      "ocf": 10606000000.0,
+      "fiscalYear": 2025
+    },
+    "TSCO": {
+      "revenue": 15524046000.0,
+      "operatingIncome": 1467389000.0,
+      "netIncome": 1096087000.0,
+      "totalAssets": 10933679000.0,
+      "totalLiabilities": 8352386000.0,
+      "totalEquity": 2581293000.0,
+      "ocf": 1635259000.0,
+      "fiscalYear": 2025
+    },
+    "TSLA": {
+      "revenue": 94827000000.0,
+      "operatingIncome": 4849000000.0,
+      "netIncome": 3794000000.0,
+      "totalAssets": 137806000000.0,
+      "totalLiabilities": 54941000000.0,
+      "totalEquity": 82137000000.0,
+      "ocf": 14747000000.0,
+      "fiscalYear": 2025
+    },
+    "TSM": {
+      "revenue": 3809054300000.0,
+      "operatingIncome": 1936095600000.0,
+      "netIncome": 1697604000000.0,
+      "totalAssets": 7932842500000.0,
+      "totalLiabilities": 2536623300000.0,
+      "totalEquity": 5355038700000.0,
+      "ocf": 2274975600000.0,
+      "fiscalYear": 2025
+    },
+    "TSN": {
+      "revenue": 54441000000.0,
+      "operatingIncome": 1441000000.0,
+      "netIncome": 474000000.0,
+      "totalAssets": 36658000000.0,
+      "totalLiabilities": 18431000000.0,
+      "totalEquity": 18085000000.0,
+      "ocf": 2155000000.0,
+      "fiscalYear": 2025
+    },
+    "TT": {
+      "revenue": 21321900000.0,
+      "operatingIncome": 3967400000.0,
+      "netIncome": 2918600000.0,
+      "totalAssets": 21420700000.0,
+      "totalLiabilities": 12819800000.0,
+      "totalEquity": 8579200000.0,
+      "ocf": 3194500000.0,
+      "fiscalYear": 2025
+    },
+    "TTD": {
+      "revenue": 2896284000.0,
+      "operatingIncome": 589321000.0,
+      "netIncome": 443304000.0,
+      "totalAssets": 6153220000.0,
+      "totalLiabilities": 3668829000.0,
+      "totalEquity": 2484391000.0,
+      "ocf": 992721000.0,
+      "fiscalYear": 2025
+    },
+    "TTWO": {
+      "revenue": 6656400000.0,
+      "operatingIncome": -108600000.0,
+      "netIncome": -298200000.0,
+      "totalAssets": 9383200000.0,
+      "totalLiabilities": 5872300000.0,
+      "totalEquity": 3510900000.0,
+      "ocf": 624300000.0,
+      "fiscalYear": 2026
+    },
+    "TXN": {
+      "revenue": 17682000000.0,
+      "operatingIncome": 6140000000.0,
+      "netIncome": 5001000000.0,
+      "totalAssets": 34585000000.0,
+      "totalLiabilities": 18312000000.0,
+      "totalEquity": 16273000000.0,
+      "ocf": 7153000000.0,
+      "fiscalYear": 2025
+    },
+    "TXT": {
+      "revenue": 14799000000.0,
+      "operatingIncome": 1001000000.0,
+      "netIncome": 921000000.0,
+      "totalAssets": 18129000000.0,
+      "totalLiabilities": 10254000000.0,
+      "totalEquity": 7875000000.0,
+      "ocf": 1312000000.0,
+      "fiscalYear": 2025
+    },
+    "TYL": {
+      "revenue": 2332340000.0,
+      "operatingIncome": 357676000.0,
+      "netIncome": 315603000.0,
+      "totalAssets": 5638908000.0,
+      "totalLiabilities": 1936119000.0,
+      "totalEquity": 3702789000.0,
+      "ocf": 653543000.0,
+      "fiscalYear": 2025
+    },
+    "UDR": {
+      "revenue": 1712317000.0,
+      "operatingIncome": 322375000.0,
+      "netIncome": 377704000.0,
+      "totalAssets": 10605674000.0,
+      "totalLiabilities": 6456911000.0,
+      "totalEquity": 3288462000.0,
+      "ocf": 902887000.0,
+      "fiscalYear": 2025
+    },
+    "UHS": {
+      "revenue": 17364829000.0,
+      "operatingIncome": 1994015000.0,
+      "netIncome": 1488796000.0,
+      "totalAssets": 15527593000.0,
+      "totalLiabilities": 8118185000.0,
+      "totalEquity": 7275792000.0,
+      "ocf": 1864397000.0,
+      "fiscalYear": 2025
+    },
+    "ULTA": {
+      "revenue": 12392820000.0,
+      "operatingIncome": 1548813000.0,
+      "netIncome": 1153479000.0,
+      "totalAssets": 6999294000.0,
+      "totalLiabilities": 4195843000.0,
+      "totalEquity": 2803451000.0,
+      "ocf": 1502780000.0,
+      "fiscalYear": 2026
+    },
+    "UNH": {
+      "revenue": 447567000000.0,
+      "operatingIncome": 18964000000.0,
+      "netIncome": 12056000000.0,
+      "totalAssets": 309581000000.0,
+      "totalLiabilities": 207883000000.0,
+      "totalEquity": 94110000000.0,
+      "ocf": 19697000000.0,
+      "fiscalYear": 2025
+    },
+    "UNP": {
+      "revenue": 24510000000.0,
+      "operatingIncome": 9846000000.0,
+      "netIncome": 7138000000.0,
+      "totalAssets": 69698000000.0,
+      "totalLiabilities": 51231000000.0,
+      "totalEquity": 18467000000.0,
+      "ocf": 9290000000.0,
+      "fiscalYear": 2025
+    },
+    "UPS": {
+      "revenue": 88661000000.0,
+      "operatingIncome": 7867000000.0,
+      "netIncome": 5572000000.0,
+      "totalAssets": 73090000000.0,
+      "totalLiabilities": 56835000000.0,
+      "totalEquity": 16227000000.0,
+      "ocf": 8450000000.0,
+      "fiscalYear": 2025
+    },
+    "URI": {
+      "revenue": 16099000000.0,
+      "operatingIncome": 3974000000.0,
+      "netIncome": 2494000000.0,
+      "totalAssets": 29866000000.0,
+      "totalLiabilities": 20898000000.0,
+      "totalEquity": 8968000000.0,
+      "ocf": 5190000000.0,
+      "fiscalYear": 2025
+    },
+    "USB": {
+      "revenue": 28540000000.0,
+      "operatingIncome": null,
+      "netIncome": 7570000000.0,
+      "totalAssets": 692345000000.0,
+      "totalLiabilities": 626694000000.0,
+      "totalEquity": 65193000000.0,
+      "ocf": 7970000000.0,
+      "fiscalYear": 2025
+    },
+    "V": {
+      "revenue": 40000000000.0,
+      "operatingIncome": 26556000000.0,
+      "netIncome": 20058000000.0,
+      "totalAssets": 99627000000.0,
+      "totalLiabilities": 61718000000.0,
+      "totalEquity": 37909000000.0,
+      "ocf": 23059000000.0,
+      "fiscalYear": 2025
+    },
+    "VICI": {
+      "revenue": 4006116000.0,
+      "operatingIncome": 3655301000.0,
+      "netIncome": 2775493000.0,
+      "totalAssets": 46724168000.0,
+      "totalLiabilities": 18501581000.0,
+      "totalEquity": 27797640000.0,
+      "ocf": 2509991000.0,
+      "fiscalYear": 2025
+    },
+    "VLO": {
+      "revenue": 122687000000.0,
+      "operatingIncome": 4312000000.0,
+      "netIncome": 2348000000.0,
+      "totalAssets": 57988000000.0,
+      "totalLiabilities": 31383000000.0,
+      "totalEquity": 23725000000.0,
+      "ocf": 5826000000.0,
+      "fiscalYear": 2025
+    },
+    "VLTO": {
+      "revenue": 5503000000.0,
+      "operatingIncome": 1277000000.0,
+      "netIncome": 940000000.0,
+      "totalAssets": 7693000000.0,
+      "totalLiabilities": 4587000000.0,
+      "totalEquity": 3105000000.0,
+      "ocf": 1077000000.0,
+      "fiscalYear": 2025
+    },
+    "VMC": {
+      "revenue": 7941100000.0,
+      "operatingIncome": 1567200000.0,
+      "netIncome": 1076700000.0,
+      "totalAssets": 16700400000.0,
+      "totalLiabilities": 8151500000.0,
+      "totalEquity": 8525100000.0,
+      "ocf": 1813000000.0,
+      "fiscalYear": 2025
+    },
+    "VRSK": {
+      "revenue": 3072700000.0,
+      "operatingIncome": 1343900000.0,
+      "netIncome": 908300000.0,
+      "totalAssets": 6195500000.0,
+      "totalLiabilities": 5885700000.0,
+      "totalEquity": 309000000.0,
+      "ocf": 1436000000.0,
+      "fiscalYear": 2025
+    },
+    "VRSN": {
+      "revenue": 1656600000.0,
+      "operatingIncome": 1121000000.0,
+      "netIncome": 825700000.0,
+      "totalAssets": 1325900000.0,
+      "totalLiabilities": 3480100000.0,
+      "totalEquity": -2154200000.0,
+      "ocf": 1091100000.0,
+      "fiscalYear": 2025
+    },
+    "VRTX": {
+      "revenue": 12001300000.0,
+      "operatingIncome": 4554400000.0,
+      "netIncome": 3953200000.0,
+      "totalAssets": 25643000000.0,
+      "totalLiabilities": 6977200000.0,
+      "totalEquity": 18665800000.0,
+      "ocf": 3631400000.0,
+      "fiscalYear": 2025
+    },
+    "VTR": {
+      "revenue": 5833980000.0,
+      "operatingIncome": 857524000.0,
+      "netIncome": 251381000.0,
+      "totalAssets": 27591945000.0,
+      "totalLiabilities": 15006137000.0,
+      "totalEquity": 12527253000.0,
+      "ocf": 1646726000.0,
+      "fiscalYear": 2025
+    },
+    "VTRS": {
+      "revenue": 14299900000.0,
+      "operatingIncome": 253500000.0,
+      "netIncome": -3514900000.0,
+      "totalAssets": 37193100000.0,
+      "totalLiabilities": 22481800000.0,
+      "totalEquity": 14711300000.0,
+      "ocf": 2315900000.0,
+      "fiscalYear": 2025
+    },
+    "VZ": {
+      "revenue": 138191000000.0,
+      "operatingIncome": 29259000000.0,
+      "netIncome": 17174000000.0,
+      "totalAssets": 404258000000.0,
+      "totalLiabilities": 298517000000.0,
+      "totalEquity": 104460000000.0,
+      "ocf": 37137000000.0,
+      "fiscalYear": 2025
+    },
+    "WAB": {
+      "revenue": 11167000000.0,
+      "operatingIncome": 1793000000.0,
+      "netIncome": 1170000000.0,
+      "totalAssets": 22069000000.0,
+      "totalLiabilities": 10879000000.0,
+      "totalEquity": 11142000000.0,
+      "ocf": 1759000000.0,
+      "fiscalYear": 2025
+    },
+    "WAT": {
+      "revenue": 3165286000.0,
+      "operatingIncome": 802588000.0,
+      "netIncome": 642629000.0,
+      "totalAssets": 5076550000.0,
+      "totalLiabilities": 2515308000.0,
+      "totalEquity": 2561242000.0,
+      "ocf": 652555000.0,
+      "fiscalYear": 2025
+    },
+    "WBD": {
+      "revenue": 37296000000.0,
+      "operatingIncome": 1309000000.0,
+      "netIncome": 727000000.0,
+      "totalAssets": 100085000000.0,
+      "totalLiabilities": 62919000000.0,
+      "totalEquity": 35919000000.0,
+      "ocf": 4319000000.0,
+      "fiscalYear": 2025
+    },
+    "WDAY": {
+      "revenue": 9552000000.0,
+      "operatingIncome": 1024000000.0,
+      "netIncome": 693000000.0,
+      "totalAssets": 18074000000.0,
+      "totalLiabilities": 10269000000.0,
+      "totalEquity": 7805000000.0,
+      "ocf": 2939000000.0,
+      "fiscalYear": 2026
+    },
+    "WDC": {
+      "revenue": 9520000000.0,
+      "operatingIncome": 2130000000.0,
+      "netIncome": 1861000000.0,
+      "totalAssets": 14002000000.0,
+      "totalLiabilities": 8462000000.0,
+      "totalEquity": 5540000000.0,
+      "ocf": 1691000000.0,
+      "fiscalYear": 2025
+    },
+    "WEC": {
+      "revenue": 9800100000.0,
+      "operatingIncome": 2374900000.0,
+      "netIncome": 1558700000.0,
+      "totalAssets": 51518300000.0,
+      "totalLiabilities": 37465500000.0,
+      "totalEquity": 13644000000.0,
+      "ocf": 3379400000.0,
+      "fiscalYear": 2025
+    },
+    "WELL": {
+      "revenue": 10667136000.0,
+      "operatingIncome": 355168000.0,
+      "netIncome": 936845000.0,
+      "totalAssets": 67303047000.0,
+      "totalLiabilities": 24100108000.0,
+      "totalEquity": 42129498000.0,
+      "ocf": 2881677000.0,
+      "fiscalYear": 2025
+    },
+    "WFC": {
+      "revenue": 83699000000.0,
+      "operatingIncome": null,
+      "netIncome": 21338000000.0,
+      "totalAssets": 2148631000000.0,
+      "totalLiabilities": 1965593000000.0,
+      "totalEquity": 181117000000.0,
+      "ocf": -19001000000.0,
+      "fiscalYear": 2025
+    },
+    "WHR": {
+      "revenue": 15524000000.0,
+      "operatingIncome": 727000000.0,
+      "netIncome": 318000000.0,
+      "totalAssets": 15999000000.0,
+      "totalLiabilities": 13284000000.0,
+      "totalEquity": 2726000000.0,
+      "ocf": 470000000.0,
+      "fiscalYear": 2025
+    },
+    "WM": {
+      "revenue": 25204000000.0,
+      "operatingIncome": 4607000000.0,
+      "netIncome": 2708000000.0,
+      "totalAssets": 45835000000.0,
+      "totalLiabilities": 35844000000.0,
+      "totalEquity": 9990000000.0,
+      "ocf": 6043000000.0,
+      "fiscalYear": 2025
+    },
+    "WMB": {
+      "revenue": 11950000000.0,
+      "operatingIncome": 4408000000.0,
+      "netIncome": 2618000000.0,
+      "totalAssets": 58573000000.0,
+      "totalLiabilities": 43578000000.0,
+      "totalEquity": 12807000000.0,
+      "ocf": 5898000000.0,
+      "fiscalYear": 2025
+    },
+    "WMT": {
+      "revenue": 713163000000.0,
+      "operatingIncome": 29825000000.0,
+      "netIncome": 21893000000.0,
+      "totalAssets": 284668000000.0,
+      "totalLiabilities": 178488000000.0,
+      "totalEquity": 99617000000.0,
+      "ocf": 41565000000.0,
+      "fiscalYear": 2026
+    },
+    "WRB": {
+      "revenue": 14639850000.0,
+      "operatingIncome": 2407435000.0,
+      "netIncome": 1779403000.0,
+      "totalAssets": 44071071000.0,
+      "totalLiabilities": 34359177000.0,
+      "totalEquity": 9700818000.0,
+      "ocf": 3582616000.0,
+      "fiscalYear": 2025
+    },
+    "WST": {
+      "revenue": 3074100000.0,
+      "operatingIncome": 636100000.0,
+      "netIncome": 493700000.0,
+      "totalAssets": 4270000000.0,
+      "totalLiabilities": 1094000000.0,
+      "totalEquity": 3176000000.0,
+      "ocf": 754800000.0,
+      "fiscalYear": 2025
+    },
+    "WTW": {
+      "revenue": 9708000000.0,
+      "operatingIncome": 2257000000.0,
+      "netIncome": 1605000000.0,
+      "totalAssets": 29530000000.0,
+      "totalLiabilities": 21478000000.0,
+      "totalEquity": 7976000000.0,
+      "ocf": 1775000000.0,
+      "fiscalYear": 2025
+    },
+    "WY": {
+      "revenue": 6905000000.0,
+      "operatingIncome": 447000000.0,
+      "netIncome": 324000000.0,
+      "totalAssets": 16613000000.0,
+      "totalLiabilities": 7187000000.0,
+      "totalEquity": 9426000000.0,
+      "ocf": 562000000.0,
+      "fiscalYear": 2025
+    },
+    "WYNN": {
+      "revenue": 7137924000.0,
+      "operatingIncome": 1206597000.0,
+      "netIncome": 327334000.0,
+      "totalAssets": 13108117000.0,
+      "totalLiabilities": 14139396000.0,
+      "totalEquity": -275492000.0,
+      "ocf": 1352653000.0,
+      "fiscalYear": 2025
+    },
+    "XEL": {
+      "revenue": 14669000000.0,
+      "operatingIncome": 2879000000.0,
+      "netIncome": 2018000000.0,
+      "totalAssets": 81371000000.0,
+      "totalLiabilities": 57762000000.0,
+      "totalEquity": 23609000000.0,
+      "ocf": 4083000000.0,
+      "fiscalYear": 2025
+    },
+    "XOM": {
+      "revenue": 323905000000.0,
+      "operatingIncome": 33938000000.0,
+      "netIncome": 28844000000.0,
+      "totalAssets": 448980000000.0,
+      "totalLiabilities": 182354000000.0,
+      "totalEquity": 259386000000.0,
+      "ocf": 51970000000.0,
+      "fiscalYear": 2025
+    },
+    "XRAY": {
+      "revenue": 3680000000.0,
+      "operatingIncome": 252000000.0,
+      "netIncome": -598000000.0,
+      "totalAssets": 5429000000.0,
+      "totalLiabilities": 4089000000.0,
+      "totalEquity": 1339000000.0,
+      "ocf": 235000000.0,
+      "fiscalYear": 2025
+    },
+    "XYL": {
+      "revenue": 9035000000.0,
+      "operatingIncome": 1326000000.0,
+      "netIncome": 957000000.0,
+      "totalAssets": 17634000000.0,
+      "totalLiabilities": 5885000000.0,
+      "totalEquity": 11480000000.0,
+      "ocf": 1241000000.0,
+      "fiscalYear": 2025
+    },
+    "YUM": {
+      "revenue": 8214000000.0,
+      "operatingIncome": 2530000000.0,
+      "netIncome": 1559000000.0,
+      "totalAssets": 8197000000.0,
+      "totalLiabilities": 15522000000.0,
+      "totalEquity": -7325000000.0,
+      "ocf": 2010000000.0,
+      "fiscalYear": 2025
+    },
+    "ZBH": {
+      "revenue": 8231500000.0,
+      "operatingIncome": 1356200000.0,
+      "netIncome": 705100000.0,
+      "totalAssets": 23091700000.0,
+      "totalLiabilities": 10385900000.0,
+      "totalEquity": 12697700000.0,
+      "ocf": 1697100000.0,
+      "fiscalYear": 2025
+    },
+    "ZBRA": {
+      "revenue": 5396000000.0,
+      "operatingIncome": 800000000.0,
+      "netIncome": 419000000.0,
+      "totalAssets": 8502000000.0,
+      "totalLiabilities": 4914000000.0,
+      "totalEquity": 3588000000.0,
+      "ocf": 917000000.0,
+      "fiscalYear": 2025
+    },
+    "ZS": {
+      "revenue": 2673115000.0,
+      "operatingIncome": -127144000.0,
+      "netIncome": -41478000.0,
+      "totalAssets": 6419888000.0,
+      "totalLiabilities": 4620615000.0,
+      "totalEquity": 1799273000.0,
+      "ocf": 972453000.0,
+      "fiscalYear": 2025
+    },
+    "ZTS": {
+      "revenue": 9467000000.0,
+      "operatingIncome": 3597000000.0,
+      "netIncome": 2673000000.0,
+      "totalAssets": 15467000000.0,
+      "totalLiabilities": 12136000000.0,
+      "totalEquity": 3331000000.0,
+      "ocf": 2904000000.0,
+      "fiscalYear": 2025
+    }
+  },
+  "failed": [
+    "ANSS",
+    "BF.B",
+    "BRK.B",
+    "DAY",
+    "DFS",
+    "FI",
+    "HES",
+    "HOLX",
+    "IPG",
+    "JNPR",
+    "K",
+    "MMC",
+    "PARA",
+    "WBA"
+  ]
+}

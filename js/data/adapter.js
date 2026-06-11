@@ -7,6 +7,7 @@ import { getSymbol } from './symbols.js';
 import { cacheGet, cacheSet } from '../utils/cache.js';
 import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 import { getKRDartEntry, getKRDartMeta } from './kr-dart.js';
+import { getUsFinancials } from './us-financials.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
@@ -196,6 +197,7 @@ export async function getFinancials(ticker) {
 
   const m = await fhMetric(ticker);
   const metric = m?.metric || {};
+  const usFin = getUsFinancials(ticker);   // yfinance 절대값 (있으면 머지)
   const data = {
     per: pickNum(metric, ['peTTM', 'peNormalizedAnnual', 'peBasicExclExtraTTM']),
     pbr: pickNum(metric, ['pbAnnual', 'pbQuarterly']),
@@ -214,10 +216,15 @@ export async function getFinancials(ticker) {
     revenueGrowthQoQ: pickNum(metric, ['revenueGrowthQuarterlyQoq']),
     opGrowth: pickNum(metric, ['operatingIncomeCAGR5Y']),
     epsGrowth: pickNum(metric, ['epsGrowthTTMYoy', 'epsGrowthQuarterlyYoy']),
-    revenue: null, operatingIncome: null, netIncome: null,
+    revenue: usFin?.revenue ?? null,
+    operatingIncome: usFin?.operatingIncome ?? null,
+    netIncome: usFin?.netIncome ?? null,
+    totalAssets: usFin?.totalAssets ?? null,
+    totalLiabilities: usFin?.totalLiabilities ?? null,
+    totalEquity: usFin?.totalEquity ?? null,
     eps: pickNum(metric, ['epsTTM', 'epsBasicExclExtraItemsTTM']),
     bps: pickNum(metric, ['bookValuePerShareAnnual']),
-    ocf: null, fcf: null,
+    ocf: usFin?.ocf ?? null, fcf: null,    // FCF 는 CAPEX 정보 부족으로 그대로 null
     debtRatio: pickNum(metric, ['totalDebtTotalEquityQuarterly', 'totalDebtTotalEquityAnnual']),
     currentRatio: pickNum(metric, ['currentRatioQuarterly', 'currentRatioAnnual']),
     interestCoverage: null,
@@ -232,7 +239,7 @@ export async function getFinancials(ticker) {
   };
   const result = {
     data,
-    source: m ? 'Finnhub /stock/metric' : 'Finnhub (no data)',
+    source: m ? (usFin ? 'Finnhub + yfinance (fundamentals)' : 'Finnhub /stock/metric') : 'Finnhub (no data)',
     asOf: todayISO(),
     currency: 'USD',
     basis: { period: 'TTM/Annual mixed', statement: '연결', earnings: '지배주주' },
@@ -309,6 +316,7 @@ function emptyFinancials() {
     'roe','roa','roic','opMargin','netMargin','ebitdaMargin',
     'revenueGrowthYoY','revenueGrowthQoQ','opGrowth','epsGrowth',
     'revenue','operatingIncome','netIncome','eps','bps','ocf','fcf',
+    'totalAssets','totalLiabilities','totalEquity',
     'debtRatio','currentRatio','interestCoverage','netDebtEbitda',
     'dps','payoutRatio','buybackFlag','beta','high52','low52','foreignOwnership',
   ].map(k => [k, null]));
