@@ -381,7 +381,8 @@ export function computeDupont(fin) {
 
   // 유형 분류 — 절대 임계값 기반
   let type = 'balanced';
-  if (netMargin > 0.15 && assetTurnover < 1.0 && leverage < 3) type = 'margin';
+  if (netMargin > 0.25 && leverage < 5) type = 'margin';                          // 마진 압도 (예: NVDA 55.6%). 단 고레버리지(은행 등)는 제외 → leverage 분기로.
+  else if (netMargin > 0.15 && assetTurnover < 1.0 && leverage < 3) type = 'margin';
   else if (assetTurnover > 1.5 && netMargin < 0.10) type = 'turnover';
   else if (leverage > 5) type = 'leverage';
 
