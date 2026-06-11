@@ -8,6 +8,7 @@ import { metaBadge, infoTip, warnIcon, loadingState, errorState, emptyState } fr
 import { showToast } from '../components/toast.js';
 import { computeFactorScores, computePeerScores, SWING_FACTOR_CATEGORIES, computeSwingScores, computeWarnings, computeDupont } from '../utils/scoring.js';
 import { getMomentumData, getCandlesMeta } from '../data/us-candles.js';
+import { getKrMomentumData, getKrCandlesMeta } from '../data/kr-candles.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
@@ -794,7 +795,7 @@ function renderScores(ticker, fin, peerFins, ts, calendar, marketKr) {
 }
 
 function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
-  const momentumData = marketKr ? null : getMomentumData(ticker);
+  const momentumData = marketKr ? getKrMomentumData(ticker) : getMomentumData(ticker);
   const scores = computeSwingScores({ fin, ts, calendar, marketKr, momentum: momentumData });
 
   const cards = [
@@ -826,9 +827,13 @@ function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
   ];
 
   const krNotice = marketKr
-    ? `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
-         한국 종목은 시세·일정 미연동으로 모멘텀·변동성·이벤트 임박이 제한적입니다. 실적 모멘텀만 본격 적용.
-       </div>`
+    ? (momentumData
+        ? `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+             한국 종목 모멘텀: yfinance 시세 연동 가용 (변동성 카드는 베타 미수집으로 52주 위치만 반영).
+           </div>`
+        : `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+             이 종목은 kr-candles 수집 실패 종목입니다(상장폐지·합병 등). 모멘텀·변동성 카드 미가용.
+           </div>`)
     : `<div style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
          스윙(1~3개월) 관점의 4 카테고리 점수입니다.
        </div>`;
@@ -839,10 +844,10 @@ function renderSwingScores({ ticker, fin, ts, calendar, marketKr }) {
       ${cards.map(c => swingScoreCardHtml(c)).join('')}
     </div>
     ${(() => {
-      const meta = getCandlesMeta();
+      const meta = marketKr ? getKrCandlesMeta() : getCandlesMeta();
       return meta.generatedAt
         ? `<p style="font-size:11px; color:var(--text-muted); margin-top:4px;">
-             시계열 출처: yfinance (수집: ${meta.generatedAt.slice(0,10)}, 종목 ${meta.tickerCount})
+             시계열 출처: yfinance ${marketKr ? '(KR)' : '(US)'} · 수집 ${meta.generatedAt.slice(0,10)} · ${meta.tickerCount} 종목
            </p>`
         : '';
     })()}

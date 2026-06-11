@@ -132,7 +132,7 @@ function pctScore(v, low, high) {
 export function computeSwingScores({ fin, ts, calendar, marketKr, momentum }) {
   // 모멘텀 점수 산출 (1·3개월 가격 변화 + 이동평균 위치). momentum = us-candles 데이터 객체.
   let momentumScore = null;
-  if (momentum && !marketKr) {
+  if (momentum) {
     const parts = [];
 
     // 1개월 변화: -15% = 0, 0% = 33, +30% = 100  → pctScore(v, -15, 30)
@@ -205,31 +205,34 @@ export function computeSwingScores({ fin, ts, calendar, marketKr, momentum }) {
     }
   }
 
-  // 변동성/강도 — 베타 + 52주 고저 위치 (US 만 가능)
+  // 변동성/강도 — 베타(US 만) + 52주 고저 위치(KR/US). KR 은 momentum.pos52 활용.
   let volatility = null;
-  if (!marketKr && fin) {
-    const beta = fin.beta;
-    const hi52 = fin.high52;
-    const lo52 = fin.low52;
-    const price = fin.price ?? null;   // 일부 fin 에 없을 수 있음. null 허용.
+  {
+    // pos52: momentum 객체에 있으면 우선 사용 (KR/US 둘 다), 없으면 fin 에서 계산
+    let pos52 = null;
+    if (momentum && momentum.pos52 != null) {
+      pos52 = momentum.pos52;
+    } else if (fin && fin.high52 && fin.low52 && fin.high52 > fin.low52 && fin.price != null) {
+      pos52 = (fin.price - fin.low52) / (fin.high52 - fin.low52);
+    }
 
-    // 베타 50점: 0.8~1.4 적정(70~85), 그 외 감점
+    // 베타: 현재는 US fin 만 가용 (KR fin 에는 없음)
+    const beta = fin?.beta;
+
     let betaScore = null;
     if (beta != null && !isNaN(beta)) {
       if (beta >= 0.8 && beta <= 1.4) betaScore = 80;
-      else if (beta < 0.5) betaScore = 35;          // 너무 둔감
-      else if (beta > 2.0) betaScore = 30;          // 너무 변동성 큼 (위험)
+      else if (beta < 0.5) betaScore = 35;
+      else if (beta > 2.0) betaScore = 30;
       else betaScore = 55;
     }
 
-    // 52주 위치 50점: 60~85% 가 강세(70~90), 90%+ 는 조정 위험
     let posScore = null;
-    if (hi52 != null && lo52 != null && hi52 > lo52 && price != null) {
-      const pos = (price - lo52) / (hi52 - lo52);
-      if (pos >= 0.6 && pos <= 0.85)      posScore = 85;
-      else if (pos >= 0.4 && pos < 0.6)   posScore = 65;
-      else if (pos > 0.85)                posScore = 60;   // 추격 매수 위험
-      else                                posScore = 40;   // 약세
+    if (pos52 != null) {
+      if (pos52 >= 0.6 && pos52 <= 0.85)    posScore = 85;
+      else if (pos52 >= 0.4 && pos52 < 0.6) posScore = 65;
+      else if (pos52 > 0.85)                posScore = 60;
+      else                                  posScore = 40;
     }
 
     const parts = [betaScore, posScore].filter(v => v != null);
@@ -248,9 +251,9 @@ export function computeSwingScores({ fin, ts, calendar, marketKr, momentum }) {
     '변동성/강도': volatility,
     '종합': total,
     _meta: {
-      momentumPending: momentumScore == null,   // 모멘텀 산출 불가/대기(KR 또는 데이터 없음)
-      momentumUnavailableReason: marketKr ? 'kr-no-data' : (momentum ? null : 'us-no-data'),
-      volatilityUnavailable: !!marketKr,
+      momentumPending: momentumScore == null,   // 모멘텀 산출 불가/대기 (시세 데이터 없음)
+      momentumUnavailableReason: momentum ? null : (marketKr ? 'kr-no-candle' : 'us-no-candle'),
+      volatilityPartial: marketKr && volatility != null ? 'pos52-only-no-beta' : null,
       categoryCount: valid.length,
     },
   };
