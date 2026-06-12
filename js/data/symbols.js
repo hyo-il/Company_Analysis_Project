@@ -2,6 +2,7 @@
 // 영문명·한글명·티커 매핑으로 통합 검색 지원.
 
 import { SYMBOLS_KR } from './symbols-kr.js';
+import { SYMBOLS_KR_EXTRA } from './symbols-kr-extra.js';
 import { SYMBOLS_US_EXTRA } from './symbols-us-extra.js';
 import { ETF_US_EXTRA } from './etf-us-extra.js';
 import { getAllExtras } from './extras-store.js';
@@ -9,6 +10,7 @@ import { lookupKr } from './dart-corpcode-full.js';
 
 const HARDCODED_SYMBOLS = [
   ...SYMBOLS_KR,
+  ...SYMBOLS_KR_EXTRA,   // KOSDAQ150 확장 (코스피200 중복은 mergeBy 가 SYMBOLS_KR 우선 유지)
 
   // KR ETF (대표)
   { ticker: '069500', nameKr: 'KODEX 200', nameEn: 'KODEX 200 ETF', market: 'kr', exchange: 'KOSPI', sector: 'ETF', industry: '국내지수', type: 'etf' },
