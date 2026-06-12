@@ -8,6 +8,7 @@ import { cacheGet, cacheSet } from '../utils/cache.js';
 import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 import { getKRDartEntry, getKRDartMeta } from './kr-dart.js';
 import { getUsFinancials, getUsFinancialsMeta } from './us-financials.js';
+import { getUsValuation, getUsValuationMeta } from './us-valuation.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
@@ -482,12 +483,44 @@ export async function getHistoricalMetrics(ticker, points = 8) {
   };
 }
 
-// 과거 PER/PBR 밸류 밴드 — 실연동 전까지 빈 결과(stub). 호출부에서 패널 숨김.
+// 과거 PER/PBR 밸류 밴드.
+//   US: us-valuation.json (yfinance 5년 월간, forward-fill)
+//   KR: stub — DART 가 BPS·주식수 미수집 (추후 보강 시 활성화).
 export async function getValuationHistory(ticker, months = 60) {
+  const sym = getSymbol(ticker);
+
+  if (sym?.market === 'us') {
+    const v = getUsValuation(ticker);
+    if (!v?.labels?.length) {
+      return {
+        data: { labels: [], per: [], pbr: [], currentPer: null, currentPbr: null },
+        source: 'unavailable', asOf: todayISO(), reason: 'us-no-valuation',
+      };
+    }
+    const lastNonNull = (arr) => {
+      if (!Array.isArray(arr)) return null;
+      for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] != null) return arr[i];
+      }
+      return null;
+    };
+    return {
+      data: {
+        labels: v.labels,
+        per: v.per || [],
+        pbr: v.pbr || [],
+        currentPer: lastNonNull(v.per),
+        currentPbr: lastNonNull(v.pbr),
+      },
+      period: `${v.labels.length}개월`,
+      source: `yfinance (사전 수집 ${getUsValuationMeta().generatedAt?.slice(0,10) || ''})`,
+      asOf: todayISO(),
+    };
+  }
+
+  // KR: stub 유지
   return {
     data: { labels: [], per: [], pbr: [], currentPer: null, currentPbr: null },
-    source: 'pending',
-    asOf: todayISO(),
-    reason: 'valuation-pending',
+    source: 'pending', asOf: todayISO(), reason: 'valuation-pending',
   };
 }

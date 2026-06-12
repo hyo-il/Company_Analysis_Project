@@ -69,7 +69,9 @@ export async function renderAnalysis(container, { ticker } = {}) {
     const currency = profile.currency;
     const watched = isWatched(ticker);
     const hasTrends = !!(hist?.data?.labels?.length);
-    const hasValband = !!(valHist?.data?.labels?.length);
+    const hasValband = !!(valHist?.data?.labels?.length &&
+      ((valHist.data.per || []).some(v => v != null) ||
+       (valHist.data.pbr || []).some(v => v != null)));
     // KR 미지원·호출 실패 시 점수/AI 해설은 의미 없으므로 섹션 자체를 숨김(5-D)
     const scoresUsable = fin?.reason !== 'kr-not-supported' && fin?.reason !== 'fetch-failed';
     // 백분위 점수(가치·수익성·성장성·안정성·종합). 피어 부족 시 카테고리·종합 모두 null.
@@ -413,7 +415,10 @@ function stddev(arr) {
   return Math.sqrt(arr.reduce((s, v) => s + (v - m) ** 2, 0) / arr.length);
 }
 function interpretBand(current, series) {
-  const m = mean(series), sd = stddev(series);
+  if (current == null) return null;
+  const clean = (series || []).filter(v => v != null && !isNaN(v));
+  if (clean.length < 12) return null;   // 1년 미만은 평균 의미 약함
+  const m = mean(clean), sd = stddev(clean);
   const z = (current - m) / (sd || 1);
   if (z < -0.8) return { text: '저평가 구간 (과거 평균 대비 하단부)', cls: 'up' };
   if (z > 0.8) return { text: '고평가 구간 (과거 평균 대비 상단부)', cls: 'down' };
@@ -424,27 +429,44 @@ function renderValuationBand(container, vd) {
   const interp = container.querySelector('#valband-interpretation');
   const perInterp = interpretBand(vd.currentPer, vd.per);
   const pbrInterp = interpretBand(vd.currentPbr, vd.pbr);
+
+  const interpCard = (label, current, fmt, info) => {
+    if (current == null) {
+      return `<div style="flex:1; min-width:240px; background:var(--bg-subtle); padding:8px 12px; border-radius:6px; color:var(--text-muted);">
+        <div style="font-size:12px;">${label}</div>
+        <div style="font-size:12px;">데이터 미가용 (무료 데이터 한계)</div>
+      </div>`;
+    }
+    return `<div style="flex:1; min-width:240px; background:var(--bg-subtle); padding:8px 12px; border-radius:6px;">
+      <div style="font-size:12px; color:var(--text-muted);">${label} 현재 ${fmt(current)} 배</div>
+      <div class="${info?.cls || ''}" style="font-weight:600;">${info?.text || '평균 산출 불가 (표본 부족)'}</div>
+    </div>`;
+  };
+
   if (interp) {
     interp.innerHTML = `
       <div style="display:flex; gap:12px; flex-wrap:wrap; font-size:13px;">
-        <div style="flex:1; min-width:240px; background:var(--bg-subtle); padding:8px 12px; border-radius:6px;">
-          <div style="font-size:12px; color:var(--text-muted);">PER 현재 ${fmtNum(vd.currentPer, 1)} 배</div>
-          <div class="${perInterp.cls}" style="font-weight:600;">${perInterp.text}</div>
-        </div>
-        <div style="flex:1; min-width:240px; background:var(--bg-subtle); padding:8px 12px; border-radius:6px;">
-          <div style="font-size:12px; color:var(--text-muted);">PBR 현재 ${fmtNum(vd.currentPbr, 2)} 배</div>
-          <div class="${pbrInterp.cls}" style="font-weight:600;">${pbrInterp.text}</div>
-        </div>
+        ${interpCard('PER', vd.currentPer, v => fmtNum(v, 1), perInterp)}
+        ${interpCard('PBR', vd.currentPbr, v => fmtNum(v, 2), pbrInterp)}
       </div>`;
   }
+
   const renderOne = (canvasId, series, current, title) => {
     const cv = container.querySelector(canvasId);
     if (!cv) return;
-    const m = mean(series), sd = stddev(series);
-    const meanLine = series.map(() => m);
-    const upper = series.map(() => m + sd);
-    const lower = series.map(() => m - sd);
-    bandChart(cv, { labels: vd.labels, values: series, meanLine, upperBand: upper, lowerBand: lower, title });
+    // null 제외한 시리즈 + 매칭 라벨 (PER/PBR 별도)
+    const cleanIdx = (series || []).map((v, i) => v != null && !isNaN(v) ? i : -1).filter(i => i >= 0);
+    if (cleanIdx.length < 12) {
+      cv.parentElement?.style && (cv.parentElement.style.opacity = '0.4');
+      return;   // 차트 미렌더 — 데이터 부족
+    }
+    const cleanLabels = cleanIdx.map(i => vd.labels[i]);
+    const cleanValues = cleanIdx.map(i => series[i]);
+    const m = mean(cleanValues), sd = stddev(cleanValues);
+    const meanLine = cleanValues.map(() => m);
+    const upper = cleanValues.map(() => m + sd);
+    const lower = cleanValues.map(() => m - sd);
+    bandChart(cv, { labels: cleanLabels, values: cleanValues, meanLine, upperBand: upper, lowerBand: lower, title });
   };
   renderOne('#valband-per', vd.per, vd.currentPer, 'PER');
   renderOne('#valband-pbr', vd.pbr, vd.currentPbr, 'PBR');
