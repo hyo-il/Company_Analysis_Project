@@ -9,6 +9,7 @@ import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 import { getKRDartEntry, getKRDartMeta } from './kr-dart.js';
 import { getUsFinancials, getUsFinancialsMeta } from './us-financials.js';
 import { getUsValuation, getUsValuationMeta } from './us-valuation.js';
+import { getKrDisclosures, getKrDisclosuresMeta } from './kr-disclosures.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
@@ -260,11 +261,31 @@ export async function getNews(ticker) {
   }
 
   if (sym?.market !== 'us') {
+    // KR: DART 공시 정적 JSON → 뉴스 패널 동일 형식으로 변환
+    const entry = getKrDisclosures(ticker);
+    if (!entry?.disclosures?.length) {
+      const result = {
+        data: [],
+        source: 'DART (no disclosures)',
+        asOf: todayISO(),
+        reason: 'kr-no-disclosures',
+      };
+      cacheSet(cacheKey, result);
+      return result;
+    }
+    const meta = getKrDisclosuresMeta();
+    const mapped = entry.disclosures.slice(0, 20).map(d => ({
+      title: d.report_nm,
+      source: `DART · ${d.category || '기타'}`,
+      date: d.rcept_dt,
+      tag: 'neutral',
+      url: d.url || `https://dart.fss.or.kr/dsaf001/main.do?rcpNo=${d.rcept_no}`,
+      summary: '',
+    }));
     const result = {
-      data: [],
-      source: 'unavailable (KR 실데이터 미지원)',
+      data: mapped,
+      source: `OpenDART (사전 수집 ${meta.generatedAt?.slice(0,10) || ''})`,
       asOf: todayISO(),
-      reason: 'kr-not-supported',
     };
     cacheSet(cacheKey, result);
     return result;
