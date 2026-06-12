@@ -20,8 +20,9 @@ export function peerMedian(peerVals) {
   return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
 }
 
-// 0~100 백분위를 0~4(=5단계) 정수 막대 칸 수로 환산.
+// 0~100 백분위를 0~5 정수 막대 칸 수로 환산. 100점 → 5칸 만점, 0점 → 0칸.
+// 임계: 0~10=0칸 / 11~30=1칸 / 31~50=2칸 / 51~70=3칸 / 71~90=4칸 / 91~100=5칸.
 export function toBars5(pct) {
   if (pct == null) return null;
-  return Math.max(0, Math.min(4, Math.round(pct / 25)));
+  return Math.max(0, Math.min(5, Math.round(pct / 20)));
 }
