@@ -361,14 +361,22 @@ function renderTrends(grid, h, currency) {
   const chartPct = v => (v == null || isNaN(v)) ? '—' : `${Number(v).toFixed(1)}%`;
   const chartInt = v => fmtInt(v);
   const items = [
-    { key: 'revenue', label: '매출', fmt: headerMoney, chartFmt: chartMoney },
-    { key: 'operatingIncome', label: '영업이익', fmt: headerMoney, chartFmt: chartMoney },
-    { key: 'netIncome', label: '순이익', fmt: headerMoney, chartFmt: chartMoney },
-    { key: 'eps', label: 'EPS', fmt: v => fmtNum(v, 0), chartFmt: chartInt },
-    { key: 'ocf', label: 'OCF', fmt: headerMoney, chartFmt: chartMoney },
-    { key: 'fcf', label: 'FCF', fmt: headerMoney, chartFmt: chartMoney },
-    { key: 'roe', label: 'ROE', fmt: v => fmtPct(v), chartFmt: chartPct },
-    { key: 'opMargin', label: '영업이익률', fmt: v => fmtPct(v), chartFmt: chartPct },
+    { key: 'revenue',         label: '매출',                  tip: '회사가 1년(또는 분기)에 판 총금액. 회사 덩치를 보여줘요.',
+      fmt: headerMoney, chartFmt: chartMoney },
+    { key: 'operatingIncome', label: '영업이익',              tip: '본업으로 판매·관리비를 빼고 남은 이익. 본업 수익성을 봐요.',
+      fmt: headerMoney, chartFmt: chartMoney },
+    { key: 'netIncome',       label: '순이익',                tip: '세금·이자까지 다 떼고 최종 남은 이익.',
+      fmt: headerMoney, chartFmt: chartMoney },
+    { key: 'eps',             label: '주당순이익(EPS)',       tip: '내가 가진 한 주가 1년에 벌어준 돈이에요. Earnings Per Share.',
+      fmt: v => fmtNum(v, 0), chartFmt: chartInt },
+    { key: 'ocf',             label: '영업현금흐름(OCF)',     tip: '장부 이익 말고 본업으로 통장에 진짜 들어온 현금. 이익은 난다는데 현금이 안 들어오면 좀 의심해봐야 해요. Operating Cash Flow.',
+      fmt: headerMoney, chartFmt: chartMoney },
+    { key: 'fcf',             label: '잉여현금흐름(FCF)',     tip: '영업현금흐름(OCF) − 자본적지출(CapEx). 벌어서 투자할 거 다 하고 손에 남은 진짜 여윳돈이에요. 이 돈으로 배당도 주고 자사주도 사요. Free Cash Flow.',
+      fmt: headerMoney, chartFmt: chartMoney },
+    { key: 'roe',             label: '자기자본이익률(ROE)',   tip: '내 돈(자본) 100원으로 1년에 몇 원 벌었나. 높을수록 자본 운용이 효율적이에요. Return on Equity.',
+      fmt: v => fmtPct(v), chartFmt: chartPct },
+    { key: 'opMargin',        label: '영업이익률',            tip: '100원어치 팔아서 본업으로 몇 원 남겼나. 20원 남기면 20%.',
+      fmt: v => fmtPct(v), chartFmt: chartPct },
   ];
   grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(260px, 1fr))';
   // 모든 값이 null/undefined 이거나 배열이 비면 카드 제외 (KR ROE·FCF·EPS 등 자동 숨김)
@@ -385,7 +393,7 @@ function renderTrends(grid, h, currency) {
     const sign = delta > 0 ? '▲' : delta < 0 ? '▼' : '–';
     return `<div style="border:1px solid var(--border); border-radius:6px; padding:10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--text-muted);">
-        <span>${it.label}</span>
+        <span>${it.label} ${it.tip ? infoTip(it.tip) : ''}</span>
         <span class="${dirCls}" style="font-size:11px;">${sign} ${Math.abs(delta).toFixed(1)}%</span>
       </div>
       <div style="font-size:15px; font-weight:600; margin:2px 0;">${last == null ? '—' : it.fmt(last)}</div>
