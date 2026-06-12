@@ -10,7 +10,8 @@ OpenDART 한국 종목 데이터 일괄 수집 → 정적 JSON 생성.
     3) 결과는 workspace/CA_Project/js/data/kr-dart.json 에 저장된다.
 
 구성:
-    - dart-corpcode.json 에서 한국 종목 ticker → corp_code 매핑 로드
+    - dart-corpcode.json (코스피200 200종) + symbols-kr-extra.json (KOSDAQ150 141종) 의
+      ticker → corp_code 매핑을 통합 corpmap 으로 로드
     - 각 종목별 다음을 OpenDART 에서 받아 정적 JSON 으로 가공:
         * 회사 개황 (company.json)
         * 사업보고서 2개년 (작년·재작년)  — 절대 지표 + 연간 YoY 성장
@@ -19,7 +20,7 @@ OpenDART 한국 종목 데이터 일괄 수집 → 정적 JSON 생성.
     - 중간 진행 표시, 실패 종목은 건너뛰고 마지막에 요약
 
 저작권/주의:
-    - OpenDART 무료 한도(일 20,000건) 안에서 운영. 200 종목 기준 약 1,400 호출.
+    - OpenDART 무료 한도(일 20,000건) 안에서 운영. 약 340 종목 기준 약 2,400 호출.
     - 본 스크립트는 사용자 PC(한국 IP) 에서 실행해야 OpenDART 가 정상 응답.
 """
 
@@ -38,8 +39,10 @@ import urllib.error
 
 # === 경로 ===
 REPO_ROOT = Path(__file__).resolve().parent.parent  # CA_Project/ (git repo root)
-CORPCODE_JSON = REPO_ROOT / "js" / "data" / "dart-corpcode.json"
-OUTPUT_JSON   = REPO_ROOT / "js" / "data" / "kr-dart.json"
+CORPCODE_JSON         = REPO_ROOT / "js" / "data" / "dart-corpcode.json"
+CORPCODE_FULL_JSON    = REPO_ROOT / "js" / "data" / "dart-corpcode-full.json"   # 신규 — 3,967 lookup 풀
+SYMBOLS_KR_EXTRA_JSON = REPO_ROOT / "js" / "data" / "symbols-kr-extra.json"     # 신규 — KOSDAQ150
+OUTPUT_JSON           = REPO_ROOT / "js" / "data" / "kr-dart.json"
 
 # === 상수 ===
 DART_BASE = "https://opendart.fss.or.kr"
@@ -439,6 +442,52 @@ def build_profile_card(co: dict | None, fallback_ticker: str) -> dict:
     }
 
 
+def load_corpmap() -> dict[str, str]:
+    """기존 dart-corpcode.json (코스피200) + symbols-kr-extra.json (KOSDAQ150) 통합 corpmap.
+
+    Returns: { ticker: corp_code } (중복 시 코스피200 우선 유지)
+    """
+    # 1. 기존 코스피200 — 그대로 사용
+    if not CORPCODE_JSON.exists():
+        print(f"corpCode 매핑 파일이 없습니다: {CORPCODE_JSON}", file=sys.stderr)
+        sys.exit(2)
+    with CORPCODE_JSON.open(encoding="utf-8") as f:
+        corpmap: dict[str, str] = json.load(f)
+
+    # 2. KOSDAQ150 추가 — dart-corpcode-full.json 의 byTicker 로 lookup
+    if not SYMBOLS_KR_EXTRA_JSON.exists() or not CORPCODE_FULL_JSON.exists():
+        print(f"[경고] EXTRA 파일이 없어 KOSPI200 200종만 수집합니다.", file=sys.stderr)
+        return corpmap
+
+    with SYMBOLS_KR_EXTRA_JSON.open(encoding="utf-8") as f:
+        extra = json.load(f)
+    with CORPCODE_FULL_JSON.open(encoding="utf-8") as f:
+        full = json.load(f)
+    by_ticker = full.get("byTicker", {})
+
+    added = 0
+    skipped_dup = 0
+    skipped_no_corpcode = 0
+    for s in extra.get("symbols", []):
+        t = s.get("ticker")
+        if not t:
+            continue
+        if t in corpmap:
+            skipped_dup += 1
+            continue
+        entry = by_ticker.get(t, {})
+        cc = entry.get("corp_code")
+        if not cc:
+            skipped_no_corpcode += 1
+            print(f"  [경고] {t} ({s.get('nameKr')}): corp_code 미가용", file=sys.stderr)
+            continue
+        corpmap[t] = cc
+        added += 1
+
+    print(f"[corpmap] 코스피200 {len(corpmap) - added} + KOSDAQ150 신규 {added} = 총 {len(corpmap)} 종 (중복 {skipped_dup}, corp_code 미가용 {skipped_no_corpcode})", file=sys.stderr)
+    return corpmap
+
+
 # === 메인 ===
 def main() -> int:
     parser = argparse.ArgumentParser(description="OpenDART 한국 종목 데이터 일괄 수집")
@@ -472,8 +521,7 @@ def main() -> int:
         print(f"corpCode 매핑 파일이 없습니다: {CORPCODE_JSON}", file=sys.stderr)
         return 2
 
-    with CORPCODE_JSON.open(encoding="utf-8") as f:
-        corpmap: dict[str, str] = json.load(f)
+    corpmap = load_corpmap()
 
     tickers = sorted(corpmap.keys())
     if args.limit:
