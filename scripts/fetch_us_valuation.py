@@ -60,6 +60,11 @@ HARDCODED_US = [
     "AAPL", "MSFT", "NVDA", "GOOGL", "GOOG", "AMZN", "META", "TSLA",
     "AMD", "AVGO", "TSM", "JPM", "BAC", "V", "WMT", "KO",
     "BK", "FI", "MMC", "PARA",
+    # 4순위 가 보강 (2026-06-12)
+    "UBER", "LYFT", "SNAP", "PINS", "SHOP", "SQ", "SOFI", "HOOD",
+    "SNOW", "U", "NET", "OKTA", "DKNG", "RBLX", "RIVN", "LCID",
+    "NIO", "XPEV", "BABA", "TME", "SE", "GRAB", "DOCN", "TWLO",
+    "ZM", "ROKU", "SPOT", "ETSY", "BNTX", "NVAX",
 ]
 
 
