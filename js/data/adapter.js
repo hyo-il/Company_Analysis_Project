@@ -396,7 +396,54 @@ export async function getCalendar(ticker = null, { from, to } = {}) {
   if (ticker) {
     const sym = getSymbol(ticker);
     if (sym?.market !== 'us') {
-      const res = emptyResult('kr-not-supported');
+      // KR: kr-disclosures.json 의 공시 중 일정 카테고리만 추출
+      const entry = getKrDisclosures(ticker);
+      if (!entry?.disclosures?.length) {
+        const res = {
+          data: [],
+          source: 'OpenDART (no disclosures)',
+          asOf: todayISO(),
+          reason: 'kr-no-disclosures',
+        };
+        cacheSetWithTTL(cacheKey, res);
+        return res;
+      }
+
+      // 일정 관점에서 의미 있는 카테고리만 (기타·수시공시 제외)
+      const KR_SCHEDULE_CATEGORIES = new Set(['정기공시', '주요사항', '주주총회', '배당', '자본거래']);
+      const KR_CATEGORY_ICON = {
+        '정기공시': '📋',
+        '주요사항': '⚠',
+        '주주총회': '👥',
+        '배당': '💰',
+        '자본거래': '🏦',
+      };
+      const KR_CATEGORY_IMPACT = {
+        '정기공시': '재무 정보 발표 — 실적 컨센서스 대비로 주가 변동',
+        '주요사항': '경영 주요 결정 — 자기주식·합병·증자 등 단기 변동 가능',
+        '주주총회': '의결권 행사·배당 확정 — 배당락 영향',
+        '배당': '배당기준일·지급일 — 배당주에 단기 매수세',
+        '자본거래': '증자·감자·합병 — 주식 수·주가 희석/영향',
+      };
+
+      const events = entry.disclosures
+        .filter(d => KR_SCHEDULE_CATEGORIES.has(d.category))
+        .filter(d => d.rcept_dt && d.rcept_dt.length === 10)
+        .map(d => ({
+          date: d.rcept_dt,
+          title: d.report_nm,
+          icon: KR_CATEGORY_ICON[d.category] || '',
+          impact: KR_CATEGORY_IMPACT[d.category] || '',
+          url: d.url,
+          ticker,
+          type: d.category,
+        }));
+
+      const res = {
+        data: events,
+        source: `OpenDART (사전 수집, ${entry.disclosures.length}건 중 일정 ${events.length}건)`,
+        asOf: todayISO(),
+      };
       cacheSetWithTTL(cacheKey, res);
       return res;
     }

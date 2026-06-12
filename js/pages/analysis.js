@@ -197,7 +197,7 @@ export async function renderAnalysis(container, { ticker } = {}) {
       </div>
 
       <div class="panel">
-        <div class="panel-title">주요 일정</div>
+        <div class="panel-title">주요 일정 ${infoTip('미국 종목은 실적·배당 예정일을 표시합니다. 한국 종목은 OpenDART 공시 신고일 기준으로 표시됩니다 (다가올 일정 정확도는 향후 본문 파싱으로 개선 예정).')}</div>
         ${renderSchedule(cal.data, cal.reason)}
       </div>
 
@@ -500,6 +500,7 @@ function renderScheduleReason(reason) {
   const map = {
     'no-key': '<strong>현재 프록시 URL이 설정되지 않았습니다.</strong><p>도움말 → 데이터 소스 설정에서 Worker URL을 확인하거나, 운영자에게 문의하세요.</p><button class="btn-primary" onclick="location.hash=\'#/help\'">도움말로 가기</button>',
     'kr-not-supported': '<strong>한국 종목 일정은 아직 지원하지 않습니다.</strong><p>본 앱 구조 제약(서버/프록시 없음)으로, 후속 단계에서 별도 어댑터로 다룰 예정입니다.</p>',
+    'kr-no-disclosures': '<strong>최근 30일 공시 신고가 없습니다.</strong><p>현재 일정은 공시 신고일 기준으로 표시되므로, 신고가 없는 종목은 일정도 비어 있습니다.</p>',
     'fetch-failed': '<strong>Finnhub 호출이 실패했습니다.</strong><p>키가 유효한지·네트워크가 정상인지 확인 후 다시 시도하세요. 거짓 데이터를 채워 넣지 않습니다.</p>',
     'no-us-watch': '<strong>관심 종목에 미국 종목이 없습니다.</strong><p>미국 주식·ETF를 관심 등록하면 해당 종목의 실적·배당 일정이 표시됩니다.</p>',
   };
