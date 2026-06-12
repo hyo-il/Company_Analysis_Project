@@ -72,6 +72,7 @@ HARDCODED_US = [
     "AAPL", "MSFT", "NVDA", "GOOGL", "GOOG", "AMZN", "META", "TSLA",
     "AMD", "AVGO", "TSM", "JPM", "BAC", "V", "WMT", "KO",
     "SPY", "IVV", "VOO", "QQQ", "VTI",
+    "BK", "FI", "MMC", "PARA",   # candles 누락 동기화 (2026-06-12)
     # 4순위 가 보강 (2026-06-12)
     "UBER", "LYFT", "SNAP", "PINS", "SHOP", "SQ", "SOFI", "HOOD",
     "SNOW", "U", "NET", "OKTA", "DKNG", "RBLX", "RIVN", "LCID",
