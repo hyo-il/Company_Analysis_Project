@@ -95,6 +95,37 @@ def _latest(df, *names) -> float | None:
     return None
 
 
+def _col_to_label(col) -> str | None:
+    """datetime 컬럼명 → 'YYQn' 라벨 변환 ('2025-03-31' → '25Q1')."""
+    try:
+        y = col.year % 100
+        m = col.month
+        q = (m - 1) // 3 + 1
+        return f"{y:02d}Q{q}"
+    except Exception:
+        return None
+
+
+def _quarterly_series(df, *names) -> list[float | None] | None:
+    """분기 DataFrame 의 첫 매칭 라인을 최대 4 분기 시계열로 반환 (최신 → 과거).
+
+    DataFrame 형태: 행=계정, 열=분기 결산일(최신순). yfinance 1.2.x quarterly_*.
+    """
+    if df is None or getattr(df, "empty", True):
+        return None
+    for nm in names:
+        if nm in df.index:
+            row = df.loc[nm]
+            series = []
+            for v in row[:4]:  # 최대 4 분기
+                if v is None or (isinstance(v, float) and math.isnan(v)):
+                    series.append(None)
+                else:
+                    series.append(float(v))
+            return series
+    return None
+
+
 def summarize_one(ticker_obj, t: str) -> dict | None:
     """yfinance Ticker → 절대값 요약 dict.
 
@@ -150,6 +181,47 @@ def summarize_one(ticker_obj, t: str) -> dict | None:
         # 모두 None 이면 제외
         if not any(v is not None for v in out.values() if isinstance(v, (int, float))):
             return None
+
+        # === 분기 시계열 수집 ===
+        try:    q_is  = ticker_obj.quarterly_income_stmt
+        except Exception: q_is = None
+        try:    q_cf  = ticker_obj.quarterly_cashflow
+        except Exception: q_cf = None
+
+        # labels 는 quarterly_income_stmt 의 컬럼 (최대 4 분기, 최신순)
+        ts_labels: list[str] = []
+        if q_is is not None and not getattr(q_is, "empty", True):
+            for col in q_is.columns[:4]:
+                lbl = _col_to_label(col)
+                if lbl:
+                    ts_labels.append(lbl)
+
+        if ts_labels:
+            ts_revenue  = _quarterly_series(q_is, "Total Revenue", "Operating Revenue") or [None] * len(ts_labels)
+            ts_op_inc   = _quarterly_series(q_is, "Operating Income", "EBIT") or [None] * len(ts_labels)
+            ts_net_inc  = _quarterly_series(q_is, "Net Income", "Net Income Common Stockholders") or [None] * len(ts_labels)
+            ts_ocf      = _quarterly_series(q_cf, "Operating Cash Flow") or [None] * len(ts_labels)
+
+            # opMargin 계산 — revenue·operatingIncome 둘 다 있는 분기만 채움
+            ts_op_margin = []
+            for r, o in zip(ts_revenue, ts_op_inc):
+                if r and o is not None and r != 0:
+                    ts_op_margin.append(round(o / r * 100, 2))
+                else:
+                    ts_op_margin.append(None)
+
+            # 길이 정합성 보강 — labels 와 동일 길이로 자름
+            n = len(ts_labels)
+            out["timeseries"] = {
+                "labels":          ts_labels,
+                "revenue":         ts_revenue[:n],
+                "operatingIncome": ts_op_inc[:n],
+                "netIncome":       ts_net_inc[:n],
+                "ocf":             ts_ocf[:n],
+                "opMargin":        ts_op_margin[:n],
+            }
+        # 시계열 미가용 시 timeseries 키 자체를 빼서 adapter 가 빈 결과로 처리하게 함
+
         return out
     except Exception as e:
         print(f"  ! {t} 예외: {e}", file=sys.stderr)
