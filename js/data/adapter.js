@@ -7,7 +7,7 @@ import { getSymbol } from './symbols.js';
 import { cacheGet, cacheSet } from '../utils/cache.js';
 import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 import { getKRDartEntry, getKRDartMeta } from './kr-dart.js';
-import { getUsFinancials } from './us-financials.js';
+import { getUsFinancials, getUsFinancialsMeta } from './us-financials.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
@@ -426,14 +426,36 @@ export function isConsensusAvailable() {
   return false;
 }
 
-// 분기 추이. US는 stub(15차 이후), KR은 OpenDART 분기 환산.
+// 분기 추이. US·KR 모두 정적 JSON timeseries 활용.
+//   - US: us-financials.json (yfinance quarterly_*)
+//   - KR: kr-dart.json (OpenDART 분기 환산)
 export async function getHistoricalMetrics(ticker, points = 8) {
   const sym = getSymbol(ticker);
   const emptyData = { labels: [], revenue: [], operatingIncome: [], netIncome: [],
                       eps: [], ocf: [], fcf: [], roe: [], opMargin: [] };
 
   if (sym?.market === 'us') {
-    return { data: emptyData, source: 'pending', asOf: todayISO(), reason: 'timeseries-pending' };
+    const usFin = getUsFinancials(ticker);
+    if (!usFin?.timeseries?.labels?.length) {
+      return {
+        data: emptyData,
+        source: 'unavailable', asOf: todayISO(), reason: 'us-no-timeseries',
+      };
+    }
+    const ts = usFin.timeseries;
+    return {
+      data: {
+        labels: ts.labels,
+        revenue: ts.revenue,
+        operatingIncome: ts.operatingIncome,
+        netIncome: ts.netIncome,
+        ocf: ts.ocf,
+        opMargin: ts.opMargin || [],   // 은행 등 일부 종목 None → visibleItems 가드로 자동 숨김
+        eps: [], fcf: [], roe: [],     // yfinance quarterly 에서 미수집 — 자동 숨김
+      },
+      source: `yfinance (사전 수집 ${getUsFinancialsMeta().generatedAt?.slice(0,10) || ''})`,
+      asOf: todayISO(),
+    };
   }
 
   // KR 시계열 — 정적 JSON 의 timeseries 사용
