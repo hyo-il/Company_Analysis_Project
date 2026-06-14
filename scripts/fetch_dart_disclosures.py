@@ -194,6 +194,46 @@ def normalize_one(d: dict) -> dict:
     }
 
 
+def _notify(title: str, message: str, ok: bool = True) -> None:
+    """macOS 알림 (osascript). 실패해도 무시."""
+    import subprocess
+    sound = "default" if ok else "Basso"
+    safe_t = title.replace('"', "'")
+    safe_m = message.replace('"', "'")
+    script = f'display notification "{safe_m}" with title "{safe_t}" sound name "{sound}"'
+    try:
+        subprocess.run(["osascript", "-e", script], check=False, capture_output=True, timeout=5)
+    except Exception:
+        pass
+
+
+def _validate(result, output_path) -> tuple[bool, str]:
+    n_ok = result["tickerCount"]
+    n_fail = len(result.get("failed", []))
+    n_total = n_ok + n_fail
+    size_kb = output_path.stat().st_size / 1024
+
+    # 1. 성공률 ≥ 98%
+    if n_total == 0 or n_ok / n_total < 0.98:
+        return False, f"성공률 {n_ok}/{n_total} ({n_ok/max(n_total,1)*100:.1f}%) < 98%"
+
+    # 2. 절대 종목 수 (KOSPI200 + KOSDAQ150 = 341 기준 ≥ 336)
+    if n_ok < 336:
+        return False, f"성공 종목 {n_ok} < 336"
+
+    # 3. 핵심 5종 모두 data 키에 존재 (활동 없으면 공시 0건 가능 — 키 존재만)
+    KEY = ["005930", "000660", "247540", "263750", "041510"]
+    missing = [t for t in KEY if t not in result["data"]]
+    if missing:
+        return False, f"핵심 종목 누락: {missing}"
+
+    # 4. 파일 크기 ≥ 700 KB
+    if size_kb < 700:
+        return False, f"파일 크기 {size_kb:.0f} KB < 700 KB"
+
+    return True, f"성공 {n_ok}/{n_total} ({size_kb:.0f} KB)"
+
+
 def main() -> int:
     key = load_key()
     corpmap = load_corpmap()
@@ -238,6 +278,14 @@ def main() -> int:
     size_kb = OUTPUT_JSON.stat().st_size // 1024
     print(f"\n저장: {OUTPUT_JSON} ({size_kb} KB)")
     print(f"성공: {len(data)}, 실패: {len(failed)}")
+
+    ok, reason = _validate(result, OUTPUT_JSON)
+    if not ok:
+        print(f"\n[검증 실패] {reason}", file=sys.stderr)
+        _notify("❌ DART 공시 갱신 실패", reason, ok=False)
+        return 1
+    print(f"\n[검증 통과] {reason}")
+    _notify("✅ DART 공시 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
     return 0
 
 

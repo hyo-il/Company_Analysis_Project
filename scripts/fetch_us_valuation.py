@@ -218,6 +218,58 @@ def summarize_one(t: str) -> dict | None:
         return None
 
 
+def _notify(title: str, message: str, ok: bool = True) -> None:
+    """macOS 알림 (osascript). 실패해도 무시."""
+    import subprocess
+    sound = "default" if ok else "Basso"
+    safe_t = title.replace('"', "'")
+    safe_m = message.replace('"', "'")
+    script = f'display notification "{safe_m}" with title "{safe_t}" sound name "{sound}"'
+    try:
+        subprocess.run(["osascript", "-e", script], check=False, capture_output=True, timeout=5)
+    except Exception:
+        pass
+
+
+def _validate(result, output_path) -> tuple[bool, str]:
+    n_ok = result["tickerCount"]
+    n_fail = len(result.get("failed", []))
+    n_total = n_ok + n_fail
+    size_kb = output_path.stat().st_size / 1024
+
+    if n_total == 0 or n_ok / n_total < 0.97:
+        return False, f"성공률 {n_ok}/{n_total} ({n_ok/max(n_total,1)*100:.1f}%) < 97%"
+    if n_ok < 480:
+        return False, f"성공 종목 {n_ok} < 480"
+
+    # PER 가용성 ≥ 95% (PBR 은 자본 음수 시 None 가능)
+    def has_per(v):
+        per = v.get("per") if v else None
+        return isinstance(per, list) and any(x is not None for x in per)
+    with_per = sum(1 for v in result["data"].values() if has_per(v))
+    if with_per / max(n_ok, 1) < 0.95:
+        return False, f"PER 가용 {with_per}/{n_ok} ({with_per/max(n_ok,1)*100:.1f}%) < 95%"
+
+    # 핵심 5종 labels 60개 + PER 마지막 non-null
+    KEY = ["AAPL", "MSFT", "NVDA", "JPM", "BAC"]
+    for t in KEY:
+        d = result["data"].get(t)
+        if not d:
+            return False, f"핵심 종목 {t} 누락"
+        labels = d.get("labels") or []
+        if len(labels) < 36:   # 최소 3년
+            return False, f"핵심 종목 {t} labels {len(labels)}월 < 36"
+        per = d.get("per") or []
+        last = next((x for x in reversed(per) if x is not None), None)
+        if last is None or last <= 0:
+            return False, f"핵심 종목 {t} PER 미가용 또는 음수"
+
+    if size_kb < 1300:
+        return False, f"파일 크기 {size_kb:.0f} KB < 1300 KB"
+
+    return True, f"성공 {n_ok}/{n_total}, PER 가용 {with_per}/{n_ok} ({size_kb:.0f} KB)"
+
+
 def main() -> int:
     tickers = load_tickers()
     print(f"대상 ticker: {len(tickers)} 개 (stock 만)")
@@ -253,6 +305,14 @@ def main() -> int:
     print(f"성공: {len(data)}, 실패: {len(failed)}")
     if failed[:10]:
         print(f"실패 예시(상위 10): {failed[:10]}")
+
+    ok, reason = _validate(result, OUTPUT_JSON)
+    if not ok:
+        print(f"\n[검증 실패] {reason}", file=sys.stderr)
+        _notify("❌ US 밸류 갱신 실패", reason, ok=False)
+        return 1
+    print(f"\n[검증 통과] {reason}")
+    _notify("✅ US 밸류 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
     return 0
 
 

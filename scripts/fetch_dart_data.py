@@ -488,6 +488,55 @@ def load_corpmap() -> dict[str, str]:
     return corpmap
 
 
+def _notify(title: str, message: str, ok: bool = True) -> None:
+    """macOS 알림 (osascript). 실패해도 무시."""
+    import subprocess
+    sound = "default" if ok else "Basso"
+    safe_t = title.replace('"', "'")
+    safe_m = message.replace('"', "'")
+    script = f'display notification "{safe_m}" with title "{safe_t}" sound name "{sound}"'
+    try:
+        subprocess.run(["osascript", "-e", script], check=False, capture_output=True, timeout=5)
+    except Exception:
+        pass
+
+
+def _validate(out_payload, fail_profile, fail_fin, fail_ts, output_path) -> tuple[bool, str]:
+    n_ok = out_payload["tickerCount"]
+    size_kb = output_path.stat().st_size / 1024
+
+    # tickerCount 절대 기준
+    if n_ok < 330:
+        return False, f"성공 종목 {n_ok} < 330"
+
+    # 재무 실패 ≤ 10
+    if len(fail_fin) > 10:
+        return False, f"재무 실패 {len(fail_fin)} > 10"
+
+    # 개황 실패 ≤ 10
+    if len(fail_profile) > 10:
+        return False, f"개황 실패 {len(fail_profile)} > 10"
+
+    # 핵심 5종 profile + revenue 채워짐
+    KEY = ["005930", "000660", "247540", "263750", "041510"]
+    for t in KEY:
+        d = out_payload["data"].get(t)
+        if not d:
+            return False, f"핵심 종목 {t} 누락"
+        prof = d.get("profile") or {}
+        fin = d.get("financials") or {}
+        if not prof or not prof.get("nameKr"):
+            return False, f"핵심 종목 {t} profile 미가용"
+        rev = fin.get("revenue")
+        if not rev or rev <= 0:
+            return False, f"핵심 종목 {t} revenue 미가용"
+
+    if size_kb < 650:
+        return False, f"파일 크기 {size_kb:.0f} KB < 650 KB"
+
+    return True, f"성공 {n_ok}, 재무 실패 {len(fail_fin)}, 개황 실패 {len(fail_profile)} ({size_kb:.0f} KB)"
+
+
 # === 메인 ===
 def main() -> int:
     parser = argparse.ArgumentParser(description="OpenDART 한국 종목 데이터 일괄 수집")
@@ -626,6 +675,14 @@ def main() -> int:
     print(f"개황 실패: {len(fail_profile)}  {fail_profile[:10]}{' ...' if len(fail_profile) > 10 else ''}")
     print(f"재무 실패: {len(fail_fin)}  {fail_fin[:10]}{' ...' if len(fail_fin) > 10 else ''}")
     print(f"시계열 실패: {len(fail_ts)}  {fail_ts[:10]}{' ...' if len(fail_ts) > 10 else ''}")
+
+    ok, reason = _validate(out_payload, fail_profile, fail_fin, fail_ts, args.output)
+    if not ok:
+        print(f"\n[검증 실패] {reason}", file=sys.stderr)
+        _notify("❌ KR DART 갱신 실패", reason, ok=False)
+        return 1
+    print(f"\n[검증 통과] {reason}")
+    _notify("✅ KR DART 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
     return 0
 
 

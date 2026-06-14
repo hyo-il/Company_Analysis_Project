@@ -100,6 +100,46 @@ def summarize_one(df: "pd.DataFrame") -> dict | None:
     }
 
 
+def _notify(title: str, message: str, ok: bool = True) -> None:
+    """macOS 알림 (osascript). 실패해도 무시."""
+    import subprocess
+    sound = "default" if ok else "Basso"
+    safe_t = title.replace('"', "'")
+    safe_m = message.replace('"', "'")
+    script = f'display notification "{safe_m}" with title "{safe_t}" sound name "{sound}"'
+    try:
+        subprocess.run(["osascript", "-e", script], check=False, capture_output=True, timeout=5)
+    except Exception:
+        pass
+
+
+def _validate(result, output_path) -> tuple[bool, str]:
+    n_ok = result["tickerCount"]
+    n_fail = len(result.get("failed", []))
+    n_total = n_ok + n_fail
+    size_kb = output_path.stat().st_size / 1024
+
+    if n_total == 0 or n_ok / n_total < 0.97:
+        return False, f"성공률 {n_ok}/{n_total} ({n_ok/max(n_total,1)*100:.1f}%) < 97%"
+    if n_ok < 330:
+        return False, f"성공 종목 {n_ok} < 330"
+
+    # 핵심 5종 ohlc 60개 이상 확인 (월간 5년 또는 일간 ~3개월)
+    KEY = ["005930", "000660", "247540", "263750", "041510"]
+    for t in KEY:
+        d = result["data"].get(t)
+        if not d or not isinstance(d, dict):
+            return False, f"핵심 종목 {t} 누락"
+        ohlc = d.get("ohlc") or d.get("series") or d.get("candles") or []
+        if len(ohlc) < 60:
+            return False, f"핵심 종목 {t} 시세 {len(ohlc)}건 < 60"
+
+    if size_kb < 50:
+        return False, f"파일 크기 {size_kb:.0f} KB < 50 KB"
+
+    return True, f"성공 {n_ok}/{n_total} ({size_kb:.0f} KB)"
+
+
 def main() -> int:
     kr_tickers = load_kr_tickers()
     if not kr_tickers:
@@ -162,6 +202,14 @@ def main() -> int:
     print(f"성공: {len(data)}, 실패: {len(failed)}")
     if failed[:10]:
         print(f"실패 예시(상위 10): {failed[:10]}")
+
+    ok, reason = _validate(result, OUTPUT_JSON)
+    if not ok:
+        print(f"\n[검증 실패] {reason}", file=sys.stderr)
+        _notify("❌ KR 시세 갱신 실패", reason, ok=False)
+        return 1
+    print(f"\n[검증 통과] {reason}")
+    _notify("✅ KR 시세 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
     return 0
 
 

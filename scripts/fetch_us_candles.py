@@ -142,6 +142,45 @@ def summarize_one(df: "pd.DataFrame", ticker: str) -> dict | None:
     }
 
 
+def _notify(title: str, message: str, ok: bool = True) -> None:
+    """macOS 알림 (osascript). 실패해도 무시."""
+    import subprocess
+    sound = "default" if ok else "Basso"
+    safe_t = title.replace('"', "'")
+    safe_m = message.replace('"', "'")
+    script = f'display notification "{safe_m}" with title "{safe_t}" sound name "{sound}"'
+    try:
+        subprocess.run(["osascript", "-e", script], check=False, capture_output=True, timeout=5)
+    except Exception:
+        pass
+
+
+def _validate(result, output_path) -> tuple[bool, str]:
+    n_ok = result["tickerCount"]
+    n_fail = len(result.get("failed", []))
+    n_total = n_ok + n_fail
+    size_kb = output_path.stat().st_size / 1024
+
+    if n_total == 0 or n_ok / n_total < 0.98:
+        return False, f"성공률 {n_ok}/{n_total} ({n_ok/max(n_total,1)*100:.1f}%) < 98%"
+    if n_ok < 615:
+        return False, f"성공 종목 {n_ok} < 615"
+
+    KEY = ["AAPL", "MSFT", "NVDA", "JPM", "SPY"]
+    for t in KEY:
+        d = result["data"].get(t)
+        if not d or not isinstance(d, dict):
+            return False, f"핵심 종목 {t} 누락"
+        ohlc = d.get("ohlc") or d.get("series") or d.get("candles") or []
+        if len(ohlc) < 60:
+            return False, f"핵심 종목 {t} 시세 {len(ohlc)}건 < 60"
+
+    if size_kb < 160:
+        return False, f"파일 크기 {size_kb:.0f} KB < 160 KB"
+
+    return True, f"성공 {n_ok}/{n_total} ({size_kb:.0f} KB)"
+
+
 def main() -> int:
     tickers = load_tickers()
     print(f"수집 대상: {len(tickers)} 종목")
@@ -201,6 +240,14 @@ def main() -> int:
     print(f"성공: {len(data)}, 실패: {len(failed)}")
     if failed[:10]:
         print(f"실패 예시(상위 10): {failed[:10]}")
+
+    ok, reason = _validate(result, OUTPUT_JSON)
+    if not ok:
+        print(f"\n[검증 실패] {reason}", file=sys.stderr)
+        _notify("❌ US 시세 갱신 실패", reason, ok=False)
+        return 1
+    print(f"\n[검증 통과] {reason}")
+    _notify("✅ US 시세 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
     return 0
 
 
