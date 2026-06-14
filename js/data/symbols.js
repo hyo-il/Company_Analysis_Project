@@ -7,6 +7,7 @@ import { SYMBOLS_US_EXTRA } from './symbols-us-extra.js';
 import { ETF_US_EXTRA } from './etf-us-extra.js';
 import { getAllExtras } from './extras-store.js';
 import { lookupKr } from './dart-corpcode-full.js';
+import { lookupUsAlias } from './symbols-us-aliases.js';
 
 const HARDCODED_SYMBOLS = [
   ...SYMBOLS_KR,
@@ -226,38 +227,84 @@ export async function lookupExternal(query) {
     };
   }
 
-  // 2차: US lookup (영문 ticker 패턴 — 1~5자 알파벳 + 선택적 점/하이픈)
+  // 2차: 한글·영문 별칭 매칭 (신규)
+  const aliasTicker = lookupUsAlias(q);
+  if (aliasTicker) {
+    // SYMBOLS 에 이미 있으면 그대로 반환
+    const existing = SYMBOLS.find(s => s.ticker === aliasTicker);
+    if (existing) {
+      return { sym: existing, source: 'us-alias-master' };
+    }
+    // SYMBOLS 에 없으면 Finnhub profile 호출
+    try {
+      const { fhProfile } = await import('./adapters/finnhub.js');
+      const p = await fhProfile(aliasTicker);
+      if (p && p.name) {
+        return {
+          sym: makeUsSym(aliasTicker, p),
+          source: 'us-alias-finnhub',
+        };
+      }
+    } catch (e) {
+      console.warn('[lookupExternal] alias finnhub failed', e?.message);
+    }
+  }
+
+  // 3차: US lookup (영문 ticker 패턴 — 1~5자 알파벳 + 선택적 점/하이픈)
   if (/^[A-Za-z][A-Za-z.\-]{0,4}$/.test(q)) {
     try {
       const { fhProfile } = await import('./adapters/finnhub.js');
       const p = await fhProfile(q.toUpperCase());
       if (p && p.name) {
-        // ETF 자동 추정: 이름에 ETF/Fund/Trust 단어가 있거나, 시총·주식수가 둘 다 비어있음(전통 주식은 둘 다 채워짐).
-        const looksLikeEtf =
-          /etf|fund|trust/i.test(p.name || '') ||
-          ((p.marketCapitalization == null || p.marketCapitalization === 0) &&
-           (p.shareOutstanding == null || p.shareOutstanding === 0));
-
-        return {
-          sym: {
-            ticker: q.toUpperCase(),
-            nameKr: p.name,
-            nameEn: p.name,
-            market: 'us',
-            exchange: p.exchange || 'NASDAQ',
-            sector: looksLikeEtf ? 'ETF' : (p.finnhubIndustry || 'Unknown'),
-            industry: p.finnhubIndustry || 'Unknown',
-            type: looksLikeEtf ? 'etf' : 'stock',
-            weburl: p.weburl || null,
-            logo: p.logo || null,
-          },
-          source: 'us-finnhub',
-        };
+        return { sym: makeUsSym(q.toUpperCase(), p), source: 'us-finnhub' };
       }
     } catch (e) {
       console.warn('[lookupExternal] us fetch failed', e?.message);
     }
   }
 
+  // 4차: Finnhub /search 회사명 검색 (신규)
+  if (q.length >= 3 && /[a-zA-Z]/.test(q)) {
+    try {
+      const { fhSearch, fhProfile } = await import('./adapters/finnhub.js');
+      const r = await fhSearch(q);
+      const first = (r?.result || [])
+        .filter(x => x?.symbol && !x.symbol.includes('.') && x.symbol.length <= 5)
+        .find(x => x?.type === 'Common Stock' || x?.type === 'ETF' || x?.type === '');
+      if (first?.symbol) {
+        // SYMBOLS 마스터 확인 우선
+        const existing = SYMBOLS.find(s => s.ticker === first.symbol);
+        if (existing) return { sym: existing, source: 'us-search-master' };
+        const p = await fhProfile(first.symbol);
+        if (p && p.name) {
+          return { sym: makeUsSym(first.symbol, p), source: 'us-search-finnhub' };
+        }
+      }
+    } catch (e) {
+      console.warn('[lookupExternal] search failed', e?.message);
+    }
+  }
+
   return null;
+}
+
+// 헬퍼: Finnhub profile 응답 → sym 객체 (기존 ETF 추정 로직 재사용)
+function makeUsSym(ticker, p) {
+  // ETF 자동 추정: 이름에 ETF/Fund/Trust 단어가 있거나, 시총·주식수가 둘 다 비어있음(전통 주식은 둘 다 채워짐).
+  const looksLikeEtf =
+    /etf|fund|trust/i.test(p.name || '') ||
+    ((p.marketCapitalization == null || p.marketCapitalization === 0) &&
+     (p.shareOutstanding == null || p.shareOutstanding === 0));
+  return {
+    ticker,
+    nameKr: p.name,
+    nameEn: p.name,
+    market: 'us',
+    exchange: p.exchange || 'NASDAQ',
+    sector: looksLikeEtf ? 'ETF' : (p.finnhubIndustry || 'Unknown'),
+    industry: p.finnhubIndustry || 'Unknown',
+    type: looksLikeEtf ? 'etf' : 'stock',
+    weburl: p.weburl || null,
+    logo: p.logo || null,
+  };
 }

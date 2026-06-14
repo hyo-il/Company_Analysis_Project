@@ -11,6 +11,7 @@ const ALLOWED_PATHS = new Set([
   '/api/v1/stock/metric',
   '/api/v1/stock/financials-reported',
   '/api/v1/company-news',
+  '/api/v1/search',
 ]);
 
 export default {

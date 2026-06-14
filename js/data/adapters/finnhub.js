@@ -78,3 +78,6 @@ export async function fhFinancialsReported(ticker) {
 export async function fhNews(ticker, from, to) {
   return fetchJson('/api/v1/company-news', { symbol: ticker, from, to });
 }
+export async function fhSearch(query) {
+  return fetchJson('/api/v1/search', { q: query });
+}
