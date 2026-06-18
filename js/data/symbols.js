@@ -308,3 +308,33 @@ function makeUsSym(ticker, p) {
     logo: p.logo || null,
   };
 }
+
+/**
+ * 외부 다중 검색 — Finnhub /search 결과를 다중 반환. 사용자 선택용.
+ * 1~5자 영문 ticker 또는 영문 회사명 등 모든 쿼리에서 동작.
+ * @returns Promise<Array<{ ticker, name, type, exchange }>> — 최대 10개
+ */
+export async function searchExternalMulti(query) {
+  if (!query) return [];
+  const q = String(query).trim();
+  if (q.length < 2) return [];
+
+  try {
+    const { fhSearch } = await import('./adapters/finnhub.js');
+    const r = await fhSearch(q);
+    const list = (r?.result || [])
+      .filter(x => x?.symbol && !x.symbol.includes('.') && x.symbol.length <= 5)
+      .filter(x => x?.type === 'Common Stock' || x?.type === 'ETF' || x?.type === '')
+      .slice(0, 10)
+      .map(x => ({
+        ticker: x.symbol,
+        name: x.description || x.symbol,
+        type: x.type || '',
+        exchange: x.displaySymbol || '',
+      }));
+    return list;
+  } catch (e) {
+    console.warn('[searchExternalMulti] failed', e?.message);
+    return [];
+  }
+}

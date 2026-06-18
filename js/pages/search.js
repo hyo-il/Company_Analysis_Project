@@ -99,6 +99,7 @@ export async function renderSearch(container, { query = '', market = 'all', onSe
       찾으시는 종목이 위 결과에 없나요? 검색어 "<strong>${query}</strong>" 그대로 외부에서 한 번 더 찾아볼 수 있습니다.
     </p>
     <button id="btn-external-lookup" class="btn-secondary">이 검색어로 외부에서 찾기</button>
+    <button id="btn-external-lookup-multi" class="btn-secondary" style="margin-left:8px;">외부에서 다중 결과 보기</button>
   `;
   container.appendChild(extraLookupPanel);
 
@@ -126,6 +127,43 @@ export async function renderSearch(container, { query = '', market = 'all', onSe
       showToast(added ? `${sym.nameKr} 추가됨` : '이미 추가된 종목입니다', { type: 'info' });
       if (onSelect) onSelect(sym.ticker);
       else location.hash = `#/analysis/${sym.ticker}`;
+    });
+  });
+
+  extraLookupPanel.querySelector('#btn-external-lookup-multi')?.addEventListener('click', async () => {
+    extraLookupPanel.innerHTML = `<p style="color:var(--text-muted); font-size:13px;">"${query}" 외부 다중 검색 중...</p>`;
+    const { searchExternalMulti, lookupExternal, registerExtraSymbol } = await import('../data/symbols.js');
+    const list = await searchExternalMulti(query);
+    if (!list.length) {
+      extraLookupPanel.innerHTML = `<p style="color:var(--text-muted); font-size:13px;">외부에서 추가 결과를 찾지 못했습니다.</p>`;
+      return;
+    }
+    extraLookupPanel.innerHTML = `
+      <p style="margin:0 0 8px; font-size:13px;">외부 검색 결과 ${list.length}건 — 선택해서 추가하세요:</p>
+      <div style="max-height:240px; overflow-y:auto; border:1px solid var(--border); border-radius:6px; padding:6px;">
+        ${list.map(e => `<label style="display:block; padding:6px; cursor:pointer; font-size:13px;">
+          <input type="checkbox" data-multi="${e.ticker}" style="margin-right:8px;"/>
+          <strong>${e.name}</strong> <span style="color:var(--text-muted)">${e.ticker} · ${e.type || ''}</span>
+        </label>`).join('')}
+      </div>
+      <button id="btn-multi-add" class="btn-primary" style="margin-top:8px;">선택 추가</button>
+    `;
+    extraLookupPanel.querySelector('#btn-multi-add')?.addEventListener('click', async () => {
+      const checks = extraLookupPanel.querySelectorAll('input[data-multi]:checked');
+      if (!checks.length) { showToast('선택된 종목이 없습니다', { type: 'info' }); return; }
+      let added = 0;
+      const { addExtra } = await import('../data/extras-store.js');
+      for (const c of checks) {
+        const t = c.dataset.multi;
+        const found = await lookupExternal(t);
+        if (found?.sym) {
+          addExtra(found.sym);
+          registerExtraSymbol(found.sym);
+          added++;
+        }
+      }
+      showToast(`${added}개 종목 추가됨`, { type: 'success' });
+      extraLookupPanel.innerHTML = `<p style="color:var(--text-muted); font-size:13px;">${added}개 추가 완료.</p>`;
     });
   });
 
