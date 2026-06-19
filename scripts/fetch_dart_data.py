@@ -537,6 +537,52 @@ def _validate(out_payload, fail_profile, fail_fin, fail_ts, output_path) -> tupl
     return True, f"성공 {n_ok}, 재무 실패 {len(fail_fin)}, 개황 실패 {len(fail_profile)} ({size_kb:.0f} KB)"
 
 
+def _auto_push(file_path, commit_subject: str) -> tuple[bool, str]:
+    """검증 통과 시 자동 git add → commit → push.
+
+    Returns: (ok: bool, message: str)
+    - 변경 사항 없으면 (True, "변경 없음 (스킵)")
+    - 푸시 성공 시 (True, "푸시 완료")
+    - 실패 시 (False, 에러 메시지 100자)
+    """
+    import subprocess
+    repo_root = file_path.parent.parent.parent   # workspace/CA_Project
+    rel_path = file_path.relative_to(repo_root)
+
+    def _git(*args, timeout=60):
+        return subprocess.run(
+            ["git", "-C", str(repo_root), *args],
+            capture_output=True, timeout=timeout
+        )
+
+    try:
+        # 1. add
+        r = _git("add", str(rel_path))
+        if r.returncode != 0:
+            return False, f"add 실패: {r.stderr.decode('utf-8', errors='ignore')[:100]}"
+
+        # 2. 변경 사항 확인 — staged diff 비어있으면 스킵
+        r = _git("diff", "--cached", "--quiet")
+        if r.returncode == 0:
+            return True, "변경 없음 (스킵)"
+
+        # 3. commit
+        r = _git("commit", "-m", commit_subject, timeout=30)
+        if r.returncode != 0:
+            return False, f"commit 실패: {r.stderr.decode('utf-8', errors='ignore')[:100]}"
+
+        # 4. push
+        r = _git("push", "origin", "main", timeout=120)
+        if r.returncode != 0:
+            return False, f"push 실패: {r.stderr.decode('utf-8', errors='ignore')[:100]}"
+
+        return True, "푸시 완료"
+    except subprocess.TimeoutExpired:
+        return False, "타임아웃 (60s+)"
+    except Exception as e:
+        return False, f"예외: {str(e)[:80]}"
+
+
 # === 메인 ===
 def main() -> int:
     parser = argparse.ArgumentParser(description="OpenDART 한국 종목 데이터 일괄 수집")
@@ -546,6 +592,8 @@ def main() -> int:
                         help="처음 N 종목만(테스트용)")
     parser.add_argument("--output", type=Path, default=OUTPUT_JSON,
                         help=f"결과 JSON 경로 (기본 {OUTPUT_JSON})")
+    parser.add_argument("--auto-push", action="store_true",
+                        help="검증 통과 시 자동 git add/commit/push (기본: 수동)")
     args = parser.parse_args()
 
     key = os.environ.get("DART_KEY") or os.environ.get("CRTFC_KEY")
@@ -681,9 +729,26 @@ def main() -> int:
         print(f"\n[검증 실패] {reason}", file=sys.stderr)
         _notify("❌ KR DART 갱신 실패", reason, ok=False)
         return 1
+
     print(f"\n[검증 통과] {reason}")
-    _notify("✅ KR DART 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
-    return 0
+
+    # 자동 푸시 분기 (--auto-push 일 때만)
+    if args.auto_push:
+        subj = f"chore(data): kr-dart 자동 갱신 — {reason}"
+        push_ok, push_msg = _auto_push(args.output, subj)
+        if push_ok:
+            if push_msg == "변경 없음 (스킵)":
+                _notify("✅ kr-dart 갱신 통과 (변경 없음)", reason, ok=True)
+            else:
+                _notify("🚀 kr-dart 자동 푸시 완료", f"{reason} | {push_msg}", ok=True)
+            return 0
+        else:
+            print(f"\n[푸시 실패] {push_msg}", file=sys.stderr)
+            _notify("⚠ kr-dart 갱신 통과, 푸시 실패", push_msg, ok=False)
+            return 1
+    else:
+        _notify("✅ KR DART 갱신 통과", f"{reason}. 수동 푸시 가능.", ok=True)
+        return 0
 
 
 if __name__ == "__main__":
