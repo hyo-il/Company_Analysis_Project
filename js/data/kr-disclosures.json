@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T16:39:19",
+  "generatedAt": "2026-06-14T13:50:21",
   "windowDays": 30,
   "tickerCount": 341,
   "data": {
@@ -359,14 +359,6 @@
           "flr_nm": "유한양행",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002331",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800285",
-          "report_nm": "기타경영사항(자율공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "유한양행",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800285",
-          "category": "기타"
         }
       ]
     },
@@ -412,14 +404,6 @@
           "flr_nm": "두산",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001456",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000946",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "국민연금공단",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000946",
-          "category": "기타"
         }
       ]
     },
@@ -683,14 +667,6 @@
           "flr_nm": "기아",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002675",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800893",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "기아",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800893",
-          "category": "기타"
         }
       ]
     },
@@ -784,14 +760,6 @@
           "flr_nm": "SK하이닉스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002287",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000549",
-          "report_nm": "주요사항보고서(자기주식처분결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK하이닉스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000549",
-          "category": "주요사항"
         }
       ]
     },
@@ -957,62 +925,6 @@
           "flr_nm": "현대건설",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002899",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000939",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이한우",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000939",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000901",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이형석",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000901",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513801010",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "현대건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801010",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800990",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "현대건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800990",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800982",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "현대건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800982",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800976",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "현대건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800976",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800970",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "현대건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800970",
-          "category": "기타"
         }
       ]
     },
@@ -1042,14 +954,6 @@
           "flr_nm": "삼성화재해상보험",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001950",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800020",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성화재해상보험",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800020",
-          "category": "수시공시"
         }
       ]
     },
@@ -1183,70 +1087,6 @@
           "flr_nm": "한화",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518000044",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001430",
-          "report_nm": "증권신고서(분할)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001430",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260514800857",
-          "report_nm": "[기재정정]유상증자결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800857",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260514000765",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000765",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800526",
-          "report_nm": "주주명부폐쇄기간또는기준일설정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800526",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800495",
-          "report_nm": "[기재정정]기타경영사항(자율공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800495",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800473",
-          "report_nm": "주주총회소집결의              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800473",
-          "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260514800436",
-          "report_nm": "주식소각결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800436",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000430",
-          "report_nm": "[기재정정]주요사항보고서(회사분할결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000430",
-          "category": "주요사항"
         }
       ]
     },
@@ -1332,14 +1172,6 @@
           "flr_nm": "DB하이텍",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001650",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001187",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "미래에셋자산운용",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001187",
-          "category": "기타"
         }
       ]
     },
@@ -1523,22 +1355,6 @@
           "flr_nm": "동국홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000962",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800843",
-          "report_nm": "타인에대한채무보증결정(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "동국홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800843",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800841",
-          "report_nm": "타인에대한채무보증결정(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "동국홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800841",
-          "category": "기타"
         }
       ]
     },
@@ -1584,22 +1400,6 @@
           "flr_nm": "대한전선",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002741",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513801130",
-          "report_nm": "유형자산취득결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대한전선",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801130",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000551",
-          "report_nm": "주식등의대량보유상황보고서(약식)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "삼성자산운용",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000551",
-          "category": "기타"
         }
       ]
     },
@@ -1645,14 +1445,6 @@
           "flr_nm": "현대해상",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515800718",
           "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260514800518",
-          "report_nm": "[첨부정정]기업지배구조보고서공시(연차보고서)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "현대해상",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800518",
-          "category": "기타"
         }
       ]
     },
@@ -1727,14 +1519,6 @@
           "flr_nm": "SK네트웍스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001439",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513801148",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK네트웍스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801148",
-          "category": "수시공시"
         }
       ]
     },
@@ -1862,22 +1646,6 @@
           "flr_nm": "한국바이오텍",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260522000616",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514900486",
-          "report_nm": "신규시설투자등(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하림지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900486",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000460",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하림지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000460",
-          "category": "정기공시"
         }
       ]
     },
@@ -1987,52 +1755,20 @@
           "flr_nm": "대한항공",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001941",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000972",
-          "report_nm": "[첨부정정]주요사항보고서(회사합병결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대한항공",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000972",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513801112",
-          "report_nm": "회사합병결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대한항공",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801112",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260513801070",
-          "report_nm": "주주명부폐쇄기간또는기준일설정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대한항공",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801070",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000797",
-          "report_nm": "주요사항보고서(회사합병결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대한항공",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000797",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513800929",
-          "report_nm": "[기재정정]신규시설투자등              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대한항공",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800929",
-          "category": "기타"
         }
       ]
     },
     "003540": {
       "name": "대신증권",
       "disclosures": [
+        {
+          "rcept_no": "20260612000591",
+          "report_nm": "투자설명서(일괄신고)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "대신증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000591",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260612000414",
           "report_nm": "일괄신고추가서류(기타파생결합사채)",
@@ -2512,38 +2248,6 @@
           "flr_nm": "대신증권",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000043",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001304",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대신증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001304",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000752",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대신증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000752",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000747",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대신증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000747",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000744",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "대신증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000744",
-          "category": "기타"
         }
       ]
     },
@@ -2846,14 +2550,6 @@
           "flr_nm": "롯데지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002994",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513801149",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "롯데지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801149",
-          "category": "기타"
         }
       ]
     },
@@ -3542,14 +3238,6 @@
           "flr_nm": "삼성전자",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002181",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000081",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "신승철",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000081",
-          "category": "기타"
         }
       ]
     },
@@ -3731,20 +3419,52 @@
           "flr_nm": "삼성전자",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002181",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000081",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "신승철",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000081",
-          "category": "기타"
         }
       ]
     },
     "005940": {
       "name": "NH투자증권",
       "disclosures": [
+        {
+          "rcept_no": "20260612000642",
+          "report_nm": "증권발행실적보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "NH투자증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000642",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000619",
+          "report_nm": "증권발행실적보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "NH투자증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000619",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000605",
+          "report_nm": "증권발행실적보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "NH투자증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000605",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000589",
+          "report_nm": "증권발행실적보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "NH투자증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000589",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000572",
+          "report_nm": "증권발행실적보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "NH투자증권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000572",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260612000452",
           "report_nm": "증권발행실적보고서",
@@ -4504,46 +4224,6 @@
           "flr_nm": "NH투자증권",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000177",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260520000161",
-          "report_nm": "[기재정정]일괄신고추가서류(파생결합증권-주가연계증권)",
-          "rcept_dt": "2026-05-20",
-          "flr_nm": "NH투자증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000161",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260520000157",
-          "report_nm": "[기재정정]일괄신고추가서류(파생결합사채-주가연계파생결합사채)",
-          "rcept_dt": "2026-05-20",
-          "flr_nm": "NH투자증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000157",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260520000148",
-          "report_nm": "일괄신고추가서류(파생결합증권-주가연계증권)",
-          "rcept_dt": "2026-05-20",
-          "flr_nm": "NH투자증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000148",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260520000146",
-          "report_nm": "일괄신고추가서류(파생결합사채-주가연계파생결합사채)",
-          "rcept_dt": "2026-05-20",
-          "flr_nm": "NH투자증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000146",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260520000145",
-          "report_nm": "투자설명서(일괄신고)",
-          "rcept_dt": "2026-05-20",
-          "flr_nm": "NH투자증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000145",
-          "category": "기타"
         }
       ]
     },
@@ -4722,38 +4402,6 @@
           "flr_nm": "LS",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001117",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801526",
-          "report_nm": "단기차입금증가결정(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LS",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801526",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001462",
-          "report_nm": "약관에의한금융거래시계열금융회사의거래상대방의공시",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LS",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001462",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800304",
-          "report_nm": "[기재정정]단일판매ㆍ공급계약체결(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LS",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800304",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000581",
-          "report_nm": "주식등의대량보유상황보고서(약식)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "삼성자산운용",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000581",
-          "category": "기타"
         }
       ]
     },
@@ -4851,22 +4499,6 @@
           "rcept_dt": "2026-05-20",
           "flr_nm": "GS건설",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520800080",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000777",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "GS건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000777",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800420",
-          "report_nm": "공정거래자율준수프로그램운영현황(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "GS건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800420",
           "category": "기타"
         }
       ]
@@ -6197,14 +5829,6 @@
           "flr_nm": "이강돈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521000582",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001380",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한샘",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001380",
-          "category": "정기공시"
         }
       ]
     },
@@ -6332,28 +5956,20 @@
           "flr_nm": "HD한국조선해양",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001799",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800347",
-          "report_nm": "단일판매ㆍ공급계약체결(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "HD한국조선해양",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800347",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800195",
-          "report_nm": "단일판매ㆍ공급계약체결(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD한국조선해양",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800195",
-          "category": "기타"
         }
       ]
     },
     "009830": {
       "name": "한화솔루션",
       "disclosures": [
+        {
+          "rcept_no": "20260612801058",
+          "report_nm": "불성실공시법인지정              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "유가증권시장본부",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612801058",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260612000379",
           "report_nm": "[기재정정]투자설명서",
@@ -6465,38 +6081,6 @@
           "flr_nm": "한화솔루션",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260519000169",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801316",
-          "report_nm": "[기재정정]주주명부폐쇄기간또는기준일설정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화솔루션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801316",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001262",
-          "report_nm": "[기재정정]증권신고서(지분증권)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화솔루션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001262",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000815",
-          "report_nm": "[기재정정]주요사항보고서(유상증자결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화솔루션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000815",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514000336",
-          "report_nm": "[기재정정]분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화솔루션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000336",
-          "category": "정기공시"
         }
       ]
     },
@@ -6582,22 +6166,6 @@
           "flr_nm": "OCI홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520800734",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000992",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "OCI홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000992",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000535",
-          "report_nm": "신탁계약에의한취득상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "OCI홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000535",
-          "category": "기타"
         }
       ]
     },
@@ -6658,38 +6226,6 @@
           "rcept_dt": "2026-05-22",
           "flr_nm": "채대석",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260522000019",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001489",
-          "report_nm": "약관에의한금융거래시계열금융회사의거래상대방의공시",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "엘에스일렉트릭",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001489",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801525",
-          "report_nm": "단기차입금증가결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "엘에스일렉트릭",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801525",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000847",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "엘에스일렉트릭",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000847",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800292",
-          "report_nm": "[기재정정]단일판매ㆍ공급계약체결              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "엘에스일렉트릭",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800292",
           "category": "기타"
         }
       ]
@@ -6893,14 +6429,6 @@
           "flr_nm": "삼성중공업",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000833",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800296",
-          "report_nm": "단일판매ㆍ공급계약체결              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성중공업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800296",
-          "category": "기타"
         }
       ]
     },
@@ -6970,14 +6498,6 @@
           "rcept_dt": "2026-05-15",
           "flr_nm": "LG이노텍",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001513",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000506",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG이노텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000506",
           "category": "정기공시"
         }
       ]
@@ -7093,14 +6613,6 @@
           "flr_nm": "HMM",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260601000548",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000483",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HMM",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000483",
-          "category": "정기공시"
         }
       ]
     },
@@ -7130,14 +6642,6 @@
           "flr_nm": "현대위아",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515801936",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001049",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "현대위아",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001049",
-          "category": "정기공시"
         }
       ]
     },
@@ -7223,14 +6727,6 @@
           "flr_nm": "금호석유화학",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002055",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000641",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "안재진",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000641",
-          "category": "기타"
         }
       ]
     },
@@ -7500,14 +6996,6 @@
           "flr_nm": "SKC",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002307",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001413",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국투자2024의1호사모투자",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001413",
-          "category": "기타"
         }
       ]
     },
@@ -7662,14 +7150,6 @@
           "flr_nm": "한화에어로스페이스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260527800625",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000860",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한화에어로스페이스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000860",
-          "category": "정기공시"
         }
       ]
     },
@@ -7713,6 +7193,14 @@
     "014620": {
       "name": "성광벤드",
       "disclosures": [
+        {
+          "rcept_no": "20260612000674",
+          "report_nm": "주식등의대량보유상황보고서(약식)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "J.P.MORGANSECURITIESPLC",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000674",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260612900178",
           "report_nm": "기업설명회(IR)개최              ",
@@ -7943,14 +7431,6 @@
           "flr_nm": "한국전력공사",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002075",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800695",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한국전력공사",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800695",
-          "category": "수시공시"
         }
       ]
     },
@@ -8300,46 +7780,6 @@
           "flr_nm": "삼성증권",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002158",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000655",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000655",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000634",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000634",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000612",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000612",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000600",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000600",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000154",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "삼성증권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000154",
-          "category": "기타"
         }
       ]
     },
@@ -8569,14 +8009,6 @@
           "flr_nm": "KG스틸",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002539",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800629",
-          "report_nm": "타법인주식및출자증권취득결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "KG스틸",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800629",
-          "category": "기타"
         }
       ]
     },
@@ -9030,14 +8462,6 @@
           "flr_nm": "SK텔레콤",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001207",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000481",
-          "report_nm": "주식등의대량보유상황보고서(약식)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "WellingtonManagementCompanyLLP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000481",
-          "category": "기타"
         }
       ]
     },
@@ -9147,22 +8571,6 @@
           "flr_nm": "현대엘리베이터",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515803016",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801062",
-          "report_nm": "현금ㆍ현물배당결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "현대엘리베이터",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801062",
-          "category": "배당"
-        },
-        {
-          "rcept_no": "20260514801045",
-          "report_nm": "현금ㆍ현물배당을위한주주명부폐쇄(기준일)결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "현대엘리베이터",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801045",
-          "category": "배당"
         }
       ]
     },
@@ -9383,14 +8791,6 @@
           "flr_nm": "한온시스템",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529001065",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000595",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한온시스템",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000595",
-          "category": "정기공시"
         }
       ]
     },
@@ -9717,14 +9117,6 @@
           "flr_nm": "시노펙스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001972",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000145",
-          "report_nm": "[첨부정정]주요사항보고서(회사합병결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "시노펙스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000145",
-          "category": "주요사항"
         }
       ]
     },
@@ -9900,14 +9292,6 @@
           "flr_nm": "삼성E&A",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001907",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000778",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "문승욱",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000778",
-          "category": "기타"
         }
       ]
     },
@@ -10147,22 +9531,6 @@
           "flr_nm": "하림지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521000800",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800446",
-          "report_nm": "신규시설투자등              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "팬오션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800446",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000428",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "팬오션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000428",
-          "category": "정기공시"
         }
       ]
     },
@@ -10352,22 +9720,6 @@
           "flr_nm": "삼성카드",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000781",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001160",
-          "report_nm": "투자설명서(일괄신고)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성카드",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001160",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001135",
-          "report_nm": "일괄신고추가서류",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성카드",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001135",
-          "category": "기타"
         }
       ]
     },
@@ -10490,278 +9842,6 @@
           "flr_nm": "이정우",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001103",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000862",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "박철호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000862",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000847",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "정찬호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000847",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000799",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "장병관",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000799",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000713",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김영민",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000713",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000547",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김용헌",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000547",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000539",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "곽우영",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000539",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000531",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김성철",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000531",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000520",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "임혜진",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000520",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000513",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "권혜진",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000513",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000500",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "최우형",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000500",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000493",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "손정엽",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000493",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000488",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김영걸",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000488",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000485",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "권희근",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000485",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000479",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "강이환",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000479",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000449",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "노형래",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000449",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000441",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이경채",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000441",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000433",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김영인",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000433",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000429",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "성원제",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000429",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000425",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "지영근",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000425",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000424",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "원만호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000424",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000414",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "전승록",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000414",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000412",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "송승호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000412",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000407",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "박철우",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000407",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000398",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김원태",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000398",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000387",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "신종수",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000387",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000375",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "윤병휴",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000375",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000369",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "정선일",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000369",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000360",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "김용남",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000360",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000350",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "황경희",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000350",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000338",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "오택균",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000338",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000332",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "정길성",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000332",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000327",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이진권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000327",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000317",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "명제훈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000317",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000310",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "윤진현",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000310",
-          "category": "기타"
         }
       ]
     },
@@ -10831,14 +9911,6 @@
           "flr_nm": "한글과컴퓨터",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518900416",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000306",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한글과컴퓨터",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000306",
-          "category": "정기공시"
         }
       ]
     },
@@ -10860,14 +9932,6 @@
           "flr_nm": "피에스케이홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001546",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000168",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "박경수",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000168",
-          "category": "기타"
         }
       ]
     },
@@ -11045,14 +10109,6 @@
           "flr_nm": "삼성생명",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002696",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800226",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "삼성생명",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800226",
-          "category": "수시공시"
         }
       ]
     },
@@ -11074,29 +10130,12 @@
           "flr_nm": "제룡전기",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260602000220",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000274",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "제룡전기",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000274",
-          "category": "정기공시"
         }
       ]
     },
     "033500": {
       "name": "동성화인텍",
-      "disclosures": [
-        {
-          "rcept_no": "20260514001136",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "동성화인텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001136",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "033780": {
       "name": "케이티앤지",
@@ -11224,22 +10263,6 @@
           "rcept_dt": "2026-05-22",
           "flr_nm": "두산에너빌리티",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260522800655",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001269",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "두산에너빌리티",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001269",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000930",
-          "report_nm": "동일인등출자계열회사와의상품ㆍ용역거래변경",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "두산에너빌리티",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000930",
           "category": "기타"
         }
       ]
@@ -11483,30 +10506,6 @@
           "flr_nm": "SK",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001990",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001227",
-          "report_nm": "동일인등출자계열회사와의상품ㆍ용역거래변경",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "SK",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001227",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001224",
-          "report_nm": "동일인등출자계열회사와의상품ㆍ용역거래변경",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "SK",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001224",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001210",
-          "report_nm": "동일인등출자계열회사와의상품ㆍ용역거래변경",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "SK",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001210",
-          "category": "기타"
         }
       ]
     },
@@ -11661,22 +10660,6 @@
           "flr_nm": "NAVER",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001511",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000881",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "오성권",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000881",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000862",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "최지훈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000862",
-          "category": "기타"
         }
       ]
     },
@@ -11986,62 +10969,6 @@
           "flr_nm": "카카오",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515800058",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001294",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001294",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001278",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001278",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001254",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001254",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001166",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001166",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001119",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001119",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001071",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001071",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000996",
-          "report_nm": "특수관계인에대한출자",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000996",
-          "category": "기타"
         }
       ]
     },
@@ -12076,14 +11003,6 @@
           "flr_nm": "JYP Ent.",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002272",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514900885",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "JYP Ent.",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900885",
-          "category": "수시공시"
         }
       ]
     },
@@ -12129,22 +11048,6 @@
           "flr_nm": "한국가스공사",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000987",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800723",
-          "report_nm": "영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국가스공사",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800723",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800420",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한국가스공사",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800420",
-          "category": "수시공시"
         }
       ]
     },
@@ -12219,22 +11122,6 @@
           "flr_nm": "NC",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002636",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000915",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "국민연금공단",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000915",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800029",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "NC",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800029",
-          "category": "수시공시"
         }
       ]
     },
@@ -12272,14 +11159,6 @@
           "flr_nm": "감성코퍼레이션",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000335",
           "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260513000342",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "감성코퍼레이션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000342",
-          "category": "정기공시"
         }
       ]
     },
@@ -12293,14 +11172,6 @@
           "flr_nm": "삼성자산운용",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529001715",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000167",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "에프에스티",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000167",
-          "category": "정기공시"
         }
       ]
     },
@@ -12327,16 +11198,7 @@
     },
     "036930": {
       "name": "주성엔지니어링",
-      "disclosures": [
-        {
-          "rcept_no": "20260514001423",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "주성엔지니어링",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001423",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "039030": {
       "name": "이오테크닉스",
@@ -12384,30 +11246,6 @@
           "rcept_dt": "2026-05-22",
           "flr_nm": "타이거자산운용투자일임",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260522000337",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001222",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "오스코텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001222",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514900973",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "오스코텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900973",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514900697",
-          "report_nm": "투자판단관련주요경영사항              (유한양행의 얀센바이오테크 기술이전 마일스톤 분배)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "오스코텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900697",
           "category": "기타"
         }
       ]
@@ -13293,20 +12131,20 @@
           "flr_nm": "우창균",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260528000645",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000970",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카페24",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000970",
-          "category": "정기공시"
         }
       ]
     },
     "042660": {
       "name": "한화오션",
       "disclosures": [
+        {
+          "rcept_no": "20260612801030",
+          "report_nm": "단일판매ㆍ공급계약체결              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "한화오션",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612801030",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260529801371",
           "report_nm": "기업지배구조보고서공시              ",
@@ -13346,22 +12184,6 @@
           "flr_nm": "한화오션",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518800002",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000288",
-          "report_nm": "특수관계인과의내부거래",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화오션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000288",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000552",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한화오션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000552",
-          "category": "정기공시"
         }
       ]
     },
@@ -13565,14 +12387,6 @@
           "flr_nm": "김무성",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001630",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800920",
-          "report_nm": "[기재정정]타인에대한채무보증결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대우건설",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800920",
-          "category": "기타"
         }
       ]
     },
@@ -13727,14 +12541,6 @@
           "flr_nm": "한국항공우주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001698",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801290",
-          "report_nm": "[기재정정]단일판매ㆍ공급계약체결              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국항공우주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801290",
-          "category": "기타"
         }
       ]
     },
@@ -13936,30 +12742,6 @@
           "flr_nm": "LG화학",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260526800771",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001264",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG화학",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001264",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800484",
-          "report_nm": "최대주주등소유주식변동신고서              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG화학",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800484",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000485",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "김동춘",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000485",
-          "category": "기타"
         }
       ]
     },
@@ -14021,30 +12803,6 @@
           "flr_nm": "LG화학",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260526800771",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001264",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG화학",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001264",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800484",
-          "report_nm": "최대주주등소유주식변동신고서              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG화학",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800484",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000485",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "김동춘",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000485",
-          "category": "기타"
         }
       ]
     },
@@ -14066,14 +12824,6 @@
           "flr_nm": "코나아이",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260605000102",
           "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514000696",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "코나아이",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000696",
-          "category": "정기공시"
         }
       ]
     },
@@ -14127,22 +12877,6 @@
           "flr_nm": "한전기술",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515801529",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000760",
-          "report_nm": "주주총회소집공고",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한전기술",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000760",
-          "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260513800908",
-          "report_nm": "[기재정정]주주총회소집결의              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한전기술",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800908",
-          "category": "주주총회"
         }
       ]
     },
@@ -14177,16 +12911,7 @@
     },
     "053800": {
       "name": "안랩",
-      "disclosures": [
-        {
-          "rcept_no": "20260514000588",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "안랩",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000588",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "055550": {
       "name": "신한지주",
@@ -14254,14 +12979,6 @@
           "flr_nm": "신한지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002273",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800528",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "신한지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800528",
-          "category": "기타"
         }
       ]
     },
@@ -14323,14 +13040,6 @@
           "flr_nm": "유진로봇",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001133",
           "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514001322",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "유진로봇",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001322",
-          "category": "정기공시"
         }
       ]
     },
@@ -14410,37 +13119,11 @@
     },
     "058470": {
       "name": "리노공업",
-      "disclosures": [
-        {
-          "rcept_no": "20260514000391",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "리노공업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000391",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "058610": {
       "name": "에스피지",
-      "disclosures": [
-        {
-          "rcept_no": "20260514000342",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "에스피지",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000342",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513900250",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "에스피지",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900250",
-          "category": "수시공시"
-        }
-      ]
+      "disclosures": []
     },
     "058970": {
       "name": "엠로",
@@ -14595,14 +13278,6 @@
           "flr_nm": "큐렉소",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000137",
           "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513000715",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "큐렉소",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000715",
-          "category": "정기공시"
         }
       ]
     },
@@ -14741,36 +13416,212 @@
           "flr_nm": "HL홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002672",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801145",
-          "report_nm": "최대주주등소유주식변동신고서              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "HL홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801145",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001083",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "정몽원",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001083",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001033",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "정지연",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001033",
-          "category": "기타"
         }
       ]
     },
     "064350": {
       "name": "현대로템",
       "disclosures": [
+        {
+          "rcept_no": "20260612000702",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "김도화",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000702",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000701",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "박영순",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000701",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000699",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "정승우",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000699",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000698",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "김성일",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000698",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000696",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "정창선",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000696",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000693",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "한항인",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000693",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000690",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "최영진",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000690",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000689",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "남궁혁준",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000689",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000688",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "최병희",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000688",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000678",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "윤정한",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000678",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000676",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "강성훈",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000676",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000672",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "공명상",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000672",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000669",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "조현세",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000669",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000668",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "곽철훈",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000668",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000664",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "한성욱",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000664",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000658",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "박창민",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000658",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000653",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "장재면",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000653",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000646",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "김명근",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000646",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000637",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "조일연",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000637",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000626",
+          "report_nm": "주식등의대량보유상황보고서(일반)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "현대자동차",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000626",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000624",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "강금상",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000624",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000611",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "김희권",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000611",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000603",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "박훈모",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000603",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000597",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "신동선",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000597",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000586",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "윤성욱",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000586",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260612000558",
           "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
@@ -15219,30 +14070,6 @@
           "flr_nm": "하나마이크론",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520900477",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514901418",
-          "report_nm": "기업가치제고계획(자율공시)              (2025년 이행현황)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하나마이크론",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901418",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001281",
-          "report_nm": "주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하나마이크론",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001281",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001268",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하나마이크론",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001268",
-          "category": "정기공시"
         }
       ]
     },
@@ -15422,6 +14249,14 @@
       "name": "현대백화점",
       "disclosures": [
         {
+          "rcept_no": "20260612800917",
+          "report_nm": "최대주주등소유주식변동신고서              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "현대백화점",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612800917",
+          "category": "기타"
+        },
+        {
           "rcept_no": "20260612000557",
           "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
           "rcept_dt": "2026-06-12",
@@ -15521,30 +14356,6 @@
           "flr_nm": "한국금융지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002256",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801417",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801417",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801039",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801039",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260514801026",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801026",
-          "category": "수시공시"
         }
       ]
     },
@@ -15651,38 +14462,6 @@
           "flr_nm": "금호타이어",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529801975",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001443",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "금호타이어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001443",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801458",
-          "report_nm": "타법인주식및출자증권취득결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "금호타이어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801458",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801419",
-          "report_nm": "유상증자결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "금호타이어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801419",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260514801373",
-          "report_nm": "[기재정정]타인에대한채무보증결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "금호타이어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801373",
-          "category": "기타"
         }
       ]
     },
@@ -15733,14 +14512,6 @@
           "flr_nm": "새론오토모티브",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260527800153",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000234",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "새론오토모티브",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000234",
-          "category": "정기공시"
         }
       ]
     },
@@ -15762,30 +14533,6 @@
           "flr_nm": "컴투스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002977",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514901503",
-          "report_nm": "[기재정정]회사합병결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "컴투스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901503",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260513900110",
-          "report_nm": "영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "컴투스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900110",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513900109",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "컴투스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900109",
-          "category": "수시공시"
         }
       ]
     },
@@ -15847,30 +14594,6 @@
           "flr_nm": "대주전자재료",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000508",
           "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514001289",
-          "report_nm": "주요사항보고서(전환사채매수선택권행사자지정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대주전자재료",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001289",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514001279",
-          "report_nm": "주요사항보고서(전환사채매수선택권행사자지정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대주전자재료",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001279",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514000408",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "대주전자재료",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000408",
-          "category": "정기공시"
         }
       ]
     },
@@ -15940,22 +14663,6 @@
           "flr_nm": "GS",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001535",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001077",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "허창수",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001077",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800309",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "GS",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800309",
-          "category": "수시공시"
         }
       ]
     },
@@ -16168,22 +14875,6 @@
           "flr_nm": "제주반도체",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002340",
           "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260514901349",
-          "report_nm": "[기재정정]주주총회소집결의              (임시주주총회)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "제주반도체",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901349",
-          "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260514000643",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "제주반도체",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000643",
-          "category": "정기공시"
         }
       ]
     },
@@ -16245,14 +14936,6 @@
           "flr_nm": "미스토홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001935",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000673",
-          "report_nm": "주요사항보고서(자기주식취득결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "미스토홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000673",
-          "category": "주요사항"
         }
       ]
     },
@@ -16354,22 +15037,6 @@
           "flr_nm": "젬백스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002587",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514901504",
-          "report_nm": "[기재정정]최대주주변경을수반하는주식담보제공계약체결              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "젬백스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901504",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000830",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "젬앤컴퍼니",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000830",
-          "category": "기타"
         }
       ]
     },
@@ -16436,14 +15103,6 @@
           "flr_nm": "CapitalResearchandManagementCompany",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260609000079",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000654",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "유진테크",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000654",
-          "category": "정기공시"
         }
       ]
     },
@@ -16828,14 +15487,6 @@
           "flr_nm": "한화생명",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529001046",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000964",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한화생명",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000964",
-          "category": "정기공시"
         }
       ]
     },
@@ -17049,14 +15700,6 @@
           "flr_nm": "테스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518900828",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000153",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "테스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000153",
-          "category": "정기공시"
         }
       ]
     },
@@ -17293,22 +15936,6 @@
           "flr_nm": "SK이노베이션",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001455",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513801240",
-          "report_nm": "[첨부정정]연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK이노베이션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801240",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800630",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK이노베이션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800630",
-          "category": "수시공시"
         }
       ]
     },
@@ -17420,38 +16047,6 @@
           "flr_nm": "고영",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001840",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514900774",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "고영",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900774",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000691",
-          "report_nm": "[기재정정]주요사항보고서(자기주식처분결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "고영",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000691",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513900966",
-          "report_nm": "주식소각결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "고영",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900966",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000772",
-          "report_nm": "주요사항보고서(자기주식처분결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "고영",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000772",
-          "category": "주요사항"
         }
       ]
     },
@@ -17478,16 +16073,7 @@
     },
     "101490": {
       "name": "에스앤에스텍",
-      "disclosures": [
-        {
-          "rcept_no": "20260514000424",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "에스앤에스텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000424",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "101730": {
       "name": "위메이드맥스",
@@ -17616,22 +16202,6 @@
           "flr_nm": "KB금융",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002888",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001124",
-          "report_nm": "증권발행실적보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "KB금융",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001124",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000033",
-          "report_nm": "투자설명서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "KB금융",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000033",
-          "category": "기타"
         }
       ]
     },
@@ -17661,14 +16231,6 @@
           "flr_nm": "한세실업",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002128",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800724",
-          "report_nm": "증권대여결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한세실업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800724",
-          "category": "기타"
         }
       ]
     },
@@ -17724,14 +16286,6 @@
           "flr_nm": "영원무역",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260601800749",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001455",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "영원무역",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001455",
-          "category": "정기공시"
         }
       ]
     },
@@ -17806,22 +16360,6 @@
           "flr_nm": "GKL",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001333",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800666",
-          "report_nm": "주주명부폐쇄기간또는기준일설정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "GKL",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800666",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800656",
-          "report_nm": "주주총회소집결의              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "GKL",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800656",
-          "category": "주주총회"
         }
       ]
     },
@@ -17936,14 +16474,6 @@
           "flr_nm": "나노신소재",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000127",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001466",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "나노신소재",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001466",
-          "category": "정기공시"
         }
       ]
     },
@@ -18089,20 +16619,51 @@
     },
     "137400": {
       "name": "피엔티",
-      "disclosures": [
-        {
-          "rcept_no": "20260513000102",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "피엔티",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000102",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "138040": {
       "name": "메리츠금융지주",
       "disclosures": [
+        {
+          "rcept_no": "20260612801032",
+          "report_nm": "지속가능경영보고서등관련사항(자율공시)              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "메리츠금융지주",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612801032",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612801027",
+          "report_nm": "최대주주등소유주식변동신고서              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "메리츠금융지주",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612801027",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000636",
+          "report_nm": "주식등의대량보유상황보고서(일반)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "조정호",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000636",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000621",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "김종민",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000621",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000616",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "서수동",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000616",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260529001946",
           "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
@@ -18134,38 +16695,6 @@
           "flr_nm": "메리츠금융지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002625",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800847",
-          "report_nm": "기업가치제고계획(자율공시)              (2026년 1분기 이행현황)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "메리츠금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800847",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800837",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "메리츠금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800837",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260514800824",
-          "report_nm": "영업(잠정)실적(공정공시)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "메리츠금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800824",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260514800820",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "메리츠금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800820",
-          "category": "수시공시"
         }
       ]
     },
@@ -18533,78 +17062,6 @@
           "flr_nm": "이마트",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521000516",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001190",
-          "report_nm": "특수관계인에대한자산양도",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001190",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001175",
-          "report_nm": "특수관계인에대한출자",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001175",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001158",
-          "report_nm": "특수관계인에대한출자",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001158",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801040",
-          "report_nm": "타법인주식및출자증권취득결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801040",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801027",
-          "report_nm": "유상증자결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801027",
-          "category": "자본거래"
-        },
-        {
-          "rcept_no": "20260514000817",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000817",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800744",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800744",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800396",
-          "report_nm": "영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800396",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800392",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이마트",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800392",
-          "category": "수시공시"
         }
       ]
     },
@@ -18703,22 +17160,6 @@
           "flr_nm": "파크시스템스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515900851",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001410",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "파크시스템스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001410",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000838",
-          "report_nm": "주요사항보고서(자기주식처분결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "파크시스템스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000838",
-          "category": "주요사항"
         }
       ]
     },
@@ -18740,30 +17181,6 @@
           "flr_nm": "리가켐바이오",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002175",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514901443",
-          "report_nm": "[기재정정]기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "리가켐바이오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901443",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514901097",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "리가켐바이오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514901097",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514900334",
-          "report_nm": "투자판단관련주요경영사항(임상시험계획승인신청등결정)              (CLDN18.2 항체-약물 접합체 (ADC) LCB02A의 제 1/2상 임상시험의 미국 임상시험계획(IND) 승인)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "리가켐바이오",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900334",
-          "category": "기타"
         }
       ]
     },
@@ -18789,14 +17206,6 @@
           "flr_nm": "휴젤",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000615",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000063",
-          "report_nm": "주식등의대량보유상황보고서(약식)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "MassachusettsFinancialServicesCompany",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000063",
-          "category": "기타"
         }
       ]
     },
@@ -18927,14 +17336,6 @@
           "flr_nm": "한국타이어앤테크놀로지",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000778",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800270",
-          "report_nm": "회사합병결정(종속회사의주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한국타이어앤테크놀로지",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800270",
-          "category": "자본거래"
         }
       ]
     },
@@ -18964,14 +17365,6 @@
           "flr_nm": "필옵틱스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260522900536",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001161",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "필옵틱스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001161",
-          "category": "정기공시"
         }
       ]
     },
@@ -19049,30 +17442,6 @@
           "flr_nm": "한국콜마",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521800207",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000877",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국콜마",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000877",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800140",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한국콜마",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800140",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800141",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한국콜마",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800141",
-          "category": "기타"
         }
       ]
     },
@@ -19118,14 +17487,6 @@
           "flr_nm": "하나머티리얼즈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518900580",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000995",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "하나머티리얼즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000995",
-          "category": "정기공시"
         }
       ]
     },
@@ -19275,6 +17636,22 @@
     "178320": {
       "name": "서진시스템",
       "disclosures": [
+        {
+          "rcept_no": "20260612000680",
+          "report_nm": "주식등의대량보유상황보고서(일반)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "전동규",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000680",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612900896",
+          "report_nm": "최대주주변경을수반하는주식담보제공계약해제ㆍ취소등              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "서진시스템",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612900896",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260605900750",
           "report_nm": "[기재정정]최대주주변경을수반하는주식담보제공계약체결              ",
@@ -19484,30 +17861,6 @@
           "flr_nm": "한진칼",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002523",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801011",
-          "report_nm": "[첨부정정]주요사항보고서(회사합병결정)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한진칼",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801011",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513801062",
-          "report_nm": "주요사항보고서(회사합병결정)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한진칼",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513801062",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513800952",
-          "report_nm": "[기재정정]신규시설투자등(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한진칼",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800952",
-          "category": "기타"
         }
       ]
     },
@@ -19630,14 +17983,6 @@
           "flr_nm": "종근당",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002659",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800849",
-          "report_nm": "투자판단관련주요경영사항              (고혈압 치료제로 개발중인 CKD339의 식약처(MFDS) 제3상 임상시험 계획 승인 신청)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "종근당",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800849",
-          "category": "기타"
         }
       ]
     },
@@ -19667,14 +18012,6 @@
           "flr_nm": "성상엽",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001520",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000883",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "인텔리안테크",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000883",
-          "category": "정기공시"
         }
       ]
     },
@@ -19720,22 +18057,6 @@
           "flr_nm": "더블유게임즈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002276",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800025",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "더블유게임즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800025",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800020",
-          "report_nm": "영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "더블유게임즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800020",
-          "category": "수시공시"
         }
       ]
     },
@@ -19789,14 +18110,6 @@
           "flr_nm": "코스맥스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260519800441",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000806",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "코스맥스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000806",
-          "category": "정기공시"
         }
       ]
     },
@@ -19831,22 +18144,6 @@
           "flr_nm": "HK이노엔",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521900375",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000665",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "HK이노엔",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000665",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513901239",
-          "report_nm": "투자판단관련주요경영사항(임상시험계획승인신청등결정)              (경증에서 중등증 아토피 피부염 치료 후보물질 IN-115314 임상 1b상 임상시험계획(IND)  미국 식품의약국(FDA) 승인)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HK이노엔",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513901239",
-          "category": "기타"
         }
       ]
     },
@@ -19875,6 +18172,14 @@
       "name": "콜마비앤에이치",
       "disclosures": [
         {
+          "rcept_no": "20260612000671",
+          "report_nm": "주식등의대량보유상황보고서(일반)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "콜마홀딩스",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000671",
+          "category": "기타"
+        },
+        {
           "rcept_no": "20260605000578",
           "report_nm": "주식등의대량보유상황보고서(일반)",
           "rcept_dt": "2026-06-05",
@@ -19897,14 +18202,6 @@
           "flr_nm": "조상현",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521000217",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001346",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "콜마비앤에이치",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001346",
-          "category": "정기공시"
         }
       ]
     },
@@ -20114,20 +18411,20 @@
           "flr_nm": "덕산네오룩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002623",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514900464",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "덕산네오룩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900464",
-          "category": "기타"
         }
       ]
     },
     "213500": {
       "name": "한솔제지",
       "disclosures": [
+        {
+          "rcept_no": "20260612800863",
+          "report_nm": "[기재정정]벌금등의부과              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "한솔제지",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612800863",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260529800774",
           "report_nm": "기업지배구조보고서공시              ",
@@ -20143,14 +18440,6 @@
           "flr_nm": "한솔제지",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260527000104",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000780",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "한솔제지",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000780",
-          "category": "정기공시"
         }
       ]
     },
@@ -20228,14 +18517,6 @@
           "flr_nm": "클래시스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001293",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513900311",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "클래시스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900311",
-          "category": "수시공시"
         }
       ]
     },
@@ -20281,37 +18562,12 @@
           "flr_nm": "정용지",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521000225",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000610",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "케어젠",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000610",
-          "category": "정기공시"
         }
       ]
     },
     "214430": {
       "name": "아이쓰리시스템",
-      "disclosures": [
-        {
-          "rcept_no": "20260513000041",
-          "report_nm": "[기재정정]분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "아이쓰리시스템",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000041",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000028",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "아이쓰리시스템",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000028",
-          "category": "정기공시"
-        }
-      ]
+      "disclosures": []
     },
     "214450": {
       "name": "파마리서치",
@@ -20415,14 +18671,6 @@
           "flr_nm": "심텍홀딩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260601001412",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000895",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "심텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000895",
-          "category": "정기공시"
         }
       ]
     },
@@ -20436,14 +18684,6 @@
           "flr_nm": "넥슨게임즈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529000531",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001048",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "넥슨게임즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001048",
-          "category": "정기공시"
         }
       ]
     },
@@ -20547,14 +18787,6 @@
           "flr_nm": "에스티팜",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000979",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514900517",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "에스티팜",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514900517",
-          "category": "기타"
         }
       ]
     },
@@ -20621,14 +18853,6 @@
           "flr_nm": "두산밥캣",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521800521",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001068",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "두산밥캣",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001068",
-          "category": "정기공시"
         }
       ]
     },
@@ -20649,14 +18873,6 @@
           "rcept_dt": "2026-05-20",
           "flr_nm": "화승엔터프라이즈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000318",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000663",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "화승엔터프라이즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000663",
           "category": "정기공시"
         }
       ]
@@ -20881,22 +19097,6 @@
           "flr_nm": "전성호",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001068",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801454",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "솔루엠",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801454",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001396",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "솔루엠",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001396",
-          "category": "정기공시"
         }
       ]
     },
@@ -20958,30 +19158,6 @@
           "flr_nm": "넷마블",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001508",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001506",
-          "report_nm": "[첨부정정]증권신고서(주식의포괄적교환ㆍ이전)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "넷마블",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001506",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001500",
-          "report_nm": "[기재정정]증권신고서(주식의포괄적교환ㆍ이전)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "넷마블",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001500",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000897",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "넷마블",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000897",
-          "category": "정기공시"
         }
       ]
     },
@@ -21247,38 +19423,6 @@
           "flr_nm": "크래프톤",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801128",
-          "report_nm": "최대주주등소유주식변동신고서              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "크래프톤",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801128",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001025",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "장병규",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001025",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000977",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "박혜리",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000977",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000896",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "장태석",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000896",
-          "category": "기타"
         }
       ]
     },
@@ -21385,46 +19529,6 @@
           "flr_nm": "HD현대",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002071",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513800543",
-          "report_nm": "현금ㆍ현물배당을위한주주명부폐쇄(기준일)결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800543",
-          "category": "배당"
-        },
-        {
-          "rcept_no": "20260513800524",
-          "report_nm": "현금ㆍ현물배당결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800524",
-          "category": "배당"
-        },
-        {
-          "rcept_no": "20260513800488",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800488",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800475",
-          "report_nm": "연결재무제표기준영업(잠정)실적(공정공시)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800475",
-          "category": "수시공시"
-        },
-        {
-          "rcept_no": "20260513800206",
-          "report_nm": "단일판매ㆍ공급계약체결(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800206",
-          "category": "기타"
         }
       ]
     },
@@ -21477,14 +19581,6 @@
           "rcept_dt": "2026-05-15",
           "flr_nm": "HD현대일렉트릭",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002266",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001193",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "HD현대",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001193",
           "category": "기타"
         }
       ]
@@ -21637,22 +19733,6 @@
           "flr_nm": "한화시스템",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529000677",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000702",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한화시스템",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000702",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000644",
-          "report_nm": "[기재정정]사업보고서 (2025.12)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "한화시스템",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000644",
-          "category": "정기공시"
         }
       ]
     },
@@ -21761,14 +19841,6 @@
           "flr_nm": "롯데웰푸드",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520800143",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514000683",
-          "report_nm": "[첨부추가]분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "롯데웰푸드",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000683",
-          "category": "정기공시"
         }
       ]
     },
@@ -21790,14 +19862,6 @@
           "flr_nm": "레이크머티리얼즈",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002697",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000690",
-          "report_nm": "주요사항보고서(전환사채권발행결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "레이크머티리얼즈",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000690",
-          "category": "주요사항"
         }
       ]
     },
@@ -21861,6 +19925,14 @@
     "290650": {
       "name": "엘앤씨바이오",
       "disclosures": [
+        {
+          "rcept_no": "20260612901087",
+          "report_nm": "[기재정정]감사보고서제출              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "엘앤씨바이오",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612901087",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260610000475",
           "report_nm": "주식등의대량보유상황보고서(약식)",
@@ -22075,22 +20147,6 @@
           "flr_nm": "효성티앤씨",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529002214",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001431",
-          "report_nm": "[기재정정]분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "효성티앤씨",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001431",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000966",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "효성티앤씨",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000966",
-          "category": "정기공시"
         }
       ]
     },
@@ -22152,22 +20208,6 @@
           "flr_nm": "효성중공업",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260518000325",
           "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260514001390",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "효성중공업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001390",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001146",
-          "report_nm": "동일인등출자계열회사와의상품ㆍ용역거래변경",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "효성중공업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001146",
-          "category": "기타"
         }
       ]
     },
@@ -22319,14 +20359,6 @@
           "flr_nm": "SK바이오사이언스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529001889",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000618",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK바이오사이언스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000618",
-          "category": "정기공시"
         }
       ]
     },
@@ -22340,14 +20372,6 @@
           "flr_nm": "솔트룩스",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260601900943",
           "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260514000748",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "솔트룩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000748",
-          "category": "정기공시"
         }
       ]
     },
@@ -22462,14 +20486,6 @@
           "flr_nm": "보로노이",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001480",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513900801",
-          "report_nm": "기업설명회(IR)개최              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "보로노이",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900801",
-          "category": "기타"
         }
       ]
     },
@@ -22603,22 +20619,6 @@
           "flr_nm": "우리금융지주",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002805",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514001490",
-          "report_nm": "[정정제출요구]증권신고서(주식의포괄적교환ㆍ이전)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "우리금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001490",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001192",
-          "report_nm": "[기재정정]주요사항보고서(주식교환ㆍ이전결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "우리금융지주",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001192",
-          "category": "주요사항"
         }
       ]
     },
@@ -22656,30 +20656,6 @@
           "flr_nm": "피에스케이",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001244",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000117",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "피에스케이홀딩스",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000117",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000220",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "이충범",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000220",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000208",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "강호길",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000208",
-          "category": "기타"
         }
       ]
     },
@@ -22770,14 +20746,6 @@
           "flr_nm": "카카오뱅크",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002001",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514800977",
-          "report_nm": "기업설명회(IR)개최(안내공시)              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오뱅크",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800977",
-          "category": "기타"
         }
       ]
     },
@@ -22929,14 +20897,6 @@
           "flr_nm": "HD현대중공업",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000230",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514800315",
-          "report_nm": "단일판매ㆍ공급계약체결              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "HD현대중공업",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514800315",
-          "category": "기타"
         }
       ]
     },
@@ -22966,14 +20926,6 @@
           "flr_nm": "두산퓨얼셀",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260521800348",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001059",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "두산퓨얼셀",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001059",
-          "category": "정기공시"
         }
       ]
     },
@@ -22995,36 +20947,36 @@
           "flr_nm": "원텍",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260520000194",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000557",
-          "report_nm": "주요사항보고서(전환사채권발행결정)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "원텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000557",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513000318",
-          "report_nm": "신탁계약해지결과보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "원텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000318",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000311",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "원텍",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000311",
-          "category": "정기공시"
         }
       ]
     },
     "339770": {
       "name": "교촌에프앤비",
       "disclosures": [
+        {
+          "rcept_no": "20260612801051",
+          "report_nm": "최대주주등소유주식변동신고서              ",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "교촌에프앤비",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612801051",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000656",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "송종화",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000656",
+          "category": "기타"
+        },
+        {
+          "rcept_no": "20260612000652",
+          "report_nm": "주식등의대량보유상황보고서(일반)",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "권원강",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000652",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260609800506",
           "report_nm": "기업설명회(IR)개최(안내공시)              ",
@@ -23048,30 +21000,6 @@
           "flr_nm": "교촌에프앤비",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529801236",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514801238",
-          "report_nm": "현금ㆍ현물배당을위한주주명부폐쇄(기준일)결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "교촌에프앤비",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801238",
-          "category": "배당"
-        },
-        {
-          "rcept_no": "20260514001182",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "교촌에프앤비",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001182",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514801147",
-          "report_nm": "현금ㆍ현물배당결정              ",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "교촌에프앤비",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514801147",
-          "category": "배당"
         }
       ]
     },
@@ -23451,22 +21379,6 @@
           "flr_nm": "지아이이노베이션",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001325",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513900691",
-          "report_nm": "주식소각결정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "지아이이노베이션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900691",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000525",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "지아이이노베이션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000525",
-          "category": "기타"
         }
       ]
     },
@@ -23528,20 +21440,20 @@
           "flr_nm": "성일하이텍",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000450",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260514000867",
-          "report_nm": "주식등의대량보유상황보고서(일반)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "디케이피-KAI 신기술투자조합 제1호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000867",
-          "category": "기타"
         }
       ]
     },
     "373220": {
       "name": "LG에너지솔루션",
       "disclosures": [
+        {
+          "rcept_no": "20260612000681",
+          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
+          "rcept_dt": "2026-06-12",
+          "flr_nm": "오성환",
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260612000681",
+          "category": "기타"
+        },
         {
           "rcept_no": "20260611000174",
           "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
@@ -23589,14 +21501,6 @@
           "flr_nm": "정원희",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260519000101",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001046",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "LG에너지솔루션",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001046",
-          "category": "정기공시"
         }
       ]
     },
@@ -23756,14 +21660,6 @@
           "flr_nm": "카카오페이",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260519800442",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001050",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "카카오페이",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001050",
-          "category": "정기공시"
         }
       ]
     },
@@ -23864,70 +21760,6 @@
           "flr_nm": "SK스퀘어",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529001004",
           "category": "기타"
-        },
-        {
-          "rcept_no": "20260514001477",
-          "report_nm": "분기보고서 (2026.03)",
-          "rcept_dt": "2026-05-14",
-          "flr_nm": "SK스퀘어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514001477",
-          "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000821",
-          "report_nm": "자기주식처분결과보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK스퀘어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000821",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000813",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "서영호",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000813",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000806",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HONGJIHOON",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000806",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000796",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "기은선",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000796",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000787",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "박승구",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000787",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000780",
-          "report_nm": "임원ㆍ주요주주특정증권등소유상황보고서",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "강호인",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000780",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513800705",
-          "report_nm": "주요사항보고서(자기주식처분결정)(자회사의 주요경영사항)              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "SK스퀘어",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513800705",
-          "category": "주요사항"
         }
       ]
     },
@@ -23989,46 +21821,6 @@
           "flr_nm": "HPSP",
           "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002241",
           "category": "정기공시"
-        },
-        {
-          "rcept_no": "20260513000628",
-          "report_nm": "주요사항보고서(자기주식처분결정)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HPSP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000628",
-          "category": "주요사항"
-        },
-        {
-          "rcept_no": "20260513900708",
-          "report_nm": "주주명부폐쇄기간또는기준일설정              ",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HPSP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900708",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513900652",
-          "report_nm": "주주총회소집결의              (임시주주총회)",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HPSP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513900652",
-          "category": "주주총회"
-        },
-        {
-          "rcept_no": "20260513000536",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HPSP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000536",
-          "category": "기타"
-        },
-        {
-          "rcept_no": "20260513000529",
-          "report_nm": "[기재정정]주식매수선택권부여에관한신고",
-          "rcept_dt": "2026-05-13",
-          "flr_nm": "HPSP",
-          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000529",
-          "category": "기타"
         }
       ]
     },
