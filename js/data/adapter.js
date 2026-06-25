@@ -7,6 +7,7 @@ import { getSymbol } from './symbols.js';
 import { cacheGet, cacheSet } from '../utils/cache.js';
 import { fhQuote, fhProfile, fhMetric, fhNews } from './adapters/finnhub.js';
 import { getKRDartEntry, getKRDartMeta } from './kr-dart.js';
+import { getKrMetrics, getKrMetricsMeta } from './kr-metrics.js';
 import { getUsFinancials, getUsFinancialsMeta } from './us-financials.js';
 import { getUsValuation, getUsValuationMeta } from './us-valuation.js';
 import { getKrDisclosures, getKrDisclosuresMeta } from './kr-disclosures.js';
@@ -163,6 +164,14 @@ export async function getFinancials(ticker) {
 
   if (sym?.market !== 'us') {
     const entry = getKRDartEntry(ticker);
+    // 정적 JSON (kr-dart / kr-metrics) 의 생성시각 조합 = 데이터 버전
+    const currentVersion = `${getKRDartMeta().generatedAt || ''}|${getKrMetricsMeta().generatedAt || ''}`;
+
+    // 캐시 재확인 — dataVersion 일치 시 캐시 우선 (TTL 무관, 빠름)
+    if (cached && cached.dataVersion === currentVersion) {
+      return cached;
+    }
+
     if (!entry?.financials) {
       const result = {
         data: emptyFinancials(),
@@ -171,6 +180,7 @@ export async function getFinancials(ticker) {
         currency: 'KRW',
         basis: { period: '—', statement: '—', earnings: '—' },
         reason: 'kr-no-data',
+        dataVersion: currentVersion,   // 신규 — 데이터 갱신 시 자동 무효화
       };
       cacheSet(cacheKey, result);
       return result;
@@ -181,10 +191,24 @@ export async function getFinancials(ticker) {
     const base = emptyFinancials();
     Object.assign(base, entry.financials);
 
-    const meta = getKRDartMeta();
+    // kr-metrics.json 의 비율 (PER·PBR·PSR·EV/EBITDA) 머지 (있는 키만 덮어씀)
+    const metrics = getKrMetrics(ticker);
+    if (metrics) {
+      if (metrics.per      != null) base.per      = metrics.per;
+      if (metrics.pbr      != null) base.pbr      = metrics.pbr;
+      if (metrics.psr      != null) base.psr      = metrics.psr;
+      if (metrics.evEbitda != null) base.evEbitda = metrics.evEbitda;
+    }
+
+    const dartMeta = getKRDartMeta();
+    const metricsMeta = getKrMetricsMeta();
+    const source = metrics
+      ? `OpenDART (${dartMeta.generatedAt?.slice(0,10) || ''}) + yfinance 비율 (${metricsMeta.generatedAt?.slice(0,10) || ''})`
+      : `OpenDART (사전 수집 ${dartMeta.generatedAt?.slice(0,10) || ''})`;
+
     const result = {
       data: base,
-      source: `OpenDART (사전 수집 ${meta.generatedAt?.slice(0,10) || ''})`,
+      source,
       asOf: todayISO(),
       currency: 'KRW',
       basis: {
@@ -192,6 +216,7 @@ export async function getFinancials(ticker) {
         statement: entry.basis?.statement || '연결',
         earnings: entry.basis?.earnings || '지배주주',
       },
+      dataVersion: currentVersion,   // 신규 — 데이터 갱신 시 자동 무효화
     };
     cacheSet(cacheKey, result);
     return result;
