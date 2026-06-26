@@ -14,6 +14,20 @@ try {
   console.warn('[us-financials] load failed', e?.message);
 }
 
+// 방어용 — 역순 timeseries (이전 스크립트 산출물) 자동 교정.
+// 분기 라벨 '25Q1' < '26Q1' 비교로 정순 여부 판단. 정순 저장된 데이터엔 no-op.
+for (const ticker of Object.keys(FIN.data || {})) {
+  const ts = FIN.data[ticker]?.timeseries;
+  if (!ts || !Array.isArray(ts.labels) || ts.labels.length < 2) continue;
+  // 첫 라벨이 마지막 라벨보다 크면 역순 → 정순으로 뒤집기
+  if (ts.labels[0] > ts.labels[ts.labels.length - 1]) {
+    ts.labels = ts.labels.slice().reverse();
+    for (const key of ['revenue', 'operatingIncome', 'netIncome', 'ocf', 'opMargin']) {
+      if (Array.isArray(ts[key])) ts[key] = ts[key].slice().reverse();
+    }
+  }
+}
+
 export function getUsFinancials(ticker) {
   if (!ticker) return null;
   return FIN.data?.[ticker.toUpperCase()] || null;

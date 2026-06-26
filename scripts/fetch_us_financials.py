@@ -193,7 +193,8 @@ def summarize_one(ticker_obj, t: str) -> dict | None:
         try:    q_cf  = ticker_obj.quarterly_cashflow
         except Exception: q_cf = None
 
-        # labels 는 quarterly_income_stmt 의 컬럼 (최대 4 분기, 최신순)
+        # labels 는 quarterly_income_stmt 의 컬럼 (최대 4 분기). yfinance 가 최신순 반환 →
+        # 저장 시 정순 (과거 → 최신) 으로 뒤집어 KR (kr-dart) 과 정렬 일관성 + 변동률 계산 정상화.
         ts_labels: list[str] = []
         if q_is is not None and not getattr(q_is, "empty", True):
             for col in q_is.columns[:4]:
@@ -218,12 +219,12 @@ def summarize_one(ticker_obj, t: str) -> dict | None:
             # 길이 정합성 보강 — labels 와 동일 길이로 자름
             n = len(ts_labels)
             out["timeseries"] = {
-                "labels":          ts_labels,
-                "revenue":         ts_revenue[:n],
-                "operatingIncome": ts_op_inc[:n],
-                "netIncome":       ts_net_inc[:n],
-                "ocf":             ts_ocf[:n],
-                "opMargin":        ts_op_margin[:n],
+                "labels":          ts_labels[::-1],            # 정순 변환 (과거 → 최신)
+                "revenue":         ts_revenue[:n][::-1],
+                "operatingIncome": ts_op_inc[:n][::-1],
+                "netIncome":       ts_net_inc[:n][::-1],
+                "ocf":             ts_ocf[:n][::-1],
+                "opMargin":        ts_op_margin[:n][::-1],
             }
         # 시계열 미가용 시 timeseries 키 자체를 빼서 adapter 가 빈 결과로 처리하게 함
 
