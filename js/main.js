@@ -2,6 +2,7 @@ import './utils/tooltip.js';
 import { renderSearch } from './pages/search.js';
 import { renderAnalysis } from './pages/analysis.js';
 import { renderCompare } from './pages/compare.js';
+import { renderLeading } from './pages/leading.js';   // 신규
 import { renderCalendar } from './pages/calendar.js';
 import { renderHelp } from './pages/help.js';
 import { renderHistory } from './pages/history.js';
@@ -15,6 +16,7 @@ import { destroyChartsIn } from './components/charts.js';
 const ROUTE_TITLES = {
   analysis: '기업 분석',
   compare: '상대가치 비교',
+  leading: '경기선행지표',
   calendar: '주요 일정',
   help: '도움말',
   history: '개발 히스토리',
@@ -117,6 +119,7 @@ function render(route) {
   }
 
   switch (route) {
+    case 'leading': return renderLeading(el);
     case 'calendar': return renderCalendar(el);
     case 'help': return renderHelp(el);
     case 'history': return renderHistory(el);
