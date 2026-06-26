@@ -118,6 +118,8 @@ def load_kr_dart() -> dict[str, dict]:
             "netIncome_annual": net_income_annual,                   # 폴백
             "revenue_annual":   revenue_annual,                      # 폴백
             "ttm_quarters":     {"netIncome": ni_q, "revenue": rev_q},
+            "revenueGrowthYoY": fin.get("revenueGrowthYoY"),         # PEG 분모용
+            "epsGrowth":        fin.get("epsGrowth"),                # PEG 폴백 분모용
         }
     return out
 
@@ -134,6 +136,79 @@ def _ratio(numer: float | None, denom: float | None, nd: int = 2) -> float | Non
     if numer is None or denom is None or denom <= 0:
         return None
     return round(numer / denom, nd)
+
+
+def _median_price(tk, info) -> float | None:
+    """yfinance 4개 메서드 시세 → 중앙값. 이상치 방지 (라-1)."""
+    prices = []
+    for v in (info.get('regularMarketPrice'),
+              info.get('currentPrice'),
+              info.get('previousClose')):
+        x = _safe_float(v)
+        if x and x > 0:
+            prices.append(x)
+    # fast_info
+    try:
+        fi = tk.fast_info
+        x = _safe_float(getattr(fi, 'last_price', None))
+        if x and x > 0:
+            prices.append(x)
+    except Exception:
+        pass
+    # history 마지막 종가
+    try:
+        h = tk.history(period='5d', interval='1d')
+        if not h.empty:
+            x = _safe_float(h['Close'].iloc[-1])
+            if x and x > 0:
+                prices.append(x)
+    except Exception:
+        pass
+    if not prices:
+        return None
+    prices.sort()
+    return prices[len(prices) // 2]   # 중앙값
+
+
+def _eps_growth_3y(tk) -> float | None:
+    """yfinance income_stmt 연간 EPS → 3년 평균 성장률(%). 미가용 시 None (마-3)."""
+    try:
+        is_ = tk.income_stmt
+        if is_ is None or is_.empty:
+            return None
+        # Diluted EPS 우선, 없으면 Net Income / Diluted Shares 계산
+        eps_row = None
+        for name in ('Diluted EPS', 'Basic EPS'):
+            if name in is_.index:
+                eps_row = is_.loc[name]
+                break
+        if eps_row is None:
+            ni_row = is_.loc['Net Income'] if 'Net Income' in is_.index else None
+            ds_row = is_.loc['Diluted Average Shares'] if 'Diluted Average Shares' in is_.index else None
+            if ni_row is None or ds_row is None:
+                return None
+            eps_series = []
+            for col in is_.columns:
+                ni = _safe_float(ni_row.get(col))
+                ds = _safe_float(ds_row.get(col))
+                if ni and ds and ds > 0:
+                    eps_series.append(ni / ds)
+                else:
+                    eps_series.append(None)
+        else:
+            eps_series = [_safe_float(v) for v in eps_row]
+        valid = [x for x in eps_series if x is not None and x > 0]
+        if len(valid) < 4:
+            return None
+        # 가장 최근 3년 성장률 평균 (분기 YoY 가 아닌 연간 비교)
+        growths = []
+        for i in range(min(3, len(valid) - 1)):
+            prev, curr = valid[i+1], valid[i]
+            if prev != 0:
+                growths.append((curr / prev - 1) * 100)
+        return round(sum(growths) / len(growths), 2) if growths else None
+    except Exception:
+        return None
 
 
 def summarize_one(ticker: str, kr_dart: dict) -> dict | None:
@@ -164,14 +239,20 @@ def summarize_one(ticker: str, kr_dart: dict) -> dict | None:
                 info = tk.info or {}
                 if not info or "symbol" not in info:
                     continue
-                market_cap = _safe_float(info.get("marketCap"))
+                mc_info    = _safe_float(info.get("marketCap"))
                 ev_ebitda  = _safe_float(info.get("enterpriseToEbitda"))
                 psr_yf     = _safe_float(info.get("priceToSalesTrailing12Months"))
-                # 시세 데이터가 전혀 없으면 (thin .KS 응답) 다음 접미로
-                if market_cap is None and psr_yf is None and ev_ebitda is None:
+                # 시세 데이터가 전혀 없으면 (thin .KS 응답) 다음 접미로 (suffix 선택 로직 유지)
+                if mc_info is None and psr_yf is None and ev_ebitda is None:
                     continue
 
                 shares = _safe_float(info.get("sharesOutstanding"))
+
+                # 라-1: 4개 메서드 중앙값 시세 × 주식수 → marketCap (이상치 방지), 실패 시 info.marketCap 폴백
+                price = _median_price(tk, info)
+                market_cap = (price * shares) if (price and shares) else mc_info
+                forward_per   = _safe_float(info.get("forwardPE"))   # 마-2 (한국 종목 대부분 미제공)
+                eps_growth_3y = _eps_growth_3y(tk)                   # 마-3 (가용 시)
 
                 per = _ratio(market_cap, net_income)   # marketCap / TTM netIncome
                 pbr = _ratio(market_cap, equity)       # marketCap / totalEquity
@@ -179,22 +260,30 @@ def summarize_one(ticker: str, kr_dart: dict) -> dict | None:
                 if psr is None:                        # yfinance 폴백
                     psr = psr_yf
 
+                # 마-1: PEG = PER / 성장률 (revenueGrowthYoY 우선, epsGrowth 폴백)
+                growth = _safe_float(dart_entry.get("revenueGrowthYoY")) or _safe_float(dart_entry.get("epsGrowth"))
+                peg = _ratio(per, growth) if (per is not None and growth and growth > 0) else None
+
                 # 주당 순자산 (book value per share) = 자본총계 / 주식수 (DART 우선, 없으면 yfinance)
                 book_value = round(equity / shares) if (equity and shares) else _safe_float(info.get("bookValue"))
 
                 if per is None and pbr is None and psr is None and ev_ebitda is None:
                     continue
                 return {
-                    "per":      per,
-                    "pbr":      pbr,
-                    "psr":      psr,
-                    "evEbitda": ev_ebitda,
+                    "per":         per,
+                    "pbr":         pbr,
+                    "psr":         psr,
+                    "evEbitda":    ev_ebitda,
+                    "peg":         peg,            # 신규 (마-1)
+                    "forwardPer":  forward_per,    # 신규 (마-2)
+                    "epsGrowth3y": eps_growth_3y,  # 신규 (마-3)
                     "marketCap":         market_cap,
                     "sharesOutstanding": shares,
                     "bookValue":         book_value,
                     "_basis": {
                         "netIncome": ni_basis,   # "ttm" 또는 "annual"
                         "revenue":   rev_basis,
+                        "price":     "median" if price else "fallback",
                     },
                 }
             except Exception:
@@ -241,9 +330,12 @@ def _validate(result, output_path) -> tuple[bool, str]:
     if size_kb < 30:
         return False, f"파일 크기 {size_kb:.0f} KB < 30 KB"
 
-    # TTM 채택 카운트 (투명성)
+    # TTM 채택 + 신규 지표 가용률 카운트 (투명성)
     n_ttm_ni = sum(1 for v in result["data"].values() if (v or {}).get("_basis", {}).get("netIncome") == "ttm")
-    return True, f"성공 {n_ok}/{n_total} (TTM netIncome {n_ttm_ni}/{n_ok}, {size_kb:.0f} KB)"
+    n_peg = sum(1 for v in result["data"].values() if v and v.get("peg") is not None)
+    n_fpe = sum(1 for v in result["data"].values() if v and v.get("forwardPer") is not None)
+    n_eps3y = sum(1 for v in result["data"].values() if v and v.get("epsGrowth3y") is not None)
+    return True, f"성공 {n_ok}/{n_total} (TTM netIncome {n_ttm_ni}/{n_ok}, PEG {n_peg}, Fwd PER {n_fpe}, EPS3y {n_eps3y}, {size_kb:.0f} KB)"
 
 
 def _auto_push(file_path, commit_subject: str) -> tuple[bool, str]:

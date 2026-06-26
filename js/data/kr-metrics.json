@@ -1,4361 +1,5701 @@
 {
-  "generatedAt": "2026-06-25T15:47:59",
-  "validUntil": "2026-09-23",
+  "generatedAt": "2026-06-26T19:56:08",
+  "validUntil": "2026-09-24",
   "tickerCount": 335,
   "data": {
     "000080": {
-      "per": 24.39,
-      "pbr": 0.88,
-      "psr": 0.4,
-      "evEbitda": 5.565,
-      "marketCap": 1002776559616.0,
+      "per": 23.81,
+      "pbr": 0.86,
+      "psr": 0.39,
+      "evEbitda": 5.491,
+      "peg": null,
+      "forwardPer": 9.054891,
+      "epsGrowth3y": 17.78,
+      "marketCap": 978940829020.0,
       "sharesOutstanding": 68649427.0,
       "bookValue": 16637,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000100": {
-      "per": 28.81,
-      "pbr": 2.26,
-      "psr": 2.44,
-      "evEbitda": 30.09,
-      "marketCap": 5338158333952.0,
+      "per": 26.38,
+      "pbr": 2.07,
+      "psr": 2.24,
+      "evEbitda": 29.674,
+      "peg": 4.59,
+      "forwardPer": 24.29245,
+      "epsGrowth3y": 59.34,
+      "marketCap": 4888087858400.0,
       "sharesOutstanding": 73615781.0,
       "bookValue": 32089,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000150": {
-      "per": 109.65,
-      "pbr": 2.24,
-      "psr": 1.38,
-      "evEbitda": 18.869,
-      "marketCap": 27359931531264.0,
+      "per": 78.63,
+      "pbr": 1.6,
+      "psr": 0.99,
+      "evEbitda": 18.614,
+      "peg": 8.63,
+      "forwardPer": 34.535324,
+      "epsGrowth3y": null,
+      "marketCap": 19618281662000.0,
       "sharesOutstanding": 13604911.0,
       "bookValue": 899258,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000210": {
       "per": null,
-      "pbr": 0.2,
-      "psr": 0.19,
-      "evEbitda": 7.974,
-      "marketCap": 990528405504.0,
+      "pbr": 0.18,
+      "psr": 0.16,
+      "evEbitda": 7.946,
+      "peg": null,
+      "forwardPer": 3.2881627,
+      "epsGrowth3y": null,
+      "marketCap": 863392488750.0,
       "sharesOutstanding": 20930727.0,
       "bookValue": 235113,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000250": {
-      "per": 442.67,
-      "pbr": 14.65,
-      "psr": 22.97,
+      "per": 409.59,
+      "pbr": 13.55,
+      "psr": 21.26,
       "evEbitda": null,
-      "marketCap": 5325198458880.0,
+      "peg": 41.37,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 4927271593000.0,
       "sharesOutstanding": 23407466.0,
       "bookValue": 15533,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000270": {
-      "per": 7.2,
-      "pbr": 0.89,
-      "psr": 0.48,
-      "evEbitda": 2.949,
-      "marketCap": 54372977344512.0,
+      "per": 6.96,
+      "pbr": 0.86,
+      "psr": 0.46,
+      "evEbitda": 2.97,
+      "peg": 1.12,
+      "forwardPer": 5.729541,
+      "epsGrowth3y": 18.14,
+      "marketCap": 52585162617900.0,
       "sharesOutstanding": 388656043.0,
       "bookValue": 157441,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000660": {
-      "per": 48.58,
-      "pbr": 17.29,
-      "psr": 21.48,
-      "evEbitda": 19.577,
-      "marketCap": 2086263586816000.0,
+      "per": 44.18,
+      "pbr": 15.72,
+      "psr": 19.53,
+      "evEbitda": 22.18,
+      "peg": 0.94,
+      "forwardPer": 6.1599183,
+      "epsGrowth3y": null,
+      "marketCap": 1897442123643000.0,
       "sharesOutstanding": 709854891.0,
       "bookValue": 169988,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000720": {
-      "per": 22.66,
-      "pbr": 1.25,
-      "psr": 0.41,
-      "evEbitda": 20.438,
-      "marketCap": 12668658253824.0,
+      "per": 20.58,
+      "pbr": 1.14,
+      "psr": 0.37,
+      "evEbitda": 20.12,
+      "peg": null,
+      "forwardPer": 15.808757,
+      "epsGrowth3y": null,
+      "marketCap": 11503050524500.0,
       "sharesOutstanding": 111355765.0,
       "bookValue": 90816,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000810": {
-      "per": 13.78,
-      "pbr": 1.31,
-      "psr": 1.2655678,
-      "evEbitda": -9.838,
-      "marketCap": 27843734011904.0,
+      "per": 12.54,
+      "pbr": 1.19,
+      "psr": 1.2288566,
+      "evEbitda": -9.659,
+      "peg": null,
+      "forwardPer": 10.719357,
+      "epsGrowth3y": 23.57,
+      "marketCap": 25330796256000.0,
       "sharesOutstanding": 39828296.0,
       "bookValue": 534604,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "000880": {
-      "per": 4.78,
-      "pbr": 0.2,
-      "psr": 0.13,
-      "evEbitda": 6.985,
-      "marketCap": 9512892235776.0,
+      "per": 3.51,
+      "pbr": 0.14,
+      "psr": 0.09,
+      "evEbitda": 7.016,
+      "peg": 0.1,
+      "forwardPer": 5.593485,
+      "epsGrowth3y": -1.83,
+      "marketCap": 6999986133800.0,
       "sharesOutstanding": 69375482.0,
       "bookValue": 698162,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "000990": {
-      "per": 26.28,
-      "pbr": 2.96,
-      "psr": 4.75,
-      "evEbitda": 12.773,
-      "marketCap": 6638623260672.0,
+      "per": 26.38,
+      "pbr": 2.97,
+      "psr": 4.77,
+      "evEbitda": 13.286,
+      "peg": 1.12,
+      "forwardPer": 17.672342,
+      "epsGrowth3y": -16.82,
+      "marketCap": 6663881015600.0,
       "sharesOutstanding": 42096532.0,
       "bookValue": 53306,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001040": {
-      "per": 36.85,
-      "pbr": 0.32,
-      "psr": 0.12,
-      "evEbitda": 5.54,
-      "marketCap": 5398480814080.0,
+      "per": 27.7,
+      "pbr": 0.24,
+      "psr": 0.09,
+      "evEbitda": 5.529,
+      "peg": 8.81,
+      "forwardPer": 7.8319435,
+      "epsGrowth3y": -1.05,
+      "marketCap": 4058768100000.0,
       "sharesOutstanding": 27058454.0,
       "bookValue": 628900,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001120": {
-      "per": 7.91,
+      "per": 7.73,
       "pbr": 0.35,
       "psr": 0.07,
-      "evEbitda": 5.623,
-      "marketCap": 1251683074048.0,
+      "evEbitda": 5.628,
+      "peg": 18.71,
+      "forwardPer": 4.2260523,
+      "epsGrowth3y": -15.49,
+      "marketCap": 1222908668000.0,
       "sharesOutstanding": 35967902.0,
       "bookValue": 98302,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001230": {
-      "per": 12.86,
-      "pbr": 0.14,
+      "per": 12.7,
+      "pbr": 0.13,
       "psr": 0.13,
-      "evEbitda": 9.535,
-      "marketCap": 266384703488.0,
+      "evEbitda": 9.294,
+      "peg": null,
+      "forwardPer": 1.368932,
+      "epsGrowth3y": -45.82,
+      "marketCap": 263119053780.0,
       "sharesOutstanding": 155507715.0,
       "bookValue": 12577,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001440": {
-      "per": 68.74,
-      "pbr": 3.78,
-      "psr": 1.7,
-      "evEbitda": 33.911,
-      "marketCap": 6178194063360.0,
+      "per": 64.09,
+      "pbr": 3.53,
+      "psr": 1.58,
+      "evEbitda": 33.088,
+      "peg": 6.12,
+      "forwardPer": 34.623978,
+      "epsGrowth3y": -25.8,
+      "marketCap": 5760120974000.0,
       "sharesOutstanding": 185810354.0,
       "bookValue": 8785,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001450": {
-      "per": 2.8,
-      "pbr": 0.55,
-      "psr": 0.17740504,
-      "evEbitda": -17.346,
-      "marketCap": 2855105986560.0,
+      "per": 2.68,
+      "pbr": 0.53,
+      "psr": 0.16952038,
+      "evEbitda": -17.305,
+      "peg": 0.13,
+      "forwardPer": 3.1319342,
+      "epsGrowth3y": 5.0,
+      "marketCap": 2728212400000.0,
       "sharesOutstanding": 79308500.0,
       "bookValue": 65031,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "001680": {
       "per": null,
-      "pbr": 0.54,
+      "pbr": 0.5,
       "psr": 0.13,
-      "evEbitda": 4.521,
-      "marketCap": 591059419136.0,
+      "evEbitda": 4.501,
+      "peg": null,
+      "forwardPer": 5.055362,
+      "epsGrowth3y": null,
+      "marketCap": 553675439500.0,
       "sharesOutstanding": 34648025.0,
       "bookValue": 31660,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001740": {
-      "per": 46.38,
-      "pbr": 1.14,
-      "psr": 0.34,
-      "evEbitda": 10.51,
-      "marketCap": 2318301134848.0,
+      "per": 41.7,
+      "pbr": 1.03,
+      "psr": 0.31,
+      "evEbitda": 11.454,
+      "peg": null,
+      "forwardPer": 26.773897,
+      "epsGrowth3y": null,
+      "marketCap": 2084324402680.0,
       "sharesOutstanding": 214657508.0,
       "bookValue": 9437,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "001800": {
-      "per": 4.2,
-      "pbr": 0.28,
-      "psr": 0.42,
-      "evEbitda": 3.57,
-      "marketCap": 1419696930816.0,
+      "per": 4.11,
+      "pbr": 0.27,
+      "psr": 0.41,
+      "evEbitda": 3.53,
+      "peg": 0.66,
+      "forwardPer": null,
+      "epsGrowth3y": 15.36,
+      "marketCap": 1386610828600.0,
       "sharesOutstanding": 60156652.0,
       "bookValue": 85708,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "002350": {
-      "per": 4.34,
-      "pbr": 0.32,
-      "psr": 0.21,
-      "evEbitda": 4.143,
-      "marketCap": 656019292160.0,
+      "per": 4.04,
+      "pbr": 0.3,
+      "psr": 0.19,
+      "evEbitda": 4.139,
+      "peg": 0.34,
+      "forwardPer": 3.6959193,
+      "epsGrowth3y": null,
+      "marketCap": 610637755100.0,
       "sharesOutstanding": 96163426.0,
       "bookValue": 21364,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "003380": {
-      "per": 1.91,
-      "pbr": 0.16,
+      "per": 1.85,
+      "pbr": 0.15,
       "psr": 0.07,
-      "evEbitda": 6.984,
-      "marketCap": 983462182912.0,
+      "evEbitda": 6.973,
+      "peg": 0.24,
+      "forwardPer": null,
+      "epsGrowth3y": 218.59,
+      "marketCap": 948153065530.0,
       "sharesOutstanding": 103850281.0,
       "bookValue": 60448,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "003490": {
-      "per": 16.55,
-      "pbr": 0.93,
-      "psr": 0.42,
-      "evEbitda": 6.898,
-      "marketCap": 10710610345984.0,
+      "per": 15.96,
+      "pbr": 0.9,
+      "psr": 0.41,
+      "evEbitda": 7.057,
+      "peg": 0.39,
+      "forwardPer": 9.272527,
+      "epsGrowth3y": -18.63,
+      "marketCap": 10328588110500.0,
       "sharesOutstanding": 368220610.0,
       "bookValue": 31120,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "003540": {
-      "per": 10.15,
-      "pbr": 0.47,
-      "psr": 0.37,
+      "per": 5.37,
+      "pbr": 0.25,
+      "psr": 0.2,
       "evEbitda": null,
-      "marketCap": 1896159379456.0,
+      "peg": 0.23,
+      "forwardPer": 6.6709347,
+      "epsGrowth3y": 9.66,
+      "marketCap": 1002492674200.0,
       "sharesOutstanding": 38483404.0,
       "bookValue": 105428,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "003550": {
-      "per": 15.45,
-      "pbr": 0.51,
-      "psr": 2.13,
-      "evEbitda": 15.011,
-      "marketCap": 15451160576000.0,
+      "per": 14.91,
+      "pbr": 0.49,
+      "psr": 2.06,
+      "evEbitda": 15.044,
+      "peg": 13.89,
+      "forwardPer": 9.464919,
+      "epsGrowth3y": -20.12,
+      "marketCap": 14907531594400.0,
       "sharesOutstanding": 151192004.0,
       "bookValue": 200638,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "003670": {
-      "per": 415.97,
-      "pbr": 3.37,
-      "psr": 5.17,
-      "evEbitda": 86.308,
-      "marketCap": 15192008163328.0,
+      "per": 391.13,
+      "pbr": 3.17,
+      "psr": 4.86,
+      "evEbitda": 83.246,
+      "peg": null,
+      "forwardPer": 137.1248,
+      "epsGrowth3y": null,
+      "marketCap": 14284757311000.0,
       "sharesOutstanding": 88946185.0,
       "bookValue": 50728,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "004000": {
-      "per": 10.6,
-      "pbr": 0.46,
-      "psr": 0.64,
-      "evEbitda": 2.916,
-      "marketCap": 1124500504576.0,
+      "per": 10.19,
+      "pbr": 0.44,
+      "psr": 0.62,
+      "evEbitda": 2.822,
+      "peg": 2.07,
+      "forwardPer": 5.5838118,
+      "epsGrowth3y": 45.4,
+      "marketCap": 1081201500000.0,
       "sharesOutstanding": 25470000.0,
       "bookValue": 95632,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "004020": {
-      "per": 2665.93,
-      "pbr": 0.19,
-      "psr": 0.16,
-      "evEbitda": 6.418,
-      "marketCap": 3703012589568.0,
+      "per": 2504.93,
+      "pbr": 0.18,
+      "psr": 0.15,
+      "evEbitda": 6.358,
+      "peg": null,
+      "forwardPer": 7.003545,
+      "epsGrowth3y": null,
+      "marketCap": 3479384796550.0,
       "sharesOutstanding": 131545739.0,
       "bookValue": 150823,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "004370": {
-      "per": 11.37,
+      "per": 11.3,
       "pbr": 0.68,
       "psr": 0.55,
-      "evEbitda": 2.625,
-      "marketCap": 1934033289216.0,
+      "evEbitda": 2.589,
+      "peg": 5.14,
+      "forwardPer": 9.761562,
+      "epsGrowth3y": 14.2,
+      "marketCap": 1922364946000.0,
       "sharesOutstanding": 5834188.0,
       "bookValue": 485275,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "004990": {
       "per": null,
-      "pbr": 0.2,
-      "psr": 0.12,
-      "evEbitda": 10.329,
-      "marketCap": 1838810136576.0,
+      "pbr": 0.19,
+      "psr": 0.11,
+      "evEbitda": 10.316,
+      "peg": null,
+      "forwardPer": -67.203514,
+      "epsGrowth3y": null,
+      "marketCap": 1745364964950.0,
       "sharesOutstanding": 76050761.0,
       "bookValue": 123886,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005180": {
-      "per": 10.14,
-      "pbr": 0.76,
+      "per": 10.06,
+      "pbr": 0.75,
       "psr": 0.38,
-      "evEbitda": 2.896,
-      "marketCap": 563222740992.0,
+      "evEbitda": 2.873,
+      "peg": 5.54,
+      "forwardPer": 5.7981653,
+      "epsGrowth3y": 68.59,
+      "marketCap": 558801823200.0,
       "sharesOutstanding": 8841801.0,
       "bookValue": 84119,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005290": {
-      "per": 30.71,
-      "pbr": 2.62,
-      "psr": 2.13,
-      "evEbitda": 13.512,
-      "marketCap": 2890006265856.0,
+      "per": 29.79,
+      "pbr": 2.54,
+      "psr": 2.07,
+      "evEbitda": 13.335,
+      "peg": null,
+      "forwardPer": 16.819572,
+      "epsGrowth3y": -11.53,
+      "marketCap": 2803356930000.0,
       "sharesOutstanding": 50970126.0,
       "bookValue": 21612,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005380": {
-      "per": 12.71,
-      "pbr": 1.03,
-      "psr": 0.71,
-      "evEbitda": 17.55,
-      "marketCap": 131702538108928.0,
+      "per": 9.38,
+      "pbr": 0.76,
+      "psr": 0.52,
+      "evEbitda": 17.437,
+      "peg": 1.49,
+      "forwardPer": 9.740527,
+      "epsGrowth3y": 13.41,
+      "marketCap": 97260919713000.0,
       "sharesOutstanding": 202416066.0,
       "bookValue": 630623,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005385": {
-      "per": 5.53,
-      "pbr": 0.45,
-      "psr": 0.31,
-      "evEbitda": 11.968,
-      "marketCap": 57341663772672.0,
+      "per": 0.47,
+      "pbr": 0.04,
+      "psr": 0.03,
+      "evEbitda": 12.1,
+      "peg": 0.07,
+      "forwardPer": null,
+      "epsGrowth3y": 13.41,
+      "marketCap": 4887553918000.0,
       "sharesOutstanding": 22839037.0,
       "bookValue": 5589038,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005440": {
-      "per": 4.4,
+      "per": 4.43,
       "pbr": 0.31,
       "psr": 0.28,
-      "evEbitda": 9.237,
-      "marketCap": 2284205899776.0,
+      "evEbitda": 9.579,
+      "peg": 0.48,
+      "forwardPer": 5.5207763,
+      "epsGrowth3y": 310.24,
+      "marketCap": 2299454437280.0,
       "sharesOutstanding": 152483716.0,
       "bookValue": 47916,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005490": {
-      "per": 48.35,
-      "pbr": 0.39,
-      "psr": 0.35,
-      "evEbitda": 8.166,
-      "marketCap": 24387700916224.0,
+      "per": 45.73,
+      "pbr": 0.37,
+      "psr": 0.33,
+      "evEbitda": 8.058,
+      "peg": null,
+      "forwardPer": 10.086521,
+      "epsGrowth3y": -39.02,
+      "marketCap": 23064337595000.0,
       "sharesOutstanding": 75620779.0,
       "bookValue": 824875,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005830": {
-      "per": 4.6,
-      "pbr": 0.75,
-      "psr": 0.39442337,
-      "evEbitda": -15.684,
-      "marketCap": 8235382734848.0,
+      "per": 4.45,
+      "pbr": 0.73,
+      "psr": 0.38193426,
+      "evEbitda": -15.717,
+      "peg": null,
+      "forwardPer": 4.1553364,
+      "epsGrowth3y": -4.01,
+      "marketCap": 7974616173500.0,
       "sharesOutstanding": 60643469.0,
       "bookValue": 180321,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "005930": {
-      "per": 52.07,
-      "pbr": 5.4,
-      "psr": 7.06,
-      "evEbitda": 15.211,
-      "marketCap": 2354112913997824.0,
+      "per": 43.29,
+      "pbr": 4.49,
+      "psr": 5.87,
+      "evEbitda": 16.055,
+      "peg": 3.98,
+      "forwardPer": 5.5000906,
+      "epsGrowth3y": 30.71,
+      "marketCap": 1956943151068500.0,
       "sharesOutstanding": 5764191903.0,
       "bookValue": 75695,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005935": {
-      "per": 34.15,
-      "pbr": 3.54,
-      "psr": 4.63,
-      "evEbitda": 9.255,
-      "marketCap": 1544010275487744.0,
+      "per": 3.91,
+      "pbr": 0.41,
+      "psr": 0.53,
+      "evEbitda": 10.263,
+      "peg": 0.36,
+      "forwardPer": 3.9589572,
+      "epsGrowth3y": 30.71,
+      "marketCap": 176922850261500.0,
       "sharesOutstanding": 802371203.0,
       "bookValue": 543789,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "005940": {
-      "per": 10.62,
-      "pbr": 1.16,
-      "psr": 0.62291694,
+      "per": 9.55,
+      "pbr": 1.04,
+      "psr": 0.58990765,
       "evEbitda": null,
-      "marketCap": 10955051237376.0,
+      "peg": 0.19,
+      "forwardPer": 7.719318,
+      "epsGrowth3y": 50.22,
+      "marketCap": 9851801334600.0,
       "sharesOutstanding": 355660698.0,
       "bookValue": 26537,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "006040": {
       "per": 3.53,
       "pbr": 0.37,
       "psr": 0.14,
-      "evEbitda": 4.177,
-      "marketCap": 1368532451328.0,
+      "evEbitda": 4.204,
+      "peg": 0.49,
+      "forwardPer": 3.7254372,
+      "epsGrowth3y": 97.13,
+      "marketCap": 1366325199500.0,
       "sharesOutstanding": 44146210.0,
       "bookValue": 83853,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006260": {
-      "per": 20.58,
-      "pbr": 1.3,
-      "psr": 0.31,
-      "evEbitda": 12.138,
-      "marketCap": 9984565837824.0,
+      "per": 19.09,
+      "pbr": 1.21,
+      "psr": 0.29,
+      "evEbitda": 12.231,
+      "peg": 1.22,
+      "forwardPer": 15.857847,
+      "epsGrowth3y": -25.44,
+      "marketCap": 9263457602000.0,
       "sharesOutstanding": 27734903.0,
       "bookValue": 276893,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006280": {
       "per": null,
-      "pbr": 1.01,
-      "psr": 0.71,
-      "evEbitda": 14.89,
-      "marketCap": 1414086393856.0,
+      "pbr": 0.97,
+      "psr": 0.68,
+      "evEbitda": 14.797,
+      "peg": null,
+      "forwardPer": 34.211926,
+      "epsGrowth3y": null,
+      "marketCap": 1345607673300.0,
       "sharesOutstanding": 11413127.0,
       "bookValue": 122164,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006360": {
-      "per": 22.13,
-      "pbr": 0.37,
-      "psr": 0.17,
-      "evEbitda": 9.666,
-      "marketCap": 2067044630528.0,
+      "per": 21.17,
+      "pbr": 0.36,
+      "psr": 0.16,
+      "evEbitda": 9.567,
+      "peg": null,
+      "forwardPer": 5.1077476,
+      "epsGrowth3y": null,
+      "marketCap": 1977911253500.0,
       "sharesOutstanding": 84888895.0,
       "bookValue": 65068,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006400": {
       "per": null,
-      "pbr": 1.61,
-      "psr": 2.86,
-      "evEbitda": 103.751,
-      "marketCap": 38009026117632.0,
+      "pbr": 1.49,
+      "psr": 2.65,
+      "evEbitda": 102.465,
+      "peg": null,
+      "forwardPer": 26.337261,
+      "epsGrowth3y": null,
+      "marketCap": 35150633245000.0,
       "sharesOutstanding": 77254139.0,
       "bookValue": 305098,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006405": {
       "per": null,
-      "pbr": 0.72,
-      "psr": 1.27,
-      "evEbitda": 60.04,
-      "marketCap": 16879784558592.0,
+      "pbr": 0.01,
+      "psr": 0.02,
+      "evEbitda": 59.719,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 300854664000.0,
       "sharesOutstanding": 1439496.0,
       "bookValue": 16373865,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006650": {
-      "per": 12.57,
-      "pbr": 0.34,
-      "psr": 0.21,
-      "evEbitda": 3.016,
-      "marketCap": 702840176640.0,
+      "per": 12.13,
+      "pbr": 0.33,
+      "psr": 0.2,
+      "evEbitda": 2.946,
+      "peg": 0.62,
+      "forwardPer": 4.411676,
+      "epsGrowth3y": null,
+      "marketCap": 678135780000.0,
       "sharesOutstanding": 6176100.0,
       "bookValue": 337020,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006730": {
-      "per": 5.22,
-      "pbr": 0.44,
-      "psr": 2.41,
-      "evEbitda": 23.363,
-      "marketCap": 606783209472.0,
+      "per": 4.99,
+      "pbr": 0.42,
+      "psr": 2.3,
+      "evEbitda": 23.259,
+      "peg": 0.15,
+      "forwardPer": 13.21394,
+      "epsGrowth3y": 263.44,
+      "marketCap": 579404753200.0,
       "sharesOutstanding": 63670852.0,
       "bookValue": 21783,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "006800": {
-      "per": 16.06,
-      "pbr": 1.89,
-      "psr": 0.87,
+      "per": 11.15,
+      "pbr": 1.31,
+      "psr": 0.6,
       "evEbitda": null,
-      "marketCap": 25424392355840.0,
+      "peg": 0.35,
+      "forwardPer": 10.626996,
+      "epsGrowth3y": 72.0,
+      "marketCap": 17643538475500.0,
       "sharesOutstanding": 438348782.0,
       "bookValue": 30748,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "007070": {
-      "per": 37.43,
-      "pbr": 0.57,
-      "psr": 0.16,
-      "evEbitda": 3.862,
-      "marketCap": 1880225873920.0,
+      "per": 35.68,
+      "pbr": 0.55,
+      "psr": 0.15,
+      "evEbitda": 3.814,
+      "peg": 12.55,
+      "forwardPer": 8.427021,
+      "epsGrowth3y": 611.72,
+      "marketCap": 1792481905500.0,
       "sharesOutstanding": 83565590.0,
       "bookValue": 39204,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "007310": {
-      "per": 14.3,
-      "pbr": 0.47,
+      "per": 14.07,
+      "pbr": 0.46,
       "psr": 0.28,
-      "evEbitda": 3.768,
-      "marketCap": 1031798128640.0,
+      "evEbitda": 3.754,
+      "peg": 3.68,
+      "forwardPer": 8.289544,
+      "epsGrowth3y": -35.25,
+      "marketCap": 1014601465000.0,
       "sharesOutstanding": 3439327.0,
       "bookValue": 640470,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "007390": {
       "per": null,
-      "pbr": 25.2,
-      "psr": 76.6,
+      "pbr": 24.33,
+      "psr": 73.96,
       "evEbitda": null,
-      "marketCap": 1588324073472.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1533554332800.0,
       "sharesOutstanding": 64435056.0,
       "bookValue": 978,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "008060": {
-      "per": 84.77,
-      "pbr": 0.36,
-      "psr": 0.38,
-      "evEbitda": 4.838,
-      "marketCap": 527791161344.0,
+      "per": 81.41,
+      "pbr": 0.35,
+      "psr": 0.37,
+      "evEbitda": 4.8,
+      "peg": 8.76,
+      "forwardPer": null,
+      "epsGrowth3y": -13.59,
+      "marketCap": 506850987600.0,
       "sharesOutstanding": 31287098.0,
       "bookValue": 46333,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "008770": {
       "per": null,
-      "pbr": 1.66,
-      "psr": 0.45,
-      "evEbitda": 16.309,
-      "marketCap": 1832113799168.0,
+      "pbr": 1.54,
+      "psr": 0.42,
+      "evEbitda": 16.418,
+      "peg": null,
+      "forwardPer": 13.546329,
+      "epsGrowth3y": null,
+      "marketCap": 1705347909950.0,
       "sharesOutstanding": 37113121.0,
       "bookValue": 29807,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "008930": {
-      "per": 15.76,
-      "pbr": 1.93,
-      "psr": 1.37,
-      "evEbitda": 27.113,
-      "marketCap": 1855355486208.0,
+      "per": 15.01,
+      "pbr": 1.84,
+      "psr": 1.3,
+      "evEbitda": 26.369,
+      "peg": 2.62,
+      "forwardPer": null,
+      "epsGrowth3y": 39.51,
+      "marketCap": 1767327726600.0,
       "sharesOutstanding": 67713706.0,
       "bookValue": 14165,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009150": {
-      "per": 207.42,
-      "pbr": 15.48,
-      "psr": 13.4,
-      "evEbitda": 78.489,
-      "marketCap": 151623334625280.0,
+      "per": 198.2,
+      "pbr": 14.79,
+      "psr": 12.8,
+      "evEbitda": 79.81,
+      "peg": 20.0,
+      "forwardPer": 58.881844,
+      "epsGrowth3y": 2.56,
+      "marketCap": 144878536128000.0,
       "sharesOutstanding": 72693696.0,
       "bookValue": 134776,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009240": {
-      "per": 11.75,
-      "pbr": 1.36,
-      "psr": 0.31,
-      "evEbitda": 4.972,
-      "marketCap": 543660539904.0,
+      "per": 11.32,
+      "pbr": 1.31,
+      "psr": 0.3,
+      "evEbitda": 5.054,
+      "peg": null,
+      "forwardPer": 17.991901,
+      "epsGrowth3y": null,
+      "marketCap": 523740159100.0,
       "sharesOutstanding": 16600322.0,
       "bookValue": 24081,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009420": {
       "per": null,
-      "pbr": 18.4,
-      "psr": 19.17,
-      "evEbitda": 956.299,
-      "marketCap": 2975204376576.0,
+      "pbr": 18.18,
+      "psr": 18.94,
+      "evEbitda": 951.416,
+      "peg": null,
+      "forwardPer": 498.20425,
+      "epsGrowth3y": null,
+      "marketCap": 2939603671000.0,
       "sharesOutstanding": 50858195.0,
       "bookValue": 3179,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009520": {
-      "per": 364.92,
-      "pbr": 4.51,
-      "psr": 1.44,
+      "per": 343.38,
+      "pbr": 4.24,
+      "psr": 1.36,
       "evEbitda": null,
-      "marketCap": 515081371648.0,
+      "peg": 110.17,
+      "forwardPer": null,
+      "epsGrowth3y": 18.56,
+      "marketCap": 484684466760.0,
       "sharesOutstanding": 41639559.0,
       "bookValue": 2744,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009540": {
-      "per": 8.87,
-      "pbr": 1.54,
-      "psr": 0.87,
-      "evEbitda": 4.31,
-      "marketCap": 25987626565632.0,
+      "per": 8.34,
+      "pbr": 1.44,
+      "psr": 0.82,
+      "evEbitda": 4.282,
+      "peg": 0.48,
+      "forwardPer": 6.0024858,
+      "epsGrowth3y": null,
+      "marketCap": 24431904665000.0,
       "sharesOutstanding": 70714630.0,
       "bookValue": 239107,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "009830": {
       "per": null,
-      "pbr": 0.54,
-      "psr": 0.45,
-      "evEbitda": 43.265,
-      "marketCap": 5998015152128.0,
+      "pbr": 0.49,
+      "psr": 0.41,
+      "evEbitda": 43.094,
+      "peg": null,
+      "forwardPer": 8.486305,
+      "epsGrowth3y": null,
+      "marketCap": 5459331810450.0,
       "sharesOutstanding": 178118493.0,
       "bookValue": 62795,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "010060": {
       "per": null,
-      "pbr": 0.83,
-      "psr": 1.16,
-      "evEbitda": 37.043,
-      "marketCap": 3927581917184.0,
+      "pbr": 0.76,
+      "psr": 1.07,
+      "evEbitda": 36.925,
+      "peg": null,
+      "forwardPer": 9.253518,
+      "epsGrowth3y": null,
+      "marketCap": 3611141608000.0,
       "sharesOutstanding": 18614132.0,
       "bookValue": 254190,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "010120": {
-      "per": 115.15,
-      "pbr": 15.29,
-      "psr": 6.59,
-      "evEbitda": 57.066,
-      "marketCap": 32732776235008.0,
+      "per": 106.25,
+      "pbr": 14.11,
+      "psr": 6.08,
+      "evEbitda": 55.696,
+      "peg": 11.68,
+      "forwardPer": 45.2779,
+      "epsGrowth3y": 54.17,
+      "marketCap": 30203426050000.0,
       "sharesOutstanding": 148785350.0,
       "bookValue": 14392,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "010130": {
-      "per": 29.31,
-      "pbr": 2.02,
-      "psr": 1.36,
-      "evEbitda": 13.223,
-      "marketCap": 22575308603392.0,
+      "per": 27.96,
+      "pbr": 1.93,
+      "psr": 1.3,
+      "evEbitda": 13.341,
+      "peg": 0.74,
+      "forwardPer": 17.896057,
+      "epsGrowth3y": 81.92,
+      "marketCap": 21535252992000.0,
       "sharesOutstanding": 20393232.0,
       "bookValue": 548428,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "010140": {
-      "per": 38.02,
-      "pbr": 4.97,
-      "psr": 1.91,
-      "evEbitda": 16.0,
-      "marketCap": 20371487064064.0,
+      "per": 36.66,
+      "pbr": 4.8,
+      "psr": 1.84,
+      "evEbitda": 15.471,
+      "peg": 4.86,
+      "forwardPer": 13.085124,
+      "epsGrowth3y": null,
+      "marketCap": 19642818133000.0,
       "sharesOutstanding": 854035571.0,
       "bookValue": 4795,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "010950": {
-      "per": 65.0,
-      "pbr": 1.29,
-      "psr": 0.34,
-      "evEbitda": 8.345,
-      "marketCap": 11502359674880.0,
+      "per": 59.3,
+      "pbr": 1.18,
+      "psr": 0.31,
+      "evEbitda": 7.886,
+      "peg": null,
+      "forwardPer": 8.012099,
+      "epsGrowth3y": null,
+      "marketCap": 10492716214400.0,
       "sharesOutstanding": 112582792.0,
       "bookValue": 78941,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "011070": {
-      "per": 66.08,
-      "pbr": 3.91,
-      "psr": 1.03,
-      "evEbitda": 12.161,
-      "marketCap": 22552275582976.0,
+      "per": 64.56,
+      "pbr": 3.82,
+      "psr": 1.01,
+      "evEbitda": 12.112,
+      "peg": 19.67,
+      "forwardPer": 22.612547,
+      "epsGrowth3y": -28.96,
+      "marketCap": 22031656017000.0,
       "sharesOutstanding": 23664507.0,
       "bookValue": 243532,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "011170": {
       "per": null,
-      "pbr": 0.16,
-      "psr": 0.15,
-      "evEbitda": 30.554,
-      "marketCap": 2833632460800.0,
+      "pbr": 0.15,
+      "psr": 0.14,
+      "evEbitda": 30.379,
+      "peg": null,
+      "forwardPer": -9.77139,
+      "epsGrowth3y": null,
+      "marketCap": 2652313546300.0,
       "sharesOutstanding": 42167147.0,
       "bookValue": 418061,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "011200": {
-      "per": 9.41,
-      "pbr": 0.67,
-      "psr": 1.62,
-      "evEbitda": 4.64,
-      "marketCap": 17676279742464.0,
+      "per": 9.19,
+      "pbr": 0.65,
+      "psr": 1.59,
+      "evEbitda": 4.526,
+      "peg": null,
+      "forwardPer": 14.95915,
+      "epsGrowth3y": 53.18,
+      "marketCap": 17270687230700.0,
       "sharesOutstanding": 943237970.0,
       "bookValue": 28170,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "011210": {
-      "per": 14.35,
-      "pbr": 0.41,
-      "psr": 0.2,
-      "evEbitda": 3.564,
-      "marketCap": 1678317584384.0,
+      "per": 13.44,
+      "pbr": 0.39,
+      "psr": 0.19,
+      "evEbitda": 3.454,
+      "peg": 3.66,
+      "forwardPer": 7.49926,
+      "epsGrowth3y": 17.75,
+      "marketCap": 1571926729500.0,
       "sharesOutstanding": 26597745.0,
       "bookValue": 152849,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "011780": {
-      "per": 10.4,
-      "pbr": 0.48,
-      "psr": 0.44,
-      "evEbitda": 4.835,
-      "marketCap": 3027163938816.0,
+      "per": 8.99,
+      "pbr": 0.42,
+      "psr": 0.38,
+      "evEbitda": 4.625,
+      "peg": null,
+      "forwardPer": 6.7884655,
+      "epsGrowth3y": -30.14,
+      "marketCap": 2615229766700.0,
       "sharesOutstanding": 22960753.0,
       "bookValue": 272053,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "011790": {
       "per": null,
-      "pbr": 2.66,
-      "psr": 2.93,
-      "evEbitda": -97.073,
-      "marketCap": 5398551592960.0,
+      "pbr": 2.54,
+      "psr": 2.79,
+      "evEbitda": -97.994,
+      "peg": null,
+      "forwardPer": -55.649258,
+      "epsGrowth3y": null,
+      "marketCap": 5136773824000.0,
       "sharesOutstanding": 49392056.0,
       "bookValue": 41013,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "012330": {
-      "per": 12.56,
-      "pbr": 0.94,
-      "psr": 0.75,
-      "evEbitda": 7.989,
-      "marketCap": 46017181384704.0,
+      "per": 11.84,
+      "pbr": 0.88,
+      "psr": 0.71,
+      "evEbitda": 8.066,
+      "peg": 1.75,
+      "forwardPer": 9.177144,
+      "epsGrowth3y": 16.3,
+      "marketCap": 43386353629500.0,
       "sharesOutstanding": 89180583.0,
       "bookValue": 551833,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "012450": {
-      "per": 24.98,
-      "pbr": 3.28,
-      "psr": 2.06,
-      "evEbitda": 17.419,
-      "marketCap": 54998754918400.0,
+      "per": 23.62,
+      "pbr": 3.1,
+      "psr": 1.95,
+      "evEbitda": 17.105,
+      "peg": 0.17,
+      "forwardPer": 17.8016,
+      "epsGrowth3y": 146.93,
+      "marketCap": 52014724668000.0,
       "sharesOutstanding": 51448788.0,
       "bookValue": 326309,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "012750": {
-      "per": 13.5,
-      "pbr": 1.37,
-      "psr": 0.83,
-      "evEbitda": 4.122,
-      "marketCap": 2410670194688.0,
+      "per": 12.97,
+      "pbr": 1.32,
+      "psr": 0.8,
+      "evEbitda": 4.059,
+      "peg": 4.3,
+      "forwardPer": 12.284516,
+      "epsGrowth3y": 6.59,
+      "marketCap": 2316001371500.0,
       "sharesOutstanding": 33810239.0,
       "bookValue": 51947,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "014620": {
-      "per": 20.32,
-      "pbr": 1.27,
-      "psr": 2.85,
-      "evEbitda": 14.551,
-      "marketCap": 699786526720.0,
+      "per": 19.36,
+      "pbr": 1.21,
+      "psr": 2.71,
+      "evEbitda": 13.223,
+      "peg": 2.45,
+      "forwardPer": 13.442967,
+      "epsGrowth3y": -2.28,
+      "marketCap": 666589836400.0,
       "sharesOutstanding": 26557364.0,
       "bookValue": 20691,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "014680": {
-      "per": 19.66,
-      "pbr": 2.47,
-      "psr": 3.3,
-      "evEbitda": 13.837,
-      "marketCap": 2913054490624.0,
+      "per": 19.78,
+      "pbr": 2.49,
+      "psr": 3.31,
+      "evEbitda": 13.61,
+      "peg": 1.43,
+      "forwardPer": 13.451867,
+      "epsGrowth3y": 1.46,
+      "marketCap": 2929958200000.0,
       "sharesOutstanding": 11269070.0,
       "bookValue": 104469,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "015750": {
-      "per": 2.72,
-      "pbr": 0.23,
-      "psr": 0.11,
-      "evEbitda": 4.776,
-      "marketCap": 483149217792.0,
+      "per": 2.59,
+      "pbr": 0.22,
+      "psr": 0.1,
+      "evEbitda": 4.745,
+      "peg": 0.8,
+      "forwardPer": null,
+      "epsGrowth3y": 113.08,
+      "marketCap": 459951659750.0,
       "sharesOutstanding": 79991593.0,
       "bookValue": 25916,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "015760": {
-      "per": 2.89,
-      "pbr": 0.51,
-      "psr": 0.26,
-      "evEbitda": 5.647,
-      "marketCap": 25036599590912.0,
+      "per": 2.75,
+      "pbr": 0.48,
+      "psr": 0.24,
+      "evEbitda": 5.696,
+      "peg": 0.64,
+      "forwardPer": 2.55413,
+      "epsGrowth3y": null,
+      "marketCap": 23816867256700.0,
       "sharesOutstanding": 641964077.0,
       "bookValue": 76831,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "016360": {
-      "per": 9.87,
-      "pbr": 1.23,
-      "psr": 0.63342,
+      "per": 9.2,
+      "pbr": 1.15,
+      "psr": 0.5907366,
       "evEbitda": null,
-      "marketCap": 9939090145280.0,
+      "peg": 0.76,
+      "forwardPer": 6.5997295,
+      "epsGrowth3y": 35.29,
+      "marketCap": 9269340000000.0,
       "sharesOutstanding": 89300000.0,
       "bookValue": 90348,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "016380": {
-      "per": 3.75,
-      "pbr": 0.25,
-      "psr": 0.16,
-      "evEbitda": 6.135,
-      "marketCap": 508384083968.0,
+      "per": 3.61,
+      "pbr": 0.24,
+      "psr": 0.15,
+      "evEbitda": 6.098,
+      "peg": null,
+      "forwardPer": 3.2083862,
+      "epsGrowth3y": -31.66,
+      "marketCap": 488750897800.0,
       "sharesOutstanding": 96782356.0,
       "bookValue": 21238,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "017670": {
-      "per": 51.92,
-      "pbr": 1.5,
-      "psr": 1.14,
-      "evEbitda": 6.675,
-      "marketCap": 19473492869120.0,
+      "per": 51.46,
+      "pbr": 1.49,
+      "psr": 1.13,
+      "evEbitda": 6.696,
+      "peg": null,
+      "forwardPer": 14.6788225,
+      "epsGrowth3y": -10.54,
+      "marketCap": 19303046736600.0,
       "sharesOutstanding": 213057911.0,
       "bookValue": 60806,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "017800": {
-      "per": 9.49,
-      "pbr": 1.77,
-      "psr": 1.04,
-      "evEbitda": 8.822,
-      "marketCap": 2556238495744.0,
+      "per": 9.26,
+      "pbr": 1.73,
+      "psr": 1.01,
+      "evEbitda": 8.668,
+      "peg": null,
+      "forwardPer": 12.214955,
+      "epsGrowth3y": 115.41,
+      "marketCap": 2494859784200.0,
       "sharesOutstanding": 36105062.0,
       "bookValue": 40003,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "017940": {
-      "per": 3.99,
+      "per": 3.86,
       "pbr": 0.17,
       "psr": 0.04,
-      "evEbitda": 26.295,
-      "marketCap": 455601979392.0,
+      "evEbitda": 26.259,
+      "peg": null,
+      "forwardPer": 1.9121706,
+      "epsGrowth3y": 10.95,
+      "marketCap": 440569426200.0,
       "sharesOutstanding": 5781751.0,
       "bookValue": 451291,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "018260": {
-      "per": 18.91,
-      "pbr": 1.44,
-      "psr": 1.06,
-      "evEbitda": 6.57,
-      "marketCap": 14797090324480.0,
+      "per": 18.77,
+      "pbr": 1.43,
+      "psr": 1.05,
+      "evEbitda": 6.614,
+      "peg": 25.54,
+      "forwardPer": 16.758636,
+      "epsGrowth3y": -9.15,
+      "marketCap": 14688800321400.0,
       "sharesOutstanding": 77350186.0,
       "bookValue": 132681,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "018290": {
-      "per": 6.12,
-      "pbr": 1.55,
-      "psr": 0.9,
-      "evEbitda": 4.422,
-      "marketCap": 393122676736.0,
+      "per": 5.78,
+      "pbr": 1.47,
+      "psr": 0.85,
+      "evEbitda": 4.386,
+      "peg": 4.55,
+      "forwardPer": 5.9390583,
+      "epsGrowth3y": 113.92,
+      "marketCap": 371301757760.0,
       "sharesOutstanding": 34636358.0,
       "bookValue": 7312,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "018880": {
       "per": null,
-      "pbr": 1.0,
-      "psr": 0.36,
-      "evEbitda": 6.429,
-      "marketCap": 3915148689408.0,
+      "pbr": 0.93,
+      "psr": 0.34,
+      "evEbitda": 6.317,
+      "peg": null,
+      "forwardPer": 13.348193,
+      "epsGrowth3y": null,
+      "marketCap": 3653454777520.0,
       "sharesOutstanding": 1026251342.0,
       "bookValue": 3813,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "019170": {
-      "per": 52.94,
-      "pbr": 1.64,
-      "psr": 1.89,
-      "evEbitda": 17.539,
-      "marketCap": 444095430656.0,
+      "per": 49.31,
+      "pbr": 1.53,
+      "psr": 1.76,
+      "evEbitda": 17.362,
+      "peg": 8.02,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 413666712000.0,
       "sharesOutstanding": 51708339.0,
       "bookValue": 5236,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "021240": {
-      "per": 9.97,
-      "pbr": 1.7,
-      "psr": 1.24,
-      "evEbitda": 6.178,
-      "marketCap": 6157318488064.0,
+      "per": 9.73,
+      "pbr": 1.66,
+      "psr": 1.21,
+      "evEbitda": 6.215,
+      "peg": 0.64,
+      "forwardPer": 7.8326774,
+      "epsGrowth3y": 11.22,
+      "marketCap": 6010047844100.0,
       "sharesOutstanding": 70128913.0,
       "bookValue": 51530,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "022100": {
-      "per": 63.04,
-      "pbr": 5.79,
-      "psr": 3.09,
-      "evEbitda": 56.586,
-      "marketCap": 3317321957376.0,
+      "per": 58.28,
+      "pbr": 5.36,
+      "psr": 2.85,
+      "evEbitda": 55.348,
+      "peg": null,
+      "forwardPer": 36.396397,
+      "epsGrowth3y": 18.89,
+      "marketCap": 3066814883800.0,
       "sharesOutstanding": 151822519.0,
       "bookValue": 3771,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "023530": {
-      "per": 65.88,
+      "per": 67.14,
       "pbr": 0.29,
-      "psr": 0.35,
-      "evEbitda": 11.129,
-      "marketCap": 4845587660800.0,
+      "psr": 0.36,
+      "evEbitda": 11.066,
+      "peg": null,
+      "forwardPer": 12.5522995,
+      "epsGrowth3y": null,
+      "marketCap": 4938880808000.0,
       "sharesOutstanding": 28270640.0,
       "bookValue": 596598,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "024110": {
-      "per": 5.88,
+      "per": 5.77,
       "pbr": 0.43,
-      "psr": 1.7679672,
+      "psr": 1.7335778,
       "evEbitda": null,
-      "marketCap": 15988388003840.0,
+      "peg": 2.37,
+      "forwardPer": 5.3789973,
+      "epsGrowth3y": 0.05,
+      "marketCap": 15677392545220.0,
       "sharesOutstanding": 797425867.0,
       "bookValue": 46219,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "025320": {
-      "per": 58.46,
-      "pbr": 2.44,
-      "psr": 1.6,
-      "evEbitda": 25.167,
-      "marketCap": 418685190144.0,
+      "per": 57.49,
+      "pbr": 2.4,
+      "psr": 1.57,
+      "evEbitda": 24.123,
+      "peg": 5.91,
+      "forwardPer": null,
+      "epsGrowth3y": 27.92,
+      "marketCap": 411776180970.0,
       "sharesOutstanding": 92119951.0,
       "bookValue": 1864,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "025900": {
       "per": null,
-      "pbr": 0.33,
-      "psr": 0.35,
-      "evEbitda": 31.94,
-      "marketCap": 293200330752.0,
+      "pbr": 0.31,
+      "psr": 0.33,
+      "evEbitda": 31.476,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 273989057220.0,
       "sharesOutstanding": 45741078.0,
       "bookValue": 19243,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "025980": {
       "per": null,
-      "pbr": 0.55,
-      "psr": 1.55,
+      "pbr": 0.53,
+      "psr": 1.48,
       "evEbitda": null,
-      "marketCap": 400880074752.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 381419880800.0,
       "sharesOutstanding": 97300990.0,
       "bookValue": 7465,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "028050": {
-      "per": 13.08,
-      "pbr": 1.91,
-      "psr": 0.94,
-      "evEbitda": 5.266,
-      "marketCap": 8476999811072.0,
+      "per": 12.53,
+      "pbr": 1.83,
+      "psr": 0.9,
+      "evEbitda": 5.104,
+      "peg": null,
+      "forwardPer": 9.882753,
+      "epsGrowth3y": -1.55,
+      "marketCap": 8124200000000.0,
       "sharesOutstanding": 196000000.0,
       "bookValue": 22685,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "028260": {
-      "per": 21.95,
-      "pbr": 1.49,
-      "psr": 2.1,
-      "evEbitda": 19.048,
-      "marketCap": 85744827760640.0,
+      "per": 20.53,
+      "pbr": 1.39,
+      "psr": 1.97,
+      "evEbitda": 20.424,
+      "peg": null,
+      "forwardPer": 27.203466,
+      "epsGrowth3y": 6.23,
+      "marketCap": 80191868804500.0,
       "sharesOutstanding": 162167581.0,
       "bookValue": 354553,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "028300": {
       "per": null,
-      "pbr": 13.26,
-      "psr": 77.9,
-      "evEbitda": -79.263,
-      "marketCap": 6557420486656.0,
+      "pbr": 12.82,
+      "psr": 75.3,
+      "evEbitda": -77.3,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 6338175803100.0,
       "sharesOutstanding": 132875803.0,
       "bookValue": 3721,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "028670": {
-      "per": 8.34,
-      "pbr": 0.44,
-      "psr": 0.46,
-      "evEbitda": 5.854,
-      "marketCap": 2512476700672.0,
+      "per": 8.12,
+      "pbr": 0.43,
+      "psr": 0.45,
+      "evEbitda": 5.806,
+      "peg": 1.54,
+      "forwardPer": 5.5616274,
+      "epsGrowth3y": -13.96,
+      "marketCap": 2448328364960.0,
       "sharesOutstanding": 534569512.0,
       "bookValue": 10707,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "029780": {
-      "per": 7.72,
-      "pbr": 0.56,
-      "psr": 1.7373842,
+      "per": 7.61,
+      "pbr": 0.55,
+      "psr": 1.7132022,
       "evEbitda": null,
-      "marketCap": 4983389421568.0,
+      "peg": null,
+      "forwardPer": 7.419043,
+      "epsGrowth3y": 1.39,
+      "marketCap": 4914027504750.0,
       "sharesOutstanding": 106710695.0,
       "bookValue": 83059,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "030000": {
-      "per": 8.79,
+      "per": 8.73,
       "pbr": 1.15,
       "psr": 0.4,
-      "evEbitda": 3.59,
-      "marketCap": 1833144942592.0,
+      "evEbitda": 3.554,
+      "peg": 1.87,
+      "forwardPer": 8.151396,
+      "epsGrowth3y": 2.49,
+      "marketCap": 1820991475500.0,
       "sharesOutstanding": 101278725.0,
       "bookValue": 15680,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "030200": {
       "per": 6.8,
       "pbr": 0.64,
       "psr": 0.44,
-      "evEbitda": 3.599,
-      "marketCap": 12493120339968.0,
+      "evEbitda": 3.611,
+      "peg": 0.99,
+      "forwardPer": 8.21738,
+      "epsGrowth3y": 66.01,
+      "marketCap": 12493120377600.0,
       "sharesOutstanding": 239331808.0,
       "bookValue": 81301,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "030520": {
-      "per": 16.32,
-      "pbr": 0.81,
-      "psr": 1.23,
+      "per": 15.99,
+      "pbr": 0.79,
+      "psr": 1.2,
       "evEbitda": null,
-      "marketCap": 401185931264.0,
+      "peg": 2.22,
+      "forwardPer": null,
+      "epsGrowth3y": 24.51,
+      "marketCap": 393109965400.0,
       "sharesOutstanding": 23752868.0,
       "bookValue": 20903,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "031980": {
-      "per": 29.91,
-      "pbr": 5.42,
-      "psr": 13.2,
+      "per": 31.84,
+      "pbr": 5.77,
+      "psr": 14.05,
       "evEbitda": null,
-      "marketCap": 2742736650240.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 38.54,
+      "marketCap": 2919548283000.0,
       "sharesOutstanding": 21562395.0,
       "bookValue": 23484,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "032190": {
-      "per": 0.58,
-      "pbr": 0.09,
+      "per": 0.54,
+      "pbr": 0.08,
       "psr": 0.04,
-      "evEbitda": -12.682,
-      "marketCap": 692463992832.0,
+      "evEbitda": -12.673,
+      "peg": 0.01,
+      "forwardPer": null,
+      "epsGrowth3y": 40.94,
+      "marketCap": 642674000000.0,
       "sharesOutstanding": 38300000.0,
       "bookValue": 201355,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "032500": {
       "per": null,
-      "pbr": 6.13,
-      "psr": 8.26,
-      "evEbitda": -65.122,
-      "marketCap": 805359648768.0,
+      "pbr": 5.7,
+      "psr": 7.69,
+      "evEbitda": -60.751,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 749760349650.0,
       "sharesOutstanding": 41491995.0,
       "bookValue": 3167,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "032640": {
-      "per": 11.74,
-      "pbr": 0.66,
+      "per": 11.85,
+      "pbr": 0.67,
       "psr": 0.39,
-      "evEbitda": 3.018,
-      "marketCap": 5975942627328.0,
+      "evEbitda": 3.019,
+      "peg": 2.1,
+      "forwardPer": 7.510971,
+      "epsGrowth3y": -1.93,
+      "marketCap": 6035362349040.0,
       "sharesOutstanding": 424427732.0,
       "bookValue": 21364,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "032820": {
       "per": null,
-      "pbr": 16.85,
-      "psr": 24.05,
+      "pbr": 15.36,
+      "psr": 21.93,
       "evEbitda": null,
-      "marketCap": 2095909961728.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1911127731980.0,
       "sharesOutstanding": 171094694.0,
       "bookValue": 727,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "032830": {
-      "per": 33.07,
-      "pbr": 1.25,
-      "psr": 3.3281672,
-      "evEbitda": -20.312,
-      "marketCap": 81078018637824.0,
+      "per": 31.68,
+      "pbr": 1.2,
+      "psr": 3.1881113,
+      "evEbitda": -20.003,
+      "peg": 3.74,
+      "forwardPer": 19.740698,
+      "epsGrowth3y": 2.6,
+      "marketCap": 77666091917500.0,
       "sharesOutstanding": 179574779.0,
       "bookValue": 361049,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "033100": {
-      "per": 12.48,
-      "pbr": 3.06,
-      "psr": 3.27,
-      "evEbitda": 10.572,
-      "marketCap": 732445868032.0,
+      "per": 11.33,
+      "pbr": 2.78,
+      "psr": 2.97,
+      "evEbitda": 9.985,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 122.32,
+      "marketCap": 664983732600.0,
       "sharesOutstanding": 16062409.0,
       "bookValue": 14901,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "033500": {
-      "per": 9.18,
-      "pbr": 1.98,
-      "psr": 0.69,
+      "per": 8.68,
+      "pbr": 1.87,
+      "psr": 0.65,
       "evEbitda": null,
-      "marketCap": 513193279488.0,
+      "peg": 0.36,
+      "forwardPer": null,
+      "epsGrowth3y": 107.65,
+      "marketCap": 485048460600.0,
       "sharesOutstanding": 29941263.0,
       "bookValue": 8647,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "033780": {
-      "per": 16.02,
-      "pbr": 1.89,
-      "psr": 2.68,
-      "evEbitda": 10.195,
-      "marketCap": 17658158252032.0,
+      "per": 15.76,
+      "pbr": 1.86,
+      "psr": 2.64,
+      "evEbitda": 10.309,
+      "peg": 1.39,
+      "forwardPer": 12.596604,
+      "epsGrowth3y": 7.82,
+      "marketCap": 17377870334400.0,
       "sharesOutstanding": 103810456.0,
       "bookValue": 89935,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "034020": {
-      "per": 275.39,
-      "pbr": 4.7,
-      "psr": 3.31,
-      "evEbitda": 48.211,
-      "marketCap": 56499338477568.0,
+      "per": 252.65,
+      "pbr": 4.32,
+      "psr": 3.04,
+      "evEbitda": 46.906,
+      "peg": 49.72,
+      "forwardPer": 81.56193,
+      "epsGrowth3y": null,
+      "marketCap": 51833671539800.0,
       "sharesOutstanding": 639132818.0,
       "bookValue": 18790,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "034220": {
-      "per": 19.98,
-      "pbr": 0.77,
-      "psr": 0.24,
-      "evEbitda": 4.748,
-      "marketCap": 6069999894528.0,
+      "per": 18.71,
+      "pbr": 0.73,
+      "psr": 0.22,
+      "evEbitda": 4.738,
+      "peg": null,
+      "forwardPer": 6.3532743,
+      "epsGrowth3y": null,
+      "marketCap": 5685000000000.0,
       "sharesOutstanding": 500000000.0,
       "bookValue": 15678,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "034730": {
-      "per": 13.16,
-      "pbr": 0.55,
-      "psr": 0.38,
-      "evEbitda": 12.399,
-      "marketCap": 46796940247040.0,
+      "per": 12.5,
+      "pbr": 0.52,
+      "psr": 0.36,
+      "evEbitda": 13.032,
+      "peg": null,
+      "forwardPer": 7.9255176,
+      "epsGrowth3y": null,
+      "marketCap": 44451638720000.0,
       "sharesOutstanding": 54541888.0,
       "bookValue": 1571111,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "035250": {
-      "per": 8.85,
+      "per": 8.8,
       "pbr": 0.71,
-      "psr": 1.91,
-      "evEbitda": -0.4,
-      "marketCap": 2816334102528.0,
+      "psr": 1.9,
+      "evEbitda": -0.525,
+      "peg": 2.52,
+      "forwardPer": 9.237829,
+      "epsGrowth3y": 66.28,
+      "marketCap": 2800478450520.0,
       "sharesOutstanding": 198193804.0,
       "bookValue": 20003,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "035420": {
-      "per": 16.45,
-      "pbr": 1.03,
-      "psr": 2.49,
-      "evEbitda": 9.286,
-      "marketCap": 29915955068928.0,
+      "per": 16.15,
+      "pbr": 1.01,
+      "psr": 2.44,
+      "evEbitda": 9.301,
+      "peg": 1.34,
+      "forwardPer": 13.252768,
+      "epsGrowth3y": 41.88,
+      "marketCap": 29377468202800.0,
       "sharesOutstanding": 149579777.0,
       "bookValue": 193562,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "035720": {
-      "per": 29.1,
-      "pbr": 0.99,
-      "psr": 1.86,
-      "evEbitda": 7.352,
-      "marketCap": 15071388368896.0,
+      "per": 28.2,
+      "pbr": 0.96,
+      "psr": 1.8,
+      "evEbitda": 7.42,
+      "peg": 9.76,
+      "forwardPer": 18.821157,
+      "epsGrowth3y": null,
+      "marketCap": 14608670389950.0,
       "sharesOutstanding": 440683873.0,
       "bookValue": 34548,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "035760": {
-      "per": 38.14,
-      "pbr": 0.19,
-      "psr": 0.13,
-      "evEbitda": 2.212,
-      "marketCap": 648965849088.0,
+      "per": 37.23,
+      "pbr": 0.18,
+      "psr": 0.12,
+      "evEbitda": 2.188,
+      "peg": null,
+      "forwardPer": 6.8569555,
+      "epsGrowth3y": null,
+      "marketCap": 633390694000.0,
       "sharesOutstanding": 20766908.0,
       "bookValue": 165929,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "035900": {
-      "per": 10.27,
-      "pbr": 2.64,
-      "psr": 2.01,
-      "evEbitda": 6.87,
-      "marketCap": 1648369729536.0,
+      "per": 9.88,
+      "pbr": 2.54,
+      "psr": 1.93,
+      "evEbitda": 6.626,
+      "peg": 0.27,
+      "forwardPer": 11.066348,
+      "epsGrowth3y": 37.71,
+      "marketCap": 1587073526100.0,
       "sharesOutstanding": 33133059.0,
       "bookValue": 18862,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036460": {
-      "per": 21.32,
+      "per": 21.05,
       "pbr": 0.26,
       "psr": 0.08,
-      "evEbitda": 9.315,
-      "marketCap": 2818996436992.0,
+      "evEbitda": 9.307,
+      "peg": null,
+      "forwardPer": 3.3136473,
+      "epsGrowth3y": null,
+      "marketCap": 2784086344600.0,
       "sharesOutstanding": 87275434.0,
       "bookValue": 123734,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036540": {
       "per": null,
-      "pbr": 2.09,
-      "psr": 2.69,
-      "evEbitda": 51.752,
-      "marketCap": 987069284352.0,
+      "pbr": 1.99,
+      "psr": 2.57,
+      "evEbitda": 50.885,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 942798744250.0,
       "sharesOutstanding": 163964999.0,
       "bookValue": 2884,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036570": {
-      "per": 13.17,
-      "pbr": 1.36,
-      "psr": 3.04,
-      "evEbitda": 13.856,
-      "marketCap": 4576127746048.0,
+      "per": 13.34,
+      "pbr": 1.38,
+      "psr": 3.08,
+      "evEbitda": 13.054,
+      "peg": null,
+      "forwardPer": 10.036769,
+      "epsGrowth3y": 57.35,
+      "marketCap": 4634546392000.0,
       "sharesOutstanding": 19472884.0,
       "bookValue": 173083,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036620": {
-      "per": 9.53,
-      "pbr": 2.52,
-      "psr": 1.35,
+      "per": 9.11,
+      "pbr": 2.41,
+      "psr": 1.29,
       "evEbitda": null,
-      "marketCap": 337435361280.0,
+      "peg": 0.67,
+      "forwardPer": null,
+      "epsGrowth3y": 29.74,
+      "marketCap": 322607968960.0,
       "sharesOutstanding": 89862944.0,
       "bookValue": 1491,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036810": {
       "per": null,
-      "pbr": 2.27,
-      "psr": 1.96,
-      "evEbitda": 33.871,
-      "marketCap": 548888772608.0,
+      "pbr": 2.12,
+      "psr": 1.84,
+      "evEbitda": 33.171,
+      "peg": null,
+      "forwardPer": 30.199253,
+      "epsGrowth3y": null,
+      "marketCap": 514914969750.0,
       "sharesOutstanding": 21233607.0,
       "bookValue": 11412,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036830": {
-      "per": 1.59,
-      "pbr": 0.4,
-      "psr": 1.31,
-      "evEbitda": 19.777,
-      "marketCap": 786147901440.0,
+      "per": 1.47,
+      "pbr": 0.37,
+      "psr": 1.21,
+      "evEbitda": 19.556,
+      "peg": 0.18,
+      "forwardPer": null,
+      "epsGrowth3y": 252.24,
+      "marketCap": 727876923600.0,
       "sharesOutstanding": 20445981.0,
       "bookValue": 95256,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "036930": {
-      "per": 213.66,
-      "pbr": 12.92,
-      "psr": 24.55,
+      "per": 212.0,
+      "pbr": 12.82,
+      "psr": 24.35,
       "evEbitda": null,
-      "marketCap": 7626315268096.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 28.03,
+      "marketCap": 7566913483200.0,
       "sharesOutstanding": 45693922.0,
       "bookValue": 12922,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "039030": {
-      "per": 101.23,
-      "pbr": 8.47,
-      "psr": 15.3,
-      "evEbitda": 55.36,
-      "marketCap": 5827147071488.0,
+      "per": 103.8,
+      "pbr": 8.69,
+      "psr": 15.69,
+      "evEbitda": 54.212,
+      "peg": 5.56,
+      "forwardPer": 38.641335,
+      "epsGrowth3y": -0.82,
+      "marketCap": 5974981750000.0,
       "sharesOutstanding": 12319550.0,
       "bookValue": 55838,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "039200": {
-      "per": 25.74,
-      "pbr": 7.49,
-      "psr": 14.03,
+      "per": 24.72,
+      "pbr": 7.2,
+      "psr": 13.47,
       "evEbitda": null,
-      "marketCap": 1400249253888.0,
+      "peg": 0.13,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1344774886400.0,
       "sharesOutstanding": 38258176.0,
       "bookValue": 4884,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "039490": {
-      "per": 7.86,
-      "pbr": 1.3,
-      "psr": 0.51,
+      "per": 7.21,
+      "pbr": 1.2,
+      "psr": 0.47,
       "evEbitda": null,
-      "marketCap": 8767810306048.0,
+      "peg": 0.14,
+      "forwardPer": 5.433801,
+      "epsGrowth3y": 43.14,
+      "marketCap": 8033882985000.0,
       "sharesOutstanding": 26211690.0,
       "bookValue": 256466,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "041190": {
-      "per": 3.4,
-      "pbr": 0.48,
-      "psr": 2.3,
+      "per": 3.17,
+      "pbr": 0.45,
+      "psr": 2.15,
       "evEbitda": null,
-      "marketCap": 375338958848.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 350809557780.0,
       "sharesOutstanding": 77871156.0,
       "bookValue": 9971,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "041510": {
-      "per": 4.39,
-      "pbr": 1.16,
-      "psr": 1.34,
-      "evEbitda": 5.738,
-      "marketCap": 1577444179968.0,
+      "per": 4.24,
+      "pbr": 1.12,
+      "psr": 1.3,
+      "evEbitda": 5.549,
+      "peg": 0.23,
+      "forwardPer": 9.628257,
+      "epsGrowth3y": 579.6,
+      "marketCap": 1522496885000.0,
       "sharesOutstanding": 22894690.0,
       "bookValue": 59348,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "042000": {
-      "per": 10.51,
-      "pbr": 1.54,
-      "psr": 1.3,
-      "evEbitda": 3.824,
-      "marketCap": 410545291264.0,
+      "per": 10.29,
+      "pbr": 1.51,
+      "psr": 1.28,
+      "evEbitda": 3.687,
+      "peg": 2.53,
+      "forwardPer": 9.316143,
+      "epsGrowth3y": null,
+      "marketCap": 401841168780.0,
       "sharesOutstanding": 24178169.0,
       "bookValue": 10998,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "042660": {
-      "per": 26.19,
-      "pbr": 5.28,
-      "psr": 2.55,
-      "evEbitda": 23.551,
-      "marketCap": 32627104940032.0,
+      "per": 24.1,
+      "pbr": 4.86,
+      "psr": 2.35,
+      "evEbitda": 23.474,
+      "peg": 1.29,
+      "forwardPer": 16.304514,
+      "epsGrowth3y": null,
+      "marketCap": 30023065086000.0,
       "sharesOutstanding": 306357807.0,
       "bookValue": 20156,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "042700": {
-      "per": 121.0,
-      "pbr": 37.51,
-      "psr": 44.9,
-      "evEbitda": 126.17,
-      "marketCap": 25894869532672.0,
+      "per": 114.13,
+      "pbr": 35.38,
+      "psr": 42.35,
+      "evEbitda": 127.582,
+      "peg": 35.9,
+      "forwardPer": 46.943874,
+      "epsGrowth3y": 64.21,
+      "marketCap": 24424648015000.0,
       "sharesOutstanding": 94853002.0,
       "bookValue": 7278,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "046890": {
       "per": null,
-      "pbr": 1.04,
-      "psr": 0.65,
-      "evEbitda": 9.397,
-      "marketCap": 654023524352.0,
+      "pbr": 0.97,
+      "psr": 0.6,
+      "evEbitda": 9.082,
+      "peg": null,
+      "forwardPer": 40.565556,
+      "epsGrowth3y": null,
+      "marketCap": 604971778200.0,
       "sharesOutstanding": 56381340.0,
       "bookValue": 11109,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "047040": {
       "per": null,
-      "pbr": 2.33,
-      "psr": 1.01,
-      "evEbitda": -15.452,
-      "marketCap": 8110884257792.0,
+      "pbr": 2.15,
+      "psr": 0.93,
+      "evEbitda": -15.687,
+      "peg": null,
+      "forwardPer": 17.56374,
+      "epsGrowth3y": null,
+      "marketCap": 7474011246800.0,
       "sharesOutstanding": 410885720.0,
       "bookValue": 8456,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "047050": {
-      "per": 12.93,
-      "pbr": 1.05,
-      "psr": 0.25,
-      "evEbitda": 8.912,
-      "marketCap": 8232468217856.0,
+      "per": 12.22,
+      "pbr": 1.0,
+      "psr": 0.24,
+      "evEbitda": 8.717,
+      "peg": 120.45,
+      "forwardPer": 8.648427,
+      "epsGrowth3y": -7.2,
+      "marketCap": 7780790831550.0,
       "sharesOutstanding": 170444487.0,
       "bookValue": 45837,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "047810": {
-      "per": 74.73,
-      "pbr": 7.38,
-      "psr": 3.79,
-      "evEbitda": 40.018,
-      "marketCap": 13997425295360.0,
+      "per": 73.69,
+      "pbr": 7.27,
+      "psr": 3.73,
+      "evEbitda": 39.801,
+      "peg": 42.75,
+      "forwardPer": 27.511923,
+      "epsGrowth3y": 24.66,
+      "marketCap": 13802475151200.0,
       "sharesOutstanding": 97475107.0,
       "bookValue": 19465,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "048410": {
       "per": null,
-      "pbr": 7.04,
-      "psr": 221.68,
-      "evEbitda": -44.235,
-      "marketCap": 779746738176.0,
+      "pbr": 6.6,
+      "psr": 207.69,
+      "evEbitda": -43.731,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 730530102120.0,
       "sharesOutstanding": 96503316.0,
       "bookValue": 1147,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "050890": {
-      "per": 18.09,
-      "pbr": 1.87,
-      "psr": 2.24,
+      "per": 17.59,
+      "pbr": 1.81,
+      "psr": 2.17,
       "evEbitda": null,
-      "marketCap": 659154599936.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 10.16,
+      "marketCap": 641177651500.0,
       "sharesOutstanding": 59923145.0,
       "bookValue": 5897,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "051600": {
-      "per": 16.32,
-      "pbr": 1.51,
-      "psr": 1.29,
-      "evEbitda": 7.128,
-      "marketCap": 2027249991680.0,
+      "per": 15.92,
+      "pbr": 1.47,
+      "psr": 1.25,
+      "evEbitda": 7.147,
+      "peg": 12.76,
+      "forwardPer": 11.745627,
+      "epsGrowth3y": 13.48,
+      "marketCap": 1977750000000.0,
       "sharesOutstanding": 45000000.0,
       "bookValue": 29908,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "051900": {
       "per": null,
-      "pbr": 0.68,
-      "psr": 0.6,
-      "evEbitda": 7.688,
-      "marketCap": 3786865639424.0,
+      "pbr": 0.57,
+      "psr": 0.5,
+      "evEbitda": 7.642,
+      "peg": null,
+      "forwardPer": 14.684345,
+      "epsGrowth3y": null,
+      "marketCap": 3151853560000.0,
       "sharesOutstanding": 14659784.0,
       "bookValue": 379972,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "051910": {
       "per": null,
-      "pbr": 0.48,
-      "psr": 0.49,
-      "evEbitda": 13.664,
-      "marketCap": 22464954368000.0,
+      "pbr": 0.41,
+      "psr": 0.42,
+      "evEbitda": 13.459,
+      "peg": null,
+      "forwardPer": 10.601807,
+      "epsGrowth3y": null,
+      "marketCap": 19130524411000.0,
       "sharesOutstanding": 70592341.0,
       "bookValue": 667290,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "051915": {
       "per": null,
-      "pbr": 0.24,
-      "psr": 0.24,
-      "evEbitda": 10.976,
-      "marketCap": 11263787663360.0,
+      "pbr": 0.02,
+      "psr": 0.02,
+      "evEbitda": 11.033,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1070208328700.0,
       "sharesOutstanding": 7682759.0,
       "bookValue": 6131332,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "052400": {
-      "per": 7.58,
-      "pbr": 2.19,
+      "per": 7.61,
+      "pbr": 2.2,
       "psr": 1.83,
-      "evEbitda": 3.323,
-      "marketCap": 564818804736.0,
+      "evEbitda": 3.172,
+      "peg": 0.25,
+      "forwardPer": null,
+      "epsGrowth3y": 42.95,
+      "marketCap": 566974611000.0,
       "sharesOutstanding": 14371980.0,
       "bookValue": 17944,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "052690": {
-      "per": 47.55,
-      "pbr": 6.5,
-      "psr": 7.82,
-      "evEbitda": 61.007,
-      "marketCap": 4059241906176.0,
+      "per": 44.52,
+      "pbr": 6.08,
+      "psr": 7.33,
+      "evEbitda": 59.45,
+      "peg": null,
+      "forwardPer": 41.971657,
+      "epsGrowth3y": 68.98,
+      "marketCap": 3800546149500.0,
       "sharesOutstanding": 38043505.0,
       "bookValue": 16428,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "053030": {
       "per": null,
-      "pbr": 1.24,
-      "psr": 1.38,
+      "pbr": 1.16,
+      "psr": 1.29,
       "evEbitda": null,
-      "marketCap": 232169553920.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 216564196800.0,
       "sharesOutstanding": 31847676.0,
       "bookValue": 5886,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "053800": {
-      "per": 9.06,
-      "pbr": 1.24,
-      "psr": 1.74,
-      "evEbitda": 4.208,
-      "marketCap": 466495209472.0,
+      "per": 8.99,
+      "pbr": 1.23,
+      "psr": 1.73,
+      "evEbitda": 4.085,
+      "peg": 3.31,
+      "forwardPer": null,
+      "epsGrowth3y": 65.33,
+      "marketCap": 462899870500.0,
       "sharesOutstanding": 8988347.0,
       "bookValue": 41862,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "055550": {
-      "per": 8.76,
-      "pbr": 0.74,
-      "psr": 2.7873247,
+      "per": 8.48,
+      "pbr": 0.71,
+      "psr": 2.6989315,
       "evEbitda": null,
-      "marketCap": 44543768526848.0,
+      "peg": 0.73,
+      "forwardPer": 7.1020265,
+      "epsGrowth3y": 3.11,
+      "marketCap": 43131175467600.0,
       "sharesOutstanding": 470864361.0,
       "bookValue": 128216,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "056080": {
       "per": null,
-      "pbr": 19.33,
-      "psr": 19.69,
+      "pbr": 18.2,
+      "psr": 18.54,
       "evEbitda": null,
-      "marketCap": 555179311104.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 522679093620.0,
       "sharesOutstanding": 38235486.0,
       "bookValue": 751,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "056190": {
-      "per": 12.53,
-      "pbr": 0.43,
-      "psr": 0.4,
-      "evEbitda": 6.775,
-      "marketCap": 652834570240.0,
+      "per": 11.78,
+      "pbr": 0.41,
+      "psr": 0.38,
+      "evEbitda": 6.669,
+      "peg": null,
+      "forwardPer": 5.901263,
+      "epsGrowth3y": null,
+      "marketCap": 613776064000.0,
       "sharesOutstanding": 27898912.0,
       "bookValue": 54134,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "057050": {
       "per": 8.53,
       "pbr": 0.26,
       "psr": 0.26,
-      "evEbitda": 5.736,
-      "marketCap": 978436554752.0,
+      "evEbitda": 5.944,
+      "peg": null,
+      "forwardPer": 6.198083,
+      "epsGrowth3y": 12.49,
+      "marketCap": 978436575000.0,
       "sharesOutstanding": 11207750.0,
       "bookValue": 334931,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "058470": {
-      "per": 43.9,
-      "pbr": 9.12,
-      "psr": 17.91,
-      "evEbitda": 19.474,
-      "marketCap": 6671223488512.0,
+      "per": 42.1,
+      "pbr": 8.75,
+      "psr": 17.17,
+      "evEbitda": 20.376,
+      "peg": 1.24,
+      "forwardPer": 27.40501,
+      "epsGrowth3y": 162.63,
+      "marketCap": 6397999080000.0,
       "sharesOutstanding": 75895600.0,
       "bookValue": 9635,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "058610": {
-      "per": 189.88,
-      "pbr": 6.72,
-      "psr": 5.08,
+      "per": 175.8,
+      "pbr": 6.22,
+      "psr": 4.7,
       "evEbitda": null,
-      "marketCap": 1734269599744.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": -18.69,
+      "marketCap": 1605640864000.0,
       "sharesOutstanding": 22177360.0,
       "bookValue": 11633,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "058970": {
-      "per": 76.07,
-      "pbr": 2.02,
-      "psr": 2.3,
-      "evEbitda": 49.176,
-      "marketCap": 192830095360.0,
+      "per": 76.75,
+      "pbr": 2.03,
+      "psr": 2.32,
+      "evEbitda": 45.787,
+      "peg": 13.48,
+      "forwardPer": 17.845804,
+      "epsGrowth3y": null,
+      "marketCap": 194560628960.0,
       "sharesOutstanding": 12360904.0,
       "bookValue": 7739,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "059090": {
-      "per": 7.5,
-      "pbr": 0.82,
-      "psr": 0.58,
-      "evEbitda": 11.53,
-      "marketCap": 562205294592.0,
+      "per": 7.3,
+      "pbr": 0.79,
+      "psr": 0.56,
+      "evEbitda": 11.406,
+      "peg": 0.09,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 547087204890.0,
       "sharesOutstanding": 31496097.0,
       "bookValue": 21879,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "060250": {
-      "per": 10.64,
-      "pbr": 1.62,
-      "psr": 0.39,
-      "evEbitda": 3.183,
-      "marketCap": 487294795776.0,
+      "per": 9.89,
+      "pbr": 1.51,
+      "psr": 0.37,
+      "evEbitda": 3.119,
+      "peg": 0.84,
+      "forwardPer": 7.668183,
+      "epsGrowth3y": 10.46,
+      "marketCap": 452595804000.0,
       "sharesOutstanding": 37716317.0,
       "bookValue": 7972,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "060280": {
-      "per": 134.58,
-      "pbr": 3.88,
-      "psr": 5.0,
+      "per": 127.73,
+      "pbr": 3.68,
+      "psr": 4.75,
       "evEbitda": null,
-      "marketCap": 372988510208.0,
+      "peg": 3.73,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 354008998200.0,
       "sharesOutstanding": 41259790.0,
       "bookValue": 2333,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "060370": {
-      "per": 151.65,
-      "pbr": 2.02,
-      "psr": 5.19,
+      "per": 140.38,
+      "pbr": 1.87,
+      "psr": 4.8,
       "evEbitda": null,
-      "marketCap": 1267235160064.0,
+      "peg": 1.61,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1173083165950.0,
       "sharesOutstanding": 50892979.0,
       "bookValue": 12341,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "060980": {
-      "per": 16.57,
+      "per": 16.36,
       "pbr": 0.33,
-      "psr": 0.27,
-      "evEbitda": 7.706,
-      "marketCap": 356237312000.0,
+      "psr": 0.26,
+      "evEbitda": 7.664,
+      "peg": null,
+      "forwardPer": 8.006166,
+      "epsGrowth3y": 505.18,
+      "marketCap": 351722278150.0,
       "sharesOutstanding": 9030097.0,
       "bookValue": 119139,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "064350": {
-      "per": 25.96,
-      "pbr": 6.58,
-      "psr": 3.43,
-      "evEbitda": 16.536,
-      "marketCap": 20005783601152.0,
+      "per": 24.05,
+      "pbr": 6.09,
+      "psr": 3.17,
+      "evEbitda": 15.283,
+      "peg": 0.72,
+      "forwardPer": 13.444035,
+      "epsGrowth3y": 74.46,
+      "marketCap": 18532361351400.0,
       "sharesOutstanding": 109142293.0,
       "bookValue": 27865,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "064760": {
-      "per": 40.3,
-      "pbr": 5.42,
-      "psr": 9.35,
+      "per": 40.22,
+      "pbr": 5.41,
+      "psr": 9.33,
       "evEbitda": null,
-      "marketCap": 2817212809216.0,
+      "peg": 4.33,
+      "forwardPer": null,
+      "epsGrowth3y": -5.93,
+      "marketCap": 2811623124000.0,
       "sharesOutstanding": 11179416.0,
       "bookValue": 46452,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "065350": {
-      "per": 40.48,
-      "pbr": 2.75,
-      "psr": 1.04,
-      "evEbitda": 27.895,
-      "marketCap": 979802718208.0,
+      "per": 31.9,
+      "pbr": 2.16,
+      "psr": 0.82,
+      "evEbitda": 27.454,
+      "peg": 8.14,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 772298938800.0,
       "sharesOutstanding": 27483948.0,
       "bookValue": 12984,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "066570": {
-      "per": 29.95,
-      "pbr": 1.28,
-      "psr": 0.41,
-      "evEbitda": 7.237,
-      "marketCap": 36548439441408.0,
+      "per": 26.08,
+      "pbr": 1.11,
+      "psr": 0.36,
+      "evEbitda": 7.195,
+      "peg": 15.54,
+      "forwardPer": 12.343698,
+      "epsGrowth3y": 24.28,
+      "marketCap": 31831281268200.0,
       "sharesOutstanding": 162487398.0,
       "bookValue": 175718,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "067160": {
-      "per": 4.79,
-      "pbr": 0.99,
+      "per": 4.76,
+      "pbr": 0.98,
       "psr": 1.06,
       "evEbitda": null,
-      "marketCap": 496681156608.0,
+      "peg": 0.37,
+      "forwardPer": null,
+      "epsGrowth3y": 21.99,
+      "marketCap": 493480192500.0,
       "sharesOutstanding": 10669842.0,
       "bookValue": 47158,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "067310": {
-      "per": 49.31,
+      "per": 49.26,
       "pbr": 4.95,
       "psr": 2.11,
       "evEbitda": null,
-      "marketCap": 3233484374016.0,
+      "peg": 2.17,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 3230161383600.0,
       "sharesOutstanding": 66464226.0,
       "bookValue": 9820,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "068270": {
-      "per": 38.44,
-      "pbr": 2.29,
-      "psr": 9.53,
-      "evEbitda": 25.919,
-      "marketCap": 39650672508928.0,
+      "per": 36.88,
+      "pbr": 2.19,
+      "psr": 9.14,
+      "evEbitda": 25.975,
+      "peg": 2.17,
+      "forwardPer": 22.971691,
+      "epsGrowth3y": 37.09,
+      "marketCap": 38045381152800.0,
       "sharesOutstanding": 229327192.0,
       "bookValue": 75667,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "068760": {
-      "per": 46.43,
-      "pbr": 4.13,
-      "psr": 3.35,
-      "evEbitda": 46.557,
-      "marketCap": 1799090995200.0,
+      "per": 44.94,
+      "pbr": 3.99,
+      "psr": 3.25,
+      "evEbitda": 45.78,
+      "peg": 3.67,
+      "forwardPer": null,
+      "epsGrowth3y": 21.84,
+      "marketCap": 1741555408650.0,
       "sharesOutstanding": 44258079.0,
       "bookValue": 9850,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "069080": {
-      "per": 13.94,
+      "per": 13.99,
       "pbr": 0.48,
-      "psr": 1.88,
+      "psr": 1.89,
       "evEbitda": null,
-      "marketCap": 328164343808.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": -26.15,
+      "marketCap": 329327013950.0,
       "sharesOutstanding": 29066815.0,
       "bookValue": 23528,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "069620": {
-      "per": 6.69,
-      "pbr": 1.14,
-      "psr": 0.82,
-      "evEbitda": 9.302,
-      "marketCap": 1289852813312.0,
+      "per": 6.4,
+      "pbr": 1.09,
+      "psr": 0.79,
+      "evEbitda": 9.165,
+      "peg": 0.61,
+      "forwardPer": 5.762621,
+      "epsGrowth3y": 263.71,
+      "marketCap": 1234622771000.0,
       "sharesOutstanding": 11506270.0,
       "bookValue": 98612,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "069960": {
-      "per": 29.68,
-      "pbr": 0.67,
-      "psr": 0.99,
-      "evEbitda": 8.569,
-      "marketCap": 4200359788544.0,
+      "per": 30.22,
+      "pbr": 0.68,
+      "psr": 1.01,
+      "evEbitda": 8.741,
+      "peg": 29.63,
+      "forwardPer": 13.378105,
+      "epsGrowth3y": null,
+      "marketCap": 4277156626000.0,
       "sharesOutstanding": 21332452.0,
       "bookValue": 295828,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "071050": {
-      "per": 6.23,
-      "pbr": 1.04,
-      "psr": 0.630384,
+      "per": 5.21,
+      "pbr": 0.87,
+      "psr": 0.5836889,
       "evEbitda": null,
-      "marketCap": 12613701337088.0,
+      "peg": null,
+      "forwardPer": 5.1110015,
+      "epsGrowth3y": 50.82,
+      "marketCap": 10547702600000.0,
       "sharesOutstanding": 52738513.0,
       "bookValue": 229424,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "071970": {
-      "per": 12.22,
-      "pbr": 4.13,
-      "psr": 5.02,
-      "evEbitda": 16.255,
-      "marketCap": 2018327527424.0,
+      "per": 11.38,
+      "pbr": 3.84,
+      "psr": 4.67,
+      "evEbitda": 16.059,
+      "peg": 0.41,
+      "forwardPer": 10.9920635,
+      "epsGrowth3y": 113.97,
+      "marketCap": 1879249604200.0,
       "sharesOutstanding": 33921473.0,
       "bookValue": 14413,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "073240": {
-      "per": 3.42,
-      "pbr": 0.57,
-      "psr": 0.27,
-      "evEbitda": 3.183,
-      "marketCap": 1286926106624.0,
+      "per": 3.8,
+      "pbr": 0.64,
+      "psr": 0.3,
+      "evEbitda": 3.199,
+      "peg": 1.02,
+      "forwardPer": 3.7729533,
+      "epsGrowth3y": null,
+      "marketCap": 1433428832130.0,
       "sharesOutstanding": 287260287.0,
       "bookValue": 7793,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "074600": {
-      "per": 943.88,
-      "pbr": 1.58,
-      "psr": 0.96,
-      "evEbitda": 12.39,
-      "marketCap": 904307212288.0,
+      "per": 894.49,
+      "pbr": 1.5,
+      "psr": 0.91,
+      "evEbitda": 12.446,
+      "peg": 153.06,
+      "forwardPer": 11.912302,
+      "epsGrowth3y": -17.2,
+      "marketCap": 856988800000.0,
       "sharesOutstanding": 26288000.0,
       "bookValue": 21705,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "075180": {
       "per": null,
-      "pbr": 0.22,
-      "psr": 0.39,
-      "evEbitda": -8.595,
-      "marketCap": 54624002048.0,
+      "pbr": 0.23,
+      "psr": 0.41,
+      "evEbitda": -8.72,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 57312000000.0,
       "sharesOutstanding": 19200000.0,
       "bookValue": 12758,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "078340": {
-      "per": 28.23,
-      "pbr": 0.25,
-      "psr": 0.38,
-      "evEbitda": 18.019,
-      "marketCap": 264376516608.0,
+      "per": 27.75,
+      "pbr": 0.24,
+      "psr": 0.37,
+      "evEbitda": 17.584,
+      "peg": 77.62,
+      "forwardPer": 6.7976794,
+      "epsGrowth3y": null,
+      "marketCap": 259798571700.0,
       "sharesOutstanding": 11444871.0,
       "bookValue": 93413,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "078600": {
-      "per": 68.97,
-      "pbr": 5.59,
-      "psr": 5.66,
+      "per": 64.29,
+      "pbr": 5.21,
+      "psr": 5.28,
       "evEbitda": null,
-      "marketCap": 1441430503424.0,
+      "peg": 3.99,
+      "forwardPer": null,
+      "epsGrowth3y": 1032.02,
+      "marketCap": 1343602745700.0,
       "sharesOutstanding": 15285583.0,
       "bookValue": 16883,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "078930": {
-      "per": 5.88,
-      "pbr": 0.32,
-      "psr": 0.24,
-      "evEbitda": 3.928,
-      "marketCap": 6106548535296.0,
+      "per": 5.59,
+      "pbr": 0.3,
+      "psr": 0.23,
+      "evEbitda": 3.886,
+      "peg": null,
+      "forwardPer": 6.0072594,
+      "epsGrowth3y": -18.28,
+      "marketCap": 5805968437500.0,
       "sharesOutstanding": 92895495.0,
       "bookValue": 206621,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "079370": {
       "per": null,
-      "pbr": 0.81,
-      "psr": 0.77,
+      "pbr": 0.8,
+      "psr": 0.75,
       "evEbitda": null,
-      "marketCap": 294595231744.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 289060029800.0,
       "sharesOutstanding": 30751067.0,
       "bookValue": 11781,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "079430": {
-      "per": 15.64,
-      "pbr": 0.28,
+      "per": 15.26,
+      "pbr": 0.27,
       "psr": 0.07,
-      "evEbitda": 5.268,
-      "marketCap": 115857801216.0,
+      "evEbitda": 5.2,
+      "peg": null,
+      "forwardPer": 9.656358,
+      "epsGrowth3y": null,
+      "marketCap": 113041815240.0,
       "sharesOutstanding": 20114202.0,
       "bookValue": 20785,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "079550": {
-      "per": 71.93,
-      "pbr": 11.57,
-      "psr": 3.97,
-      "evEbitda": 37.652,
-      "marketCap": 17082986004480.0,
+      "per": 67.61,
+      "pbr": 10.88,
+      "psr": 3.73,
+      "evEbitda": 35.59,
+      "peg": 2.15,
+      "forwardPer": 30.385143,
+      "epsGrowth3y": 27.66,
+      "marketCap": 16056258750000.0,
       "sharesOutstanding": 21845250.0,
       "bookValue": 67571,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "080220": {
-      "per": 92.52,
-      "pbr": 16.09,
-      "psr": 12.09,
+      "per": 84.59,
+      "pbr": 14.71,
+      "psr": 11.06,
       "evEbitda": null,
-      "marketCap": 3654616875008.0,
+      "peg": 0.98,
+      "forwardPer": null,
+      "epsGrowth3y": 30.09,
+      "marketCap": 3341363916800.0,
       "sharesOutstanding": 33683104.0,
       "bookValue": 6742,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "081660": {
-      "per": 5.98,
-      "pbr": 0.8,
-      "psr": 0.47,
-      "evEbitda": 6.394,
-      "marketCap": 2084854956032.0,
+      "per": 5.86,
+      "pbr": 0.79,
+      "psr": 0.46,
+      "evEbitda": 6.446,
+      "peg": 1.25,
+      "forwardPer": 7.2918706,
+      "epsGrowth3y": 66.28,
+      "marketCap": 2042736657600.0,
       "sharesOutstanding": 52647852.0,
       "bookValue": 49279,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "082270": {
       "per": null,
       "pbr": null,
-      "psr": 6.18,
+      "psr": 6.15,
       "evEbitda": null,
-      "marketCap": 504163205120.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 501525922450.0,
       "sharesOutstanding": 43954945.0,
       "bookValue": null,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "083650": {
-      "per": 25.63,
-      "pbr": 9.41,
-      "psr": 2.16,
+      "per": 23.26,
+      "pbr": 8.53,
+      "psr": 1.96,
       "evEbitda": null,
-      "marketCap": 1670875185152.0,
+      "peg": 0.25,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1516164566000.0,
       "sharesOutstanding": 30942134.0,
       "bookValue": 5741,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "084370": {
-      "per": 82.7,
-      "pbr": 7.49,
-      "psr": 10.5,
+      "per": 87.79,
+      "pbr": 7.95,
+      "psr": 11.15,
       "evEbitda": null,
-      "marketCap": 3678767677440.0,
+      "peg": 24.21,
+      "forwardPer": null,
+      "epsGrowth3y": 29.98,
+      "marketCap": 3905014072200.0,
       "sharesOutstanding": 22624647.0,
       "bookValue": 21719,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "085660": {
       "per": null,
-      "pbr": 1.26,
-      "psr": 0.8,
-      "evEbitda": -112.941,
-      "marketCap": 1020807610368.0,
+      "pbr": 1.2,
+      "psr": 0.77,
+      "evEbitda": -110.716,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 974322707520.0,
       "sharesOutstanding": 92969724.0,
       "bookValue": 8704,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "086280": {
-      "per": 8.18,
-      "pbr": 1.37,
-      "psr": 0.48,
-      "evEbitda": 4.443,
-      "marketCap": 14190000472064.0,
+      "per": 7.8,
+      "pbr": 1.3,
+      "psr": 0.46,
+      "evEbitda": 4.417,
+      "peg": 1.91,
+      "forwardPer": 7.4318967,
+      "epsGrowth3y": 36.42,
+      "marketCap": 13530000000000.0,
       "sharesOutstanding": 75000000.0,
       "bookValue": 138513,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "086450": {
-      "per": 10.92,
-      "pbr": 1.06,
-      "psr": 0.87,
+      "per": 10.39,
+      "pbr": 1.01,
+      "psr": 0.83,
       "evEbitda": null,
-      "marketCap": 807482032128.0,
+      "peg": 0.74,
+      "forwardPer": null,
+      "epsGrowth3y": 8.89,
+      "marketCap": 768235680810.0,
       "sharesOutstanding": 45110727.0,
       "bookValue": 16930,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "086520": {
       "per": null,
-      "pbr": 3.1,
-      "psr": 4.07,
+      "pbr": 2.88,
+      "psr": 3.79,
       "evEbitda": null,
-      "marketCap": 13893481005056.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 12918500083800.0,
       "sharesOutstanding": 135414047.0,
       "bookValue": 33138,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "086790": {
-      "per": 7.64,
-      "pbr": 0.68,
-      "psr": 2.1969821,
+      "per": 7.29,
+      "pbr": 0.64,
+      "psr": 2.0957298,
       "evEbitda": null,
-      "marketCap": 30851882549248.0,
+      "peg": 1.02,
+      "forwardPer": 6.2441716,
+      "epsGrowth3y": 5.79,
+      "marketCap": 29430014434700.0,
       "sharesOutstanding": 268277251.0,
       "bookValue": 170143,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "086900": {
-      "per": 33.05,
-      "pbr": 1.14,
-      "psr": 2.09,
-      "evEbitda": 15.284,
-      "marketCap": 517492441088.0,
+      "per": 30.8,
+      "pbr": 1.06,
+      "psr": 1.95,
+      "evEbitda": 15.536,
+      "peg": 3.77,
+      "forwardPer": 12.816269,
+      "epsGrowth3y": 1.27,
+      "marketCap": 482297738000.0,
       "sharesOutstanding": 6517537.0,
       "bookValue": 69702,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "087010": {
       "per": null,
-      "pbr": 29.53,
-      "psr": 744.14,
+      "pbr": 27.33,
+      "psr": 688.87,
       "evEbitda": null,
-      "marketCap": 4193107312640.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 3881645963000.0,
       "sharesOutstanding": 23243389.0,
       "bookValue": 6110,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "088350": {
-      "per": 4.23,
-      "pbr": 0.21,
-      "psr": 0.122786194,
-      "evEbitda": -25.269,
-      "marketCap": 3539048071168.0,
+      "per": 3.97,
+      "pbr": 0.2,
+      "psr": 0.11522611,
+      "evEbitda": -25.263,
+      "peg": null,
+      "forwardPer": 4.7000566,
+      "epsGrowth3y": -13.22,
+      "marketCap": 3321144905000.0,
       "sharesOutstanding": 751390250.0,
       "bookValue": 22124,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "089030": {
-      "per": 207.38,
-      "pbr": 8.8,
-      "psr": 11.72,
-      "evEbitda": 50.984,
-      "marketCap": 1865652633600.0,
+      "per": 205.79,
+      "pbr": 8.73,
+      "psr": 11.63,
+      "evEbitda": 53.1,
+      "peg": null,
+      "forwardPer": 12.5765,
+      "epsGrowth3y": null,
+      "marketCap": 1851356553200.0,
       "sharesOutstanding": 35740474.0,
       "bookValue": 5935,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "090430": {
-      "per": 27.23,
-      "pbr": 1.22,
-      "psr": 1.58,
-      "evEbitda": 9.936,
-      "marketCap": 6734145388544.0,
+      "per": 22.9,
+      "pbr": 1.03,
+      "psr": 1.33,
+      "evEbitda": 9.902,
+      "peg": 2.42,
+      "forwardPer": 14.69281,
+      "epsGrowth3y": 67.76,
+      "marketCap": 5662401578000.0,
       "sharesOutstanding": 58375274.0,
       "bookValue": 94277,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "093370": {
-      "per": 275.0,
-      "pbr": 4.96,
-      "psr": 4.1,
-      "evEbitda": 29.528,
-      "marketCap": 1932741050368.0,
+      "per": 250.43,
+      "pbr": 4.52,
+      "psr": 3.73,
+      "evEbitda": 29.055,
+      "peg": 32.47,
+      "forwardPer": 39.447117,
+      "epsGrowth3y": null,
+      "marketCap": 1760059965300.0,
       "sharesOutstanding": 107255330.0,
       "bookValue": 3630,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "095340": {
-      "per": 69.3,
-      "pbr": 7.27,
-      "psr": 17.73,
+      "per": 67.01,
+      "pbr": 7.03,
+      "psr": 17.15,
       "evEbitda": null,
-      "marketCap": 3904727678976.0,
+      "peg": 2.56,
+      "forwardPer": null,
+      "epsGrowth3y": 60.84,
+      "marketCap": 3775459016000.0,
       "sharesOutstanding": 20518799.0,
       "bookValue": 26184,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "095610": {
-      "per": 52.13,
-      "pbr": 7.57,
-      "psr": 8.45,
+      "per": 57.11,
+      "pbr": 8.3,
+      "psr": 9.26,
       "evEbitda": null,
-      "marketCap": 2966919315456.0,
+      "peg": 1.23,
+      "forwardPer": null,
+      "epsGrowth3y": 856.46,
+      "marketCap": 3250665295800.0,
       "sharesOutstanding": 17734126.0,
       "bookValue": 22090,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "095660": {
-      "per": 7.23,
-      "pbr": 0.59,
-      "psr": 0.75,
+      "per": 7.1,
+      "pbr": 0.58,
+      "psr": 0.74,
       "evEbitda": null,
-      "marketCap": 325706743808.0,
+      "peg": 0.4,
+      "forwardPer": null,
+      "epsGrowth3y": 738.85,
+      "marketCap": 320030354700.0,
       "sharesOutstanding": 19573722.0,
       "bookValue": 28396,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "096530": {
-      "per": 27.46,
-      "pbr": 1.31,
-      "psr": 2.81,
-      "evEbitda": 6.692,
-      "marketCap": 1330477924352.0,
+      "per": 26.33,
+      "pbr": 1.26,
+      "psr": 2.69,
+      "evEbitda": 7.586,
+      "peg": 1.82,
+      "forwardPer": 13.500483,
+      "epsGrowth3y": null,
+      "marketCap": 1275800708000.0,
       "sharesOutstanding": 45564311.0,
       "bookValue": 22294,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "096760": {
-      "per": 2.23,
-      "pbr": 0.43,
-      "psr": 0.27,
+      "per": 2.14,
+      "pbr": 0.42,
+      "psr": 0.26,
       "evEbitda": 4.001,
-      "marketCap": 257735819264.0,
+      "peg": 0.23,
+      "forwardPer": null,
+      "epsGrowth3y": 70.83,
+      "marketCap": 247703160660.0,
       "sharesOutstanding": 69190827.0,
       "bookValue": 8594,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "096770": {
       "per": null,
-      "pbr": 0.44,
-      "psr": 0.2,
-      "evEbitda": 11.092,
-      "marketCap": 16087577001984.0,
+      "pbr": 0.41,
+      "psr": 0.19,
+      "evEbitda": 10.963,
+      "peg": null,
+      "forwardPer": 16.057974,
+      "epsGrowth3y": null,
+      "marketCap": 15056074850000.0,
       "sharesOutstanding": 168224300.0,
       "bookValue": 216327,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "097230": {
-      "per": 36.07,
-      "pbr": 2.77,
+      "per": 36.24,
+      "pbr": 2.78,
       "psr": 0.93,
-      "evEbitda": 22.384,
-      "marketCap": 1855447105536.0,
+      "evEbitda": 22.055,
+      "peg": 6.01,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1864476171950.0,
       "sharesOutstanding": 90289403.0,
       "bookValue": 7416,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "097950": {
       "per": null,
-      "pbr": 0.25,
-      "psr": 0.11,
-      "evEbitda": 6.37,
-      "marketCap": 2903400775680.0,
+      "pbr": 0.23,
+      "psr": 0.1,
+      "evEbitda": 6.311,
+      "peg": null,
+      "forwardPer": 6.2797136,
+      "epsGrowth3y": null,
+      "marketCap": 2608696022500.0,
       "sharesOutstanding": 14696879.0,
       "bookValue": 785963,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "098460": {
-      "per": 137.2,
-      "pbr": 6.04,
-      "psr": 8.7,
-      "evEbitda": 49.985,
-      "marketCap": 2024549646336.0,
+      "per": 132.49,
+      "pbr": 5.83,
+      "psr": 8.4,
+      "evEbitda": 49.204,
+      "peg": 8.91,
+      "forwardPer": 37.738415,
+      "epsGrowth3y": -25.77,
+      "marketCap": 1955079712500.0,
       "sharesOutstanding": 66161750.0,
       "bookValue": 5066,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "101360": {
       "per": null,
-      "pbr": 0.67,
-      "psr": 1.0,
-      "evEbitda": 82.07,
-      "marketCap": 142662369280.0,
+      "pbr": 0.61,
+      "psr": 0.92,
+      "evEbitda": 80.622,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 131080915620.0,
       "sharesOutstanding": 17547646.0,
       "bookValue": 12178,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "101490": {
-      "per": 19.49,
-      "pbr": 3.72,
-      "psr": 4.65,
+      "per": 18.58,
+      "pbr": 3.55,
+      "psr": 4.43,
       "evEbitda": null,
-      "marketCap": 1132121554944.0,
+      "peg": 0.48,
+      "forwardPer": null,
+      "epsGrowth3y": 51.36,
+      "marketCap": 1079513646300.0,
       "sharesOutstanding": 21043151.0,
       "bookValue": 14459,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "101730": {
       "per": null,
-      "pbr": 0.51,
-      "psr": 1.59,
+      "pbr": 0.48,
+      "psr": 1.49,
       "evEbitda": null,
-      "marketCap": 236253118464.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 222086253285.0,
       "sharesOutstanding": 83334429.0,
       "bookValue": 5550,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "105560": {
-      "per": 9.25,
-      "pbr": 0.89,
-      "psr": 3.280354,
+      "per": 9.07,
+      "pbr": 0.87,
+      "psr": 3.2136276,
       "evEbitda": null,
-      "marketCap": 54054411567104.0,
+      "peg": 0.56,
+      "forwardPer": 7.886981,
+      "epsGrowth3y": 12.7,
+      "marketCap": 52954878686200.0,
       "sharesOutstanding": 354687734.0,
       "bookValue": 171503,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "105630": {
-      "per": 5.53,
-      "pbr": 0.43,
+      "per": 5.43,
+      "pbr": 0.42,
       "psr": 0.16,
-      "evEbitda": 5.535,
-      "marketCap": 316638035968.0,
+      "evEbitda": 5.477,
+      "peg": 0.68,
+      "forwardPer": 4.5850263,
+      "epsGrowth3y": -6.34,
+      "marketCap": 311124428100.0,
       "sharesOutstanding": 39382839.0,
       "bookValue": 18656,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "108490": {
-      "per": 706.51,
-      "pbr": 11.93,
-      "psr": 96.21,
-      "evEbitda": -514.417,
-      "marketCap": 3746746335232.0,
+      "per": 640.28,
+      "pbr": 10.81,
+      "psr": 87.19,
+      "evEbitda": -515.495,
+      "peg": 21.6,
+      "forwardPer": 117.963104,
+      "epsGrowth3y": null,
+      "marketCap": 3395488896000.0,
       "sharesOutstanding": 14635728.0,
       "bookValue": 21460,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "108860": {
       "per": null,
-      "pbr": 0.78,
-      "psr": 1.76,
-      "evEbitda": 30.2,
-      "marketCap": 202126213120.0,
+      "pbr": 0.73,
+      "psr": 1.65,
+      "evEbitda": 29.566,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 189476503040.0,
       "sharesOutstanding": 26914276.0,
       "bookValue": 9657,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "111770": {
-      "per": 7.26,
-      "pbr": 0.75,
-      "psr": 0.76,
-      "evEbitda": 3.17,
-      "marketCap": 3094120235008.0,
+      "per": 7.03,
+      "pbr": 0.73,
+      "psr": 0.74,
+      "evEbitda": 3.278,
+      "peg": 0.45,
+      "forwardPer": 4.932943,
+      "epsGrowth3y": -7.47,
+      "marketCap": 2996231884800.0,
       "sharesOutstanding": 42560112.0,
       "bookValue": 96463,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "112040": {
       "per": null,
-      "pbr": 0.63,
-      "psr": 0.84,
+      "pbr": 0.61,
+      "psr": 0.81,
       "evEbitda": null,
-      "marketCap": 515850272768.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 495905868270.0,
       "sharesOutstanding": 33804081.0,
       "bookValue": 24040,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "114090": {
-      "per": 14.07,
-      "pbr": 1.5,
-      "psr": 1.57,
-      "evEbitda": 2.32,
-      "marketCap": 662474260480.0,
+      "per": 13.61,
+      "pbr": 1.45,
+      "psr": 1.52,
+      "evEbitda": 2.245,
+      "peg": 2.03,
+      "forwardPer": 9.840269,
+      "epsGrowth3y": null,
+      "marketCap": 640824741200.0,
       "sharesOutstanding": 61855670.0,
       "bookValue": 7137,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "120110": {
-      "per": 40.53,
-      "pbr": 0.51,
-      "psr": 0.43,
-      "evEbitda": 11.041,
-      "marketCap": 2090089840640.0,
+      "per": 34.38,
+      "pbr": 0.44,
+      "psr": 0.36,
+      "evEbitda": 10.679,
+      "peg": 54.78,
+      "forwardPer": 7.9151254,
+      "epsGrowth3y": -21.71,
+      "marketCap": 1773161523000.0,
       "sharesOutstanding": 31272690.0,
       "bookValue": 129986,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "121600": {
-      "per": 357.38,
-      "pbr": 2.36,
-      "psr": 5.23,
-      "evEbitda": 27.738,
-      "marketCap": 584302133248.0,
+      "per": 337.95,
+      "pbr": 2.23,
+      "psr": 4.94,
+      "evEbitda": 26.306,
+      "peg": 12.37,
+      "forwardPer": 31.10189,
+      "epsGrowth3y": null,
+      "marketCap": 552540078500.0,
       "sharesOutstanding": 11985685.0,
       "bookValue": 20636,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "122870": {
-      "per": 14.11,
-      "pbr": 1.17,
-      "psr": 1.39,
-      "evEbitda": 6.828,
-      "marketCap": 758567337984.0,
+      "per": 13.49,
+      "pbr": 1.11,
+      "psr": 1.33,
+      "evEbitda": 6.401,
+      "peg": 0.27,
+      "forwardPer": 11.833946,
+      "epsGrowth3y": 36.95,
+      "marketCap": 725182929800.0,
       "sharesOutstanding": 18546878.0,
       "bookValue": 35092,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "128940": {
-      "per": 26.73,
-      "pbr": 3.52,
-      "psr": 3.23,
-      "evEbitda": 17.481,
-      "marketCap": 5002344529920.0,
+      "per": 24.8,
+      "pbr": 3.26,
+      "psr": 3.0,
+      "evEbitda": 17.112,
+      "peg": 7.13,
+      "forwardPer": 22.034634,
+      "epsGrowth3y": 34.35,
+      "marketCap": 4640958324000.0,
       "sharesOutstanding": 12680214.0,
       "bookValue": 112211,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "131290": {
-      "per": 59.67,
-      "pbr": 5.14,
-      "psr": 5.57,
+      "per": 61.74,
+      "pbr": 5.32,
+      "psr": 5.76,
       "evEbitda": null,
-      "marketCap": 2389268758528.0,
+      "peg": 2.66,
+      "forwardPer": null,
+      "epsGrowth3y": 11917.67,
+      "marketCap": 2472229381500.0,
       "sharesOutstanding": 11061429.0,
       "bookValue": 41999,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "131970": {
-      "per": 1514.12,
-      "pbr": 5.23,
-      "psr": 7.52,
+      "per": 1474.61,
+      "pbr": 5.09,
+      "psr": 7.33,
       "evEbitda": null,
-      "marketCap": 2286380646400.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": -44.37,
+      "marketCap": 2226719159600.0,
       "sharesOutstanding": 19245628.0,
       "bookValue": 22710,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "137400": {
-      "per": 11.92,
-      "pbr": 1.19,
-      "psr": 1.11,
-      "evEbitda": 10.739,
-      "marketCap": 828478521344.0,
+      "per": 11.25,
+      "pbr": 1.12,
+      "psr": 1.05,
+      "evEbitda": 10.322,
+      "peg": null,
+      "forwardPer": 5.8832016,
+      "epsGrowth3y": 19.4,
+      "marketCap": 781869296450.0,
       "sharesOutstanding": 23304599.0,
       "bookValue": 29960,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "138040": {
-      "per": 7.17,
-      "pbr": 1.5,
-      "psr": 0.8509183,
+      "per": 7.05,
+      "pbr": 1.47,
+      "psr": 0.8375967,
       "evEbitda": null,
-      "marketCap": 16839920844800.0,
+      "peg": null,
+      "forwardPer": 5.5189795,
+      "epsGrowth3y": 5.48,
+      "marketCap": 16576281703200.0,
       "sharesOutstanding": 164774172.0,
       "bookValue": 68343,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "138930": {
-      "per": 6.05,
-      "pbr": 0.45,
-      "psr": 0.8395248,
+      "per": 5.89,
+      "pbr": 0.44,
+      "psr": 0.8173914,
       "evEbitda": null,
-      "marketCap": 5061433884672.0,
+      "peg": 0.51,
+      "forwardPer": 5.0963893,
+      "epsGrowth3y": 3.84,
+      "marketCap": 4927993284040.0,
       "sharesOutstanding": 310327033.0,
       "bookValue": 36226,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "139130": {
-      "per": 5.53,
+      "per": 5.48,
       "pbr": 0.39,
-      "psr": 0.81602013,
+      "psr": 0.80886656,
       "evEbitda": null,
-      "marketCap": 2529063600128.0,
+      "peg": 0.04,
+      "forwardPer": 4.633164,
+      "epsGrowth3y": 23.14,
+      "marketCap": 2506892748640.0,
       "sharesOutstanding": 158363408.0,
       "bookValue": 40646,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "139480": {
-      "per": 8.76,
+      "per": 8.65,
       "pbr": 0.16,
       "psr": 0.07,
-      "evEbitda": 6.241,
-      "marketCap": 2159141191680.0,
+      "evEbitda": 6.244,
+      "peg": null,
+      "forwardPer": 7.294989,
+      "epsGrowth3y": null,
+      "marketCap": 2129674063500.0,
       "sharesOutstanding": 26788353.0,
       "bookValue": 511301,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "140410": {
       "per": null,
-      "pbr": 104.11,
+      "pbr": 98.28,
       "psr": null,
       "evEbitda": null,
-      "marketCap": 1790098669568.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1689804485200.0,
       "sharesOutstanding": 30392167.0,
       "bookValue": 566,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "140860": {
-      "per": 48.4,
-      "pbr": 7.41,
-      "psr": 8.11,
-      "evEbitda": 43.234,
-      "marketCap": 1668492034048.0,
+      "per": 48.7,
+      "pbr": 7.46,
+      "psr": 8.17,
+      "evEbitda": 42.533,
+      "peg": 2.79,
+      "forwardPer": 24.812351,
+      "epsGrowth3y": 13.92,
+      "marketCap": 1678920075000.0,
       "sharesOutstanding": 6952050.0,
       "bookValue": 32382,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "141080": {
       "per": null,
-      "pbr": 10.49,
-      "psr": 40.11,
-      "evEbitda": -34.846,
-      "marketCap": 5677281443840.0,
+      "pbr": 9.62,
+      "psr": 36.79,
+      "evEbitda": -35.632,
+      "peg": null,
+      "forwardPer": 1832.0513,
+      "epsGrowth3y": null,
+      "marketCap": 5207211409200.0,
       "sharesOutstanding": 36439548.0,
       "bookValue": 14850,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "145020": {
-      "per": 18.78,
-      "pbr": 2.82,
-      "psr": 6.49,
-      "evEbitda": 9.88,
-      "marketCap": 2760241053696.0,
+      "per": 18.56,
+      "pbr": 2.78,
+      "psr": 6.42,
+      "evEbitda": 9.622,
+      "peg": 1.33,
+      "forwardPer": 14.434014,
+      "epsGrowth3y": 41.77,
+      "marketCap": 2727831230000.0,
       "sharesOutstanding": 10803292.0,
       "bookValue": 90728,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "160190": {
       "per": null,
-      "pbr": 5.82,
-      "psr": 8.47,
-      "evEbitda": -80.99,
-      "marketCap": 622759968768.0,
+      "pbr": 5.33,
+      "psr": 7.75,
+      "evEbitda": -75.68,
+      "peg": null,
+      "forwardPer": 154.64568,
+      "epsGrowth3y": null,
+      "marketCap": 570210084000.0,
       "sharesOutstanding": 29033100.0,
       "bookValue": 3683,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "161390": {
-      "per": 7.52,
-      "pbr": 0.51,
-      "psr": 0.34,
-      "evEbitda": 3.628,
-      "marketCap": 7307126112256.0,
+      "per": 7.78,
+      "pbr": 0.53,
+      "psr": 0.36,
+      "evEbitda": 3.615,
+      "peg": 0.06,
+      "forwardPer": 5.003471,
+      "epsGrowth3y": 18.95,
+      "marketCap": 7563302686000.0,
       "sharesOutstanding": 121988753.0,
       "bookValue": 116420,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "161580": {
       "per": null,
-      "pbr": 4.54,
-      "psr": 8.42,
-      "evEbitda": -31.652,
-      "marketCap": 870879526912.0,
+      "pbr": 4.24,
+      "psr": 7.86,
+      "evEbitda": -31.302,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 813445970900.0,
       "sharesOutstanding": 23442247.0,
       "bookValue": 8176,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "161890": {
-      "per": 12.14,
-      "pbr": 1.22,
-      "psr": 0.75,
-      "evEbitda": 10.342,
-      "marketCap": 2041839091712.0,
+      "per": 12.73,
+      "pbr": 1.28,
+      "psr": 0.79,
+      "evEbitda": 10.355,
+      "peg": 1.15,
+      "forwardPer": 11.406853,
+      "epsGrowth3y": null,
+      "marketCap": 2140980483900.0,
       "sharesOutstanding": 23605077.0,
       "bookValue": 70635,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "166090": {
-      "per": 30.01,
-      "pbr": 2.48,
-      "psr": 4.21,
-      "evEbitda": 12.715,
-      "marketCap": 1151580241920.0,
+      "per": 29.51,
+      "pbr": 2.44,
+      "psr": 4.14,
+      "evEbitda": 12.597,
+      "peg": 3.4,
+      "forwardPer": 11.312391,
+      "epsGrowth3y": -13.92,
+      "marketCap": 1132290832400.0,
       "sharesOutstanding": 19289452.0,
       "bookValue": 24038,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "170900": {
       "per": null,
-      "pbr": 0.48,
-      "psr": 0.4,
-      "evEbitda": 13.597,
-      "marketCap": 323548151808.0,
+      "pbr": 0.46,
+      "psr": 0.38,
+      "evEbitda": 13.512,
+      "peg": null,
+      "forwardPer": 9.550814,
+      "epsGrowth3y": null,
+      "marketCap": 308600320000.0,
       "sharesOutstanding": 9643760.0,
       "bookValue": 69646,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "171090": {
-      "per": 5.96,
-      "pbr": 4.0,
-      "psr": 1.12,
-      "evEbitda": 3.906,
-      "marketCap": 575730221056.0,
+      "per": 5.47,
+      "pbr": 3.67,
+      "psr": 1.02,
+      "evEbitda": 3.852,
+      "peg": 0.02,
+      "forwardPer": 5.2629895,
+      "epsGrowth3y": null,
+      "marketCap": 527592260800.0,
       "sharesOutstanding": 9627596.0,
       "bookValue": 14937,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "175330": {
-      "per": 6.04,
-      "pbr": 0.71,
-      "psr": 1.6925879,
+      "per": 5.8,
+      "pbr": 0.69,
+      "psr": 1.6250267,
       "evEbitda": null,
-      "marketCap": 4409936314368.0,
+      "peg": 1.08,
+      "forwardPer": 5.1956797,
+      "epsGrowth3y": 6.85,
+      "marketCap": 4233909495400.0,
       "sharesOutstanding": 185291444.0,
       "bookValue": 33327,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "178320": {
       "per": null,
-      "pbr": 4.57,
-      "psr": 3.16,
-      "evEbitda": 75.83,
-      "marketCap": 3369620733952.0,
+      "pbr": 4.21,
+      "psr": 2.91,
+      "evEbitda": 73.425,
+      "peg": null,
+      "forwardPer": 10.548706,
+      "epsGrowth3y": null,
+      "marketCap": 3105772940950.0,
       "sharesOutstanding": 63577747.0,
       "bookValue": 11604,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "179900": {
       "per": null,
-      "pbr": 1.11,
-      "psr": 3.64,
-      "evEbitda": -3.657,
-      "marketCap": 72642961408.0,
+      "pbr": 1.27,
+      "psr": 4.17,
+      "evEbitda": -3.449,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 83314223305.0,
       "sharesOutstanding": 19580311.0,
       "bookValue": 3343,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "180640": {
-      "per": 51.07,
-      "pbr": 2.37,
-      "psr": 27.25,
-      "evEbitda": 431.765,
-      "marketCap": 8128943357952.0,
+      "per": 48.32,
+      "pbr": 2.25,
+      "psr": 25.78,
+      "evEbitda": 457.157,
+      "peg": 22.75,
+      "forwardPer": null,
+      "epsGrowth3y": -27.66,
+      "marketCap": 7691014310400.0,
       "sharesOutstanding": 66762277.0,
       "bookValue": 51288,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "183300": {
-      "per": 23.95,
-      "pbr": 5.0,
-      "psr": 3.06,
-      "evEbitda": 16.108,
-      "marketCap": 1849520422912.0,
+      "per": 23.08,
+      "pbr": 4.82,
+      "psr": 2.95,
+      "evEbitda": 15.848,
+      "peg": 1.21,
+      "forwardPer": 23.143381,
+      "epsGrowth3y": 11.35,
+      "marketCap": 1782961876800.0,
       "sharesOutstanding": 20169252.0,
       "bookValue": 18335,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "185750": {
-      "per": 11.39,
-      "pbr": 0.88,
-      "psr": 0.52,
-      "evEbitda": 9.752,
-      "marketCap": 886749396992.0,
+      "per": 10.85,
+      "pbr": 0.84,
+      "psr": 0.5,
+      "evEbitda": 9.672,
+      "peg": 1.62,
+      "forwardPer": 10.126382,
+      "epsGrowth3y": 26.93,
+      "marketCap": 844585958800.0,
       "sharesOutstanding": 13176068.0,
       "bookValue": 76378,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "189300": {
-      "per": 105.03,
-      "pbr": 2.94,
-      "psr": 2.45,
+      "per": 96.27,
+      "pbr": 2.7,
+      "psr": 2.25,
       "evEbitda": null,
-      "marketCap": 783970205696.0,
+      "peg": 4.01,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 718554156200.0,
       "sharesOutstanding": 10221254.0,
       "bookValue": 26051,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "192080": {
       "per": 6.43,
       "pbr": 0.7,
       "psr": 1.61,
-      "evEbitda": 2.776,
-      "marketCap": 1156806737920.0,
+      "evEbitda": 2.655,
+      "peg": 0.47,
+      "forwardPer": 5.80526,
+      "epsGrowth3y": null,
+      "marketCap": 1156806780000.0,
       "sharesOutstanding": 19280113.0,
       "bookValue": 85703,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "192820": {
-      "per": 12.84,
-      "pbr": 2.75,
-      "psr": 0.7,
-      "evEbitda": 8.698,
-      "marketCap": 1682561695744.0,
+      "per": 12.54,
+      "pbr": 2.68,
+      "psr": 0.69,
+      "evEbitda": 8.549,
+      "peg": 1.17,
+      "forwardPer": 9.5928955,
+      "epsGrowth3y": 89.2,
+      "marketCap": 1643986423800.0,
       "sharesOutstanding": 11345662.0,
       "bookValue": 53972,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "194480": {
-      "per": 13.81,
-      "pbr": 0.88,
-      "psr": 0.5,
-      "evEbitda": -9.709,
-      "marketCap": 149230567424.0,
+      "per": 13.34,
+      "pbr": 0.85,
+      "psr": 0.49,
+      "evEbitda": -9.264,
+      "peg": null,
+      "forwardPer": 4.280599,
+      "epsGrowth3y": null,
+      "marketCap": 144186778100.0,
       "sharesOutstanding": 10964774.0,
       "bookValue": 15454,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "195940": {
-      "per": 14.86,
-      "pbr": 0.85,
-      "psr": 1.06,
-      "evEbitda": 14.887,
-      "marketCap": 1124696719360.0,
+      "per": 14.28,
+      "pbr": 0.81,
+      "psr": 1.02,
+      "evEbitda": 15.184,
+      "peg": 0.77,
+      "forwardPer": 9.773345,
+      "epsGrowth3y": 25.85,
+      "marketCap": 1080785341650.0,
       "sharesOutstanding": 28329891.0,
       "bookValue": 46890,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "196170": {
-      "per": 139.14,
-      "pbr": 44.45,
-      "psr": 93.58,
-      "evEbitda": 210.324,
-      "marketCap": 20200076345344.0,
+      "per": 126.61,
+      "pbr": 40.45,
+      "psr": 85.15,
+      "evEbitda": 212.34,
+      "peg": 1.15,
+      "forwardPer": 45.760727,
+      "epsGrowth3y": null,
+      "marketCap": 18380731372500.0,
       "sharesOutstanding": 53510135.0,
       "bookValue": 8493,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "200130": {
       "per": null,
-      "pbr": 0.63,
-      "psr": 0.39,
-      "evEbitda": 4.932,
-      "marketCap": 223246942208.0,
+      "pbr": 0.62,
+      "psr": 0.38,
+      "evEbitda": 4.867,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 220417442380.0,
       "sharesOutstanding": 28294922.0,
       "bookValue": 12563,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "204270": {
       "per": null,
-      "pbr": 4.5,
-      "psr": 6.01,
-      "evEbitda": -57.118,
-      "marketCap": 1115544485888.0,
+      "pbr": 4.03,
+      "psr": 5.38,
+      "evEbitda": -50.47,
+      "peg": null,
+      "forwardPer": 7.068338,
+      "epsGrowth3y": null,
+      "marketCap": 999472995720.0,
       "sharesOutstanding": 57178089.0,
       "bookValue": 4332,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "204320": {
-      "per": 18.76,
-      "pbr": 0.8,
-      "psr": 0.24,
-      "evEbitda": 5.348,
-      "marketCap": 2303246729216.0,
+      "per": 17.47,
+      "pbr": 0.75,
+      "psr": 0.23,
+      "evEbitda": 5.224,
+      "peg": 2.55,
+      "forwardPer": 8.381186,
+      "epsGrowth3y": -2.54,
+      "marketCap": 2145940384000.0,
       "sharesOutstanding": 46957120.0,
       "bookValue": 61243,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "207940": {
-      "per": 36.06,
-      "pbr": 8.64,
-      "psr": 14.12,
-      "evEbitda": 22.86,
-      "marketCap": 64344423399424.0,
+      "per": 34.84,
+      "pbr": 8.34,
+      "psr": 13.64,
+      "evEbitda": 22.877,
+      "peg": 164.18,
+      "forwardPer": 27.86367,
+      "epsGrowth3y": 35.55,
+      "marketCap": 62168747193000.0,
       "sharesOutstanding": 46290951.0,
       "bookValue": 160963,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "211050": {
-      "per": 6.25,
-      "pbr": 2.07,
-      "psr": 0.43,
-      "evEbitda": 3.453,
-      "marketCap": 443804286976.0,
+      "per": 6.5,
+      "pbr": 2.15,
+      "psr": 0.45,
+      "evEbitda": 3.351,
+      "peg": 0.29,
+      "forwardPer": null,
+      "epsGrowth3y": 313.71,
+      "marketCap": 461044181520.0,
       "sharesOutstanding": 49256857.0,
       "bookValue": 4353,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "213420": {
-      "per": 14.59,
-      "pbr": 1.67,
-      "psr": 2.29,
-      "evEbitda": 9.56,
-      "marketCap": 787241435136.0,
+      "per": 13.82,
+      "pbr": 1.58,
+      "psr": 2.17,
+      "evEbitda": 9.008,
+      "peg": 0.22,
+      "forwardPer": 7.839651,
+      "epsGrowth3y": 12.22,
+      "marketCap": 745484470250.0,
       "sharesOutstanding": 24562915.0,
       "bookValue": 19153,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "213500": {
-      "per": 38.21,
+      "per": 36.93,
       "pbr": 0.21,
       "psr": 0.06,
-      "evEbitda": 8.797,
-      "marketCap": 148613595136.0,
+      "evEbitda": 8.792,
+      "peg": 11.02,
+      "forwardPer": 4.0564137,
+      "epsGrowth3y": null,
+      "marketCap": 143612282720.0,
       "sharesOutstanding": 23776868.0,
       "bookValue": 29341,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "214150": {
-      "per": 23.03,
-      "pbr": 5.51,
-      "psr": 9.02,
-      "evEbitda": 15.955,
-      "marketCap": 3039237767168.0,
+      "per": 22.34,
+      "pbr": 5.34,
+      "psr": 8.75,
+      "evEbitda": 16.327,
+      "peg": 0.58,
+      "forwardPer": 12.901747,
+      "epsGrowth3y": 20.91,
+      "marketCap": 2947930214000.0,
       "sharesOutstanding": 65219695.0,
       "bookValue": 8459,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "214370": {
-      "per": 168.99,
-      "pbr": 15.99,
-      "psr": 46.65,
+      "per": 157.08,
+      "pbr": 14.86,
+      "psr": 43.36,
       "evEbitda": null,
-      "marketCap": 3396519591936.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 191.5,
+      "marketCap": 3157052646400.0,
       "sharesOutstanding": 48870784.0,
       "bookValue": 4348,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "214430": {
-      "per": 24.09,
-      "pbr": 3.13,
-      "psr": 3.52,
-      "evEbitda": 28.972,
-      "marketCap": 437702164480.0,
+      "per": 22.24,
+      "pbr": 2.89,
+      "psr": 3.25,
+      "evEbitda": 28.292,
+      "peg": 7.51,
+      "forwardPer": 14.649007,
+      "epsGrowth3y": 47.9,
+      "marketCap": 404088989500.0,
       "sharesOutstanding": 7307215.0,
       "bookValue": 19122,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "214450": {
-      "per": 19.91,
-      "pbr": 4.63,
-      "psr": 6.25,
-      "evEbitda": 11.528,
-      "marketCap": 3350661431296.0,
+      "per": 20.01,
+      "pbr": 4.65,
+      "psr": 6.28,
+      "evEbitda": 12.303,
+      "peg": 0.38,
+      "forwardPer": 14.301047,
+      "epsGrowth3y": 56.89,
+      "marketCap": 3366245952000.0,
       "sharesOutstanding": 10389648.0,
       "bookValue": 69673,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "215000": {
-      "per": 17.65,
-      "pbr": 0.52,
-      "psr": 0.47,
-      "evEbitda": 1.242,
-      "marketCap": 226992783360.0,
+      "per": 17.27,
+      "pbr": 0.51,
+      "psr": 0.46,
+      "evEbitda": 1.182,
+      "peg": null,
+      "forwardPer": 3.8865547,
+      "epsGrowth3y": -37.73,
+      "marketCap": 222188700000.0,
       "sharesOutstanding": 6005100.0,
       "bookValue": 73093,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "215200": {
-      "per": 4.21,
+      "per": 4.2,
       "pbr": 0.75,
       "psr": 0.44,
-      "evEbitda": 1.599,
-      "marketCap": 390835404800.0,
+      "evEbitda": 1.604,
+      "peg": null,
+      "forwardPer": 3.9422774,
+      "epsGrowth3y": 12.09,
+      "marketCap": 390317751200.0,
       "sharesOutstanding": 10353256.0,
       "bookValue": 50282,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "218410": {
-      "per": 47.72,
-      "pbr": 4.27,
-      "psr": 9.12,
+      "per": 44.9,
+      "pbr": 4.02,
+      "psr": 8.58,
       "evEbitda": null,
-      "marketCap": 1694259609600.0,
+      "peg": 0.73,
+      "forwardPer": null,
+      "epsGrowth3y": 198.29,
+      "marketCap": 1594287767400.0,
       "sharesOutstanding": 26308379.0,
       "bookValue": 15070,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "222800": {
       "per": null,
-      "pbr": 8.17,
-      "psr": 3.34,
-      "evEbitda": 39.12,
-      "marketCap": 4707811590144.0,
+      "pbr": 8.08,
+      "psr": 3.3,
+      "evEbitda": 41.594,
+      "peg": null,
+      "forwardPer": 21.261406,
+      "epsGrowth3y": null,
+      "marketCap": 4659277209600.0,
       "sharesOutstanding": 37333952.0,
       "bookValue": 15438,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "225570": {
       "per": null,
-      "pbr": 2.03,
-      "psr": 2.89,
-      "evEbitda": -7.83,
-      "marketCap": 517564301312.0,
+      "pbr": 1.95,
+      "psr": 2.77,
+      "evEbitda": -7.616,
+      "peg": null,
+      "forwardPer": 8.991631,
+      "epsGrowth3y": null,
+      "marketCap": 497440299020.0,
       "sharesOutstanding": 62887522.0,
       "bookValue": 4053,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "226950": {
       "per": null,
-      "pbr": 19.13,
-      "psr": 21106.588,
-      "evEbitda": -404.276,
-      "marketCap": 2870502490112.0,
+      "pbr": 18.21,
+      "psr": 20091.562,
+      "evEbitda": -411.185,
+      "peg": null,
+      "forwardPer": -107.1656,
+      "epsGrowth3y": null,
+      "marketCap": 2732458471800.0,
       "sharesOutstanding": 20300583.0,
       "bookValue": 7393,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "232140": {
-      "per": 36.08,
-      "pbr": 2.2,
-      "psr": 3.84,
-      "evEbitda": 33.861,
-      "marketCap": 1045622685696.0,
+      "per": 35.45,
+      "pbr": 2.16,
+      "psr": 3.77,
+      "evEbitda": 33.326,
+      "peg": 1.22,
+      "forwardPer": 21.948658,
+      "epsGrowth3y": 2.13,
+      "marketCap": 1027594689000.0,
       "sharesOutstanding": 81945350.0,
       "bookValue": 5811,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "237690": {
-      "per": 47.05,
-      "pbr": 4.33,
-      "psr": 7.74,
+      "per": 44.84,
+      "pbr": 4.13,
+      "psr": 7.38,
       "evEbitda": null,
-      "marketCap": 2567287865344.0,
+      "peg": 2.12,
+      "forwardPer": null,
+      "epsGrowth3y": 43.59,
+      "marketCap": 2446425459800.0,
       "sharesOutstanding": 20838377.0,
       "bookValue": 28457,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "240810": {
-      "per": 90.45,
-      "pbr": 7.83,
-      "psr": 8.35,
-      "evEbitda": 53.547,
-      "marketCap": 7600018554880.0,
+      "per": 94.85,
+      "pbr": 8.22,
+      "psr": 8.76,
+      "evEbitda": 55.068,
+      "peg": 4.39,
+      "forwardPer": 36.14338,
+      "epsGrowth3y": null,
+      "marketCap": 7969802022000.0,
       "sharesOutstanding": 48655690.0,
       "bookValue": 19936,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "241560": {
-      "per": 20435.33,
-      "pbr": 1153.55,
-      "psr": 935.18,
-      "evEbitda": 9176.141,
-      "marketCap": 5781113536512.0,
+      "per": 20333.83,
+      "pbr": 1147.82,
+      "psr": 930.54,
+      "evEbitda": 8938.173,
+      "peg": null,
+      "forwardPer": 9.325415,
+      "epsGrowth3y": -7.03,
+      "marketCap": 5752399500200.0,
       "sharesOutstanding": 95713802.0,
       "bookValue": 52,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "241590": {
       "per": null,
-      "pbr": 0.4,
-      "psr": 0.12,
-      "evEbitda": 8.388,
-      "marketCap": 187523809280.0,
+      "pbr": 0.38,
+      "psr": 0.11,
+      "evEbitda": 8.318,
+      "peg": null,
+      "forwardPer": 4.9292254,
+      "epsGrowth3y": null,
+      "marketCap": 179344256960.0,
       "sharesOutstanding": 60589276.0,
       "bookValue": 7779,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "241710": {
-      "per": 11.74,
-      "pbr": 2.02,
-      "psr": 1.06,
-      "evEbitda": 8.091,
-      "marketCap": 679248003072.0,
+      "per": 12.21,
+      "pbr": 2.1,
+      "psr": 1.1,
+      "evEbitda": 7.819,
+      "peg": 0.55,
+      "forwardPer": 9.180896,
+      "epsGrowth3y": 279.09,
+      "marketCap": 705948000000.0,
       "sharesOutstanding": 10680000.0,
       "bookValue": 31483,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "247540": {
-      "per": 154.13,
-      "pbr": 7.0,
-      "psr": 5.58,
-      "evEbitda": 78.08,
-      "marketCap": 14116088446976.0,
+      "per": 142.8,
+      "pbr": 6.49,
+      "psr": 5.17,
+      "evEbitda": 74.353,
+      "peg": null,
+      "forwardPer": 129.42094,
+      "epsGrowth3y": null,
+      "marketCap": 13079147816700.0,
       "sharesOutstanding": 97824591.0,
       "bookValue": 20608,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "248070": {
-      "per": 53.56,
-      "pbr": 1.35,
-      "psr": 0.45,
-      "evEbitda": 10.564,
-      "marketCap": 759800004608.0,
+      "per": 51.57,
+      "pbr": 1.3,
+      "psr": 0.43,
+      "evEbitda": 10.277,
+      "peg": 7.77,
+      "forwardPer": 8.749106,
+      "epsGrowth3y": 8.58,
+      "marketCap": 731588410800.0,
       "sharesOutstanding": 47816236.0,
       "bookValue": 11769,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "251270": {
-      "per": 12.76,
-      "pbr": 0.54,
-      "psr": 1.04,
-      "evEbitda": 7.242,
-      "marketCap": 2945547763712.0,
+      "per": 12.48,
+      "pbr": 0.52,
+      "psr": 1.02,
+      "evEbitda": 7.139,
+      "peg": 1.94,
+      "forwardPer": 8.595927,
+      "epsGrowth3y": null,
+      "marketCap": 2880000170650.0,
       "sharesOutstanding": 81934571.0,
       "bookValue": 67035,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "251970": {
       "per": null,
-      "pbr": 1.15,
-      "psr": 1.1,
-      "evEbitda": 5.545,
-      "marketCap": 409146753024.0,
+      "pbr": 1.14,
+      "psr": 1.08,
+      "evEbitda": 5.395,
+      "peg": null,
+      "forwardPer": 8.330213,
+      "epsGrowth3y": 21.51,
+      "marketCap": 403567464300.0,
       "sharesOutstanding": 12398386.0,
       "bookValue": 28660,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "253450": {
-      "per": 59.42,
-      "pbr": 0.77,
-      "psr": 1.16,
-      "evEbitda": 3.527,
-      "marketCap": 613193351168.0,
+      "per": 57.56,
+      "pbr": 0.74,
+      "psr": 1.12,
+      "evEbitda": 3.396,
+      "peg": null,
+      "forwardPer": 12.349005,
+      "epsGrowth3y": -32.83,
+      "marketCap": 593955920480.0,
       "sharesOutstanding": 30058498.0,
       "bookValue": 26623,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "253590": {
-      "per": 90.23,
-      "pbr": 4.04,
-      "psr": 7.54,
-      "evEbitda": 85.383,
-      "marketCap": 482032812032.0,
+      "per": 88.78,
+      "pbr": 3.98,
+      "psr": 7.42,
+      "evEbitda": 82.998,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": 7.36,
+      "marketCap": 474258063960.0,
       "sharesOutstanding": 43192902.0,
       "bookValue": 2760,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "257720": {
-      "per": 12.47,
-      "pbr": 4.59,
-      "psr": 1.88,
-      "evEbitda": 8.626,
-      "marketCap": 2101718941696.0,
+      "per": 11.83,
+      "pbr": 4.36,
+      "psr": 1.79,
+      "evEbitda": 8.244,
+      "peg": 0.19,
+      "forwardPer": 7.1903734,
+      "epsGrowth3y": 168.33,
+      "marketCap": 1993518060800.0,
       "sharesOutstanding": 65576252.0,
       "bookValue": 6976,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "259960": {
-      "per": 12.82,
-      "pbr": 1.31,
-      "psr": 2.83,
-      "evEbitda": 5.3,
-      "marketCap": 9402754007040.0,
+      "per": 12.54,
+      "pbr": 1.28,
+      "psr": 2.77,
+      "evEbitda": 4.903,
+      "peg": 0.55,
+      "forwardPer": 7.9574327,
+      "epsGrowth3y": 33.53,
+      "marketCap": 9199817376000.0,
       "sharesOutstanding": 45097144.0,
       "bookValue": 159304,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "263750": {
       "per": null,
-      "pbr": 2.73,
-      "psr": 5.96,
-      "evEbitda": 9.164,
-      "marketCap": 2178151219200.0,
+      "pbr": 2.63,
+      "psr": 5.74,
+      "evEbitda": 8.89,
+      "peg": null,
+      "forwardPer": 18.600145,
+      "epsGrowth3y": null,
+      "marketCap": 2098275376500.0,
       "sharesOutstanding": 61442910.0,
       "bookValue": 13006,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "267250": {
-      "per": 3.89,
-      "pbr": 0.47,
-      "psr": 0.2,
-      "evEbitda": 4.051,
-      "marketCap": 14310357073920.0,
+      "per": 3.71,
+      "pbr": 0.45,
+      "psr": 0.19,
+      "evEbitda": 4.008,
+      "peg": 0.72,
+      "forwardPer": 6.790445,
+      "epsGrowth3y": 33.45,
+      "marketCap": 13617806461000.0,
       "sharesOutstanding": 70668430.0,
       "bookValue": 429259,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "267260": {
-      "per": 46.97,
-      "pbr": 16.91,
-      "psr": 8.43,
-      "evEbitda": 29.461,
-      "marketCap": 34373032214528.0,
+      "per": 43.43,
+      "pbr": 15.63,
+      "psr": 7.79,
+      "evEbitda": 29.882,
+      "peg": 1.91,
+      "forwardPer": 25.69167,
+      "epsGrowth3y": 66.37,
+      "marketCap": 31781557632000.0,
       "sharesOutstanding": 35992704.0,
       "bookValue": 56482,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "267270": {
-      "per": 63.7,
-      "pbr": 2.87,
-      "psr": 1.47,
-      "evEbitda": 15.744,
-      "marketCap": 5544329871360.0,
+      "per": 60.41,
+      "pbr": 2.72,
+      "psr": 1.39,
+      "evEbitda": 15.315,
+      "peg": 6.14,
+      "forwardPer": 8.611393,
+      "epsGrowth3y": 0.07,
+      "marketCap": 5258048087000.0,
       "sharesOutstanding": 47713685.0,
       "bookValue": 40456,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "271560": {
-      "per": 12.71,
-      "pbr": 1.27,
-      "psr": 1.49,
-      "evEbitda": 4.829,
-      "marketCap": 4964815994880.0,
+      "per": 12.79,
+      "pbr": 1.28,
+      "psr": 1.5,
+      "evEbitda": 4.797,
+      "peg": 1.74,
+      "forwardPer": 9.512645,
+      "epsGrowth3y": 2.74,
+      "marketCap": 4996438803200.0,
       "sharesOutstanding": 39528788.0,
       "bookValue": 98971,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "272210": {
-      "per": 70.9,
-      "pbr": 2.97,
-      "psr": 4.05,
-      "evEbitda": 55.724,
-      "marketCap": 14828565430272.0,
+      "per": 65.8,
+      "pbr": 2.75,
+      "psr": 3.76,
+      "evEbitda": 53.517,
+      "peg": 2.14,
+      "forwardPer": 32.0542,
+      "epsGrowth3y": null,
+      "marketCap": 13762704009600.0,
       "sharesOutstanding": 186993261.0,
       "bookValue": 26744,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "272290": {
-      "per": 8.47,
-      "pbr": 0.91,
-      "psr": 1.08,
-      "evEbitda": 7.709,
-      "marketCap": 473909755904.0,
+      "per": 7.94,
+      "pbr": 0.85,
+      "psr": 1.01,
+      "evEbitda": 7.415,
+      "peg": 2.0,
+      "forwardPer": 6.636024,
+      "epsGrowth3y": 13.61,
+      "marketCap": 444110181900.0,
       "sharesOutstanding": 19225549.0,
       "bookValue": 27168,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "277810": {
       "per": null,
-      "pbr": 74.65,
-      "psr": 292.79,
-      "evEbitda": -6503.847,
-      "marketCap": 9990926499840.0,
+      "pbr": 69.58,
+      "psr": 272.89,
+      "evEbitda": -6516.553,
+      "peg": null,
+      "forwardPer": 404.0404,
+      "epsGrowth3y": null,
+      "marketCap": 9311931840000.0,
       "sharesOutstanding": 19399858.0,
       "bookValue": 6899,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "278280": {
       "per": null,
-      "pbr": 0.99,
-      "psr": 3.46,
-      "evEbitda": 28.776,
-      "marketCap": 462740226048.0,
+      "pbr": 0.97,
+      "psr": 3.38,
+      "evEbitda": 27.76,
+      "peg": null,
+      "forwardPer": 64.18642,
+      "epsGrowth3y": null,
+      "marketCap": 451978833600.0,
       "sharesOutstanding": 11957112.0,
       "bookValue": 39089,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "280360": {
-      "per": 11.49,
+      "per": 11.38,
       "pbr": 0.36,
       "psr": 0.19,
       "evEbitda": 6.008,
-      "marketCap": 820469563392.0,
+      "peg": 2.68,
+      "forwardPer": 6.037711,
+      "epsGrowth3y": 11.64,
+      "marketCap": 812512437300.0,
       "sharesOutstanding": 8841267.0,
       "bookValue": 258643,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "281740": {
-      "per": 120.29,
-      "pbr": 6.91,
-      "psr": 6.65,
-      "evEbitda": 39.832,
-      "marketCap": 938631692288.0,
+      "per": 114.06,
+      "pbr": 6.55,
+      "psr": 6.3,
+      "evEbitda": 39.276,
+      "peg": 63.09,
+      "forwardPer": null,
+      "epsGrowth3y": -29.14,
+      "marketCap": 889991105400.0,
       "sharesOutstanding": 65730510.0,
       "bookValue": 2067,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "282330": {
-      "per": 10.42,
-      "pbr": 1.55,
+      "per": 10.24,
+      "pbr": 1.52,
       "psr": 0.22,
-      "evEbitda": 1.685,
-      "marketCap": 2034996871168.0,
+      "evEbitda": 1.709,
+      "peg": 2.46,
+      "forwardPer": 8.442224,
+      "epsGrowth3y": 0.3,
+      "marketCap": 1998719235500.0,
       "sharesOutstanding": 17275015.0,
       "bookValue": 76009,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "290650": {
       "per": null,
-      "pbr": 11.46,
-      "psr": 27.93,
-      "evEbitda": 132.594,
-      "marketCap": 2390099492864.0,
+      "pbr": 10.42,
+      "psr": 25.4,
+      "evEbitda": 136.592,
+      "peg": null,
+      "forwardPer": 42.049915,
+      "epsGrowth3y": null,
+      "marketCap": 2173488870900.0,
       "sharesOutstanding": 24614823.0,
       "bookValue": 8472,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "293490": {
       "per": null,
-      "pbr": 0.68,
-      "psr": 1.76,
-      "evEbitda": -78.305,
-      "marketCap": 819212648448.0,
+      "pbr": 0.62,
+      "psr": 1.59,
+      "evEbitda": -72.73,
+      "peg": null,
+      "forwardPer": 10.420997,
+      "epsGrowth3y": null,
+      "marketCap": 737291404080.0,
       "sharesOutstanding": 106391256.0,
       "bookValue": 11260,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "294870": {
-      "per": 7.16,
+      "per": 7.01,
       "pbr": 0.35,
       "psr": 0.27,
-      "evEbitda": 8.714,
-      "marketCap": 1131729125376.0,
+      "evEbitda": 8.52,
+      "peg": null,
+      "forwardPer": 2.3933187,
+      "epsGrowth3y": 81.06,
+      "marketCap": 1108568766690.0,
       "sharesOutstanding": 62595639.0,
       "bookValue": 51326,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "298020": {
-      "per": 31.18,
-      "pbr": 0.61,
+      "per": 29.61,
+      "pbr": 0.58,
       "psr": 0.15,
-      "evEbitda": 6.663,
-      "marketCap": 1190993068032.0,
+      "evEbitda": 6.637,
+      "peg": null,
+      "forwardPer": 3.8932834,
+      "epsGrowth3y": 218.81,
+      "marketCap": 1130906954500.0,
       "sharesOutstanding": 4291867.0,
       "bookValue": 455958,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "298040": {
-      "per": 61.33,
-      "pbr": 12.39,
-      "psr": 5.17,
-      "evEbitda": 38.151,
-      "marketCap": 30840486625280.0,
+      "per": 57.46,
+      "pbr": 11.61,
+      "psr": 4.84,
+      "evEbitda": 37.327,
+      "peg": 2.62,
+      "forwardPer": 25.189728,
+      "epsGrowth3y": 420.28,
+      "marketCap": 28894332323000.0,
       "sharesOutstanding": 9311741.0,
       "bookValue": 267374,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "298050": {
-      "per": 48.01,
-      "pbr": 0.91,
-      "psr": 0.23,
-      "evEbitda": 9.208,
-      "marketCap": 751521300480.0,
+      "per": 44.98,
+      "pbr": 0.85,
+      "psr": 0.21,
+      "evEbitda": 9.153,
+      "peg": null,
+      "forwardPer": 7.8780303,
+      "epsGrowth3y": null,
+      "marketCap": 704160267200.0,
       "sharesOutstanding": 4468022.0,
       "bookValue": 184982,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "298380": {
       "per": null,
-      "pbr": 34.05,
-      "psr": 67.24,
-      "evEbitda": -218.479,
-      "marketCap": 5335605575680.0,
+      "pbr": 31.69,
+      "psr": 62.58,
+      "evEbitda": -209.873,
+      "peg": null,
+      "forwardPer": 414.00232,
+      "epsGrowth3y": null,
+      "marketCap": 4966087968100.0,
       "sharesOutstanding": 55987463.0,
       "bookValue": 2799,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "302440": {
       "per": null,
-      "pbr": 1.42,
-      "psr": 4.46,
-      "evEbitda": -47.757,
-      "marketCap": 2902892478464.0,
+      "pbr": 1.35,
+      "psr": 4.21,
+      "evEbitda": -48.642,
+      "peg": null,
+      "forwardPer": -37.124504,
+      "epsGrowth3y": null,
+      "marketCap": 2742056527350.0,
       "sharesOutstanding": 78456553.0,
       "bookValue": 25969,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "304100": {
       "per": null,
-      "pbr": 2.13,
-      "psr": 3.77,
-      "evEbitda": -34.175,
-      "marketCap": 156919431168.0,
+      "pbr": 2.01,
+      "psr": 3.56,
+      "evEbitda": -32.154,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 148229673350.0,
       "sharesOutstanding": 12593855.0,
       "bookValue": 5857,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "307950": {
-      "per": 80.01,
-      "pbr": 7.97,
-      "psr": 3.51,
-      "evEbitda": 33.017,
-      "marketCap": 14945598046208.0,
+      "per": 74.43,
+      "pbr": 7.42,
+      "psr": 3.27,
+      "evEbitda": 33.143,
+      "peg": 5.13,
+      "forwardPer": 49.648113,
+      "epsGrowth3y": 17.25,
+      "marketCap": 13903519812000.0,
       "sharesOutstanding": 27423116.0,
       "bookValue": 68363,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "310210": {
       "per": null,
-      "pbr": 32.5,
-      "psr": 449.01,
-      "evEbitda": -59.067,
-      "marketCap": 3373110919168.0,
+      "pbr": 30.17,
+      "psr": 416.8,
+      "evEbitda": -54.459,
+      "peg": null,
+      "forwardPer": -56.165733,
+      "epsGrowth3y": null,
+      "marketCap": 3131126779200.0,
       "sharesOutstanding": 18332124.0,
       "bookValue": 5662,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "316140": {
-      "per": 6.55,
-      "pbr": 0.56,
-      "psr": 2.091397,
+      "per": 6.39,
+      "pbr": 0.54,
+      "psr": 2.0410023,
       "evEbitda": null,
-      "marketCap": 21141217345536.0,
+      "peg": 3.62,
+      "forwardPer": 5.779182,
+      "epsGrowth3y": 0.65,
+      "marketCap": 20631791398050.0,
       "sharesOutstanding": 727752783.0,
       "bookValue": 52022,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "319660": {
-      "per": 62.88,
-      "pbr": 9.16,
-      "psr": 10.8,
-      "evEbitda": 37.962,
-      "marketCap": 4938824941568.0,
+      "per": 69.41,
+      "pbr": 10.11,
+      "psr": 11.92,
+      "evEbitda": 38.175,
+      "peg": 4.67,
+      "forwardPer": 28.310686,
+      "epsGrowth3y": 6.0,
+      "marketCap": 5451535574800.0,
       "sharesOutstanding": 28966714.0,
       "bookValue": 18609,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "323280": {
       "per": null,
-      "pbr": 10.34,
-      "psr": 34.97,
-      "evEbitda": -4668.97,
-      "marketCap": 1323821432832.0,
+      "pbr": 9.49,
+      "psr": 32.1,
+      "evEbitda": -4383.097,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 1215411604000.0,
       "sharesOutstanding": 30537980.0,
       "bookValue": 4194,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "323410": {
-      "per": 20.29,
-      "pbr": 1.44,
-      "psr": 3.16,
+      "per": 19.59,
+      "pbr": 1.39,
+      "psr": 3.05,
       "evEbitda": null,
-      "marketCap": 9743997337600.0,
+      "peg": 4.1,
+      "forwardPer": 14.258556,
+      "epsGrowth3y": 22.73,
+      "marketCap": 9410462284250.0,
       "sharesOutstanding": 476479103.0,
       "bookValue": 14166,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "326030": {
-      "per": 27.4,
-      "pbr": 8.4,
-      "psr": 9.82,
-      "evEbitda": 22.938,
-      "marketCap": 6938553745408.0,
+      "per": 25.64,
+      "pbr": 7.86,
+      "psr": 9.19,
+      "evEbitda": 23.489,
+      "peg": 0.88,
+      "forwardPer": 16.891687,
+      "epsGrowth3y": null,
+      "marketCap": 6492168425000.0,
       "sharesOutstanding": 78313250.0,
       "bookValue": 10551,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "328130": {
       "per": null,
-      "pbr": 5.79,
-      "psr": 9.57,
-      "evEbitda": -11.608,
-      "marketCap": 795150450688.0,
+      "pbr": 5.35,
+      "psr": 8.84,
+      "evEbitda": -11.161,
+      "peg": null,
+      "forwardPer": -11.728924,
+      "epsGrowth3y": null,
+      "marketCap": 734900443680.0,
       "sharesOutstanding": 74382636.0,
       "bookValue": 1848,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "329180": {
-      "per": 43.29,
-      "pbr": 6.56,
-      "psr": 3.49,
-      "evEbitda": 20.242,
-      "marketCap": 61280740179968.0,
+      "per": 41.81,
+      "pbr": 6.34,
+      "psr": 3.37,
+      "evEbitda": 20.059,
+      "peg": 1.96,
+      "forwardPer": 16.683283,
+      "epsGrowth3y": null,
+      "marketCap": 59182084536000.0,
       "sharesOutstanding": 104932774.0,
       "bookValue": 89025,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "336260": {
       "per": null,
-      "pbr": 12.25,
-      "psr": 9.9,
-      "evEbitda": -67.39,
-      "marketCap": 4502246129664.0,
+      "pbr": 9.23,
+      "psr": 7.46,
+      "evEbitda": -68.643,
+      "peg": null,
+      "forwardPer": -1110.0831,
+      "epsGrowth3y": null,
+      "marketCap": 3392162730600.0,
       "sharesOutstanding": 65485767.0,
       "bookValue": 5612,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "336570": {
-      "per": 13.91,
-      "pbr": 3.11,
-      "psr": 3.12,
-      "evEbitda": 8.731,
-      "marketCap": 489796075520.0,
+      "per": 13.4,
+      "pbr": 3.0,
+      "psr": 3.01,
+      "evEbitda": 7.985,
+      "peg": 0.37,
+      "forwardPer": 7.643678,
+      "epsGrowth3y": 57.82,
+      "marketCap": 472049840360.0,
       "sharesOutstanding": 88731173.0,
       "bookValue": 1774,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "339770": {
-      "per": 10.63,
-      "pbr": 0.97,
+      "per": 10.53,
+      "pbr": 0.96,
       "psr": 0.35,
-      "evEbitda": 4.926,
-      "marketCap": 183037771776.0,
+      "evEbitda": 4.837,
+      "peg": 1.39,
+      "forwardPer": 7.5465837,
+      "epsGrowth3y": 266.92,
+      "marketCap": 181296923625.0,
       "sharesOutstanding": 49738525.0,
       "bookValue": 3792,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "347850": {
       "per": null,
-      "pbr": 47.37,
-      "psr": 870.46,
-      "evEbitda": -131.853,
-      "marketCap": 3740874309632.0,
+      "pbr": 43.09,
+      "psr": 791.97,
+      "evEbitda": -121.772,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 3403582221900.0,
       "sharesOutstanding": 43804147.0,
       "bookValue": 1803,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "348210": {
       "per": null,
-      "pbr": 3.09,
-      "psr": 6.92,
-      "evEbitda": -109.569,
-      "marketCap": 463294595072.0,
+      "pbr": 2.98,
+      "psr": 6.69,
+      "evEbitda": -109.132,
+      "peg": null,
+      "forwardPer": 6.5082097,
+      "epsGrowth3y": null,
+      "marketCap": 447459836400.0,
       "sharesOutstanding": 10215978.0,
       "bookValue": 14697,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "348370": {
       "per": null,
-      "pbr": 1.2,
-      "psr": 1.84,
-      "evEbitda": -11.987,
-      "marketCap": 575163531264.0,
+      "pbr": 1.09,
+      "psr": 1.68,
+      "evEbitda": -11.413,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 525863832000.0,
       "sharesOutstanding": 21910993.0,
       "bookValue": 21954,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "352480": {
-      "per": 20.11,
-      "pbr": 0.81,
-      "psr": 1.0,
-      "evEbitda": 6.339,
-      "marketCap": 287235637248.0,
+      "per": 19.63,
+      "pbr": 0.79,
+      "psr": 0.97,
+      "evEbitda": 6.761,
+      "peg": 9.93,
+      "forwardPer": 7.137907,
+      "epsGrowth3y": 10.79,
+      "marketCap": 280429118400.0,
       "sharesOutstanding": 13613064.0,
       "bookValue": 26036,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "352820": {
       "per": null,
-      "pbr": 2.25,
-      "psr": 3.02,
-      "evEbitda": -303.54,
-      "marketCap": 8002015330304.0,
+      "pbr": 2.13,
+      "psr": 2.86,
+      "evEbitda": -293.069,
+      "peg": null,
+      "forwardPer": 18.175608,
+      "epsGrowth3y": null,
+      "marketCap": 7567863375800.0,
       "sharesOutstanding": 42563911.0,
       "bookValue": 83438,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "357780": {
-      "per": 31.92,
-      "pbr": 2.41,
-      "psr": 2.9,
-      "evEbitda": 11.411,
-      "marketCap": 2680529616896.0,
+      "per": 30.36,
+      "pbr": 2.29,
+      "psr": 2.76,
+      "evEbitda": 11.76,
+      "peg": 4.37,
+      "forwardPer": 13.403547,
+      "epsGrowth3y": -20.54,
+      "marketCap": 2550332448000.0,
       "sharesOutstanding": 7658656.0,
       "bookValue": 145140,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "358570": {
       "per": null,
-      "pbr": 5.8,
+      "pbr": 5.35,
       "psr": null,
       "evEbitda": null,
-      "marketCap": 675683500032.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 623016159000.0,
       "sharesOutstanding": 64228470.0,
       "bookValue": 1814,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "365340": {
       "per": null,
-      "pbr": 3.48,
-      "psr": 2.76,
-      "evEbitda": 2771.854,
-      "marketCap": 536226267136.0,
+      "pbr": 3.24,
+      "psr": 2.56,
+      "evEbitda": 2726.847,
+      "peg": null,
+      "forwardPer": 26.32241,
+      "epsGrowth3y": null,
+      "marketCap": 498755039000.0,
       "sharesOutstanding": 12921115.0,
       "bookValue": 11929,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "373220": {
-      "per": 1022.26,
-      "pbr": 2.82,
-      "psr": 3.49,
-      "evEbitda": 26.145,
-      "marketCap": 82602002219008.0,
+      "per": 960.0,
+      "pbr": 2.65,
+      "psr": 3.28,
+      "evEbitda": 25.422,
+      "peg": null,
+      "forwardPer": 38.56307,
+      "epsGrowth3y": null,
+      "marketCap": 77571000000000.0,
       "sharesOutstanding": 234000000.0,
       "bookValue": 125306,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "375500": {
-      "per": 6.95,
-      "pbr": 0.49,
-      "psr": 0.35,
+      "per": 6.07,
+      "pbr": 0.43,
+      "psr": 0.3,
       "evEbitda": 3.585,
-      "marketCap": 2571076370432.0,
+      "peg": null,
+      "forwardPer": 5.408121,
+      "epsGrowth3y": 7.82,
+      "marketCap": 2245829066000.0,
       "sharesOutstanding": 37555670.0,
       "bookValue": 139635,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "376300": {
-      "per": 25.17,
-      "pbr": 2.23,
-      "psr": 5.59,
-      "evEbitda": 11.835,
-      "marketCap": 468833533952.0,
+      "per": 24.88,
+      "pbr": 2.21,
+      "psr": 5.53,
+      "evEbitda": 11.07,
+      "peg": 2.08,
+      "forwardPer": 9.227487,
+      "epsGrowth3y": 6.97,
+      "marketCap": 463611069180.0,
       "sharesOutstanding": 23738406.0,
       "bookValue": 8842,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "377300": {
-      "per": 100.05,
-      "pbr": 2.86,
-      "psr": 5.81,
-      "evEbitda": 3.002,
-      "marketCap": 5572108746752.0,
+      "per": 92.4,
+      "pbr": 2.64,
+      "psr": 5.37,
+      "evEbitda": 4.529,
+      "peg": 3.68,
+      "forwardPer": 35.514286,
+      "epsGrowth3y": null,
+      "marketCap": 5146086214350.0,
       "sharesOutstanding": 135245367.0,
       "bookValue": 14425,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "383310": {
-      "per": 44.24,
-      "pbr": 1.92,
-      "psr": 4.15,
-      "evEbitda": 28.366,
-      "marketCap": 584903819264.0,
+      "per": 44.64,
+      "pbr": 1.94,
+      "psr": 4.18,
+      "evEbitda": 28.258,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": -26.78,
+      "marketCap": 590144876100.0,
       "sharesOutstanding": 20964294.0,
       "bookValue": 14535,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "388720": {
       "per": null,
-      "pbr": 9.34,
+      "pbr": 8.81,
       "psr": null,
       "evEbitda": null,
-      "marketCap": 837653626880.0,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 790528249500.0,
       "sharesOutstanding": 11781345.0,
       "bookValue": 7614,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "annual"
+        "revenue": "annual",
+        "price": "median"
       }
     },
     "399720": {
       "per": null,
-      "pbr": 8.56,
-      "psr": 6.83,
-      "evEbitda": -69.81,
-      "marketCap": 468076953600.0,
+      "pbr": 7.86,
+      "psr": 6.27,
+      "evEbitda": -66.391,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 429795561000.0,
       "sharesOutstanding": 11600420.0,
       "bookValue": 4714,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "402340": {
-      "per": 28.67,
-      "pbr": 9.03,
-      "psr": 179.1,
-      "evEbitda": 15.119,
-      "marketCap": 252808687255552.0,
+      "per": 25.71,
+      "pbr": 8.1,
+      "psr": 160.61,
+      "evEbitda": 15.964,
+      "peg": null,
+      "forwardPer": 5.075425,
+      "epsGrowth3y": null,
+      "marketCap": 226710597640000.0,
       "sharesOutstanding": 131808487.0,
       "bookValue": 212302,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "403870": {
-      "per": 57.04,
-      "pbr": 13.45,
-      "psr": 23.96,
-      "evEbitda": 42.217,
-      "marketCap": 4144631382016.0,
+      "per": 58.94,
+      "pbr": 13.89,
+      "psr": 24.76,
+      "evEbitda": 42.571,
+      "peg": null,
+      "forwardPer": 35.855427,
+      "epsGrowth3y": 114.55,
+      "marketCap": 4282785656000.0,
       "sharesOutstanding": 81267280.0,
       "bookValue": 3793,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "417200": {
       "per": null,
-      "pbr": 4.9,
-      "psr": 6.57,
-      "evEbitda": 108.926,
-      "marketCap": 1009377607680.0,
+      "pbr": 4.41,
+      "psr": 5.92,
+      "evEbitda": 107.156,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": -41.04,
+      "marketCap": 908575210370.0,
       "sharesOutstanding": 67652659.0,
       "bookValue": 3046,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "454910": {
       "per": null,
-      "pbr": 17.14,
-      "psr": 181.22,
-      "evEbitda": -118.561,
-      "marketCap": 5976401903616.0,
+      "pbr": 15.81,
+      "psr": 167.07,
+      "evEbitda": -115.091,
+      "peg": null,
+      "forwardPer": -296.44492,
+      "epsGrowth3y": null,
+      "marketCap": 5509698300000.0,
       "sharesOutstanding": 64819980.0,
       "bookValue": 5378,
       "_basis": {
         "netIncome": "ttm",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     },
     "466100": {
       "per": null,
-      "pbr": 12.86,
-      "psr": 18.77,
-      "evEbitda": -797.944,
-      "marketCap": 777255583744.0,
+      "pbr": 11.85,
+      "psr": 17.29,
+      "evEbitda": -735.825,
+      "peg": null,
+      "forwardPer": null,
+      "epsGrowth3y": null,
+      "marketCap": 716024782350.0,
       "sharesOutstanding": 24992139.0,
       "bookValue": 2419,
       "_basis": {
         "netIncome": "annual",
-        "revenue": "ttm"
+        "revenue": "ttm",
+        "price": "median"
       }
     }
   },

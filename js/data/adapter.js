@@ -194,10 +194,13 @@ export async function getFinancials(ticker) {
     // kr-metrics.json 의 비율 (PER·PBR·PSR·EV/EBITDA) 머지 (있는 키만 덮어씀)
     const metrics = getKrMetrics(ticker);
     if (metrics) {
-      if (metrics.per      != null) base.per      = metrics.per;
-      if (metrics.pbr      != null) base.pbr      = metrics.pbr;
-      if (metrics.psr      != null) base.psr      = metrics.psr;
-      if (metrics.evEbitda != null) base.evEbitda = metrics.evEbitda;
+      if (metrics.per         != null) base.per         = metrics.per;
+      if (metrics.pbr         != null) base.pbr         = metrics.pbr;
+      if (metrics.psr         != null) base.psr         = metrics.psr;
+      if (metrics.evEbitda    != null) base.evEbitda    = metrics.evEbitda;
+      if (metrics.peg         != null) base.peg         = metrics.peg;         // 신규 (마-1)
+      if (metrics.forwardPer  != null) base.forwardPer  = metrics.forwardPer;   // 신규 (마-2)
+      if (metrics.epsGrowth3y != null) base.epsGrowth3y = metrics.epsGrowth3y;  // 신규 (마-3)
     }
 
     const dartMeta = getKRDartMeta();
@@ -359,7 +362,7 @@ function pickNum(obj, keys) {
 
 function emptyFinancials() {
   return Object.fromEntries([
-    'per','pbr','psr','pcr','peg','evEbitda','dividendYield',
+    'per','pbr','psr','pcr','peg','evEbitda','forwardPer','epsGrowth3y','dividendYield',
     'roe','roa','roic','opMargin','netMargin','ebitdaMargin',
     'revenueGrowthYoY','revenueGrowthQoQ','opGrowth','epsGrowth',
     'revenue','operatingIncome','netIncome','eps','bps','ocf','fcf',
