@@ -13,6 +13,21 @@ import { getUsValuation, getUsValuationMeta } from './us-valuation.js';
 import { getKrDisclosures, getKrDisclosuresMeta } from './kr-disclosures.js';
 export { getHoldings, getEtfsContaining, ISSUER_LINKS, HOLDINGS_MAP } from './holdings.js';
 
+/**
+ * 모든 정적 데이터의 generatedAt 을 결합한 글로벌 버전 문자열.
+ * 정적 데이터 중 하나라도 갱신되면 정적 의존 분기(profile·financials)의 캐시가 자동 무효화된다.
+ * quote·news 같은 동적 데이터는 TTL 만 사용 (dataVersion 무관).
+ */
+function computeDataVersion() {
+  return [
+    getKRDartMeta()?.generatedAt || '',
+    getKrMetricsMeta()?.generatedAt || '',
+    getUsFinancialsMeta()?.generatedAt || '',
+    getUsValuationMeta()?.generatedAt || '',
+    getKrDisclosuresMeta()?.generatedAt || '',
+  ].join('|');
+}
+
 // TODO(15차/16차): getHistoricalMetrics·getValuationHistory를 financials-reported·candle 기반
 // 실데이터로 교체 예정. 현재는 빈 결과(stub)를 반환하고 호출부에서 패널을 숨긴다.
 
@@ -29,10 +44,12 @@ export async function getProfile(ticker) {
   const sym = getSymbol(ticker);
   if (!sym) throw new Error('symbol not found');
 
+  const currentVersion = computeDataVersion();   // KR·US 공통 (정적 데이터 버전)
+
   if (sym.market !== 'us') {
     const cacheKey = `profile:${ticker}`;
     const cached = cacheGet(cacheKey);
-    if (cached) {
+    if (cached && cached.dataVersion === currentVersion) {
       const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
       if (ageHours < 24 * 7) return cached;
     }
@@ -73,6 +90,7 @@ export async function getProfile(ticker) {
       source: `OpenDART (사전 수집 ${getKRDartMeta().generatedAt?.slice(0,10) || ''})`,
       asOf: todayISO(),
       currency: 'KRW',
+      dataVersion: currentVersion,   // 신규 — 정적 데이터 갱신 시 자동 무효화
     };
     cacheSet(cacheKey, result);
     return result;
@@ -80,7 +98,7 @@ export async function getProfile(ticker) {
 
   const cacheKey = `profile:${ticker}`;
   const cached = cacheGet(cacheKey);
-  if (cached) {
+  if (cached && cached.dataVersion === currentVersion) {
     const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
     if (ageHours < 24 * 7) return cached;
   }
@@ -105,6 +123,7 @@ export async function getProfile(ticker) {
     asOf: todayISO(),
     currency: 'USD',
     reason: p ? undefined : 'fetch-failed',
+    dataVersion: currentVersion,   // 신규 — 정적 데이터 갱신 시 자동 무효화
   };
   if (p) cacheSet(cacheKey, result);  // 실패는 캐시하지 않음(재시도 허용)
   return result;
@@ -157,20 +176,15 @@ export async function getFinancials(ticker) {
   const sym = getSymbol(ticker);
   const cacheKey = `fin:${ticker}`;
   const cached = cacheGet(cacheKey);
-  if (cached) {
+  const currentVersion = computeDataVersion();   // KR·US 공통 (정적 데이터 버전)
+  // 캐시 우선: dataVersion 일치 + TTL 이내일 때만 (버전 불일치 → 즉시 재계산, 24h 내라도 무효화)
+  if (cached && cached.dataVersion === currentVersion) {
     const ageHours = (Date.now() - new Date(cached.asOf).getTime()) / 36e5;
     if (ageHours < 24) return cached;
   }
 
   if (sym?.market !== 'us') {
     const entry = getKRDartEntry(ticker);
-    // 정적 JSON (kr-dart / kr-metrics) 의 생성시각 조합 = 데이터 버전
-    const currentVersion = `${getKRDartMeta().generatedAt || ''}|${getKrMetricsMeta().generatedAt || ''}`;
-
-    // 캐시 재확인 — dataVersion 일치 시 캐시 우선 (TTL 무관, 빠름)
-    if (cached && cached.dataVersion === currentVersion) {
-      return cached;
-    }
 
     if (!entry?.financials) {
       const result = {
@@ -233,8 +247,9 @@ export async function getFinancials(ticker) {
     pbr: pickNum(metric, ['pbAnnual', 'pbQuarterly']),
     psr: pickNum(metric, ['psTTM', 'psAnnual']),
     pcr: pickNum(metric, ['pcfShareTTM']),
-    peg: pickNum(metric, ['pegRatioTTM']),
+    peg: pickNum(metric, ['pegTTM', 'forwardPEG']),
     evEbitda: pickNum(metric, ['enterpriseValueOverEBITDATTM', 'evEbitTTM']),
+    forwardPer: pickNum(metric, ['forwardPE']),                  // 신규
     dividendYield: pickNum(metric, ['dividendYieldIndicatedAnnual', 'currentDividendYieldTTM']),
     roe: pickNum(metric, ['roeTTM', 'roeRfy']),
     roa: pickNum(metric, ['roaTTM', 'roaRfy']),
@@ -246,6 +261,7 @@ export async function getFinancials(ticker) {
     revenueGrowthQoQ: pickNum(metric, ['revenueGrowthQuarterlyQoq']),
     opGrowth: pickNum(metric, ['operatingIncomeCAGR5Y']),
     epsGrowth: pickNum(metric, ['epsGrowthTTMYoy', 'epsGrowthQuarterlyYoy']),
+    epsGrowth3y: pickNum(metric, ['epsGrowth3Y']),              // 신규 (Finnhub 3년 EPS CAGR, %)
     revenue: usFin?.revenue ?? null,
     operatingIncome: usFin?.operatingIncome ?? null,
     netIncome: usFin?.netIncome ?? null,
@@ -274,6 +290,7 @@ export async function getFinancials(ticker) {
     currency: 'USD',
     basis: { period: 'TTM/Annual mixed', statement: '연결', earnings: '지배주주' },
     reason: m ? undefined : 'fetch-failed',
+    dataVersion: currentVersion,   // 신규 — 정적/Finnhub 데이터 갱신 시 자동 무효화
   };
   if (m) cacheSet(cacheKey, result);  // 실패는 캐시하지 않음(재시도 허용)
   return result;

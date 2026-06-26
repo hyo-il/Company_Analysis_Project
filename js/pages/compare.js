@@ -6,13 +6,16 @@ import { emptyState, loadingState, infoTip } from '../components/common.js';
 import { peerMedian as median, peerPercentile as percentile } from '../utils/peer-percentile.js';
 
 const COMPARE_METRICS = [
-  { key: 'per', label: 'PER', unit: 'x', lowerBetter: true },
-  { key: 'pbr', label: 'PBR', unit: 'x', lowerBetter: true },
-  { key: 'psr', label: 'PSR', unit: 'x', lowerBetter: true },
-  { key: 'evEbitda', label: 'EV/EBITDA', unit: 'x', lowerBetter: true },
-  { key: 'roe', label: 'ROE', unit: '%', lowerBetter: false },
-  { key: 'opMargin', label: '영업이익률', unit: '%', lowerBetter: false },
+  { key: 'per',              label: 'PER',           unit: 'x', lowerBetter: true  },
+  { key: 'pbr',              label: 'PBR',           unit: 'x', lowerBetter: true  },
+  { key: 'psr',              label: 'PSR',           unit: 'x', lowerBetter: true  },
+  { key: 'evEbitda',         label: 'EV/EBITDA',     unit: 'x', lowerBetter: true  },
+  { key: 'peg',              label: 'PEG',           unit: 'x', lowerBetter: true  },          // 신규
+  { key: 'forwardPer',       label: 'Forward PER',   unit: 'x', lowerBetter: true  },          // 신규
+  { key: 'roe',              label: 'ROE',           unit: '%', lowerBetter: false },
+  { key: 'opMargin',         label: '영업이익률',     unit: '%', lowerBetter: false },
   { key: 'revenueGrowthYoY', label: '매출성장률(YoY)', unit: '%', lowerBetter: false },
+  { key: 'epsGrowth3y',      label: 'EPS 3년 성장률', unit: '%', lowerBetter: false, clipAbs: 200 },  // 신규 + 클리핑
 ];
 
 // 현재 종목별 사용자 조정 피어 목록 (메모리)
@@ -30,8 +33,14 @@ function getEffectivePeers(ticker) {
   return [...auto, ...added].filter(s => (seen.has(s.ticker) ? false : (seen.add(s.ticker), true)));
 }
 
-function fmtCell(v, unit) {
+function fmtCell(v, unit, clipAbs = null) {
   if (v == null) return '—';
+  // 극단값 클리핑 (예: EPS3y 절댓값 200% 초과 시 ">200%" 표시) — 표시 단계만, 통계는 원본 값
+  if (clipAbs != null && Math.abs(v) > clipAbs) {
+    const sign = v > 0 ? '>' : '<-';
+    const suffix = unit === '%' ? '%' : 'x';
+    return sign + clipAbs + suffix;
+  }
   return unit === '%' ? fmtPct(v) : fmtNum(v, 2) + 'x';
 }
 
@@ -122,11 +131,11 @@ export async function renderCompare(container, { ticker } = {}) {
                 return `<td class="${cls}"${tip}>
                   <span class="cell-flex">
                     <span class="cell-badge-slot">${badge}</span>
-                    <span class="cell-num-val">${fmtCell(v, m.unit)}</span>
+                    <span class="cell-num-val">${fmtCell(v, m.unit, m.clipAbs)}</span>
                   </span>
                 </td>`;
               }).join('')}
-              <td class="num peer-col">${fmtCell(med, m.unit)}</td>
+              <td class="num peer-col">${fmtCell(med, m.unit, m.clipAbs)}</td>
               <td class="num peer-col">${pct == null ? '—' : pct.toFixed(0) + '%'}</td>
             </tr>`;
           }).join('')}
