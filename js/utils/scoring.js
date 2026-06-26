@@ -7,9 +7,11 @@ export const FACTOR_CATEGORIES = [
   {
     name: '가치',
     metrics: [
-      { key: 'per',       label: 'PER',       lowerBetter: true  },
-      { key: 'pbr',       label: 'PBR',       lowerBetter: true  },
-      { key: 'evEbitda',  label: 'EV/EBITDA', lowerBetter: true  },
+      { key: 'per',         label: 'PER',         lowerBetter: true },
+      { key: 'pbr',         label: 'PBR',         lowerBetter: true },
+      { key: 'evEbitda',    label: 'EV/EBITDA',   lowerBetter: true },
+      { key: 'peg',         label: 'PEG',         lowerBetter: true },         // 신규
+      { key: 'forwardPer',  label: 'Forward PER', lowerBetter: true },         // 신규
     ],
   },
   {
@@ -23,9 +25,10 @@ export const FACTOR_CATEGORIES = [
   {
     name: '성장성',
     metrics: [
-      { key: 'revenueGrowthYoY', label: '매출 YoY',      lowerBetter: false },
-      { key: 'opGrowth',         label: '영업이익 성장', lowerBetter: false },
-      { key: 'epsGrowth',        label: 'EPS 성장',      lowerBetter: false },
+      { key: 'revenueGrowthYoY', label: '매출 YoY',       lowerBetter: false },
+      { key: 'opGrowth',         label: '영업이익 성장',  lowerBetter: false },
+      { key: 'epsGrowth',        label: 'EPS 성장',       lowerBetter: false },
+      { key: 'epsGrowth3y',      label: 'EPS 3년 성장',   lowerBetter: false }, // 신규
     ],
   },
   {
@@ -54,30 +57,59 @@ function score(v, low, high, inverse = false) {
   return Math.round((inverse ? 1 - t : t) * 100);
 }
 
+// 같은 변환 로직이지만 null/NaN 입력 시 null 반환 — computeFactorScores 용 (가용 지표만 평균).
+function scoreOrNull(v, low, high, inverse = false) {
+  if (v == null || isNaN(v)) return null;
+  const t = clamp((v - low) / (high - low), 0, 1);
+  return Math.round((inverse ? 1 - t : t) * 100);
+}
+
+// null 을 제외한 평균. 모두 null 이면 50 (중립) 반환.
+function avgScore(...scores) {
+  const valid = scores.filter(s => s != null);
+  if (!valid.length) return 50;
+  return Math.round(valid.reduce((a, b) => a + b, 0) / valid.length);
+}
+
 export function computeFactorScores(fin) {
-  const value = Math.round((
-    score(fin.per, 5, 40, true) +
-    score(fin.pbr, 0.5, 6, true) +
-    score(fin.evEbitda, 4, 25, true)
-  ) / 3);
-  const profitability = Math.round((
-    score(fin.roe, 0, 30) +
-    score(fin.roic, 0, 30) +
-    score(fin.opMargin, 0, 35)
-  ) / 3);
-  const growth = Math.round((
-    score(fin.revenueGrowthYoY, -10, 40) +
-    score(fin.opGrowth, -15, 50) +
-    score(fin.epsGrowth, -10, 45)
-  ) / 3);
-  const stability = Math.round((
-    score(fin.debtRatio, 20, 200, true) +
-    score(fin.currentRatio, 80, 280) +
-    score(fin.interestCoverage, 0, 20)
-  ) / 3);
+  // 가치 — PER·PBR·EV/EBITDA + PEG·Forward PER 통합 (가용 지표만 평균)
+  const value = avgScore(
+    scoreOrNull(fin.per,        5,    40,  true),
+    scoreOrNull(fin.pbr,        0.5,  6,   true),
+    scoreOrNull(fin.evEbitda,   4,    25,  true),
+    scoreOrNull(fin.peg,        0.5,  3,   true),       // 신규 — 1 미만 우수, 2 초과 부담
+    scoreOrNull(fin.forwardPer, 5,    40,  true),       // 신규 — PER 동일 임계
+  );
+  // 수익성 — 기존 그대로
+  const profitability = avgScore(
+    scoreOrNull(fin.roe,        0,    30),
+    scoreOrNull(fin.roic,       0,    30),
+    scoreOrNull(fin.opMargin,   0,    35),
+  );
+  // 성장성 — 단년 + 3년 평균 통합
+  const growth = avgScore(
+    scoreOrNull(fin.revenueGrowthYoY, -10,  40),
+    scoreOrNull(fin.opGrowth,         -15,  50),
+    scoreOrNull(fin.epsGrowth,        -10,  45),
+    scoreOrNull(fin.epsGrowth3y,      -10,  30),        // 신규 — 단년보다 보수적 범위
+  );
+  // 안정성 — 기존 그대로
+  const stability = avgScore(
+    scoreOrNull(fin.debtRatio,        20,   200,  true),
+    scoreOrNull(fin.currentRatio,     80,   280),
+    scoreOrNull(fin.interestCoverage, 0,    20),
+  );
+  // 배당 — 단일 지표라 그대로
   const dividend = score(fin.dividendYield, 0, 5);
   const total = Math.round((value + profitability + growth + stability) / 4);
-  return { '가치': value, '수익성': profitability, '성장성': growth, '안정성': stability, '배당': dividend, '종합': total };
+  return {
+    '가치': value,
+    '수익성': profitability,
+    '성장성': growth,
+    '안정성': stability,
+    '배당': dividend,
+    '종합': total,
+  };
 }
 
 // 동종업계 백분위 기반 점수. 카테고리 내 지표별 백분위 평균.
