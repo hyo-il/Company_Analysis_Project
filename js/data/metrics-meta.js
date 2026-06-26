@@ -8,6 +8,7 @@ export const METRIC_CATEGORIES = [
       { key: 'psr', label: 'PSR', basis: 'TTM·연결', unit: '배', tip: '아직 이익이 별로 없는 회사 볼 때 써요. 1년에 100억 파는데 회사 가격이 300억이면 PSR 3배. 매출 대비 얼마에 거래되나 보는 거예요.' },
       { key: 'pcr', label: 'PCR', basis: 'TTM·연결', unit: '배', tip: 'PER랑 똑같은데 \'이익\' 대신 \'통장에 실제로 들어온 현금\' 기준이에요. 장부 이익 말고 진짜 현금 버는 힘을 보고 싶을 때 써요.' },
       { key: 'peg', label: 'PEG', basis: 'TTM·연결', unit: '배', tip: 'PER가 좀 높아 보여도 그만큼 빨리 크면 괜찮잖아요? PER를 이익 크는 속도로 나눈 값이에요. 1보다 낮으면 성장하는 거에 비해 싼 편.' },
+      { key: 'forwardPer', label: 'Forward PER', basis: '향후 12개월 예상', unit: '배', tip: '지금까지 번 이익이 아니라 \'앞으로 1년 동안 벌 거라고 예상되는 이익\' 기준 PER 이에요. 시장의 미래 기대가 반영돼요. 현재 PER 보다 많이 낮으면 시장이 \'이익이 더 늘어날 것\' 으로 본다는 뜻이에요.' },
       { key: 'evEbitda', label: 'EV/EBITDA', basis: 'TTM·연결', unit: '배', tip: '빚 많은 회사랑 적은 회사를 공평하게 비교하려고 써요. 회사 통째로 사는 값을 현금성 이익으로 나눈 건데, 낮을수록 싼 거예요.' },
       { key: 'dividendYield', label: '배당수익률', basis: 'TTM', unit: '%', tip: '주식 사두면 은행 이자처럼 1년에 몇 % 배당 받나예요. 100만원어치 샀는데 3만원 받으면 3%죠.' },
     ],
@@ -30,6 +31,7 @@ export const METRIC_CATEGORIES = [
       { key: 'revenueGrowthQoQ', label: '매출 성장률(QoQ)', basis: '전분기', unit: '%', tip: '바로 전 분기보다 매출이 얼마나 늘었나예요.' },
       { key: 'opGrowth', label: '영업이익 성장률', basis: 'YoY', unit: '%', tip: '본업으로 버는 이익이 얼마나 빨리 늘고 있나예요.' },
       { key: 'epsGrowth', label: 'EPS 성장률', basis: 'YoY', unit: '%', tip: '내 한 주가 벌어주는 돈이 얼마나 늘고 있나예요.' },
+      { key: 'epsGrowth3y', label: 'EPS 3년 성장률', basis: '최근 3년 연평균', unit: '%', tip: '한 해만 보면 한 번 잘하고 끝일 수도 있으니까 \'3년 평균\' 으로 봐요. 꾸준히 성장하는 회사인지 확인할 수 있어요. 단년 EPS 성장률 보다 변동성 적고 안정적이에요.' },
     ],
   },
   {
@@ -87,6 +89,7 @@ export const METRIC_THRESHOLDS = {
   psr: { dir: 'low', good: 2, bad: 6 },
   pcr: { dir: 'low', good: 10, bad: 20 },
   peg: { dir: 'low', good: 1, bad: 2 },
+  forwardPer: { dir: 'low', good: 12, bad: 25 },   // PER 과 동일 임계값
   evEbitda: { dir: 'low', good: 8, bad: 15 },
   debtRatio: { dir: 'low', good: 50, bad: 150 },
   netDebtEbitda: { dir: 'low', good: 1, bad: 4 },
@@ -101,6 +104,7 @@ export const METRIC_THRESHOLDS = {
   revenueGrowthQoQ: { dir: 'high', good: 5, bad: -3 },
   opGrowth: { dir: 'high', good: 15, bad: 0 },
   epsGrowth: { dir: 'high', good: 15, bad: 0 },
+  epsGrowth3y: { dir: 'high', good: 10, bad: 0 },   // 3년 평균이라 단년보다 보수적 (15 → 10)
   interestCoverage: { dir: 'high', good: 8, bad: 1.5 },
   currentRatio: { dir: 'high', good: 150, bad: 100 },
   dividendYield: { dir: 'high', good: 3, bad: 0.5 },
