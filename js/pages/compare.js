@@ -6,17 +6,26 @@ import { emptyState, loadingState, infoTip } from '../components/common.js';
 import { peerMedian as median, peerPercentile as percentile } from '../utils/peer-percentile.js';
 
 const COMPARE_METRICS = [
-  { key: 'per',              label: 'PER',           unit: 'x', lowerBetter: true  },
-  { key: 'pbr',              label: 'PBR',           unit: 'x', lowerBetter: true  },
-  { key: 'psr',              label: 'PSR',           unit: 'x', lowerBetter: true  },
-  { key: 'evEbitda',         label: 'EV/EBITDA',     unit: 'x', lowerBetter: true  },
-  { key: 'peg',              label: 'PEG',           unit: 'x', lowerBetter: true  },          // 신규
-  { key: 'forwardPer',       label: 'Forward PER',   unit: 'x', lowerBetter: true  },          // 신규
-  { key: 'roe',              label: 'ROE',           unit: '%', lowerBetter: false },
-  { key: 'opMargin',         label: '영업이익률',     unit: '%', lowerBetter: false },
-  { key: 'revenueGrowthYoY', label: '매출성장률(YoY)', unit: '%', lowerBetter: false },
-  { key: 'epsGrowth3y',      label: 'EPS 3년 성장률', unit: '%', lowerBetter: false, clipAbs: 200 },  // 신규 + 클리핑
+  { key: 'per',              label: 'PER',           unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'pbr',              label: 'PBR',           unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'psr',              label: 'PSR',           unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'evEbitda',         label: 'EV/EBITDA',     unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'peg',              label: 'PEG',           unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'forwardPer',       label: 'Forward PER',   unit: 'x', lowerBetter: true,  group: 'valuation'     },
+  { key: 'roe',              label: 'ROE',           unit: '%', lowerBetter: false, group: 'profitability' },
+  { key: 'opMargin',         label: '영업이익률',     unit: '%', lowerBetter: false, group: 'profitability' },
+  { key: 'revenueGrowthYoY', label: '매출성장률(YoY)', unit: '%', lowerBetter: false, group: 'growth'        },
+  { key: 'epsGrowth3y',      label: 'EPS 3년 성장률', unit: '%', lowerBetter: false, group: 'growth', clipAbs: 200 },
 ];
+
+const COMPARE_GROUPS = [
+  { id: 'valuation',     label: '밸류에이션', icon: '💰' },
+  { id: 'profitability', label: '수익성',     icon: '📈' },
+  { id: 'growth',        label: '성장성',     icon: '🚀' },
+];
+
+// 그룹 토글 상태 (메모리만 유지, 페이지 새로고침 시 전체 ON 리셋)
+const groupState = { valuation: true, profitability: true, growth: true };
 
 // 현재 종목별 사용자 조정 피어 목록 (메모리)
 const peerState = {}; // { [ticker]: { excluded: Set, added: Set } }
@@ -99,6 +108,16 @@ export async function renderCompare(container, { ticker } = {}) {
         <button id="peer-clear-all-btn" class="btn-secondary" style="font-size:12px; padding:3px 10px;" ${peers.length === 0 ? 'disabled' : ''}>모두 삭제</button>
       </div>
 
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; flex-wrap:wrap;">
+        <span style="font-size:13px; color:var(--text-muted);">표시 그룹</span>
+        ${COMPARE_GROUPS.map(g => `
+          <label style="display:inline-flex; align-items:center; gap:4px; font-size:12px; cursor:pointer; padding:3px 8px; border:1px solid var(--border); border-radius:12px; background:${groupState[g.id] ? 'var(--primary-soft)' : 'var(--surface)'};">
+            <input type="checkbox" data-group-toggle="${g.id}" ${groupState[g.id] ? 'checked' : ''} style="margin:0;" />
+            ${g.icon} ${g.label}
+          </label>
+        `).join('')}
+      </div>
+
       ${peers.length === 0 ? emptyState('피어 종목이 없습니다. 위 입력창에서 피어를 추가해 보세요.') : `
       <div class="compare-table-wrap">
       <table class="compare-table">
@@ -114,30 +133,42 @@ export async function renderCompare(container, { ticker } = {}) {
           </tr>
         </thead>
         <tbody>
-          ${COMPARE_METRICS.map(m => {
-            const vals = results.map(r => r.fin[m.key]);
-            const med = median(vals);
-            const pct = percentile(me[m.key], vals, m.lowerBetter);
-            const valid = vals.filter(v => v != null && !isNaN(v));
-            const bestVal = valid.length ? (m.lowerBetter ? Math.min(...valid) : Math.max(...valid)) : null;
-            return `<tr>
-              <td><strong>${m.label}</strong> <span style="font-size:11px; color:var(--text-muted);">(${m.lowerBetter ? '낮을수록 우수' : '높을수록 우수'})</span></td>
-              ${vals.map((v, i) => {
-                const isBest = bestVal != null && v === bestVal;
-                const isCurrent = i === 0;
-                const cls = ['num', 'peer-col', isCurrent ? 'current-col' : '', isBest ? 'best-value' : ''].filter(Boolean).join(' ');
-                const tip = isBest ? ' data-tooltip="피어 그룹 내 가장 우수한 값"' : '';
-                const badge = isBest ? '<span class="best-badge" aria-label="동종업계 대비 우수">우수</span>' : '';
-                return `<td class="${cls}"${tip}>
-                  <span class="cell-flex">
-                    <span class="cell-badge-slot">${badge}</span>
-                    <span class="cell-num-val">${fmtCell(v, m.unit, m.clipAbs)}</span>
-                  </span>
-                </td>`;
-              }).join('')}
-              <td class="num peer-col">${fmtCell(med, m.unit, m.clipAbs)}</td>
-              <td class="num peer-col">${pct == null ? '—' : pct.toFixed(0) + '%'}</td>
+          ${COMPARE_GROUPS.filter(g => groupState[g.id]).map(g => {
+            const groupMetrics = COMPARE_METRICS.filter(m => m.group === g.id);
+            if (!groupMetrics.length) return '';
+            // 그룹 헤더 행 — colspan = 지표 + 종목들 + 중앙값 + 백분위
+            const colCount = 1 + all.length + 2;
+            const groupHeader = `<tr class="group-header" style="background:var(--bg-subtle); border-top:2px solid var(--border);">
+              <td colspan="${colCount}" style="padding:6px 10px; font-weight:600; color:var(--text-muted); font-size:12px;">
+                ${g.icon} ${g.label} (${groupMetrics.length}개)
+              </td>
             </tr>`;
+            const metricRows = groupMetrics.map(m => {
+              const vals = results.map(r => r.fin[m.key]);
+              const med = median(vals);
+              const pct = percentile(me[m.key], vals, m.lowerBetter);
+              const valid = vals.filter(v => v != null && !isNaN(v));
+              const bestVal = valid.length ? (m.lowerBetter ? Math.min(...valid) : Math.max(...valid)) : null;
+              return `<tr>
+                <td><strong>${m.label}</strong> <span style="font-size:11px; color:var(--text-muted);">(${m.lowerBetter ? '낮을수록 우수' : '높을수록 우수'})</span></td>
+                ${vals.map((v, i) => {
+                  const isBest = bestVal != null && v === bestVal;
+                  const isCurrent = i === 0;
+                  const cls = ['num', 'peer-col', isCurrent ? 'current-col' : '', isBest ? 'best-value' : ''].filter(Boolean).join(' ');
+                  const tip = isBest ? ' data-tooltip="피어 그룹 내 가장 우수한 값"' : '';
+                  const badge = isBest ? '<span class="best-badge" aria-label="동종업계 대비 우수">우수</span>' : '';
+                  return `<td class="${cls}"${tip}>
+                    <span class="cell-flex">
+                      <span class="cell-badge-slot">${badge}</span>
+                      <span class="cell-num-val">${fmtCell(v, m.unit, m.clipAbs)}</span>
+                    </span>
+                  </td>`;
+                }).join('')}
+                <td class="num peer-col">${fmtCell(med, m.unit, m.clipAbs)}</td>
+                <td class="num peer-col">${pct == null ? '—' : pct.toFixed(0) + '%'}</td>
+              </tr>`;
+            }).join('');
+            return groupHeader + metricRows;
           }).join('')}
         </tbody>
       </table>
@@ -152,6 +183,14 @@ export async function renderCompare(container, { ticker } = {}) {
       </p>
       `}
     </div>`;
+
+  // 그룹 토글
+  container.querySelectorAll('[data-group-toggle]').forEach(input => {
+    input.addEventListener('change', () => {
+      groupState[input.dataset.groupToggle] = input.checked;
+      renderCompare(container, { ticker });
+    });
+  });
 
   // 피어 제외
   container.querySelectorAll('[data-remove-peer]').forEach(btn => {
