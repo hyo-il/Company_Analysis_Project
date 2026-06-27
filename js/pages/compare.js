@@ -27,6 +27,9 @@ const COMPARE_GROUPS = [
 // 그룹 토글 상태 (메모리만 유지, 페이지 새로고침 시 전체 ON 리셋)
 const groupState = { valuation: true, profitability: true, growth: true };
 
+// 백분위 정렬 상태 (메모리만). active=false 시 기본 (지표 순).
+let sortState = { active: false, direction: 'desc' };   // 'desc' = 백분위 높은 순
+
 // 현재 종목별 사용자 조정 피어 목록 (메모리)
 const peerState = {}; // { [ticker]: { excluded: Set, added: Set } }
 
@@ -129,13 +132,33 @@ export async function renderCompare(container, { ticker } = {}) {
               ${i === 0 ? '<div style="font-size:10px; color:var(--primary); font-weight:600; margin-top:2px;">현재 종목</div>' : ''}
             </th>`).join('')}
             <th class="num peer-col">중앙값</th>
-            <th class="num peer-col">백분위 ${infoTip('현재 종목이 지표 방향(낮을수록/높을수록 좋음)을 반영해 피어 그룹 내에서 얼마나 우수한지(%). 높을수록 우수합니다.')}</th>
+            <th class="num peer-col" id="pct-header" style="cursor:pointer; user-select:none;" data-tooltip="클릭으로 백분위 기준 정렬 (그룹 내)">
+              백분위 ${sortState.active ? (sortState.direction === 'desc' ? '↓' : '↑') : '↕'}
+              ${infoTip('현재 종목이 지표 방향(낮을수록/높을수록 좋음)을 반영해 피어 그룹 내에서 얼마나 우수한지(%). 높을수록 우수합니다. 헤더 클릭으로 그룹 내 정렬.')}
+            </th>
           </tr>
         </thead>
         <tbody>
           ${COMPARE_GROUPS.filter(g => groupState[g.id]).map(g => {
-            const groupMetrics = COMPARE_METRICS.filter(m => m.group === g.id);
+            let groupMetrics = COMPARE_METRICS.filter(m => m.group === g.id);
             if (!groupMetrics.length) return '';
+            // 백분위 정렬 (그룹 내) — null 백분위는 항상 마지막
+            if (sortState.active) {
+              groupMetrics = [...groupMetrics]
+                .map(m => ({
+                  m,
+                  pct: percentile(me[m.key], results.map(r => r.fin[m.key]), m.lowerBetter),
+                }))
+                .sort((a, b) => {
+                  // null 백분위는 정렬 방향과 무관하게 항상 마지막
+                  if (a.pct == null && b.pct == null) return 0;
+                  if (a.pct == null) return 1;
+                  if (b.pct == null) return -1;
+                  const diff = b.pct - a.pct;   // desc 기본
+                  return sortState.direction === 'desc' ? diff : -diff;
+                })
+                .map(x => x.m);
+            }
             // 그룹 헤더 행 — colspan = 지표 + 종목들 + 중앙값 + 백분위
             const colCount = 1 + all.length + 2;
             const groupHeader = `<tr class="group-header" style="background:var(--bg-subtle); border-top:2px solid var(--border);">
@@ -190,6 +213,18 @@ export async function renderCompare(container, { ticker } = {}) {
       groupState[input.dataset.groupToggle] = input.checked;
       renderCompare(container, { ticker });
     });
+  });
+
+  // 백분위 헤더 클릭 — 정렬 토글 (3단계: off → desc → asc → off)
+  container.querySelector('#pct-header')?.addEventListener('click', () => {
+    if (!sortState.active) {
+      sortState = { active: true, direction: 'desc' };
+    } else if (sortState.direction === 'desc') {
+      sortState = { active: true, direction: 'asc' };
+    } else {
+      sortState = { active: false, direction: 'desc' };
+    }
+    renderCompare(container, { ticker });
   });
 
   // 피어 제외
