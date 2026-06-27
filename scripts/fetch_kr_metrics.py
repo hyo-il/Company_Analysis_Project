@@ -60,6 +60,8 @@ import json
 import math
 import sys
 import time
+import urllib.parse
+import urllib.request
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -76,6 +78,124 @@ OUTPUT_JSON   = REPO_ROOT / "js" / "data" / "kr-metrics.json"
 
 # 429 (Too Many Requests) 완화용 종목 간 대기 (초)
 THROTTLE_SEC = 0.3
+
+# === DART API 상수 (EPS3y 폴백용) ===
+DART_BASE = "https://opendart.fss.or.kr"
+DART_REQ_INTERVAL = 0.15   # 호출 간 대기 (분당 1000건 한도)
+DART_KEY_PATH = Path.home() / ".secrets" / "opendart_key"
+CORPCODE_JSON = REPO_ROOT / "js" / "data" / "dart-corpcode.json"
+CORPCODE_FULL_JSON = REPO_ROOT / "js" / "data" / "dart-corpcode-full.json"
+
+# 모듈 전역 — main() 진입 시 1회 로드
+DART_API_KEY: str | None = None
+DART_CORPMAP: dict[str, str] = {}
+
+
+def _load_dart_key() -> str | None:
+    """~/.secrets/opendart_key 에서 DART API 키 로드. 미가용 시 None (DART 폴백 비활성)."""
+    if not DART_KEY_PATH.exists():
+        return None
+    try:
+        return DART_KEY_PATH.read_text(encoding="utf-8").strip() or None
+    except Exception:
+        return None
+
+
+def _load_corpmap() -> dict[str, str]:
+    """ticker → corp_code 매핑 (코스피200 flat + 전체 byTicker). 실패 시 빈 dict.
+
+    - dart-corpcode.json: {ticker: "corp_code"} (평면 문자열).
+    - dart-corpcode-full.json: {byTicker: {ticker: {corp_code, nameKr, ...}}} (객체) → corp_code 추출.
+    """
+    corpmap: dict[str, str] = {}
+    if CORPCODE_JSON.exists():
+        try:
+            flat = json.loads(CORPCODE_JSON.read_text(encoding="utf-8"))
+            for t, c in flat.items():
+                if isinstance(c, str) and c:
+                    corpmap[t] = c
+        except Exception:
+            pass
+    if CORPCODE_FULL_JSON.exists():
+        try:
+            full = json.loads(CORPCODE_FULL_JSON.read_text(encoding="utf-8"))
+            for t, c in (full.get("byTicker") or {}).items():
+                code = c.get("corp_code") if isinstance(c, dict) else c
+                if code:
+                    corpmap.setdefault(t, code)
+        except Exception:
+            pass
+    return corpmap
+
+
+def _fetch_dart_netincome(corp_code: str, year: int, api_key: str) -> float | None:
+    """DART 사업보고서 (FY, 11011) 의 당기순이익 조회 — CFS 우선, OFS 폴백. 실패 시 None (원)."""
+    params = urllib.parse.urlencode({
+        "crtfc_key": api_key,
+        "corp_code": corp_code,
+        "bsns_year": str(year),
+        "reprt_code": "11011",
+    })
+    url = f"{DART_BASE}/api/fnlttSinglAcnt.json?{params}"
+    try:
+        with urllib.request.urlopen(url, timeout=10) as r:
+            d = json.loads(r.read().decode("utf-8"))
+        if d.get("status") != "000":
+            return None
+        # CFS (연결) 우선, 없으면 OFS (별도)
+        for fs_div in ("CFS", "OFS"):
+            for it in d.get("list", []):
+                if it.get("fs_div") != fs_div:
+                    continue
+                nm = it.get("account_nm", "")
+                if nm in ("당기순이익", "당기순이익(손실)", "분기순이익", "분기순이익(손실)"):
+                    amt = (it.get("thstrm_amount") or "").replace(",", "").strip()
+                    if amt and amt != "-":
+                        try:
+                            return float(amt)
+                        except ValueError:
+                            continue
+        return None
+    except Exception:
+        return None
+    finally:
+        time.sleep(DART_REQ_INTERVAL)
+
+
+def _eps_growth_3y_dart(ticker: str, shares: float | None,
+                        api_key: str, corpmap: dict) -> float | None:
+    """DART 폴백 — 사업보고서 3년 netIncome / 현재 sharesOutstanding 으로 EPS 3년 성장률 평균.
+
+    한계:
+    - sharesOutstanding 은 현재 시점 값 (과거 분할·증자 영향 무시) — 한국 종목 분할 빈도 낮아 영향 미미.
+    - 3년 중 한 해라도 미가용 (또는 적자) 시 None 반환.
+    """
+    if not shares or shares <= 0:
+        return None
+    corp_code = corpmap.get(ticker)
+    if not corp_code:
+        return None
+    # 최근 3년 사업보고서 (현재년-1 부터 -3 까지)
+    base_year = datetime.now().year - 1
+    years = [base_year - i for i in range(3)]   # [base, base-1, base-2]
+
+    eps_series = []
+    for y in years:
+        ni = _fetch_dart_netincome(corp_code, y, api_key)
+        if ni is None:
+            return None
+        eps = ni / shares
+        if eps <= 0:
+            return None
+        eps_series.append(eps)
+
+    # eps_series = [최근, 중간, 과거]
+    growths = []
+    for i in range(len(eps_series) - 1):
+        prev, curr = eps_series[i + 1], eps_series[i]
+        if prev > 0:
+            growths.append((curr / prev - 1) * 100)
+    return round(sum(growths) / len(growths), 2) if growths else None
 
 
 def load_kr_dart() -> dict[str, dict]:
@@ -170,45 +290,51 @@ def _median_price(tk, info) -> float | None:
     return prices[len(prices) // 2]   # 중앙값
 
 
-def _eps_growth_3y(tk) -> float | None:
-    """yfinance income_stmt 연간 EPS → 3년 평균 성장률(%). 미가용 시 None (마-3)."""
+def _eps_growth_3y(tk, ticker: str | None = None, shares: float | None = None,
+                   api_key: str | None = None, corpmap: dict | None = None) -> float | None:
+    """yfinance income_stmt 우선, 실패 시 DART 사업보고서 3년 폴백 (마-3)."""
+    # 1. yfinance 우선
     try:
         is_ = tk.income_stmt
-        if is_ is None or is_.empty:
-            return None
-        # Diluted EPS 우선, 없으면 Net Income / Diluted Shares 계산
-        eps_row = None
-        for name in ('Diluted EPS', 'Basic EPS'):
-            if name in is_.index:
-                eps_row = is_.loc[name]
-                break
-        if eps_row is None:
-            ni_row = is_.loc['Net Income'] if 'Net Income' in is_.index else None
-            ds_row = is_.loc['Diluted Average Shares'] if 'Diluted Average Shares' in is_.index else None
-            if ni_row is None or ds_row is None:
-                return None
-            eps_series = []
-            for col in is_.columns:
-                ni = _safe_float(ni_row.get(col))
-                ds = _safe_float(ds_row.get(col))
-                if ni and ds and ds > 0:
-                    eps_series.append(ni / ds)
+        if is_ is not None and not is_.empty:
+            # Diluted EPS 우선, 없으면 Net Income / Diluted Shares 계산
+            eps_row = None
+            for name in ('Diluted EPS', 'Basic EPS'):
+                if name in is_.index:
+                    eps_row = is_.loc[name]
+                    break
+            if eps_row is None:
+                ni_row = is_.loc['Net Income'] if 'Net Income' in is_.index else None
+                ds_row = is_.loc['Diluted Average Shares'] if 'Diluted Average Shares' in is_.index else None
+                if ni_row is not None and ds_row is not None:
+                    eps_series = []
+                    for col in is_.columns:
+                        ni = _safe_float(ni_row.get(col))
+                        ds = _safe_float(ds_row.get(col))
+                        if ni and ds and ds > 0:
+                            eps_series.append(ni / ds)
+                        else:
+                            eps_series.append(None)
                 else:
-                    eps_series.append(None)
-        else:
-            eps_series = [_safe_float(v) for v in eps_row]
-        valid = [x for x in eps_series if x is not None and x > 0]
-        if len(valid) < 4:
-            return None
-        # 가장 최근 3년 성장률 평균 (분기 YoY 가 아닌 연간 비교)
-        growths = []
-        for i in range(min(3, len(valid) - 1)):
-            prev, curr = valid[i+1], valid[i]
-            if prev != 0:
-                growths.append((curr / prev - 1) * 100)
-        return round(sum(growths) / len(growths), 2) if growths else None
+                    eps_series = []
+            else:
+                eps_series = [_safe_float(v) for v in eps_row]
+            valid = [x for x in eps_series if x is not None and x > 0]
+            if len(valid) >= 4:
+                # 가장 최근 3년 성장률 평균 (분기 YoY 가 아닌 연간 비교)
+                growths = []
+                for i in range(min(3, len(valid) - 1)):
+                    prev, curr = valid[i+1], valid[i]
+                    if prev != 0:
+                        growths.append((curr / prev - 1) * 100)
+                if growths:
+                    return round(sum(growths) / len(growths), 2)
     except Exception:
-        return None
+        pass
+    # 2. DART 폴백
+    if ticker and api_key and corpmap:
+        return _eps_growth_3y_dart(ticker, shares, api_key, corpmap)
+    return None
 
 
 def summarize_one(ticker: str, kr_dart: dict) -> dict | None:
@@ -252,7 +378,8 @@ def summarize_one(ticker: str, kr_dart: dict) -> dict | None:
                 price = _median_price(tk, info)
                 market_cap = (price * shares) if (price and shares) else mc_info
                 forward_per   = _safe_float(info.get("forwardPE"))   # 마-2 (한국 종목 대부분 미제공)
-                eps_growth_3y = _eps_growth_3y(tk)                   # 마-3 (가용 시)
+                eps_growth_3y = _eps_growth_3y(tk, ticker=ticker, shares=shares,
+                                               api_key=DART_API_KEY, corpmap=DART_CORPMAP)  # 마-3 (yfinance→DART 폴백)
 
                 per = _ratio(market_cap, net_income)   # marketCap / TTM netIncome
                 pbr = _ratio(market_cap, equity)       # marketCap / totalEquity
@@ -375,7 +502,15 @@ def _parse_args():
 
 
 def main() -> int:
+    global DART_API_KEY, DART_CORPMAP
     args = _parse_args()
+    DART_API_KEY = _load_dart_key()
+    DART_CORPMAP = _load_corpmap()
+    if DART_API_KEY is None:
+        print("[경고] DART API 키 미가용 — EPS3y DART 폴백 비활성 (yfinance 만 사용)", file=sys.stderr)
+    else:
+        print(f"DART 폴백 활성 — corpmap {len(DART_CORPMAP)} 종목")
+
     dart = load_kr_dart()
     if not dart:
         print("KR 재무 데이터 비어있음 (kr-dart.json 먼저 갱신 필요)", file=sys.stderr)
