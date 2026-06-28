@@ -268,10 +268,10 @@ export async function renderAnalysis(container, { ticker } = {}) {
       const cacheMeta = getGeminiCacheMeta(`analysis:${ticker}:v1`);
       if (cacheMeta.exists) {
         // 캐시 있으면 자동 표시
-        fetchAndRenderGemini(ticker, profile.data, fin.data, false);
+        fetchAndRenderGemini(ticker, profile.data, fin.data, hist?.data, false);
       } else {
         // 버튼만 바인딩 (호출은 사용자 클릭 시)
-        _bindGeminiButtons(ticker, profile.data, fin.data);
+        _bindGeminiButtons(ticker, profile.data, fin.data, hist?.data);
       }
     }
   } catch (e) {
@@ -633,7 +633,7 @@ function renderCategory(cat, data, currency, priority) {
  * @param {object} fin - fin.data
  * @param {boolean} forceRefresh - true 면 캐시 무시
  */
-async function fetchAndRenderGemini(ticker, profile, fin, forceRefresh = false) {
+async function fetchAndRenderGemini(ticker, profile, fin, hist, forceRefresh = false) {
   const resultEl = document.getElementById('gemini-result');
   const actionsEl = document.getElementById('gemini-actions');
   if (!resultEl || !actionsEl) return;
@@ -644,32 +644,61 @@ async function fetchAndRenderGemini(ticker, profile, fin, forceRefresh = false) 
 
   // 프롬프트 구성 — null 안전
   const safeNum = (v, suffix = '') => (v == null || isNaN(v)) ? '미가용' : `${Number(v).toFixed(2)}${suffix}`;
-  const prompt = `종목 분석 요청 (한국어 답변):
 
-종목: ${profile.nameKr || profile.ticker} (${ticker})
-산업: ${profile.sector || '미상'} · ${profile.industry || '미상'}
+  // 4분기 추이 (가용 시)
+  const trendStr = (() => {
+    if (!hist?.labels?.length || !hist?.revenue?.length) return '';
+    const fmt = (v) => v == null ? '?' : (v >= 1e12 ? (v / 1e12).toFixed(1) + '조' : v >= 1e8 ? (v / 1e8).toFixed(0) + '억' : '');
+    const rev = hist.revenue.map(fmt).join(' → ');
+    const op = (hist.operatingIncome || []).map(fmt).join(' → ');
+    const ni = (hist.netIncome || []).map(fmt).join(' → ');
+    return `\n분기 추이 (${hist.labels.join('·')}):\n- 매출: ${rev}\n- 영업이익: ${op}\n- 순이익: ${ni}\n`;
+  })();
 
-밸류에이션:
-- PER: ${safeNum(fin.per, '배')}
-- PBR: ${safeNum(fin.pbr, '배')}
+  const prompt = `당신은 한국 주식 시장 전문 애널리스트입니다. 아래 데이터를 분석하여 투자자에게 명확하고 구체적인 평가를 제공하세요.
+
+# 분석 절차 (반드시 이 순서로)
+1. 데이터 패턴 파악 (밸류·수익성·성장성·추세 균형 검토).
+2. 동종업계·일반적 기준 대비 평가.
+3. 가장 두드러진 강점·약점 도출 (구체적 수치 근거 포함).
+
+# 종목 정보
+- 종목명: ${profile.nameKr || profile.ticker} (${ticker})
+- 산업: ${profile.sector || '미상'} · ${profile.industry || '미상'}
+
+# 밸류에이션 지표
+- PER: ${safeNum(fin.per, '배')} (낮을수록 저평가)
+- PBR: ${safeNum(fin.pbr, '배')} (1배 미만 = 청산가치 이하)
 - PSR: ${safeNum(fin.psr, '배')}
-- PEG: ${safeNum(fin.peg, '배')}
-- Forward PER: ${safeNum(fin.forwardPer, '배')}
+- PEG: ${safeNum(fin.peg, '배')} (1배 미만 = 성장 대비 저평가)
+- Forward PER: ${safeNum(fin.forwardPer, '배')} (미래 EPS 기준)
 - EV/EBITDA: ${safeNum(fin.evEbitda, '배')}
 
-수익성:
-- ROE: ${safeNum(fin.roe, '%')}
-- 영업이익률: ${safeNum(fin.opMargin, '%')}
+# 수익성 지표
+- ROE: ${safeNum(fin.roe, '%')} (15% 이상 우수)
+- 영업이익률: ${safeNum(fin.opMargin, '%')} (15% 이상 우수)
 
-성장성:
+# 성장성 지표
 - 매출 성장률 YoY: ${safeNum(fin.revenueGrowthYoY, '%')}
 - EPS 3년 성장률: ${safeNum(fin.epsGrowth3y, '%')}
+${trendStr}
 
-위 데이터를 토대로 다음을 한국어로 답변하세요:
-1. 한 줄 평가 (현재 밸류·성장·수익성 종합).
-2. 강점 2가지 (구체적 근거 포함).
-3. 약점 2가지 (구체적 근거 포함).
-4. 마지막 줄: "※ AI 생성 — 사실 검증 필요" 표시.`;
+# 출력 형식 (반드시 이 형식 준수)
+**[한 줄 평가]**
+(밸류·성장·수익성 종합한 한 줄. 구체적이고 명확하게.)
+
+**[강점]**
+1. (강점 1 — 어떤 지표가 어떤 기준 대비 우수한지 구체적 수치)
+2. (강점 2 — 동일 형식)
+
+**[약점]**
+1. (약점 1 — 어떤 지표가 어떤 기준 대비 부족한지 구체적 수치)
+2. (약점 2 — 동일 형식)
+
+**[종합 의견]**
+(투자 관점에서 어떤 투자자에게 적합한지 1~2문장.)
+
+※ AI 생성 — 사실 검증 필요. 투자 권유 아님.`;
 
   // 호출
   const { text, error, fromCache, modelVersion, timestamp } = await askGemini(prompt, {
@@ -705,7 +734,7 @@ async function fetchAndRenderGemini(ticker, profile, fin, forceRefresh = false) 
   }
 
   // 새 버튼 이벤트 재바인딩
-  _bindGeminiButtons(ticker, profile, fin);
+  _bindGeminiButtons(ticker, profile, fin, hist);
 }
 
 function _fmtAgo(timestamp) {
@@ -719,13 +748,13 @@ function _fmtAgo(timestamp) {
   return `${day}일 전`;
 }
 
-function _bindGeminiButtons(ticker, profile, fin) {
+function _bindGeminiButtons(ticker, profile, fin, hist) {
   document.getElementById('gemini-fetch-btn')?.addEventListener('click', () => {
-    fetchAndRenderGemini(ticker, profile, fin, false);
+    fetchAndRenderGemini(ticker, profile, fin, hist, false);
   });
   document.getElementById('gemini-refresh-btn')?.addEventListener('click', () => {
     if (confirm('캐시를 무시하고 새로 분석하시겠어요? (호출 한도 사용)')) {
-      fetchAndRenderGemini(ticker, profile, fin, true);
+      fetchAndRenderGemini(ticker, profile, fin, hist, true);
     }
   });
 }

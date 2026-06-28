@@ -14,12 +14,14 @@ const ALLOWED_PATHS = new Set([
   '/api/v1/search',
 ]);
 
-// Gemini 1.5 Flash — 무료 tier 가장 빠르고 저렴
-const GEMINI_MODEL = 'gemini-1.5-flash-latest';
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+// 주 모델 — 무료 tier 가능 확인 (gemini-2.5-flash-lite, 2026-06 기준)
+const GEMINI_MODEL_PRIMARY = 'gemini-2.5-flash-lite';
+// 폴백 모델 — 별칭 (Google 자동 매핑, 주 모델 일시 장애 시)
+const GEMINI_MODEL_FALLBACK = 'gemini-flash-lite-latest';
+const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 // 보안: 입력 길이 제한 (악용·비용 폭주 방지)
-const MAX_PROMPT_CHARS = 8000;     // 약 2000~3000 토큰
-const MAX_RESPONSE_TOKENS = 800;   // 응답 상한 (1~2 문단 분량)
+const MAX_PROMPT_CHARS = 8000;       // 약 2000~3000 토큰
+const MAX_RESPONSE_TOKENS = 1500;    // 800 → 1500 (잘림 방지)
 
 export default {
   async fetch(request, env) {
@@ -73,55 +75,59 @@ export default {
   },
 };
 
+async function callGemini(prompt, model, apiKey) {
+  const url = `${GEMINI_API_BASE}/${model}:generateContent?key=${apiKey}`;
+  const body = {
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: {
+      maxOutputTokens: MAX_RESPONSE_TOKENS,
+      temperature: 0.3,   // 0.7 → 0.3 (일관성·정확성 ↑)
+      topP: 0.8,
+      topK: 40,
+    },
+  };
+  try {
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const text = await resp.text();
+    return { status: resp.status, text, contentType: resp.headers.get('content-type') };
+  } catch (e) {
+    return { status: 502, text: JSON.stringify({ error: { message: 'Upstream fetch failed' } }), contentType: 'application/json' };
+  }
+}
+
 async function handleGemini(request, env, origin, allowedOrigins) {
   if (!env.GEMINI_API_KEY) {
     return cors('Gemini API key not configured', 500, origin, allowedOrigins);
   }
 
-  // 요청 본문 파싱
   let body;
-  try {
-    body = await request.json();
-  } catch (e) {
-    return cors('Invalid JSON body', 400, origin, allowedOrigins);
-  }
+  try { body = await request.json(); }
+  catch (e) { return cors('Invalid JSON body', 400, origin, allowedOrigins); }
 
-  // 입력 검증
   const prompt = (body?.prompt || '').toString();
-  if (!prompt.trim()) {
-    return cors('Missing "prompt" field', 400, origin, allowedOrigins);
-  }
+  if (!prompt.trim()) return cors('Missing "prompt" field', 400, origin, allowedOrigins);
   if (prompt.length > MAX_PROMPT_CHARS) {
     return cors(`Prompt too long (max ${MAX_PROMPT_CHARS} chars)`, 413, origin, allowedOrigins);
   }
 
-  // Gemini API 호출
-  const geminiUrl = `${GEMINI_ENDPOINT}?key=${env.GEMINI_API_KEY}`;
-  const geminiBody = {
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: {
-      maxOutputTokens: MAX_RESPONSE_TOKENS,
-      temperature: 0.7,
-    },
-  };
-
-  let resp;
-  try {
-    resp = await fetch(geminiUrl, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(geminiBody),
-    });
-  } catch (e) {
-    return cors('Gemini upstream fetch failed', 502, origin, allowedOrigins);
+  // 주 모델 호출 → 일시 장애 (429/503) 시 폴백 자동 시도
+  let resp = await callGemini(prompt, GEMINI_MODEL_PRIMARY, env.GEMINI_API_KEY);
+  if (resp.status === 429 || resp.status === 503) {
+    const fallback = await callGemini(prompt, GEMINI_MODEL_FALLBACK, env.GEMINI_API_KEY);
+    // 폴백이 더 나쁘지 않으면 폴백 사용
+    if (fallback.status === 200 || (fallback.status >= 200 && fallback.status < resp.status)) {
+      resp = fallback;
+    }
   }
 
-  const respText = await resp.text();
-  // Gemini 응답 형식 그대로 전달 (클라이언트가 candidates[0].content.parts[0].text 추출)
-  return new Response(respText, {
+  return new Response(resp.text, {
     status: resp.status,
     headers: {
-      'content-type': resp.headers.get('content-type') || 'application/json',
+      'content-type': resp.contentType || 'application/json',
       'cache-control': 'no-store',   // AI 응답은 항상 fresh
       'Access-Control-Allow-Origin': origin,
       'Vary': 'Origin',
