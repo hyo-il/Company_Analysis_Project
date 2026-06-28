@@ -12,6 +12,7 @@ import { getKrMomentumData, getKrCandlesMeta } from '../data/kr-candles.js';
 import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
+import { askGemini, getGeminiCacheMeta, clearGeminiCache } from '../data/adapters/gemini.js';
 
 // 투자 기간 모드 (장기/스윙) — 사용자 선호 LocalStorage 저장
 const INVEST_MODE_KEY = 'ca:invest-mode';
@@ -149,6 +150,19 @@ export async function renderAnalysis(container, { ticker } = {}) {
         ${metaBadge(fin)}
       </div>
 
+      <div class="panel" id="gemini-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <div class="panel-title" style="margin-bottom:0;">🤖 AI 분석 (Gemini) ${infoTip('Google Gemini 가 종목 지표를 보고 한 줄 평가 + 강점·약점을 한국어로 답변합니다. 무료 API 호출이며 24시간 캐싱됩니다. 참고용 — 투자 권유 X.')}</div>
+          <div id="gemini-actions" style="display:flex; gap:6px;">
+            <button id="gemini-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">AI 분석 보기</button>
+          </div>
+        </div>
+        <div id="gemini-result" style="min-height:60px;">
+          <p style="color:var(--text-muted); font-size:13px; margin:0;">아직 분석 요청 전입니다. 위 버튼을 눌러 시작하세요.</p>
+        </div>
+        <p style="font-size:11px; color:var(--text-muted); margin-top:8px;">⚠ AI 생성 — 사실 검증 필요. 투자 권유 X.</p>
+      </div>
+
       <div class="panel" id="scores-panel">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
           <div class="panel-title" style="margin-bottom:0;">퀀트 종합점수 ${infoTip('동종업계 비교 또는 절대 환산 기반 참고용 점수. 미래 수익을 보장하지 않습니다.')}</div>
@@ -248,6 +262,18 @@ export async function renderAnalysis(container, { ticker } = {}) {
       if (open) { past.setAttribute('hidden', ''); e.target.textContent = '지난 일정 보기'; }
       else { past.removeAttribute('hidden'); e.target.textContent = '지난 일정 숨기기'; }
     });
+
+    // === Gemini 카드 초기화 ===
+    if (document.getElementById('gemini-panel')) {
+      const cacheMeta = getGeminiCacheMeta(`analysis:${ticker}:v1`);
+      if (cacheMeta.exists) {
+        // 캐시 있으면 자동 표시
+        fetchAndRenderGemini(ticker, profile.data, fin.data, false);
+      } else {
+        // 버튼만 바인딩 (호출은 사용자 클릭 시)
+        _bindGeminiButtons(ticker, profile.data, fin.data);
+      }
+    }
   } catch (e) {
     console.error(e);
     container.innerHTML = errorState('데이터 로드 실패: ' + e.message);
@@ -598,6 +624,110 @@ function renderCategory(cat, data, currency, priority) {
         </tbody>
       </table>
     </div>`;
+}
+
+/**
+ * Gemini 분석 요청·렌더링.
+ * @param {string} ticker
+ * @param {object} profile - profile.data
+ * @param {object} fin - fin.data
+ * @param {boolean} forceRefresh - true 면 캐시 무시
+ */
+async function fetchAndRenderGemini(ticker, profile, fin, forceRefresh = false) {
+  const resultEl = document.getElementById('gemini-result');
+  const actionsEl = document.getElementById('gemini-actions');
+  if (!resultEl || !actionsEl) return;
+
+  // 로딩 상태
+  resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">⏳ Gemini 분석 중... (1~5초)</p>`;
+  actionsEl.innerHTML = `<button class="btn-secondary" style="font-size:12px; padding:5px 12px;" disabled>분석 중…</button>`;
+
+  // 프롬프트 구성 — null 안전
+  const safeNum = (v, suffix = '') => (v == null || isNaN(v)) ? '미가용' : `${Number(v).toFixed(2)}${suffix}`;
+  const prompt = `종목 분석 요청 (한국어 답변):
+
+종목: ${profile.nameKr || profile.ticker} (${ticker})
+산업: ${profile.sector || '미상'} · ${profile.industry || '미상'}
+
+밸류에이션:
+- PER: ${safeNum(fin.per, '배')}
+- PBR: ${safeNum(fin.pbr, '배')}
+- PSR: ${safeNum(fin.psr, '배')}
+- PEG: ${safeNum(fin.peg, '배')}
+- Forward PER: ${safeNum(fin.forwardPer, '배')}
+- EV/EBITDA: ${safeNum(fin.evEbitda, '배')}
+
+수익성:
+- ROE: ${safeNum(fin.roe, '%')}
+- 영업이익률: ${safeNum(fin.opMargin, '%')}
+
+성장성:
+- 매출 성장률 YoY: ${safeNum(fin.revenueGrowthYoY, '%')}
+- EPS 3년 성장률: ${safeNum(fin.epsGrowth3y, '%')}
+
+위 데이터를 토대로 다음을 한국어로 답변하세요:
+1. 한 줄 평가 (현재 밸류·성장·수익성 종합).
+2. 강점 2가지 (구체적 근거 포함).
+3. 약점 2가지 (구체적 근거 포함).
+4. 마지막 줄: "※ AI 생성 — 사실 검증 필요" 표시.`;
+
+  // 호출
+  const { text, error, fromCache, modelVersion, timestamp } = await askGemini(prompt, {
+    cacheKey: `analysis:${ticker}:v1`,
+    skipCache: forceRefresh,
+  });
+
+  // 결과 렌더
+  if (error) {
+    resultEl.innerHTML = `<p style="color:var(--danger, #c00); font-size:13px; margin:0;">⚠ ${error}</p>`;
+    actionsEl.innerHTML = `<button id="gemini-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  } else if (text) {
+    // 줄바꿈 보존 + 안전한 HTML
+    const safe = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\n/g, '<br>');
+    const cacheInfo = fromCache && timestamp
+      ? `<span style="color:var(--text-muted); font-size:11px; margin-left:8px;">캐시됨 (${_fmtAgo(timestamp)})</span>`
+      : '';
+    const modelInfo = modelVersion
+      ? `<span style="color:var(--text-muted); font-size:11px;">모델: ${modelVersion}${cacheInfo}</span>`
+      : cacheInfo;
+    resultEl.innerHTML = `
+      <div style="font-size:13px; line-height:1.6; white-space:normal;">${safe}</div>
+      <div style="margin-top:8px;">${modelInfo}</div>
+    `;
+    actionsEl.innerHTML = `<button id="gemini-refresh-btn" class="btn-secondary" style="font-size:12px; padding:5px 12px;">다시 분석</button>`;
+  } else {
+    resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">응답이 없습니다.</p>`;
+    actionsEl.innerHTML = `<button id="gemini-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  }
+
+  // 새 버튼 이벤트 재바인딩
+  _bindGeminiButtons(ticker, profile, fin);
+}
+
+function _fmtAgo(timestamp) {
+  const diffMs = Date.now() - timestamp;
+  const min = Math.floor(diffMs / 60000);
+  if (min < 1) return '방금 전';
+  if (min < 60) return `${min}분 전`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}시간 전`;
+  const day = Math.floor(hr / 24);
+  return `${day}일 전`;
+}
+
+function _bindGeminiButtons(ticker, profile, fin) {
+  document.getElementById('gemini-fetch-btn')?.addEventListener('click', () => {
+    fetchAndRenderGemini(ticker, profile, fin, false);
+  });
+  document.getElementById('gemini-refresh-btn')?.addEventListener('click', () => {
+    if (confirm('캐시를 무시하고 새로 분석하시겠어요? (호출 한도 사용)')) {
+      fetchAndRenderGemini(ticker, profile, fin, true);
+    }
+  });
 }
 
 function renderAIBusiness(profile, fin, peerScores) {
