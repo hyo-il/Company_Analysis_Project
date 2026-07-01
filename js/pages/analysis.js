@@ -13,6 +13,7 @@ import { MAX_PEERS, MIN_PEERS, toBars5 } from '../utils/peer-percentile.js';
 import { bandChart, trendChart, destroyChartsIn } from '../components/charts.js';
 import { pushRecent } from '../data/recents.js';
 import { askGemini, getGeminiCacheMeta, clearGeminiCache } from '../data/adapters/gemini.js';
+import { showLoading, hideLoading, updateLoadingMessage } from '../components/loading-overlay.js';
 
 // 투자 기간 모드 (장기/스윙) — 사용자 선호 LocalStorage 저장
 const INVEST_MODE_KEY = 'ca:invest-mode';
@@ -638,10 +639,17 @@ async function fetchAndRenderGemini(ticker, profile, fin, hist, forceRefresh = f
   const actionsEl = document.getElementById('gemini-actions');
   if (!resultEl || !actionsEl) return;
 
+  // 캐시 hit 여부 미리 확인 → hit 시 오버레이 X (즉시 반환)
+  const cacheKey = `analysis:${ticker}:v1`;
+  const cacheMeta = getGeminiCacheMeta(cacheKey);
+  const willHitCache = !forceRefresh && cacheMeta.exists;
+
   // 로딩 상태
   resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">⏳ Gemini 분석 중... (1~5초)</p>`;
   actionsEl.innerHTML = `<button class="btn-secondary" style="font-size:12px; padding:5px 12px;" disabled>분석 중…</button>`;
 
+  if (!willHitCache) showLoading('🤖 AI 분석 중... (1~5초)');
+  try {
   // 프롬프트 구성 — null 안전
   const safeNum = (v, suffix = '') => (v == null || isNaN(v)) ? '미가용' : `${Number(v).toFixed(2)}${suffix}`;
 
@@ -704,6 +712,9 @@ ${trendStr}
   const { text, error, fromCache, modelVersion, timestamp } = await askGemini(prompt, {
     cacheKey: `analysis:${ticker}:v1`,
     skipCache: forceRefresh,
+    onRetry: (attempt, max) => {
+      updateLoadingMessage(`🤖 AI 분석 재시도 중... (${attempt}/${max})`);
+    },
   });
 
   // 결과 렌더
@@ -735,6 +746,9 @@ ${trendStr}
 
   // 새 버튼 이벤트 재바인딩
   _bindGeminiButtons(ticker, profile, fin, hist);
+  } finally {
+    if (!willHitCache) hideLoading();
+  }
 }
 
 function _fmtAgo(timestamp) {

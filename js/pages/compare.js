@@ -4,6 +4,8 @@ import { getFinancials } from '../data/adapter.js';
 import { fmtNum, fmtPct } from '../utils/format.js';
 import { emptyState, loadingState, infoTip } from '../components/common.js';
 import { peerMedian as median, peerPercentile as percentile } from '../utils/peer-percentile.js';
+import { askGemini, getGeminiCacheMeta } from '../data/adapters/gemini.js';
+import { showLoading, hideLoading, updateLoadingMessage } from '../components/loading-overlay.js';
 
 const COMPARE_METRICS = [
   { key: 'per',              label: 'PER',           unit: 'x', lowerBetter: true,  group: 'valuation'     },
@@ -196,6 +198,18 @@ export async function renderCompare(container, { ticker } = {}) {
         </tbody>
       </table>
       </div>
+      <div class="panel" id="gemini-compare-panel" style="margin-top:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <div class="panel-title" style="margin-bottom:0;">🤖 AI 비교 분석 (Gemini)</div>
+          <div id="gemini-compare-actions" style="display:flex; gap:6px;">
+            <button id="gemini-compare-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">AI 비교 분석 보기</button>
+          </div>
+        </div>
+        <div id="gemini-compare-result" style="min-height:60px;">
+          <p style="color:var(--text-muted); font-size:13px; margin:0;">현재 종목과 피어 그룹 비교 결과 AI 분석입니다. 위 버튼을 눌러 시작하세요.</p>
+        </div>
+        <p style="font-size:11px; color:var(--text-muted); margin-top:8px;">⚠ AI 생성 — 사실 검증 필요. 투자 권유 X.</p>
+      </div>
       <div style="display:flex; gap:16px; font-size:12px; color:var(--text-muted); margin-top:10px; flex-wrap:wrap;">
         <span><span style="display:inline-block; width:12px; height:12px; background:var(--primary-soft); border-radius:3px; vertical-align:middle; margin-right:4px;"></span>지표별 최우수 값</span>
         <span><span style="display:inline-block; width:12px; height:12px; background:var(--bg-subtle); border-left:2px solid var(--primary); vertical-align:middle; margin-right:4px;"></span>현재 선택 종목 열</span>
@@ -277,6 +291,16 @@ export async function renderCompare(container, { ticker } = {}) {
       }, 150);
     });
     input.addEventListener('blur', () => setTimeout(() => suggest.style.display = 'none', 200));
+  }
+
+  // === Gemini 비교 분석 카드 초기화 ===
+  if (document.getElementById('gemini-compare-panel')) {
+    const cacheMeta = getGeminiCacheMeta(`compare:${sym.ticker}:v1`);
+    if (cacheMeta.exists) {
+      fetchAndRenderGeminiCompare(sym, peers, results, false);
+    } else {
+      _bindGeminiCompareButtons(sym, peers, results);
+    }
   }
 }
 
@@ -503,5 +527,112 @@ function openPeerAddModal(container, ticker, currentPeers) {
 
     modal.remove();
     renderCompare(container, { ticker });
+  });
+}
+
+async function fetchAndRenderGeminiCompare(sym, peers, results, forceRefresh = false) {
+  const resultEl = document.getElementById('gemini-compare-result');
+  const actionsEl = document.getElementById('gemini-compare-actions');
+  if (!resultEl || !actionsEl) return;
+
+  const cacheKey = `compare:${sym.ticker}:v1`;
+  const cacheMeta = getGeminiCacheMeta(cacheKey);
+  const willHitCache = !forceRefresh && cacheMeta.exists;
+
+  resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">⏳ Gemini 비교 분석 중... (1~5초)</p>`;
+  actionsEl.innerHTML = `<button class="btn-secondary" style="font-size:12px; padding:5px 12px;" disabled>분석 중…</button>`;
+
+  if (!willHitCache) showLoading('🤖 AI 비교 분석 중... (1~5초)');
+  try {
+  const safeNum = (v, s = '') => (v == null || isNaN(v)) ? '미가용' : `${Number(v).toFixed(2)}${s}`;
+  const me = results[0].fin;
+  const peersLines = peers.map((p, i) => {
+    const pf = results[i + 1]?.fin || {};
+    return `- ${p.nameKr} (${p.ticker}): PER ${safeNum(pf.per)}배 · PBR ${safeNum(pf.pbr)}배 · ROE ${safeNum(pf.roe, '%')} · 영업이익률 ${safeNum(pf.opMargin, '%')}`;
+  }).join('\n');
+
+  const prompt = `당신은 한국 주식 시장 전문 애널리스트입니다. 아래 현재 종목과 피어 그룹을 상대적으로 비교 분석하세요.
+
+# 분석 절차
+1. 현재 종목의 밸류·수익성·성장을 피어 평균과 비교.
+2. 상대적 강점·약점 도출 (구체적 수치 근거).
+3. 투자 관점 결론.
+
+# 현재 종목
+- 종목명: ${sym.nameKr} (${sym.ticker})
+- 산업: ${sym.sector || '미상'} · ${sym.industry || '미상'}
+- PER: ${safeNum(me.per, '배')} · PBR: ${safeNum(me.pbr, '배')} · PSR: ${safeNum(me.psr, '배')} · PEG: ${safeNum(me.peg, '배')} · Forward PER: ${safeNum(me.forwardPer, '배')} · EV/EBITDA: ${safeNum(me.evEbitda, '배')}
+- ROE: ${safeNum(me.roe, '%')} · 영업이익률: ${safeNum(me.opMargin, '%')}
+- 매출성장 YoY: ${safeNum(me.revenueGrowthYoY, '%')} · EPS 3년 성장: ${safeNum(me.epsGrowth3y, '%')}
+
+# 피어 그룹 (${peers.length}개)
+${peersLines}
+
+# 출력 형식 (반드시 이 형식 준수)
+**[상대 위치]**
+(피어 그룹 안에서 현재 종목의 밸류·수익성·성장이 어느 위치인지 한 줄.)
+
+**[강점]** (피어 대비)
+1. (강점 1 — 어떤 지표가 어떤 피어 대비 우수한지 구체적 수치)
+2. (강점 2 — 동일 형식)
+
+**[약점]** (피어 대비)
+1. (약점 1 — 어떤 지표가 어떤 피어 대비 부족한지 구체적 수치)
+2. (약점 2 — 동일 형식)
+
+**[비교 결론]**
+(피어 그룹 내에서 이 종목을 선택할 만한 이유 또는 다른 피어가 나은 이유. 1~2 문장.)
+
+※ AI 생성 — 사실 검증 필요. 투자 권유 아님.`;
+
+  const { text, error, fromCache, modelVersion, timestamp } = await askGemini(prompt, {
+    cacheKey: `compare:${sym.ticker}:v1`,
+    skipCache: forceRefresh,
+    onRetry: (attempt, max) => {
+      updateLoadingMessage(`🤖 AI 비교 분석 재시도 중... (${attempt}/${max})`);
+    },
+  });
+
+  if (error) {
+    resultEl.innerHTML = `<p style="color:var(--danger, #c00); font-size:13px; margin:0;">⚠ ${error}</p>`;
+    actionsEl.innerHTML = `<button id="gemini-compare-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  } else if (text) {
+    const safe = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+    const cacheInfo = fromCache && timestamp
+      ? `<span style="color:var(--text-muted); font-size:11px; margin-left:8px;">캐시됨 (${_fmtAgoCompare(timestamp)})</span>`
+      : '';
+    const modelInfo = modelVersion
+      ? `<span style="color:var(--text-muted); font-size:11px;">모델: ${modelVersion}${cacheInfo}</span>`
+      : cacheInfo;
+    resultEl.innerHTML = `<div style="font-size:13px; line-height:1.6;">${safe}</div><div style="margin-top:8px;">${modelInfo}</div>`;
+    actionsEl.innerHTML = `<button id="gemini-compare-refresh-btn" class="btn-secondary" style="font-size:12px; padding:5px 12px;">다시 분석</button>`;
+  } else {
+    resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">응답이 없습니다.</p>`;
+    actionsEl.innerHTML = `<button id="gemini-compare-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  }
+
+  _bindGeminiCompareButtons(sym, peers, results);
+  } finally {
+    if (!willHitCache) hideLoading();
+  }
+}
+
+function _fmtAgoCompare(ts) {
+  const min = Math.floor((Date.now() - ts) / 60000);
+  if (min < 1) return '방금 전';
+  if (min < 60) return `${min}분 전`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}시간 전`;
+  return `${Math.floor(hr / 24)}일 전`;
+}
+
+function _bindGeminiCompareButtons(sym, peers, results) {
+  document.getElementById('gemini-compare-fetch-btn')?.addEventListener('click', () => {
+    fetchAndRenderGeminiCompare(sym, peers, results, false);
+  });
+  document.getElementById('gemini-compare-refresh-btn')?.addEventListener('click', () => {
+    if (confirm('캐시를 무시하고 새로 분석하시겠어요? (호출 한도 사용)')) {
+      fetchAndRenderGeminiCompare(sym, peers, results, true);
+    }
   });
 }

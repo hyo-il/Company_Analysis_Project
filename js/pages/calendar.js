@@ -1,6 +1,8 @@
 import { getCalendar } from '../data/adapter.js';
 import { getWatchlist } from '../data/watchlist.js';
 import { fmtDate } from '../utils/format.js';
+import { askGemini, getGeminiCacheMeta } from '../data/adapters/gemini.js';
+import { showLoading, hideLoading, updateLoadingMessage } from '../components/loading-overlay.js';
 
 export function renderReasonBanner(reason, dataLen) {
   if (reason === 'no-key') {
@@ -84,6 +86,19 @@ export async function renderCalendar(container) {
         💡 날짜의 빈 공간을 누르면 그 날의 일정 목록이, 일정 칩을 누르면 해당 일정의 상세 정보가 열립니다.
       </p>
       ${sourceLine}
+    </div>
+
+    <div class="panel" id="gemini-calendar-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+        <div class="panel-title" style="margin-bottom:0;">🤖 AI 일정 요약 (Gemini)</div>
+        <div id="gemini-calendar-actions" style="display:flex; gap:6px;">
+          <button id="gemini-calendar-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">AI 요약 보기</button>
+        </div>
+      </div>
+      <div id="gemini-calendar-result" style="min-height:60px;">
+        <p style="color:var(--text-muted); font-size:13px; margin:0;">다가올 4주 일정을 AI 가 요약합니다. 위 버튼을 눌러 시작하세요.</p>
+      </div>
+      <p style="font-size:11px; color:var(--text-muted); margin-top:8px;">⚠ AI 생성 — 사실 검증 필요. 투자 권유 X.</p>
     </div>
 
     <dialog id="event-dialog" style="border:none; border-radius:8px; padding:0; max-width:520px; width:90vw;">
@@ -390,4 +405,129 @@ export async function renderCalendar(container) {
   });
 
   drawGrid();
+
+  // === Gemini 일정 요약 카드 초기화 ===
+  if (document.getElementById('gemini-calendar-panel')) {
+    const cacheMeta = getGeminiCacheMeta('calendar:upcoming:v1');
+    if (cacheMeta.exists) {
+      fetchAndRenderGeminiCalendar(all, false);
+    } else {
+      _bindGeminiCalendarButtons(all);
+    }
+  }
+}
+
+async function fetchAndRenderGeminiCalendar(events, forceRefresh = false) {
+  const resultEl = document.getElementById('gemini-calendar-result');
+  const actionsEl = document.getElementById('gemini-calendar-actions');
+  if (!resultEl || !actionsEl) return;
+
+  const cacheKey = 'calendar:upcoming:v1';
+  const cacheMeta = getGeminiCacheMeta(cacheKey);
+  const willHitCache = !forceRefresh && cacheMeta.exists;
+
+  resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">⏳ Gemini 일정 요약 중... (1~5초)</p>`;
+  actionsEl.innerHTML = `<button class="btn-secondary" style="font-size:12px; padding:5px 12px;" disabled>분석 중…</button>`;
+
+  if (!willHitCache) showLoading('🤖 AI 일정 요약 중... (1~5초)');
+  try {
+  // 다가올 4주 일정 필터 (오늘 ~ +28일)
+  const today = new Date();
+  const cutoff = new Date(today.getTime() + 28 * 24 * 60 * 60 * 1000);
+  const upcoming = events
+    .filter(e => e.date)
+    .filter(e => {
+      const d = new Date(e.date);
+      return d >= today && d <= cutoff;
+    })
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(0, 30);   // 프롬프트 길이 상한
+
+  if (upcoming.length === 0) {
+    resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">다가올 일정이 없습니다.</p>`;
+    actionsEl.innerHTML = `<button id="gemini-calendar-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">AI 요약 보기</button>`;
+    _bindGeminiCalendarButtons(events);
+    return;
+  }
+
+  const eventLines = upcoming.map(e => {
+    const parts = [e.date, e.title || e.category || '이벤트'];
+    if (e.ticker) parts.push(`(${e.ticker})`);
+    if (e.market) parts.push(`[${e.market === 'kr' ? 'KR' : 'US'}]`);
+    return `- ${parts.join(' ')}`;
+  }).join('\n');
+
+  const prompt = `당신은 한국·미국 시장 매크로·기업 이벤트 분석 전문가입니다. 아래 다가올 4주 일정을 분석하세요.
+
+# 분석 절차
+1. 시장 영향이 큰 이벤트 판별 (매크로·실적·배당·정책 등).
+2. 투자자가 대응해야 할 시사점 도출.
+3. 잠재 리스크 파악.
+
+# 다가올 일정 (${upcoming.length}건)
+${eventLines}
+
+# 출력 형식 (반드시 이 형식 준수)
+**[주요 이벤트]**
+(가장 시장 영향이 큰 이벤트 2~3개를 구체적 날짜와 함께 나열.)
+
+**[투자 관점 시사점]**
+1. (시사점 1 — 어떤 이벤트가 어떤 준비를 요구하는지)
+2. (시사점 2 — 동일 형식)
+
+**[리스크 요인]**
+(잠재적 리스크 1~2개 — 구체적 이벤트와 연결.)
+
+※ AI 생성 — 사실 검증 필요. 투자 권유 아님.`;
+
+  const { text, error, fromCache, modelVersion, timestamp } = await askGemini(prompt, {
+    cacheKey: 'calendar:upcoming:v1',
+    skipCache: forceRefresh,
+    onRetry: (attempt, max) => {
+      updateLoadingMessage(`🤖 AI 일정 요약 재시도 중... (${attempt}/${max})`);
+    },
+  });
+
+  if (error) {
+    resultEl.innerHTML = `<p style="color:var(--danger, #c00); font-size:13px; margin:0;">⚠ ${error}</p>`;
+    actionsEl.innerHTML = `<button id="gemini-calendar-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  } else if (text) {
+    const safe = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+    const cacheInfo = fromCache && timestamp
+      ? `<span style="color:var(--text-muted); font-size:11px; margin-left:8px;">캐시됨 (${_fmtAgoCal(timestamp)})</span>`
+      : '';
+    const modelInfo = modelVersion
+      ? `<span style="color:var(--text-muted); font-size:11px;">모델: ${modelVersion}${cacheInfo}</span>`
+      : cacheInfo;
+    resultEl.innerHTML = `<div style="font-size:13px; line-height:1.6;">${safe}</div><div style="margin-top:8px;">${modelInfo}</div>`;
+    actionsEl.innerHTML = `<button id="gemini-calendar-refresh-btn" class="btn-secondary" style="font-size:12px; padding:5px 12px;">다시 분석</button>`;
+  } else {
+    resultEl.innerHTML = `<p style="color:var(--text-muted); font-size:13px; margin:0;">응답이 없습니다.</p>`;
+    actionsEl.innerHTML = `<button id="gemini-calendar-fetch-btn" class="btn-primary" style="font-size:12px; padding:5px 12px;">다시 시도</button>`;
+  }
+
+  _bindGeminiCalendarButtons(events);
+  } finally {
+    if (!willHitCache) hideLoading();
+  }
+}
+
+function _fmtAgoCal(ts) {
+  const min = Math.floor((Date.now() - ts) / 60000);
+  if (min < 1) return '방금 전';
+  if (min < 60) return `${min}분 전`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}시간 전`;
+  return `${Math.floor(hr / 24)}일 전`;
+}
+
+function _bindGeminiCalendarButtons(events) {
+  document.getElementById('gemini-calendar-fetch-btn')?.addEventListener('click', () => {
+    fetchAndRenderGeminiCalendar(events, false);
+  });
+  document.getElementById('gemini-calendar-refresh-btn')?.addEventListener('click', () => {
+    if (confirm('캐시를 무시하고 새로 분석하시겠어요? (호출 한도 사용)')) {
+      fetchAndRenderGeminiCalendar(events, true);
+    }
+  });
 }
